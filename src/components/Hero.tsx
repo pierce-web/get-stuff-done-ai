@@ -13,13 +13,14 @@ export const Hero = () => {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
-              className="bg-primary hover:bg-primary/90"
+              className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
               onClick={() => window.location.href = "#services"}
             >
               View Services
             </Button>
             <Button
               variant="outline"
+              className="border-2 border-secondary text-secondary hover:bg-secondary/10"
               onClick={() => window.location.href = "#free-course"}
             >
               Free AI Course
