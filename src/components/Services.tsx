@@ -20,7 +20,7 @@ const services = [
       "State-of-the-art AI tools",
     ],
     cta: "Book Session",
-    calendlyLink: "#", // Replace with actual Calendly link
+    calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
   },
   {
     title: "C-Level Office Hours",
@@ -93,6 +93,7 @@ export const Services = () => {
               <CardFooter className="pt-4">
                 <Button 
                   className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6"
+                  onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
                 >
                   {service.cta}
                 </Button>
