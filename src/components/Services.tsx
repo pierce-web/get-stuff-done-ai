@@ -12,6 +12,7 @@ const services = [
   {
     title: "A La Carte Sessions",
     description: "2-hour accelerated AI adoption working sessions",
+    price: "$2,000 per session",
     features: [
       "1-3 participants",
       "Live coaching",
@@ -24,7 +25,7 @@ const services = [
   {
     title: "C-Level Office Hours",
     description: "Strategic AI consultation for executives",
-    price: "$2,000 per session",
+    price: "$5,000 per month",
     features: [
       "Executive-level guidance",
       "Strategic planning",
@@ -63,15 +64,15 @@ export const Services = () => {
           {services.map((service) => (
             <Card key={service.title} className="flex flex-col justify-between">
               <CardHeader>
-                <CardTitle>{service.title}</CardTitle>
-                <CardDescription>{service.description}</CardDescription>
+                <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                <CardDescription className="mt-2">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center">
                       <svg
-                        className="h-5 w-5 text-primary-light"
+                        className="h-5 w-5 text-secondary"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -85,12 +86,14 @@ export const Services = () => {
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-              <CardFooter>
                 {service.price && (
-                  <p className="mb-4 text-lg font-semibold">{service.price}</p>
+                  <p className="mt-6 text-xl font-bold text-primary">{service.price}</p>
                 )}
-                <Button className="w-full bg-primary hover:bg-primary/90">
+              </CardContent>
+              <CardFooter className="pt-4">
+                <Button 
+                  className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6"
+                >
                   {service.cta}
                 </Button>
               </CardFooter>
