@@ -37,7 +37,7 @@ const services = [
   {
     title: "Fractional Chief AI Officer",
     description: "14-week accelerated AI adoption cycle",
-    price: "$100,000",
+    price: "$100,000 per quarter",
     features: [
       "Complete AI transformation",
       "Custom implementation",
