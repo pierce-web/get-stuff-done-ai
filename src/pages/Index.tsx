@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { FreeCourse } from "@/components/FreeCourse";
 import { Placeholder } from "@/components/Placeholder";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
         title="About Us"
         description="Learn about our expertise and commitment to AI excellence"
       />
+      <Footer />
     </div>
   );
 };
