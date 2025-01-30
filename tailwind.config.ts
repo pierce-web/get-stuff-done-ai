@@ -25,12 +25,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#ea384c",
-          light: "#f26d7d",
+          DEFAULT: "#1A1F2C",
+          light: "#9b87f5",
         },
         secondary: {
-          DEFAULT: "#1A1F2C",
-          light: "#7E69AB",
+          DEFAULT: "#7E69AB",
+          light: "#D6BCFA",
         },
       },
       keyframes: {
