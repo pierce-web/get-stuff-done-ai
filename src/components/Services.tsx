@@ -33,6 +33,7 @@ const services = [
       "Priority access",
     ],
     cta: "Schedule Consultation",
+    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
   },
   {
     title: "Fractional Chief AI Officer",
@@ -44,7 +45,8 @@ const services = [
       "Team training",
       "Ongoing support",
     ],
-    cta: "Contact Us",
+    cta: "Schedule Consultation",
+    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
   },
 ];
 
