@@ -10,7 +10,7 @@ import {
 
 const services = [
   {
-    title: "A La Carte Sessions",
+    title: "A La Carte Workshops",
     description: "2-hour accelerated AI adoption working sessions",
     price: "$2,000 per session",
     features: [
