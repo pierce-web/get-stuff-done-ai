@@ -1,6 +1,5 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { FreeCourse } from "@/components/FreeCourse";
 import { Placeholder } from "@/components/Placeholder";
 import { Footer } from "@/components/Footer";
 
@@ -9,7 +8,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Hero />
       <Services />
-      <FreeCourse />
       <Placeholder
         title="Client Success Stories"
         description="Discover how our clients have transformed their businesses with AI"

@@ -21,9 +21,9 @@ export const Hero = () => {
             <Button
               variant="outline"
               className="border-2 border-secondary text-secondary hover:bg-secondary/10"
-              onClick={() => window.location.href = "#free-course"}
+              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
-              Free AI Course
+              Schedule Free Consultation
             </Button>
           </div>
         </div>
