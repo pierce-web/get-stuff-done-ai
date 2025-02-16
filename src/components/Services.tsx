@@ -12,7 +12,7 @@ const services = [
   {
     title: "A La Carte Workshops",
     description: "2-hour accelerated AI adoption working sessions",
-    price: "$2,000 per session",
+    price: "$2,499 per session",
     features: [
       "1-3 participants",
       "Live coaching",
@@ -25,7 +25,7 @@ const services = [
   {
     title: "C-Level Office Hours",
     description: "Strategic AI consultation for executives",
-    price: "$5,000 per month",
+    price: "$10,000 per month",
     features: [
       "Executive-level guidance",
       "Strategic planning",
@@ -38,7 +38,7 @@ const services = [
   {
     title: "Fractional Chief AI Officer",
     description: "14-week accelerated AI adoption cycle",
-    price: "$100,000 per quarter",
+    price: "Starts at $100,000",
     features: [
       "Complete AI transformation",
       "Custom implementation",
