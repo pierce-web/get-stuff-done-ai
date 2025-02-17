@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,11 +27,11 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#1A1F2C",
-          light: "#9b87f5",
+          light: "#D22B2B",
         },
         secondary: {
-          DEFAULT: "#7E69AB",
-          light: "#D6BCFA",
+          DEFAULT: "#D22B2B",
+          light: "#ff9999",
         },
       },
       keyframes: {
