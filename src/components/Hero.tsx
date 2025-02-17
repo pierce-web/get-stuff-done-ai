@@ -10,7 +10,7 @@ export const Hero = () => {
             Get Stuff Done with AI
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We help you set bold goals and achieve them 10x faster with AI. From strategy to implementation, we're your partners in harnessing AI's true potential.
+            We help you set bold goals and achieve them 10x faster with AI. From strategy to implementation, we're with you every step of the way.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
