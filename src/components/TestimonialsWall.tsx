@@ -24,25 +24,16 @@ export const TestimonialsWall = () => {
   }, []);
 
   return (
-    <div className="py-24 sm:py-32 animate-fade-in">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Client Testimonials
-          </h2>
-          <div className="mt-10">
-            <iframe
-              id="wall-of-love-dq6aUlD"
-              src="https://senja.io/p/gsd-work/dq6aUlD?hideNavigation=true&embed=true"
-              title="Wall of Love"
-              frameBorder="0"
-              scrolling="no"
-              width="100%"
-              className="min-h-[400px]"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="animate-fade-in">
+      <iframe
+        id="wall-of-love-dq6aUlD"
+        src="https://senja.io/p/gsd-work/dq6aUlD?hideNavigation=true&embed=true"
+        title="Wall of Love"
+        frameBorder="0"
+        scrolling="no"
+        width="100%"
+        className="min-h-[400px]"
+      />
     </div>
   );
 };
