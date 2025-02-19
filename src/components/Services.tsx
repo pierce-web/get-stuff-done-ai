@@ -11,7 +11,7 @@ import {
 
 const services = [
   {
-    title: "AI Strategy Workshop",
+    title: "AI Acceleration Workshop",
     description: "2-hour accelerated working session to identify your highest-impact AI opportunities",
     price: "$2,499 per session",
     features: [
@@ -24,36 +24,19 @@ const services = [
     calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
   },
   {
-    title: "AI Transformation Program",
-    description: "14-week program to revolutionize your operations with AI",
+    title: "Triple A Transformation Program",
+    description: "14-week program to revolutionize your operations with AI (AAA stands for Accelerated AI Adoption)",
     price: "Starting at $25,000 + Performance Incentives",
     subtext: "Pricing tied to measurable business outcomes",
     features: [
+      "Fractional Chief AI Officer services",
       "Comprehensive AI opportunity assessment",
       "Custom implementation roadmap",
       "Team training and change management",
       "Weekly strategic guidance",
-      "Performance-based pricing structure",
       "ROI-focused metrics and tracking",
     ],
     cta: "Schedule Discovery Call",
-    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
-  },
-  {
-    title: "Strategic AI Partnership",
-    description: "Ongoing strategic partnership for enterprise-level transformation",
-    price: "Custom Pricing Based on Scope",
-    subtext: "Includes base retainer + performance incentives",
-    features: [
-      "Fractional Chief AI Officer services",
-      "Full AI transformation strategy",
-      "Custom implementation across departments",
-      "Priority access and support",
-      "Team training and development",
-      "Monthly strategic reviews",
-      "Results-based compensation structure",
-    ],
-    cta: "Schedule Consultation",
     calendlyLink: "https://calendly.com/gsdatwork/free-consult",
   },
 ];
@@ -78,7 +61,7 @@ export const Services = () => {
             Choose the right path for your AI transformation journey
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
           {services.map((service) => (
             <Card key={service.title} className="flex flex-col justify-between">
               <CardHeader>
@@ -86,11 +69,11 @@ export const Services = () => {
                 <CardDescription className="mt-2">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center">
+                    <li key={feature} className="flex items-start">
                       <svg
-                        className="h-5 w-5 text-secondary"
+                        className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -124,7 +107,7 @@ export const Services = () => {
         </div>
 
         {/* Value-Based Pricing Section */}
-        <div className="mt-24 mx-auto max-w-3xl text-center">
+        <div className="mt-24 mx-auto max-w-2xl text-center">
           <h3 className="text-2xl font-bold tracking-tight text-primary">
             Our Approach to Value-Based Pricing
           </h3>
@@ -132,11 +115,11 @@ export const Services = () => {
             We believe in aligning our success with yours. After our initial engagement, 
             we offer flexible pricing structures that tie our compensation to measurable business outcomes:
           </p>
-          <ul className="mt-8 space-y-3 text-left max-w-xl mx-auto">
+          <ul className="mt-8 space-y-4 text-left max-w-md mx-auto">
             {valueMetrics.map((metric) => (
               <li key={metric} className="flex items-center">
                 <svg
-                  className="h-5 w-5 text-secondary"
+                  className="h-6 w-6 text-secondary flex-shrink-0"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
