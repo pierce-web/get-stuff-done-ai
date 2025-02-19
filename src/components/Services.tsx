@@ -121,11 +121,11 @@ export const Services = () => {
             We believe in aligning our success with yours. After our initial engagement, 
             we offer flexible pricing structures that tie our compensation to measurable business outcomes:
           </p>
-          <ul className="mt-8 space-y-4 text-left max-w-md mx-auto">
+          <ul className="mt-8 space-y-4 text-left mx-auto">
             {valueMetrics.map((metric) => (
-              <li key={metric} className="flex items-center">
+              <li key={metric} className="flex items-start">
                 <svg
-                  className="h-6 w-6 text-secondary flex-shrink-0"
+                  className="h-6 w-6 text-secondary flex-shrink-0 mt-1"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
