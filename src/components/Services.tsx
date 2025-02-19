@@ -12,20 +12,20 @@ import {
 const services = [
   {
     title: "AI Acceleration Workshop",
-    description: "2-hour accelerated working session to identify your highest-impact AI opportunities",
+    description: "2-hour intensive working session where you'll implement real AI solutions and achieve results that typically take weeks",
     price: "$2,499 per session",
     features: [
-      "Hands-on implementation with state-of-the-art AI tools",
-      "Clear action plan with specific next steps",
-      "1-3 participants from your team",
-      "Live coaching and guidance",
+      "Achieve concrete results with hands-on AI implementation",
+      "Get coached through rapid implementation with proven frameworks",
+      "Develop repeatable processes and SOPs for your team",
+      "Includes pre-session discovery and post-session support",
     ],
     cta: "Book Workshop",
     calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
   },
   {
     title: "Triple A Transformation Program",
-    description: "14-week program to revolutionize your operations with AI (AAA stands for Accelerated AI Adoption)",
+    description: "14-week program to revolutionize your operations with AI (Triple A = Accelerated AI Adoption)",
     price: "Starting at $25,000 + Performance Incentives",
     subtext: "Pricing tied to measurable business outcomes",
     features: [
