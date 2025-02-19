@@ -24,7 +24,7 @@ export const Hero = () => {
               className="border-2 border-secondary text-secondary hover:bg-secondary/10"
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
-              Schedule Free Consultation
+              Schedule Strategic Planning Call
             </Button>
           </div>
         </div>
