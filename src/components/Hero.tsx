@@ -12,16 +12,16 @@ export const Hero = () => {
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Turn AI possibilities into real business results. We help you identify what matters and execute 10x faster. From strategy to implementation, we're obsessed with GSD (Getting Stuff Done).
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 px-4">
             <Button
-              className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
+              className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold"
               onClick={() => window.location.href = "#services"}
             >
               See How We Execute
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-secondary text-secondary hover:bg-secondary/10"
+              className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10"
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
               Schedule Strategic Planning Call
