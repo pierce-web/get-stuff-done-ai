@@ -10,14 +10,14 @@ export const Hero = () => {
             Get Stuff Done with AI
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We help you set bold goals and achieve them 10x faster with AI. From strategy to implementation, we're with you every step of the way.
+            Turn AI possibilities into real business results. We help you cut through the noise, focus on what matters, and execute 10x faster. From strategy to implementation, we're obsessed with getting stuff done.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
               className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
               onClick={() => window.location.href = "#services"}
             >
-              View Services
+              See How We Execute
             </Button>
             <Button
               variant="outline"
