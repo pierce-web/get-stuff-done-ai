@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -139,7 +138,7 @@ export const Services = () => {
           <div className="mt-8 space-y-4">
             <Button
               className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
-              onClick={() => window.open("/case-studies", "_blank")}
+              onClick={() => window.open("https://love.gsdat.work", "_blank")}
             >
               See Client Success Stories
             </Button>
