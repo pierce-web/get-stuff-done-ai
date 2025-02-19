@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,8 +11,8 @@ import {
 
 const services = [
   {
-    title: "AI Acceleration Workshop",
-    description: "2-hour intensive working session where you'll implement real AI solutions and achieve results that typically take weeks",
+    title: "2-Hour AI Action Workshop",
+    description: "Hands-on working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution",
     price: "$2,499 per session",
     features: [
       "Achieve concrete results with hands-on AI implementation",
@@ -28,6 +29,7 @@ const services = [
     description: "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption)",
     price: "Starting at $25,000 + Performance Incentives",
     subtext: "Pricing tied to measurable business outcomes",
+    extraText: "Ready to go beyond quick wins? Our transformation program helps you revolutionize your operations with AI.",
     features: [
       "Fractional Chief AI Officer services",
       "Comprehensive AI opportunity assessment",
@@ -41,8 +43,8 @@ const services = [
 ];
 
 const valueMetrics = [
-  "Cost reduction achieved (e.g., 30-40% on target processes)",
-  "Revenue increased (e.g., 25%+ growth in target areas)",
+  "Immediate cost reduction (e.g., 30-40% on target processes)",
+  "Direct revenue impact (e.g., 25%+ growth in target areas)",
   "Productivity gains (e.g., 3x faster execution on key tasks)",
   "Time saved (e.g., 15+ hours per week per team)",
   "ROI delivered (e.g., 5-10x return)",
@@ -68,6 +70,9 @@ export const Services = () => {
                 <CardDescription className="mt-2">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
+                {service.extraText && (
+                  <p className="mb-4 text-gray-600">{service.extraText}</p>
+                )}
                 <ul className="space-y-4">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start">
@@ -132,6 +137,9 @@ export const Services = () => {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-gray-600 font-medium">
+            Results typically seen within first 30 days
+          </p>
           <p className="mt-8 text-gray-600">
             This ensures we're fully invested in delivering real, measurable value for your business.
           </p>

@@ -10,7 +10,7 @@ export const Hero = () => {
             Get Stuff Done with AI
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Turn AI possibilities into real business results. We help you cut through the noise, focus on what matters, and execute 10x faster. From strategy to implementation, we're obsessed with getting stuff done.
+            Turn AI possibilities into real business results. We help you identify what matters and execute 10x faster. From strategy to implementation, we're obsessed with GSD (Getting Stuff Done).
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
