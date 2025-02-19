@@ -14,6 +14,8 @@ const services = [
     title: "2-Hour AI Action Workshop",
     description: "Hands-on working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution",
     price: "$2,499 per session",
+    subtext: "Satisfaction Guaranteed",
+    extraText: "Ready to implement AI right now? Our workshop delivers immediate, concrete results you can use.",
     features: [
       "Achieve concrete results with hands-on AI implementation",
       "Get coached through rapid implementation with proven frameworks",
