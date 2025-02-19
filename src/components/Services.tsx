@@ -25,8 +25,8 @@ const services = [
     calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
   },
   {
-    title: "Triple A Transformation Program",
-    description: "14-week program to revolutionize your operations with AI (Triple A = Accelerated AI Adoption)",
+    title: "Triple-A Transformation Program",
+    description: "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption)",
     price: "Starting at $25,000 + Performance Incentives",
     subtext: "Pricing tied to measurable business outcomes",
     features: [
@@ -42,11 +42,11 @@ const services = [
 ];
 
 const valueMetrics = [
-  "Cost reduction achieved",
-  "Revenue increased",
-  "Productivity gains",
-  "Time saved",
-  "ROI delivered",
+  "Cost reduction achieved (e.g., 30-40% on target processes)",
+  "Revenue increased (e.g., 25%+ growth in target areas)",
+  "Productivity gains (e.g., 3x faster execution on key tasks)",
+  "Time saved (e.g., 15+ hours per week per team)",
+  "ROI delivered (e.g., 5-10x return)",
 ];
 
 export const Services = () => {
@@ -136,13 +136,23 @@ export const Services = () => {
           <p className="mt-8 text-gray-600">
             This ensures we're fully invested in delivering real, measurable value for your business.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 space-y-4">
             <Button
               className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
-              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+              onClick={() => window.open("/case-studies", "_blank")}
             >
-              Learn More About Our ROI-Focused Approach
+              See Client Success Stories
             </Button>
+            <p className="text-gray-600">
+              Or{" "}
+              <a 
+                href="https://calendly.com/gsdatwork/free-consult" 
+                target="_blank" 
+                className="text-secondary hover:text-secondary/90 font-medium inline-flex items-center"
+              >
+                book a quick call to discuss your goals →
+              </a>
+            </p>
           </div>
         </div>
       </div>
