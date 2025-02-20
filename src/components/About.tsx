@@ -39,28 +39,28 @@ export const About = () => {
               <p>
                 As the Former MIT AI Co-Chair and startup executive, Christian brings deep expertise in translating AI possibilities into concrete business results. His unique approach combines technical knowledge with practical business acumen to deliver rapid, measurable outcomes.
               </p>
-              <p>
+              <p className="mb-12">
                 Working with enterprise and growth-stage companies across regulated industries, Christian has consistently delivered transformative results: 30-40% cost reduction in target processes, and productivity gains ranging from 100% to 2,000%. His focus is on quick wins that build momentum for larger transformations.
               </p>
 
               {/* Credentials */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-8 py-12">
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-12">
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
                   <GraduationCap className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">MIT Sloan MBA</span>
                   <span className="text-sm text-gray-500">Graduate</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100">
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
                   <CircuitBoard className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">MIT AI</span>
                   <span className="text-sm text-gray-500">Former Co-Chair</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100">
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
                   <TrendingUp className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">Productivity Gains</span>
                   <span className="text-sm text-gray-500">100-2,000% Improvement</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100">
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
                   <File className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">Patent Holder</span>
                   <span className="text-sm text-gray-500">Medical Imaging AI</span>
@@ -68,7 +68,7 @@ export const About = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-8 sm:pt-16">
+              <div className="flex flex-col sm:flex-row gap-4 pt-10">
                 <Button
                   className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 sm:py-2 transition-all duration-300"
                   onClick={() => window.open("https://www.linkedin.com/in/christianulstrup/", "_blank")}
