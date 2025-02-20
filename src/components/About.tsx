@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
-import { GraduationCap, CircuitBoard, TrendingUp } from "lucide-react";
+import { GraduationCap, CircuitBoard, TrendingUp, File } from "lucide-react";
 
 export const About = () => {
   return (
-    <div className="py-24 sm:py-32 animate-fade-in">
+    <div className="py-24 sm:py-32 bg-gray-50/50 animate-fade-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
@@ -40,11 +40,11 @@ export const About = () => {
                 As the Former MIT AI Co-Chair and startup executive, Christian brings deep expertise in translating AI possibilities into concrete business results. His unique approach combines technical knowledge with practical business acumen to deliver rapid, measurable outcomes.
               </p>
               <p>
-                Working across healthcare, defense, private equity, and real estate industries, Christian has consistently delivered transformative results: 30-40% cost reduction in target processes, and productivity gains ranging from 100% to 2,000%. His focus is on quick wins that build momentum for larger transformations.
+                Working with enterprise and growth-stage companies across regulated industries, Christian has consistently delivered transformative results: 30-40% cost reduction in target processes, and productivity gains ranging from 100% to 2,000%. His focus is on quick wins that build momentum for larger transformations.
               </p>
 
               {/* Credentials */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 py-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 py-12">
                 <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100">
                   <GraduationCap className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">MIT Sloan MBA</span>
@@ -60,19 +60,24 @@ export const About = () => {
                   <span className="font-semibold text-primary">Productivity Gains</span>
                   <span className="text-sm text-gray-500">100-2,000% Improvement</span>
                 </div>
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100">
+                  <File className="w-8 h-8 text-secondary mb-3" />
+                  <span className="font-semibold text-primary">Patent Holder</span>
+                  <span className="text-sm text-gray-500">Medical Imaging AI</span>
+                </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-12">
+              <div className="flex flex-col sm:flex-row gap-4 pt-16">
                 <Button
-                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold transition-colors duration-300"
+                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold transition-all duration-300"
                   onClick={() => window.open("https://www.linkedin.com/in/christianulstrup/", "_blank")}
                 >
                   Connect on LinkedIn
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 transition-colors duration-300"
+                  className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 transition-all duration-300"
                   onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
                 >
                   Book a Call
