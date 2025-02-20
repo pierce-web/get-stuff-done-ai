@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { GraduationCap, CircuitBoard, TrendingUp } from "lucide-react";
 
 export const About = () => {
   return (
@@ -20,6 +21,7 @@ export const About = () => {
                 src="/lovable-uploads/eb3e02b7-4b6b-4085-bd2c-fd961a1b1003.png"
                 alt="Christian Ulstrup"
                 className="relative rounded-full w-full h-full object-cover shadow-lg"
+                loading="eager"
               />
             </div>
           </div>
@@ -30,44 +32,50 @@ export const About = () => {
               Christian Ulstrup
             </h3>
             <h4 className="text-xl sm:text-2xl font-semibold text-secondary mb-8">
-              Principal and Founder
+              AI Implementation Expert | Founder, GSD at Work
             </h4>
 
-            <div className="space-y-6 text-gray-600">
+            <div className="space-y-8 text-gray-600">
               <p>
-                As a leader in MIT's AI initiatives and former startup executive, Christian brings deep expertise in translating AI possibilities into concrete business results. His unique approach combines technical knowledge with practical business acumen to deliver rapid, measurable outcomes.
+                As the Former MIT AI Co-Chair and startup executive, Christian brings deep expertise in translating AI possibilities into concrete business results. His unique approach combines technical knowledge with practical business acumen to deliver rapid, measurable outcomes.
+              </p>
+              <p className="text-primary font-medium">
+                Working across healthcare, defense, private equity, and real estate industries.
               </p>
               <p>
                 Working with organizations across industries, Christian has consistently delivered transformative results: 30-40% cost reduction in target processes, and productivity gains ranging from 100% to 2,000%. His focus is on quick wins that build momentum for larger transformations.
               </p>
 
               {/* Credentials */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-6">
-                <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-8">
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 hover:bg-gray-100">
+                  <GraduationCap className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">MIT Sloan MBA</span>
                   <span className="text-sm text-gray-500">Graduate</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg">
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 hover:bg-gray-100">
+                  <CircuitBoard className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">MIT AI</span>
                   <span className="text-sm text-gray-500">Former Co-Chair</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg">
-                  <span className="font-semibold text-primary">Client Impact</span>
-                  <span className="text-sm text-gray-500">5-10x ROI Delivered</span>
+                <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 hover:bg-gray-100">
+                  <TrendingUp className="w-8 h-8 text-secondary mb-3" />
+                  <span className="font-semibold text-primary">Productivity Gains</span>
+                  <span className="text-sm text-gray-500">100-2,000% Improvement</span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+              <div className="flex flex-col sm:flex-row gap-4 pt-8">
                 <Button
-                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold"
+                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold transition-colors duration-300"
                   onClick={() => window.open("https://www.linkedin.com/in/christianulstrup/", "_blank")}
                 >
                   Connect on LinkedIn
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10"
+                  className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 transition-colors duration-300"
                   onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
                 >
                   Book a Call
