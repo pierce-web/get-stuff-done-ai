@@ -17,7 +17,7 @@ export const About = () => {
             <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]">
               <div className="absolute inset-0 rounded-full bg-gray-100"></div>
               <img
-                src="/lovable-uploads/ca2d8755-dcba-43b9-90c4-3e3fd21aa912.png"
+                src="/lovable-uploads/eb3e02b7-4b6b-4085-bd2c-fd961a1b1003.png"
                 alt="Christian Ulstrup"
                 className="relative rounded-full w-full h-full object-cover shadow-lg"
               />
@@ -30,7 +30,7 @@ export const About = () => {
               Christian Ulstrup
             </h3>
             <h4 className="text-xl sm:text-2xl font-semibold text-secondary mb-8">
-              AI Implementation Expert
+              Principal and Founder
             </h4>
 
             <div className="space-y-6 text-gray-600">
