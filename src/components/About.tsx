@@ -15,7 +15,7 @@ export const About = () => {
         <div className="mt-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Left Column - Profile Photo */}
           <div className="lg:w-2/5 flex justify-center">
-            <div className="relative w-[216px] h-[216px] sm:w-[360px] sm:h-[360px]">
+            <div className="relative w-[180px] h-[180px] sm:w-[360px] sm:h-[360px]">
               <div className="absolute inset-0 rounded-full bg-gray-100"></div>
               <img
                 src="/lovable-uploads/eb3e02b7-4b6b-4085-bd2c-fd961a1b1003.png"
@@ -44,7 +44,7 @@ export const About = () => {
               </p>
 
               {/* Credentials */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 py-12">
                 <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
                   <GraduationCap className="w-8 h-8 text-secondary mb-3" />
                   <span className="font-semibold text-primary">MIT Sloan MBA</span>
