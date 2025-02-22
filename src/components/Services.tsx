@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -54,7 +53,7 @@ const valueMetrics = [
 
 export const Services = () => {
   return (
-    <div id="services" className="py-24 sm:py-32 animate-fade-in">
+    <section id="services" className="py-24 sm:py-32 animate-fade-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
@@ -165,6 +164,6 @@ export const Services = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

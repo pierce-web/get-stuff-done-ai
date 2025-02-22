@@ -1,7 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative py-24 sm:py-32 animate-fade-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -15,7 +21,7 @@ export const Hero = () => {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 px-4">
             <Button
               className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold"
-              onClick={() => window.location.href = "#services"}
+              onClick={scrollToServices}
             >
               See How We Execute
             </Button>
