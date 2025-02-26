@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle2, Linkedin } from "lucide-react";
+import { CheckCircle2, Linkedin, Phone } from "lucide-react";
 
 const StrategySessionConfirmed = () => {
   // Track conversion with Google Analytics
@@ -54,6 +54,16 @@ const StrategySessionConfirmed = () => {
         <div className="mt-8">
           <p className="text-gray-600 mb-6">
             Please check your email for the meeting details and Google Meet link.
+          </p>
+          <p className="text-gray-600 mb-6">
+            To help me prepare better for our session, please call our AI assistant at{' '}
+            <a 
+              href="tel:+14159917188" 
+              className="text-secondary hover:text-secondary/90 font-semibold inline-flex items-center"
+            >
+              <Phone className="h-4 w-4 mr-1" />
+              +1 (415) 991-7188
+            </a>
           </p>
           <a 
             href="https://www.linkedin.com/in/christianulstrup/" 
