@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Linkedin } from "lucide-react";
 
 const StrategySessionConfirmed = () => {
   // Track conversion with Google Analytics
@@ -55,11 +55,16 @@ const StrategySessionConfirmed = () => {
           <p className="text-gray-600 mb-6">
             Please check your email for the meeting details and Google Meet link.
           </p>
-          <Link to="/">
-            <Button className="bg-secondary hover:bg-secondary/90 text-white">
-              Return to Homepage
+          <a 
+            href="https://www.linkedin.com/in/carlospastor/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-[#0A66C2] hover:bg-[#0A66C2]/90 text-white">
+              <Linkedin className="mr-2 h-5 w-5" />
+              Connect on LinkedIn
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
