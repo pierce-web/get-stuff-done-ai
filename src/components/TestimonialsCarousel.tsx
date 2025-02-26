@@ -1,22 +1,14 @@
 
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const TestimonialsCarousel = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     // Load Senja widget script
     const script = document.createElement("script");
     script.src = "https://widget.senja.io/widget/65930308-2b7d-4525-8c89-002db8d5b1af/platform.js";
     script.async = true;
-    
-    // Handle script load completion
-    script.onload = () => {
-      setIsLoading(false);
-    };
-    
     document.body.appendChild(script);
 
     return () => {
@@ -33,12 +25,10 @@ export const TestimonialsCarousel = () => {
         </h2>
         
         <div 
-          className={`senja-embed transition-opacity duration-300 ${
-            isLoading ? "opacity-0" : "opacity-100"
-          }`}
+          className="senja-embed" 
           data-id="65930308-2b7d-4525-8c89-002db8d5b1af" 
           data-mode="shadow" 
-          data-lazyload="true"
+          data-lazyload="false" 
           style={{ display: "block" }}
         />
 
