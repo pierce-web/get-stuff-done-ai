@@ -1,42 +1,22 @@
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-
-const testimonials = [
-  {
-    id: 1,
-    quote: "Christian understands businesses, he has real empathy for leaders that are going through transformation.",
-    author: "Justin Wilcox",
-    role: "CTO and Co-founder at BurnRate.io",
-  },
-  {
-    id: 2,
-    quote: "Christian helped us identify exactly where to start with AI and created a clear roadmap for implementation.",
-    author: "Maria Chen",
-    role: "Operations Director",
-  },
-  {
-    id: 3,
-    quote: "The strategy session was incredibly valuable. We now have a clear path forward with AI adoption.",
-    author: "David Thompson",
-    role: "CEO at TechStart",
-  },
-  {
-    id: 4,
-    quote: "Working with Christian gave us the confidence to move forward with AI implementation. His approach is practical and results-focused.",
-    author: "Sarah Johnson",
-    role: "Head of Innovation",
-  }
-];
+import { useEffect } from "react";
 
 export const TestimonialsCarousel = () => {
+  useEffect(() => {
+    // Load Senja widget script
+    const script = document.createElement("script");
+    script.src = "https://widget.senja.io/widget/65930308-2b7d-4525-8c89-002db8d5b1af/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-4xl mx-auto">
@@ -44,31 +24,13 @@ export const TestimonialsCarousel = () => {
           What Leaders Say
         </h2>
         
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/1 lg:basis-1/1">
-                <div className="h-full p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                  <blockquote className="text-xl text-gray-700 italic mb-4">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="mt-4">
-                    <p className="font-semibold text-primary">{testimonial.author}</p>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+        <div 
+          className="senja-embed" 
+          data-id="65930308-2b7d-4525-8c89-002db8d5b1af" 
+          data-mode="shadow" 
+          data-lazyload="false" 
+          style={{ display: "block" }}
+        />
 
         <div className="mt-8 text-center">
           <a 
