@@ -56,7 +56,7 @@ const StrategySessionConfirmed = () => {
             Please check your email for the meeting details and Google Meet link.
           </p>
           <a 
-            href="https://www.linkedin.com/in/carlospastor/" 
+            href="https://www.linkedin.com/in/christianulstrup/" 
             target="_blank" 
             rel="noopener noreferrer"
           >
