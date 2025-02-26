@@ -52,18 +52,22 @@ const StrategySessionConfirmed = () => {
         </div>
 
         <div className="mt-8">
-          <p className="text-gray-600 mb-6">
-            Please check your email for the meeting details and Google Meet link.
-          </p>
-          <p className="text-gray-600 mb-6">
-            To help me prepare better for our session, please call our AI assistant at{' '}
+          <div className="bg-secondary/5 border-2 border-secondary rounded-lg p-6 mb-8">
+            <h3 className="font-bold text-lg text-primary mb-3">📞 Important Next Step</h3>
+            <p className="text-gray-600 mb-4">
+              To make our session as valuable as possible, please take 2 minutes to speak with our AI assistant. This helps me customize the session specifically for your needs.
+            </p>
             <a 
               href="tel:+14159917188" 
-              className="text-secondary hover:text-secondary/90 font-semibold inline-flex items-center"
+              className="inline-flex items-center justify-center w-full bg-secondary text-white py-3 px-4 rounded-md hover:bg-secondary/90 transition-colors"
             >
-              <Phone className="h-4 w-4 mr-1" />
-              +1 (415) 991-7188
+              <Phone className="h-5 w-5 mr-2" />
+              Call AI Assistant Now: +1 (415) 991-7188
             </a>
+          </div>
+          
+          <p className="text-gray-600 mb-6">
+            Please check your email for the meeting details and Google Meet link.
           </p>
           <a 
             href="https://www.linkedin.com/in/christianulstrup/" 
