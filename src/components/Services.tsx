@@ -1,4 +1,6 @@
+
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -145,12 +147,22 @@ export const Services = () => {
             This ensures we're fully invested in delivering real, measurable value for your business.
           </p>
           <div className="mt-8 space-y-4">
-            <Button
-              className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
-              onClick={() => window.open("https://love.gsdat.work", "_blank")}
-            >
-              See Client Success Stories
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                className="bg-secondary hover:bg-secondary/90 text-white font-semibold"
+                onClick={() => window.open("https://love.gsdat.work", "_blank")}
+              >
+                See Client Success Stories
+              </Button>
+              <Button
+                variant="outline"
+                className="border border-primary text-primary hover:bg-primary/10 gap-2"
+                onClick={() => window.location.href = "tel:+18482610259"}
+              >
+                <Phone className="h-4 w-4" />
+                Call Now: (848) 261-0259
+              </Button>
+            </div>
             <p className="text-gray-600">
               Or{" "}
               <a 

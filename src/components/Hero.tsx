@@ -1,4 +1,6 @@
+
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 
 export const Hero = () => {
   const scrollToServices = () => {
@@ -31,6 +33,14 @@ export const Hero = () => {
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
               Schedule Strategic Planning Call
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto border border-primary text-primary hover:bg-primary/10 gap-2"
+              onClick={() => window.location.href = "tel:+18482610259"}
+            >
+              <Phone className="h-4 w-4" />
+              Call Now: (848) 261-0259
             </Button>
           </div>
         </div>
