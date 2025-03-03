@@ -40,7 +40,10 @@ export const Hero = () => {
               onClick={() => window.location.href = "tel:+18482610259"}
             >
               <Phone className="h-4 w-4" />
-              Call Now: (848) 261-0259
+              <span>
+                <span className="font-medium">Speak with our AI Assistant</span>
+                <span className="block text-xs md:text-sm">(848) 261-0259</span>
+              </span>
             </Button>
           </div>
         </div>

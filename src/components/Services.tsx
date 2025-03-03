@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, MessageSquare } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -160,7 +160,10 @@ export const Services = () => {
                 onClick={() => window.location.href = "tel:+18482610259"}
               >
                 <Phone className="h-4 w-4" />
-                Call Now: (848) 261-0259
+                <span>
+                  <span className="font-medium">Talk to our AI Assistant</span>
+                  <span className="block text-xs">(848) 261-0259</span>
+                </span>
               </Button>
             </div>
             <p className="text-gray-600">
