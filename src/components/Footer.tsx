@@ -4,7 +4,7 @@ import { Phone, MessageSquare } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const email = "hello@gsdat.work";
+  const email = "hello@gsdat.work"; // Corrected from gsdai.work to gsdat.work
   const subject = "site inquiry";
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
   const linkedInUrl = "https://www.linkedin.com/company/100624720";
