@@ -23,23 +23,23 @@ export const Hero = () => {
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600 px-2 sm:px-0">
             Turn AI possibilities into real business results. We help you identify what matters and execute 10x faster. From strategy to implementation, we're obsessed with GSD (Getting Stuff Done).
           </p>
-          <div className="mt-8 sm:mt-10 flex flex-col gap-3 sm:gap-4 px-4">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
-              className="w-full py-5 bg-secondary hover:bg-secondary/90 text-white font-semibold text-base"
+              className="py-5 bg-secondary hover:bg-secondary/90 text-white font-semibold text-base w-full sm:w-auto sm:px-8"
               onClick={scrollToServices}
             >
               See How We Execute
             </Button>
             <Button
               variant="outline"
-              className="w-full py-5 border-2 border-secondary text-secondary hover:bg-secondary/10 text-base"
+              className="py-5 border-2 border-secondary text-secondary hover:bg-secondary/10 text-base w-full sm:w-auto sm:px-8"
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
               Schedule Strategic Planning Call
             </Button>
             <Button
               variant="outline"
-              className="w-full py-5 border border-primary text-primary hover:bg-primary/10 gap-2 text-base"
+              className="py-5 border border-primary text-primary hover:bg-primary/10 gap-2 text-base w-full sm:w-auto sm:px-8"
               onClick={() => window.location.href = "tel:+18482610259"}
             >
               <Phone className="h-4 w-4" />
