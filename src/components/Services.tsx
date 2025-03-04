@@ -25,6 +25,7 @@ const services = [
       "Includes pre-session discovery and post-session support",
     ],
     cta: "Book Workshop",
+    secondaryCta: "Not sure yet? Talk to our AI Assistant",
     calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
   },
   {
@@ -41,6 +42,7 @@ const services = [
       "ROI-focused metrics and tracking",
     ],
     cta: "Schedule Discovery Call",
+    secondaryCta: "Have questions? Call our AI Assistant",
     calendlyLink: "https://calendly.com/gsdatwork/free-consult",
   },
 ];
@@ -101,12 +103,20 @@ export const Services = () => {
                   )}
                 </div>
               </CardContent>
-              <CardFooter className="pt-4">
+              <CardFooter className="pt-4 flex flex-col gap-3">
                 <Button 
                   className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6"
                   onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
                 >
                   {service.cta}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full border border-primary text-primary hover:bg-primary/10 gap-2 text-sm"
+                  onClick={() => window.location.href = "tel:+18482610259"}
+                >
+                  <Phone className="h-4 w-4" />
+                  <span>{service.secondaryCta}</span>
                 </Button>
               </CardFooter>
             </Card>
