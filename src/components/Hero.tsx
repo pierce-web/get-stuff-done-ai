@@ -17,6 +17,9 @@ export const Hero = () => {
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
             Get Stuff Done with AI
           </h1>
+          <p className="mt-2 text-xl font-semibold text-secondary">
+            From Insight to Action in minutes not months
+          </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Turn AI possibilities into real business results. We help you identify what matters and execute 10x faster. From strategy to implementation, we're obsessed with GSD (Getting Stuff Done).
           </p>
