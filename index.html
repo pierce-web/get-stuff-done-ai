@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,12 +8,13 @@
     
     <!-- Primary Meta Tags -->
     <meta name="description" content="Expert AI consulting and implementation services to accelerate your business. From solopreneurs to enterprises, we help you harness AI's potential with proven strategies." />
-    <meta name="keywords" content="AI consulting, AI implementation, artificial intelligence, business automation, AI strategy, AI solutions, AI adoption, AI workshop, business transformation" />
+    <meta name="keywords" content="AI consulting, AI implementation, artificial intelligence, business automation, AI strategy, AI solutions, AI adoption, AI workshop, business transformation, productivity gains" />
     <meta name="author" content="Get Stuff Done AI" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <link rel="canonical" href="https://gsdat.work/" />
+    <meta name="theme-color" content="#ffffff" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -33,6 +35,12 @@
     <meta name="twitter:description" content="Expert AI consulting and implementation services to accelerate your business. From solopreneurs to enterprises, we help you harness AI's potential with proven strategies." />
     <meta property="twitter:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
     <meta property="twitter:image:alt" content="GSD AI consulting services" />
+    <meta name="twitter:creator" content="@gsdatwork" />
+    
+    <!-- Pinterest -->
+    <meta name="pinterest:title" content="Get Stuff Done with AI | AI Consulting & Implementation Services" />
+    <meta name="pinterest:description" content="Expert AI consulting and implementation services to accelerate your business with proven AI strategies." />
+    <meta name="pinterest:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
     
     <!-- Fallback Open Graph Image -->
     <script type="text/javascript">
@@ -46,6 +54,7 @@
         
         var ogImage = document.querySelector('meta[property="og:image"]');
         var twitterImage = document.querySelector('meta[property="twitter:image"]');
+        var pinterestImage = document.querySelector('meta[name="pinterest:image"]');
         var primaryImgUrl = ogImage.getAttribute('content');
         
         checkImageExists(primaryImgUrl, function(exists) {
@@ -53,7 +62,8 @@
             var fallbackUrl = 'https://gsdat.work/lovable-uploads/27fe830f-8000-40cf-9d6d-49cfa6d1275a.png';
             ogImage.setAttribute('content', fallbackUrl);
             twitterImage.setAttribute('content', fallbackUrl);
-            console.log('Using fallback image for Open Graph tags');
+            pinterestImage.setAttribute('content', fallbackUrl);
+            console.log('Using fallback image for social media tags');
           }
         });
       });
@@ -69,15 +79,29 @@
       "url": "https://gsdat.work/",
       "image": "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
       "priceRange": "$$",
-      "serviceType": ["AI Consulting", "AI Implementation", "Business Automation"],
+      "serviceType": ["AI Consulting", "AI Implementation", "Business Automation", "AI Strategy", "Productivity Improvement"],
       "areaServed": "Worldwide",
       "offers": {
         "@type": "Offer",
-        "description": "AI strategy and implementation services"
+        "description": "AI strategy and implementation services",
+        "availability": "https://schema.org/InStock"
       },
       "sameAs": [
         "https://www.linkedin.com/company/100624720"
-      ]
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Christian Ulstrup",
+        "jobTitle": "AI Implementation Expert",
+        "sameAs": "https://www.linkedin.com/in/christianulstrup/"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+18482610259",
+        "contactType": "customer service",
+        "email": "hello@gsdat.work",
+        "availableLanguage": "English"
+      }
     }
     </script>
     
@@ -113,6 +137,7 @@
     </script>
     
     <link rel="icon" href="/lovable-uploads/27fe830f-8000-40cf-9d6d-49cfa6d1275a.png" />
+    <link rel="apple-touch-icon" href="/lovable-uploads/27fe830f-8000-40cf-9d6d-49cfa6d1275a.png" />
   </head>
 
   <body>

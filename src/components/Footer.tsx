@@ -1,11 +1,11 @@
 
 import React from "react";
-import { Phone, MessageSquare } from "lucide-react";
+import { Phone, MessageSquare, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const email = "hello@gsdat.work"; // Corrected from gsdai.work to gsdat.work
-  const subject = "site inquiry";
+  const email = "hello@gsdat.work";
+  const subject = "Website Inquiry";
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
   const linkedInUrl = "https://www.linkedin.com/company/100624720";
   const phoneNumber = "+18482610259";
@@ -26,6 +26,7 @@ export const Footer = () => {
           <a
             href={mailtoLink}
             className="text-primary hover:text-primary-light transition-colors flex items-center gap-1"
+            aria-label="Email Us"
           >
             <MessageSquare className="h-4 w-4" />
             <span>Contact Us</span>
@@ -34,9 +35,11 @@ export const Footer = () => {
             href={linkedInUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary-light transition-colors"
+            className="text-primary hover:text-primary-light transition-colors flex items-center gap-1"
+            aria-label="Follow us on LinkedIn"
           >
-            LinkedIn
+            <Linkedin className="h-4 w-4" />
+            <span>LinkedIn</span>
           </a>
         </div>
       </div>
