@@ -4,17 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Case studies data
+// This is a temporary mock data structure - you can replace with real data later
 const cases = [
-  {
-    id: "alena-solutions-powerline",
-    title: "How Alena Solutions Gains Peace of Mind with Powerline",
-    description: "AI Chief of Staff helps secure $50K upsells and prevents blind spots",
-    industry: "Tech & Agency Services",
-    tags: ["AI Assistant", "Revenue Growth", "Risk Prevention"],
-    readTime: "6 min read",
-    featured: true,
-  },
   {
     id: "enterprise-ai-transformation",
     title: "Enterprise AI Transformation",
@@ -50,12 +41,7 @@ const Cases = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cases.map((caseStudy) => (
             <Link to={`/cases/${caseStudy.id}`} key={caseStudy.id}>
-              <Card className={`h-full hover:shadow-lg transition-shadow duration-300 ${caseStudy.featured ? 'border-secondary' : ''}`}>
-                {caseStudy.featured && (
-                  <div className="bg-secondary text-white text-xs font-semibold px-3 py-1 absolute right-4 top-4 rounded">
-                    Featured
-                  </div>
-                )}
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
@@ -68,7 +54,7 @@ const Cases = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                  <div className="space-x-2 mb-4">
+                  <div className="space-x-2">
                     {caseStudy.tags.map((tag) => (
                       <Badge key={tag} variant="secondary" className="bg-secondary/10 text-secondary">
                         {tag}
