@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle, Zap, ShieldCheck, TrendingUp, User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -36,7 +35,7 @@ const casesData = {
       "Spotted repeated under-estimation before a big client blow-up",
       "Snagged a new $50K marketing retainer",
       "Prevented a potential security breach after offboarding",
-      "Freed the CEO from note-taking and constant "what's happening?" anxiety",
+      'Freed the CEO from note-taking and constant "what\'s happening?" anxiety',
     ],
     content: `
       <div class="space-y-8">
