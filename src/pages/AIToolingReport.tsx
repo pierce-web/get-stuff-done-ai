@@ -55,14 +55,17 @@ const AIToolingReport = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>2025 AI Tooling & Budget Report | GSD at Work</title>
-        <meta name="description" content="Discover how to equip your team with AI tools, boost productivity, and stay competitive in 2025. Get comprehensive cost estimates and budget tiers for AI implementation." />
-        <meta name="keywords" content="AI tools budget, AI cost estimates, business AI investment, AI productivity tools, AI ROI, AI implementation guide" />
+        <title>2025 AI Tooling & Budget Report | Complete Implementation Guide</title>
+        <meta name="description" content="Comprehensive guide to AI tool budgeting in 2025. Learn how to equip your team with the right AI tools, optimize costs, and increase productivity for businesses of all sizes." />
+        <meta name="keywords" content="AI tools budget, AI implementation guide, AI ROI, business AI investment, AI productivity tools, AI cost estimates, AI tool categories, AI for business, AI budgeting, small business AI, enterprise AI implementation" />
         
-        {/* Enhanced Open Graph tags for LinkedIn and other social sharing */}
-        <meta property="og:title" content="2025 AI Tooling & Budget Report | GSD at Work" />
-        <meta property="og:description" content="How to budget for AI tools in 2025: A comprehensive guide to right-sizing AI investments for businesses of all sizes." />
+        {/* Enhanced canonical URL */}
+        <link rel="canonical" href="https://gsdat.work/ai-tooling-report" />
+        
+        {/* Enhanced Open Graph tags for social sharing */}
         <meta property="og:type" content="article" />
+        <meta property="og:title" content="2025 AI Tooling & Budget Report | Complete Implementation Guide" />
+        <meta property="og:description" content="Comprehensive guide to AI tool budgeting in 2025. Learn how to equip your team with the right AI tools, optimize costs, and increase productivity." />
         <meta property="og:url" content="https://gsdat.work/ai-tooling-report" />
         <meta property="og:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
         <meta property="og:image:width" content="1200" />
@@ -73,17 +76,83 @@ const AIToolingReport = () => {
         
         {/* Twitter Card data (also used by LinkedIn) */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="2025 AI Tooling & Budget Report | GSD at Work" />
-        <meta name="twitter:description" content="How to budget for AI tools in 2025: A comprehensive guide to right-sizing AI investments for businesses of all sizes." />
+        <meta name="twitter:title" content="2025 AI Tooling & Budget Report | Complete Implementation Guide" />
+        <meta name="twitter:description" content="Comprehensive guide to AI tool budgeting in 2025. Learn how to equip your team with the right AI tools, optimize costs, and increase productivity." />
         <meta name="twitter:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
         <meta name="twitter:image:alt" content="2025 AI Tooling & Budget Report Cover" />
         
         {/* Article specific metadata */}
         <meta property="article:published_time" content="2024-08-01T08:00:00-04:00" />
-        <meta property="article:modified_time" content="2024-08-01T08:00:00-04:00" />
+        <meta property="article:modified_time" content="2024-08-15T08:00:00-04:00" />
         <meta property="article:author" content="Christian Ulstrup" />
         <meta property="article:section" content="AI Business" />
-        <meta property="article:tag" content="AI, Budget, Productivity Tools, Business Strategy" />
+        <meta property="article:tag" content="AI, Budget, Productivity Tools, Business Strategy, AI Implementation" />
+        
+        {/* Enhanced JSON-LD structured data for rich snippets */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "The 2025 AI Tooling & Budget Report",
+              "description": "How to equip your team for quick wins and right-sized steps toward long-term AI transformation",
+              "image": "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
+              "author": {
+                "@type": "Person",
+                "name": "Christian Ulstrup",
+                "url": "https://www.linkedin.com/in/christianulstrup/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "GSD at Work LLC",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://gsdat.work/lovable-uploads/27fe830f-8000-40cf-9d6d-49cfa6d1275a.png"
+                }
+              },
+              "datePublished": "2024-08-01T08:00:00-04:00",
+              "dateModified": "2024-08-15T08:00:00-04:00",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://gsdat.work/ai-tooling-report"
+              }
+            }
+          `}
+        </script>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How much should a business budget for AI tools in 2025?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Businesses should expect to budget from $50-100/month for entry-level AI users, $300-500/month for semi-power users, and $500-700/month for power users. Enterprise implementations may require $1,000-2,500+ per month for specialized roles."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What categories of AI tools should businesses invest in?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key AI tool categories include: chatbots & text generation, transcription & note-taking, coding agents, multimedia creation tools, automation & scheduling tools, presentation & design tools, security solutions, and workspace AI."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the ROI for implementing AI tools in business?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Businesses implementing AI tools typically see productivity gains of 20-40%, significant time savings on repetitive tasks, enhanced competitive advantage, and scalable efficiency as workloads grow."
+                  }
+                }
+              ]
+            }
+          `}
+        </script>
       </Helmet>
 
       <FloatingNavigation />
@@ -100,7 +169,11 @@ const AIToolingReport = () => {
             </Link>
           </div>
 
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none" itemScope itemType="https://schema.org/Article">
+            <meta itemProp="headline" content="The 2025 AI Tooling & Budget Report" />
+            <meta itemProp="author" content="Christian Ulstrup" />
+            <meta itemProp="datePublished" content="2024-08-01T08:00:00-04:00" />
+            <meta itemProp="dateModified" content="2024-08-15T08:00:00-04:00" />
             <ReportHeader />
             <TableOfContents />
             <Introduction />

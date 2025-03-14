@@ -8,7 +8,7 @@ const ReportCTA = () => {
   const { toast } = useToast();
 
   const handleScheduleCall = () => {
-    window.open("https://calendly.com/gsdatwork/free-consult", "_blank");
+    window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer");
     toast({
       title: "Calendly opened",
       description: "Schedule your free AI tools consultation now.",
@@ -26,7 +26,7 @@ const ReportCTA = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-secondary/20 to-secondary/5 p-8 rounded-xl mb-12 shadow-sm">
+    <section id="get-started" className="bg-gradient-to-r from-secondary/20 to-secondary/5 p-8 rounded-xl mb-12 shadow-sm">
       <h2 className="text-2xl font-bold mb-6 text-primary">Get a Personalized AI Tool Recommendation</h2>
       <p className="mb-6">
         Want to know which AI tools would best fit your specific business needs and budget? Schedule a free consultation with our team or speak with our AI assistant for personalized recommendations.
@@ -35,20 +35,34 @@ const ReportCTA = () => {
         <Button
           onClick={handleScheduleCall}
           className="bg-secondary hover:bg-secondary/90 gap-2"
+          aria-label="Schedule a free consultation via Calendly"
         >
-          <Calendar className="h-4 w-4 text-white" />
+          <Calendar className="h-4 w-4 text-white" aria-hidden="true" />
           <span className="text-white">Schedule Free Consultation</span>
         </Button>
         <Button
           variant="outline"
           className="border border-secondary text-secondary hover:bg-secondary/10 gap-2"
           onClick={handleSpeakWithAI}
+          aria-label="Speak with our AI assistant via phone"
         >
-          <Phone className="h-4 w-4" />
+          <Phone className="h-4 w-4" aria-hidden="true" />
           Speak with our AI Assistant
         </Button>
       </div>
-    </div>
+      
+      {/* Hidden microdata for SEO */}
+      <div itemScope itemType="https://schema.org/Service" className="hidden">
+        <meta itemProp="name" content="AI Tool Consultation" />
+        <meta itemProp="description" content="Free consultation to determine the best AI tools for your business needs and budget" />
+        <meta itemProp="provider" content="GSD at Work LLC" />
+        <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+          <meta itemProp="price" content="0" />
+          <meta itemProp="priceCurrency" content="USD" />
+          <meta itemProp="availability" content="https://schema.org/InStock" />
+        </div>
+      </div>
+    </section>
   );
 };
 
