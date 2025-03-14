@@ -18,6 +18,7 @@ import Conclusion from "@/components/ai-report/Conclusion";
 import ReportCTA from "@/components/ai-report/ReportCTA";
 import ReportFooter from "@/components/ai-report/ReportFooter";
 import BudgetCalculator from "@/components/ai-report/BudgetCalculator";
+import FloatingNavigation from "@/components/ai-report/FloatingNavigation";
 
 const AIToolingReport = () => {
   return (
@@ -31,6 +32,8 @@ const AIToolingReport = () => {
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://gsdat.work/ai-tooling-report" />
       </Helmet>
+
+      <FloatingNavigation />
 
       <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
