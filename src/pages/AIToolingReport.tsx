@@ -17,6 +17,7 @@ import PracticalTips from "@/components/ai-report/PracticalTips";
 import Conclusion from "@/components/ai-report/Conclusion";
 import ReportCTA from "@/components/ai-report/ReportCTA";
 import ReportFooter from "@/components/ai-report/ReportFooter";
+import BudgetCalculator from "@/components/ai-report/BudgetCalculator";
 
 const AIToolingReport = () => {
   return (
@@ -46,6 +47,7 @@ const AIToolingReport = () => {
             <WhyInvest />
             <CoreCategories />
             <CostEstimates />
+            <BudgetCalculator />
             <BudgetTiers />
             <PerEmployeeBudgeting />
             <PracticalTips />
