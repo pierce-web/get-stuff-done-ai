@@ -67,7 +67,7 @@ const ToolSearch: React.FC<ToolSearchProps> = ({
             variant={activeCategory === category ? "default" : "outline"}
             className={`cursor-pointer ${
               activeCategory === category 
-                ? "bg-secondary hover:bg-secondary/80" 
+                ? "bg-secondary hover:bg-secondary/80 text-white" 
                 : "hover:bg-gray-100"
             }`}
             onClick={() => onCategoryFilter(category === activeCategory ? "" : category)}
