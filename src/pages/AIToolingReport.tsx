@@ -1,20 +1,20 @@
 
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { ReportHeader } from "@/components/ai-report/ReportHeader";
-import { TableOfContents } from "@/components/ai-report/TableOfContents";
-import { Introduction } from "@/components/ai-report/Introduction";
-import { WhyInvest } from "@/components/ai-report/WhyInvest";
-import { CoreCategories } from "@/components/ai-report/CoreCategories";
-import { CostEstimates } from "@/components/ai-report/CostEstimates";
-import { BudgetTiers } from "@/components/ai-report/BudgetTiers";
-import { PerEmployeeBudgeting } from "@/components/ai-report/PerEmployeeBudgeting";
-import { BudgetCalculator } from "@/components/ai-report/BudgetCalculator";
-import { PracticalTips } from "@/components/ai-report/PracticalTips";
-import { Conclusion } from "@/components/ai-report/Conclusion";
-import { ReportCTA } from "@/components/ai-report/ReportCTA";
-import { ReportFooter } from "@/components/ai-report/ReportFooter";
-import { FloatingNavigation } from "@/components/ai-report/FloatingNavigation";
+import ReportHeader from "@/components/ai-report/ReportHeader";
+import TableOfContents from "@/components/ai-report/TableOfContents";
+import Introduction from "@/components/ai-report/Introduction";
+import WhyInvest from "@/components/ai-report/WhyInvest";
+import CoreCategories from "@/components/ai-report/CoreCategories";
+import CostEstimates from "@/components/ai-report/CostEstimates";
+import BudgetTiers from "@/components/ai-report/BudgetTiers";
+import PerEmployeeBudgeting from "@/components/ai-report/PerEmployeeBudgeting";
+import BudgetCalculator from "@/components/ai-report/BudgetCalculator";
+import PracticalTips from "@/components/ai-report/PracticalTips";
+import Conclusion from "@/components/ai-report/Conclusion";
+import ReportCTA from "@/components/ai-report/ReportCTA";
+import ReportFooter from "@/components/ai-report/ReportFooter";
+import FloatingNavigation from "@/components/ai-report/FloatingNavigation";
 import { Toaster } from "@/components/ui/toaster";
 import { useIsMobile } from "@/hooks/use-mobile";
 
