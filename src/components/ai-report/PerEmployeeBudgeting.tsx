@@ -1,25 +1,26 @@
 
 import React from "react";
+import { Users } from "lucide-react";
 
 const PerEmployeeBudgeting = () => {
   const budgetCategories = [
     {
-      title: "1. Basic User:",
+      title: "Basic User:",
       price: "~$100/month",
       description: "Needs ChatGPT (e.g., Plus at $20/month), meeting transcription, a few automations."
     },
     {
-      title: "2. Semi-Power User:",
+      title: "Semi-Power User:",
       price: "$300–$500/month",
       description: "Multiple AI tools for advanced tasks, moderate usage of coding or design AI."
     },
     {
-      title: "3. Full Power User:",
+      title: "Full Power User:",
       price: "$500–$700/month",
       description: "Heavy use of premium AI subscriptions, possibly advanced dev tools, robust automations."
     },
     {
-      title: "4. Engineer / Agent-Orchestrator:",
+      title: "Engineer / Agent-Orchestrator:",
       price: "$1,000–$2,500+/month",
       description: "Extensive coding-agent usage, large API calls, specialized enterprise tools."
     }
@@ -28,7 +29,10 @@ const PerEmployeeBudgeting = () => {
   return (
     <section id="per-employee" className="mb-16">
       <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-bold mb-6 text-primary">6. Scaling Up: Per-Employee Budgeting</h2>
+        <h2 className="text-2xl font-bold mb-6 text-primary flex items-center">
+          <Users className="h-6 w-6 text-secondary mr-2" />
+          Scaling Up: Per-Employee Budgeting
+        </h2>
         <p className="mb-6">
           We recommend segmenting your staff based on how heavily they use AI. Typically, about 5% of employees are power users:
         </p>

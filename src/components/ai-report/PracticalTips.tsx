@@ -1,16 +1,22 @@
 
 import React from "react";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Lightbulb, BookOpen } from "lucide-react";
 
 const PracticalTips = () => {
   return (
     <section id="practical-tips" className="mb-16">
       <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-bold mb-8 text-primary">7. Practical Tips: Zero-Based Budgeting & Monthly Reviews</h2>
+        <h2 className="text-2xl font-bold mb-8 text-primary flex items-center">
+          <Lightbulb className="h-6 w-6 text-secondary mr-2" />
+          Practical Tips: Zero-Based Budgeting & Monthly Reviews
+        </h2>
         
         <div className="space-y-10">
           <div>
-            <h3 className="text-xl font-semibold mb-4 pb-2 border-b border-gray-200">7.1 Zero-Based Budgeting Approach</h3>
+            <h3 className="text-xl font-semibold mb-4 pb-2 border-b border-gray-200 flex items-center">
+              <BookOpen className="h-5 w-5 text-secondary mr-2" />
+              Zero-Based Budgeting Approach
+            </h3>
             <ul className="list-disc list-inside ml-4 space-y-4">
               <li className="flex items-start">
                 <span className="inline-flex items-center justify-center rounded-full bg-secondary/10 text-secondary p-1 mr-2 mt-1">
@@ -32,7 +38,10 @@ const PracticalTips = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold mb-4 pb-2 border-b border-gray-200">7.2 Monthly Review Process</h3>
+            <h3 className="text-xl font-semibold mb-4 pb-2 border-b border-gray-200 flex items-center">
+              <BookOpen className="h-5 w-5 text-secondary mr-2" />
+              Monthly Review Process
+            </h3>
             <ol className="list-decimal list-inside ml-4 space-y-6">
               <li>
                 <strong className="text-primary">Set a Recurring CFO Check-In</strong>

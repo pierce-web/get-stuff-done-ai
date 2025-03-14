@@ -4,16 +4,20 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ToolCategoryProps {
   title: string;
+  icon?: React.ReactNode;
   examples: { name: string; url: string }[];
   useCases: string;
 }
 
-const ToolCategory: React.FC<ToolCategoryProps> = ({ title, examples, useCases }) => {
+const ToolCategory: React.FC<ToolCategoryProps> = ({ title, icon, examples, useCases }) => {
   const isMobile = useIsMobile();
   
   return (
     <div className="bg-gray-50 p-4 sm:p-6 rounded-lg transition-all hover:shadow-md">
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold mb-3 flex items-center">
+        {icon}
+        {title}
+      </h3>
       <ul className="list-disc list-inside ml-2 sm:ml-4 space-y-2 text-sm sm:text-base">
         <li>
           <strong>Examples:</strong>{" "}
