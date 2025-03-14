@@ -1,6 +1,6 @@
 
 import React from "react";
-import { CheckSquare, ArrowRight, FileText, Lightning, Clock } from "lucide-react";
+import { CheckSquare, ArrowRight, FileText, Zap, Clock } from "lucide-react";
 
 const Conclusion = () => {
   const keyTakeaways = [
@@ -72,7 +72,7 @@ const Conclusion = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full">
+          <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full hover:shadow-md transition-all">
             <div className="bg-primary/10 p-2 rounded-full w-10 h-10 flex items-center justify-center mb-3">
               <FileText className="h-5 w-5 text-primary" />
             </div>
@@ -80,22 +80,22 @@ const Conclusion = () => {
             <p className="text-sm text-gray-600 mb-4">Get the complete PDF version with additional resources and worksheets.</p>
             <a 
               href="#" 
-              className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80"
+              className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
             >
               Download PDF
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </div>
           
-          <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full">
+          <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full hover:shadow-md transition-all">
             <div className="bg-primary/10 p-2 rounded-full w-10 h-10 flex items-center justify-center mb-3">
-              <Lightning className="h-5 w-5 text-primary" />
+              <Zap className="h-5 w-5 text-primary" />
             </div>
             <h3 className="font-semibold mb-2">Book a Strategy Session</h3>
             <p className="text-sm text-gray-600 mb-4">Get personalized guidance on implementing AI tools for your specific needs.</p>
             <a 
               href="#" 
-              className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80"
+              className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
             >
               Schedule Now
               <ArrowRight className="ml-2 h-4 w-4" />
