@@ -45,9 +45,9 @@ const AIToolingReport = () => {
             <TableOfContents />
             <Introduction />
             <WhyInvest />
+            <BudgetCalculator />
             <CoreCategories />
             <CostEstimates />
-            <BudgetCalculator />
             <BudgetTiers />
             <PerEmployeeBudgeting />
             <PracticalTips />

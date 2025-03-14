@@ -8,9 +8,9 @@ const TableOfContents = () => {
       <ol className="list-decimal list-inside space-y-2 ml-2">
         <li><a href="#introduction" className="text-secondary hover:underline">Introduction</a></li>
         <li><a href="#why-invest" className="text-secondary hover:underline">Why Every Business Needs to Invest in AI Tools</a></li>
+        <li><a href="#budget-calculator" className="text-secondary hover:underline">Interactive Budget Calculator</a></li>
         <li><a href="#core-categories" className="text-secondary hover:underline">Core AI Tool Categories</a></li>
         <li><a href="#cost-estimates" className="text-secondary hover:underline">Cost Estimates by Category</a></li>
-        <li><a href="#budget-calculator" className="text-secondary hover:underline">Interactive Budget Calculator</a></li>
         <li><a href="#budget-tiers" className="text-secondary hover:underline">Monthly Totals and Budget Tiers</a></li>
         <li><a href="#per-employee" className="text-secondary hover:underline">Scaling Up: Per-Employee Budgeting</a></li>
         <li><a href="#practical-tips" className="text-secondary hover:underline">Practical Implementation Tips</a></li>
