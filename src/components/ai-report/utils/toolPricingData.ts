@@ -18,7 +18,7 @@ export const toolPricingData: ToolPrice[] = [
     tool: "Anthropic Claude Pro",
     url: "https://claude.ai",
     cost: "$20 ($30 for Teams)",
-    purpose: "AI text generation/analysis.",
+    purpose: "AI text generation/analysis with interactive 'Artifacts' for rapid prototyping. Forthcoming support for MCP (Model Context Protocol) enables integration with other systems (essentially 'Apps for Claude').",
   },
   {
     tool: "WisprFlow",
@@ -30,13 +30,13 @@ export const toolPricingData: ToolPrice[] = [
     tool: "SuperWhisper",
     url: "https://superwhisper.com",
     cost: "$9",
-    purpose: "Mac/iPhone transcription/AI assistant.",
+    purpose: "Mac/iPhone transcription (not an AI assistant).",
   },
   {
     tool: "Fireflies (Enterprise)",
     url: "https://fireflies.ai",
     cost: "$40",
-    purpose: "AI meeting notes and summaries.",
+    purpose: "AI meeting notes and summaries with programmatic data access via API, making it unique among meeting transcription services.",
   },
   {
     tool: "Raycast",
@@ -61,13 +61,13 @@ export const toolPricingData: ToolPrice[] = [
     tool: "Loom",
     url: "https://www.loom.com",
     cost: "$20",
-    purpose: "Video messaging with AI editing/transcripts.",
+    purpose: "Video messaging with AI editing/transcripts. Facilitates asynchronous communication and collaboration in a high-fidelity, AI-mediated way—essential for 'multiplayer mode' in AI-native organizations.",
   },
   {
     tool: "Calendly",
     url: "https://calendly.com",
     cost: "$16",
-    purpose: "Meeting scheduling with AI suggestions.",
+    purpose: "Meeting scheduling that helps you take control of your time and attention. Set constraints on availability and create workflows (e.g., voice intake via VAPI) to collect and analyze information before meetings.",
   },
   {
     tool: "Zoom",
@@ -79,7 +79,7 @@ export const toolPricingData: ToolPrice[] = [
     tool: "Zapier",
     url: "https://zapier.com",
     cost: "$30",
-    purpose: "Automation/workflow orchestration with AI triggers.",
+    purpose: "Automation/workflow orchestration with user-friendly AI processing tools. Makes it easy to build highly specified automations triggered by events.",
   },
   {
     tool: "Shortwave",
@@ -115,19 +115,19 @@ export const toolPricingData: ToolPrice[] = [
     tool: "Descript",
     url: "https://www.descript.com",
     cost: "$20",
-    purpose: "AI audio/video editing.",
+    purpose: "Multimedia editing with quality-of-life tools for audio/video transcription. Allows editing multimedia like editing a document rather than using traditional linear editors.",
   },
   {
     tool: "Suno",
     url: "https://suno.ai",
     cost: "$10",
-    purpose: "AI music generation.",
+    purpose: "AI music generation with creative applications like turning corporate objectives into catchy songs for better information retention.",
   },
   {
     tool: "Gemini Premium (Google Workspace)",
     url: "http://gemini.google.com",
     cost: "$10–$20",
-    purpose: "Access to Notebook LM+ and advanced Workspace AI.",
+    purpose: "Access to Notebook LM+ for converting information into personalized podcasts, improving onboarding and information delivery with charismatic presentation.",
   },
   {
     tool: "Claude Code",
