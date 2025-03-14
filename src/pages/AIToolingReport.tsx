@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -124,7 +123,7 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">1. Chatbots & Text Generation</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://openai.com/chatgpt" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">ChatGPT</a>, <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Anthropic Claude</a></li>
+                      <li><strong>Examples:</strong> <a href="https://openai.com/chatgpt" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">ChatGPT</a>, <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Anthropic's Claude</a></li>
                       <li><strong>Use Cases:</strong> Drafting emails, strategy docs, marketing copy, brainstorming.</li>
                     </ul>
                   </div>
@@ -132,15 +131,15 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">2. Transcription & Note-Taking</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://whisperflow.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">WhisperFlow</a>, <a href="https://fireflies.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Fireflies</a></li>
-                      <li><strong>Use Cases:</strong> Automatically summarizing meetings, generating subtitles, capturing key action items.</li>
+                      <li><strong>Examples:</strong> <a href="https://whisperflow.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">WisprFlow</a>, <a href="https://fireflies.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Fireflies</a></li>
+                      <li><strong>Use Cases:</strong> Liberating yourself from your keyboard, iterating faster with your AI assistants, automatically summarizing meetings, generating transcripts (and, over time, a "data asset"), capturing key action items.</li>
                     </ul>
                   </div>
                   
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">3. Coding Agents & Development Tools</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Cursor</a>, <a href="https://windsurf.io" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Windsurf</a>, <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Claude Code</a></li>
+                      <li><strong>Examples:</strong> <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Cursor</a>, <a href="https://windsurf.io" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Windsurf</a>, <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">orchestrated Claude Code Agents</a></li>
                       <li><strong>Use Cases:</strong> Automating code generation, debugging, development workflows.</li>
                     </ul>
                   </div>
@@ -149,7 +148,7 @@ const AIToolingReport = () => {
                     <h3 className="text-xl font-semibold mb-3">4. Audio/Video Editing & Creation</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
                       <li><strong>Examples:</strong> <a href="https://www.descript.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Descript</a>, <a href="https://www.loom.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Loom</a>, <a href="https://suno.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Suno</a></li>
-                      <li><strong>Use Cases:</strong> Video messaging, audio overdubbing, music generation, AI-powered video editing.</li>
+                      <li><strong>Use Cases:</strong> Video messaging (and asynchronous communication more generally), audio overdubbing, music generation, AI-powered video editing and rich content creation.</li>
                     </ul>
                   </div>
                   
@@ -164,15 +163,15 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">6. Presentation & Design Tools</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://gamma.app" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Gamma</a>, <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Figma</a> with AI plug-ins</li>
-                      <li><strong>Use Cases:</strong> Rapid slide deck creation, AI-assisted design, prototypes, user flows.</li>
+                      <li><strong>Examples:</strong> <a href="https://gamma.app" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Gamma</a>, <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Figma FigJam Boards</a> (for visual collaboration and remote white boarding)</li>
+                      <li><strong>Use Cases:</strong> Rapid slide deck creation, AI-assisted design, prototyping, user flow and architecture illustration.</li>
                     </ul>
                   </div>
                   
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">7. Web & Branding Tools</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://lovable.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Lovable</a> (AI website builder), <a href="https://www.withagency.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Agency</a> (cybersecurity)</li>
+                      <li><strong>Examples:</strong> <a href="https://lovable.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Lovable</a> (AI website builder), <a href="https://www.withagency.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Crowdstrike cybersecurity coverage via Agency</a></li>
                       <li><strong>Use Cases:</strong> Building AI-enhanced websites, brand identity creation, safeguarding data.</li>
                     </ul>
                   </div>
@@ -180,7 +179,7 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">8. Email & Workspace AI</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://shortwave.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Shortwave</a>, <a href="https://workspace.google.com/products/gemini/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Google Workspace with Gemini</a></li>
+                      <li><strong>Examples:</strong> <a href="https://shortwave.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Shortwave</a> (AI email client), <a href="https://workspace.google.com/products/gemini/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Google Workspace with Gemini Premium</a></li>
                       <li><strong>Use Cases:</strong> Advanced email prioritization, summarization, plus AI-driven doc creation and analysis.</li>
                     </ul>
                   </div>
