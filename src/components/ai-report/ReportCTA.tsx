@@ -13,10 +13,10 @@ const ReportCTA = () => {
       <div className="flex flex-col sm:flex-row gap-4">
         <Button
           onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
-          className="bg-secondary hover:bg-secondary/90 gap-2 text-white"
+          className="bg-secondary hover:bg-secondary/90 gap-2"
         >
-          <Calendar className="h-4 w-4" />
-          Schedule Free Consultation
+          <Calendar className="h-4 w-4 text-white" />
+          <span className="text-white">Schedule Free Consultation</span>
         </Button>
         <Button
           variant="outline"

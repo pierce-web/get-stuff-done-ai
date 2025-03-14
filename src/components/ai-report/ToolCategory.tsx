@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ToolCategoryProps {
   title: string;
@@ -8,10 +9,12 @@ interface ToolCategoryProps {
 }
 
 const ToolCategory: React.FC<ToolCategoryProps> = ({ title, examples, useCases }) => {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
+    <div className="bg-gray-50 p-4 sm:p-6 rounded-lg transition-all hover:shadow-md">
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <ul className="list-disc list-inside ml-4 space-y-2">
+      <ul className="list-disc list-inside ml-2 sm:ml-4 space-y-2 text-sm sm:text-base">
         <li>
           <strong>Examples:</strong>{" "}
           {examples.map((example, index) => (

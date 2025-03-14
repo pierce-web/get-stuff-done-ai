@@ -14,7 +14,7 @@ const ReportHeader = () => {
       <div className="w-24 h-1 bg-secondary mx-auto mb-6 rounded-full"></div>
       <div className="flex items-center justify-center">
         <img 
-          src="/lovable-uploads/ca2d8755-dcba-43b9-90c4-3e3fd21aa912.png" 
+          src="/lovable-uploads/eb3e02b7-4b6b-4085-bd2c-fd961a1b1003.png" 
           alt="Christian Ulstrup" 
           className="h-10 w-10 rounded-full mr-3 object-cover border-2 border-gray-200"
         />

@@ -1,7 +1,11 @@
 
 import React from "react";
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const CostEstimates = () => {
+  const isMobile = useIsMobile();
+  
   const toolPricing = [
     {
       tool: "ChatGPT Pro",
@@ -132,50 +136,86 @@ const CostEstimates = () => {
     },
   ];
 
+  // Mobile view with cards instead of a table
+  const renderMobileView = () => (
+    <div className="space-y-4">
+      {toolPricing.map((tool, index) => (
+        <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          <h4 className="font-semibold text-secondary mb-2">
+            {tool.secondUrl ? (
+              <>
+                <a href={tool.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {tool.tool.split(" or ")[0]}
+                </a>
+                {" or "}
+                <a href={tool.secondUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {tool.tool.split(" or ")[1]}
+                </a>
+              </>
+            ) : (
+              <a href={tool.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                {tool.tool}
+              </a>
+            )}
+          </h4>
+          <div className="text-sm space-y-1">
+            <p><strong>Cost:</strong> {tool.cost}</p>
+            <p><strong>Purpose:</strong> {tool.purpose}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  // Desktop view with table
+  const renderDesktopView = () => (
+    <div className="overflow-x-auto">
+      <Table>
+        <TableHeader>
+          <TableRow className="bg-gray-100">
+            <TableHead className="font-semibold">Tool / Service</TableHead>
+            <TableHead className="font-semibold">Approx. Monthly Cost</TableHead>
+            <TableHead className="font-semibold">Purpose</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {toolPricing.map((tool, index) => (
+            <TableRow key={index} className={index % 2 === 0 ? "hover:bg-gray-50" : "bg-gray-50 hover:bg-gray-100"}>
+              <TableCell>
+                {tool.secondUrl ? (
+                  <>
+                    <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
+                      {tool.tool.split(" or ")[0]}
+                    </a>
+                    {" or "}
+                    <a href={tool.secondUrl} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
+                      {tool.tool.split(" or ")[1]}
+                    </a>
+                  </>
+                ) : (
+                  <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
+                    {tool.tool}
+                  </a>
+                )}
+              </TableCell>
+              <TableCell>{tool.cost}</TableCell>
+              <TableCell>{tool.purpose}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+
   return (
     <section id="cost-estimates" className="mb-16">
-      <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-bold mb-6 text-primary">4. Line-by-Line Cost Estimates</h2>
+      <div className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-xl shadow-sm border border-gray-100">
+        <h2 className="text-2xl font-bold mb-4 sm:mb-6 text-primary">4. Line-by-Line Cost Estimates</h2>
         <p className="mb-6">
           Below is a snapshot of popular AI tools with approximate monthly costs per user. Actual pricing may vary based on usage, plan tiers, and new competitive offerings.
         </p>
         
-        <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Tool / Service</th>
-                <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Approx. Monthly Cost</th>
-                <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Purpose</th>
-              </tr>
-            </thead>
-            <tbody>
-              {toolPricing.map((tool, index) => (
-                <tr key={index} className={index % 2 === 0 ? "hover:bg-gray-50" : "bg-gray-50 hover:bg-gray-100"}>
-                  <td className="border border-gray-200 px-4 py-3">
-                    {tool.secondUrl ? (
-                      <>
-                        <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
-                          {tool.tool.split(" or ")[0]}
-                        </a>
-                        {" or "}
-                        <a href={tool.secondUrl} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
-                          {tool.tool.split(" or ")[1]}
-                        </a>
-                      </>
-                    ) : (
-                      <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
-                        {tool.tool}
-                      </a>
-                    )}
-                  </td>
-                  <td className="border border-gray-200 px-4 py-3">{tool.cost}</td>
-                  <td className="border border-gray-200 px-4 py-3">{tool.purpose}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {isMobile ? renderMobileView() : renderDesktopView()}
       </div>
     </section>
   );
