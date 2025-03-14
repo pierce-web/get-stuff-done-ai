@@ -1,133 +1,122 @@
 
-import React, { useState } from "react";
-import { Link } from "react-scroll";
+import React from "react";
+import { ArrowRight, BookOpen, DollarSign, Calculator, Grid, PieChart, Users, Lightbulb, CheckSquare, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Share2, Menu, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const TableOfContents = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const { toast } = useToast();
-  const isMobile = useIsMobile();
+  
+  const sections = [
+    { id: "introduction", number: "1", title: "Introduction", icon: <BookOpen className="h-4 w-4" /> },
+    { id: "why-invest", number: "2", title: "Why Every Business Needs to Invest in AI Tools", icon: <DollarSign className="h-4 w-4" /> },
+    { id: "budget-calculator", number: "3", title: "Interactive Budget Calculator", icon: <Calculator className="h-4 w-4" /> },
+    { id: "core-categories", number: "4", title: "Core AI Tool Categories", icon: <Grid className="h-4 w-4" /> },
+    { id: "cost-estimates", number: "5", title: "Cost Estimates by Category", icon: <PieChart className="h-4 w-4" /> },
+    { id: "budget-tiers", number: "6", title: "Monthly Totals and Budget Tiers", icon: <DollarSign className="h-4 w-4" /> },
+    { id: "per-employee", number: "7", title: "Scaling Up: Per-Employee Budgeting", icon: <Users className="h-4 w-4" /> },
+    { id: "practical-tips", number: "8", title: "Practical Implementation Tips", icon: <Lightbulb className="h-4 w-4" /> },
+    { id: "conclusion", number: "9", title: "Conclusion and Next Steps", icon: <CheckSquare className="h-4 w-4" /> }
+  ];
 
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
-  };
+  const handleShareReport = () => {
+    const shareData = {
+      title: '2025 AI Tooling & Budget Report',
+      text: 'Check out this comprehensive guide to AI tool budgeting for 2025',
+      url: window.location.href,
+    };
 
-  const handleShare = async () => {
-    const url = window.location.href;
-    const title = "2025 AI Tooling & Budget Report by GSD at Work";
-    
+    // Check if navigator.share is available (modern browsers)
     if (navigator.share) {
-      try {
-        await navigator.share({
-          title,
-          url
+      navigator.share(shareData)
+        .then(() => {
+          toast({
+            title: "Report shared successfully",
+            description: "Thank you for sharing our 2025 AI Tooling & Budget Report!",
+            duration: 3000,
+          });
+        })
+        .catch((error) => {
+          console.log('Error sharing', error);
+          // Fallback to clipboard copy if share fails
+          fallbackShareToCopy();
         });
-        toast({
-          title: "Report shared successfully",
-          description: "Thanks for spreading the word!",
-        });
-      } catch (error) {
-        copyToClipboard(url);
-      }
     } else {
-      copyToClipboard(url);
+      // Fallback for browsers that don't support navigator.share
+      fallbackShareToCopy();
     }
   };
-  
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    toast({
-      title: "Link copied to clipboard",
-      description: "You can now paste it anywhere to share the report",
+
+  const fallbackShareToCopy = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      toast({
+        title: "Link copied to clipboard",
+        description: "Share this link with others to view the 2025 AI Tooling & Budget Report.",
+        duration: 3000,
+      });
+    }).catch(() => {
+      toast({
+        variant: "destructive",
+        title: "Failed to copy link",
+        description: "Please manually copy the URL from your browser's address bar.",
+        duration: 3000,
+      });
     });
   };
 
-  const tocItems = [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "why-invest", label: "2. Why Invest in AI Tools" },
-    { id: "core-categories", label: "3. Core AI Categories" },
-    { id: "cost-estimates", label: "4. Tool Cost Estimates" },
-    { id: "budget-tiers", label: "5. Budget Tiers" },
-    { id: "per-employee", label: "6. Per-Employee Budgeting" },
-    { id: "calculator", label: "7. Interactive Calculator" },
-    { id: "practical-tips", label: "8. Practical Tips" },
-    { id: "conclusion", label: "9. Conclusion" },
-  ];
-
   return (
-    <>
-      {/* Mobile toggle button */}
-      {isMobile && (
-        <Button
-          variant="outline"
-          size="sm"
-          className="fixed top-4 right-4 z-50 rounded-full p-2 shadow-md bg-white"
-          onClick={toggleExpanded}
-        >
-          {isExpanded ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
-        </Button>
-      )}
-
-      {/* Table of contents */}
-      <div 
-        className={`
-          ${isMobile ? 'fixed top-0 right-0 bottom-0 z-40 w-full max-w-xs bg-white shadow-xl transition-transform duration-300 ease-in-out p-4 overflow-y-auto' : 'sticky top-6 p-6 bg-white rounded-lg border border-gray-200 shadow-sm'} 
-          ${isMobile && !isExpanded ? 'translate-x-full' : 'translate-x-0'}
-        `}
-      >
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-lg">Table of Contents</h3>
-          {isMobile && (
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="p-1" 
-              onClick={toggleExpanded}
-            >
-              <X className="h-5 w-5" />
-            </Button>
-          )}
-        </div>
-
-        <nav className="mt-2 mb-6">
-          <ul className="space-y-2 text-sm">
-            {tocItems.map((item) => (
-              <li key={item.id}>
-                <Link
-                  to={item.id}
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  className="block py-1.5 px-3 hover:bg-gray-100 rounded-md cursor-pointer transition-all"
-                  activeClass="bg-gray-100 text-secondary font-medium"
-                  onClick={() => isMobile && setIsExpanded(false)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <Button
-          onClick={handleShare}
-          variant="outline"
-          className="w-full justify-center gap-2 mt-2"
-          size="sm"
-        >
-          <Share2 className="h-4 w-4" />
-          <span>Share Report</span>
-        </Button>
+    <div className="my-10 bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl border border-gray-100 shadow-sm">
+      <h2 className="text-2xl font-bold mb-6 text-primary">Table of Contents</h2>
+      
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {sections.map((section) => (
+          <a 
+            key={section.id}
+            href={`#${section.id}`} 
+            className="group flex items-center p-3 bg-white hover:bg-secondary/5 rounded-lg border border-gray-100 transition-colors hover:shadow-sm"
+          >
+            <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3 font-semibold text-sm">
+              {section.number}
+            </div>
+            <div className="flex flex-col">
+              <span className="text-gray-700 group-hover:text-secondary transition-colors font-medium">
+                {section.title}
+              </span>
+              <div className="text-gray-400 text-xs mt-1 flex items-center">
+                {section.icon}
+                <span className="ml-1">Section {section.number}</span>
+              </div>
+            </div>
+            <ArrowRight className="ml-auto h-4 w-4 text-gray-400 group-hover:text-secondary transform group-hover:translate-x-1 transition-all" />
+          </a>
+        ))}
       </div>
-    </>
+      
+      <div className="mt-6 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-3">
+        <div className="flex items-center">
+          <Clock className="h-4 w-4 mr-2 text-secondary" />
+          <span>Estimated reading time: 7 minutes</span>
+        </div>
+        <div className="flex gap-3">
+          <Button 
+            variant="outline" 
+            className="text-secondary border-secondary hover:bg-secondary/5 flex items-center gap-2"
+            onClick={handleShareReport}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-share">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+              <polyline points="16 6 12 2 8 6"/>
+              <line x1="12" x2="12" y1="2" y2="15"/>
+            </svg>
+            Share Report
+          </Button>
+        </div>
+        <a href="#introduction" className="flex items-center text-secondary hover:underline group bg-secondary/5 px-4 py-2 rounded-full">
+          Begin Reading
+          <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </div>
   );
 };
 
