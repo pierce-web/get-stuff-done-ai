@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight, BookOpen, DollarSign, Calculator, Grid, PieChart, Users, Lightbulb, CheckSquare } from "lucide-react";
+import { ArrowRight, BookOpen, DollarSign, Calculator, Grid, PieChart, Users, Lightbulb, CheckSquare, Clock } from "lucide-react";
 
 const TableOfContents = () => {
   const sections = [
