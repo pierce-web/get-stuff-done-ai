@@ -1,8 +1,9 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 // This is a temporary mock data structure - you can replace with real data later
 const cases = [
@@ -29,13 +30,34 @@ const Cases = () => {
   return (
     <div className="min-h-screen bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
+        <div className="mx-auto max-w-2xl text-center mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
             Case Studies
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Real results from our AI implementation work. See how we help businesses transform with practical AI solutions.
           </p>
+        </div>
+
+        <div className="mx-auto max-w-2xl mb-16">
+          <Card className="bg-secondary/5 border-secondary/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="h-5 w-5" />
+                New Report: 2025 AI Tooling & Budget Guide
+              </CardTitle>
+              <CardDescription>
+                Get comprehensive insights on AI tool costs, budget tiers, and implementation strategies
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Link to="/ai-tooling-report">
+                <Button className="w-full bg-secondary hover:bg-secondary/90">
+                  Read the Full Report <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
