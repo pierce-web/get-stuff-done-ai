@@ -1,14 +1,52 @@
 
 import React from "react";
 import { CheckSquare, ArrowRight, FileText, Zap, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Conclusion = () => {
+  const { toast } = useToast();
+  
   const keyTakeaways = [
     "Start with essentials: Every team member needs at least a basic AI chatbot",
     "Budget wisely: Allocate $100/month per basic user, $500+ for power users",
     "Evaluate ROI: Measure time saved and output quality improvements",
     "Scale gradually: Begin with pilot programs before full deployment"
   ];
+
+  const handleDownloadPDF = () => {
+    toast({
+      title: "PDF download started",
+      description: "Your 2025 AI Tooling & Budget Report is being prepared for download.",
+      duration: 3000,
+    });
+    
+    // Simulate a download after a short delay
+    setTimeout(() => {
+      // Create a dummy PDF download
+      const link = document.createElement('a');
+      link.href = 'https://gsdat.work/2025-ai-tooling-budget-report.pdf';
+      link.setAttribute('download', '2025-AI-Tooling-Budget-Report.pdf');
+      link.setAttribute('target', '_blank');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast({
+        title: "Report downloaded",
+        description: "The 2025 AI Tooling & Budget Report PDF has been downloaded.",
+        duration: 3000,
+      });
+    }, 1500);
+  };
+
+  const handleScheduleNow = () => {
+    window.open("https://calendly.com/gsdatwork/free-consult", "_blank");
+    toast({
+      title: "Calendly opened",
+      description: "Schedule your free AI tools strategy session now.",
+      duration: 3000,
+    });
+  };
 
   return (
     <section id="conclusion" className="mb-16">
@@ -78,13 +116,13 @@ const Conclusion = () => {
             </div>
             <h3 className="font-semibold mb-2">Download the Report</h3>
             <p className="text-sm text-gray-600 mb-4">Get the complete PDF version with additional resources and worksheets.</p>
-            <a 
-              href="#" 
+            <button 
+              onClick={handleDownloadPDF}
               className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
             >
               Download PDF
               <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </button>
           </div>
           
           <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full hover:shadow-md transition-all">
@@ -93,13 +131,13 @@ const Conclusion = () => {
             </div>
             <h3 className="font-semibold mb-2">Book a Strategy Session</h3>
             <p className="text-sm text-gray-600 mb-4">Get personalized guidance on implementing AI tools for your specific needs.</p>
-            <a 
-              href="#" 
+            <button 
+              onClick={handleScheduleNow}
               className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
             >
               Schedule Now
               <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

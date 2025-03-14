@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Toaster } from "@/components/ui/toaster";
 
 // Import report components
 import ReportHeader from "@/components/ai-report/ReportHeader";
@@ -118,6 +119,7 @@ const AIToolingReport = () => {
       </div>
 
       <Footer />
+      <Toaster />
     </div>
   );
 };

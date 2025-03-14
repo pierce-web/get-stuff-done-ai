@@ -26,43 +26,67 @@ const TableOfContents = () => {
       duration: 3000,
     });
     
-    // In a real implementation, this would generate and download a PDF
-    // For now, we'll simulate a download after a short delay
+    // Create a dummy PDF download
     setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = 'https://gsdat.work/2025-ai-tooling-budget-report.pdf';
+      link.setAttribute('download', '2025-AI-Tooling-Budget-Report.pdf');
+      link.setAttribute('target', '_blank');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
       toast({
         title: "Report downloaded",
         description: "The 2025 AI Tooling & Budget Report PDF has been downloaded.",
         duration: 3000,
       });
-    }, 2000);
+    }, 1500);
   };
 
   const handleShareReport = () => {
+    const shareData = {
+      title: '2025 AI Tooling & Budget Report',
+      text: 'Check out this comprehensive guide to AI tool budgeting for 2025',
+      url: window.location.href,
+    };
+
     // Check if navigator.share is available (modern browsers)
     if (navigator.share) {
-      navigator.share({
-        title: '2025 AI Tooling & Budget Report',
-        text: 'Check out this comprehensive guide to AI tool budgeting for 2025',
-        url: window.location.href,
-      })
-      .then(() => {
-        toast({
-          title: "Report shared successfully",
-          description: "Thank you for sharing our 2025 AI Tooling & Budget Report!",
-          duration: 3000,
+      navigator.share(shareData)
+        .then(() => {
+          toast({
+            title: "Report shared successfully",
+            description: "Thank you for sharing our 2025 AI Tooling & Budget Report!",
+            duration: 3000,
+          });
+        })
+        .catch((error) => {
+          console.log('Error sharing', error);
+          // Fallback to clipboard copy if share fails
+          fallbackShareToCopy();
         });
-      })
-      .catch((error) => console.log('Error sharing', error));
     } else {
       // Fallback for browsers that don't support navigator.share
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        toast({
-          title: "Link copied to clipboard",
-          description: "Share this link with others to view the 2025 AI Tooling & Budget Report.",
-          duration: 3000,
-        });
-      });
+      fallbackShareToCopy();
     }
+  };
+
+  const fallbackShareToCopy = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      toast({
+        title: "Link copied to clipboard",
+        description: "Share this link with others to view the 2025 AI Tooling & Budget Report.",
+        duration: 3000,
+      });
+    }).catch(() => {
+      toast({
+        variant: "destructive",
+        title: "Failed to copy link",
+        description: "Please manually copy the URL from your browser's address bar.",
+        duration: 3000,
+      });
+    });
   };
 
   return (
