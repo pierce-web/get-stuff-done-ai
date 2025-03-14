@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -131,7 +132,7 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">2. Transcription & Note-Taking</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://whisperflow.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">WisprFlow</a>, <a href="https://fireflies.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Fireflies</a></li>
+                      <li><strong>Examples:</strong> <a href="http://wisprflow.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">WisprFlow</a>, <a href="https://fireflies.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Fireflies</a></li>
                       <li><strong>Use Cases:</strong> Liberating yourself from your keyboard, iterating faster with your AI assistants, automatically summarizing meetings, generating transcripts (and, over time, a "data asset"), capturing key action items.</li>
                     </ul>
                   </div>
@@ -139,7 +140,7 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">3. Coding Agents & Development Tools</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Cursor</a>, <a href="https://windsurf.io" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Windsurf</a>, <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">orchestrated Claude Code Agents</a></li>
+                      <li><strong>Examples:</strong> <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Cursor</a>, <a href="http://codeium.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Windsurf</a>, <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">orchestrated Claude Code Agents</a></li>
                       <li><strong>Use Cases:</strong> Automating code generation, debugging, development workflows.</li>
                     </ul>
                   </div>
@@ -171,7 +172,7 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">7. Web & Branding Tools</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://lovable.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Lovable</a> (AI website builder), <a href="https://www.withagency.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Crowdstrike cybersecurity coverage via Agency</a></li>
+                      <li><strong>Examples:</strong> <a href="http://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Lovable</a> (AI website builder), <a href="https://www.getagency.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Crowdstrike cybersecurity coverage via Agency</a></li>
                       <li><strong>Use Cases:</strong> Building AI-enhanced websites, brand identity creation, safeguarding data.</li>
                     </ul>
                   </div>
@@ -179,7 +180,7 @@ const AIToolingReport = () => {
                   <div className="bg-gray-50 p-6 rounded-lg transition-all hover:shadow-md">
                     <h3 className="text-xl font-semibold mb-3">8. Email & Workspace AI</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
-                      <li><strong>Examples:</strong> <a href="https://shortwave.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Shortwave</a> (AI email client), <a href="https://workspace.google.com/products/gemini/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Google Workspace with Gemini Premium</a></li>
+                      <li><strong>Examples:</strong> <a href="https://shortwave.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Shortwave</a> (AI email client), <a href="http://gemini.google.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Google Workspace with Gemini Premium</a></li>
                       <li><strong>Use Cases:</strong> Advanced email prioritization, summarization, plus AI-driven doc creation and analysis.</li>
                     </ul>
                   </div>
@@ -215,7 +216,7 @@ const AIToolingReport = () => {
                         <td className="border border-gray-200 px-4 py-3">AI text generation/analysis.</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="border border-gray-200 px-4 py-3"><a href="https://whisperflow.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">WisprFlow</a></td>
+                        <td className="border border-gray-200 px-4 py-3"><a href="http://wisprflow.ai" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">WisprFlow</a></td>
                         <td className="border border-gray-200 px-4 py-3">$15</td>
                         <td className="border border-gray-200 px-4 py-3">Speech-to-text/transcription (Mac/Windows).</td>
                       </tr>
@@ -235,7 +236,7 @@ const AIToolingReport = () => {
                         <td className="border border-gray-200 px-4 py-3">AI-enhanced "command line" productivity tool for interacting with your desktop applications and running automation scripts.</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="border border-gray-200 px-4 py-3"><a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Cursor</a> or <a href="https://windsurf.io" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Windsurf</a></td>
+                        <td className="border border-gray-200 px-4 py-3"><a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Cursor</a> or <a href="http://codeium.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Windsurf</a></td>
                         <td className="border border-gray-200 px-4 py-3">$15–$20</td>
                         <td className="border border-gray-200 px-4 py-3">AI-driven coding IDE.</td>
                       </tr>
