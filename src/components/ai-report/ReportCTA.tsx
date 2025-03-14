@@ -5,7 +5,7 @@ import { Calendar, ArrowRight } from "lucide-react";
 
 const ReportCTA = () => {
   const openCalendly = () => {
-    window.open("https://calendly.com/gsdat/30min", "_blank");
+    window.open("https://calendly.com/gsdatwork/free-consult", "_blank");
   };
 
   return (
@@ -27,7 +27,7 @@ const ReportCTA = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               onClick={openCalendly}
-              className="bg-white text-primary hover:bg-white/90 px-6 sm:px-8 py-3 text-base"
+              className="bg-white text-primary hover:bg-white/90 px-6 sm:px-8 py-3 text-base w-full sm:w-auto"
               size="lg"
             >
               <Calendar className="mr-2 h-5 w-5" />
