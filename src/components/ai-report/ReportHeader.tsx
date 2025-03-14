@@ -18,7 +18,7 @@ const ReportHeader = () => {
       </h1>
       
       <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        How to Equip Your Team for Quick Wins and Right-Side Steps Toward Long-Term Transformation
+        How to Equip Your Team for Quick Wins and Right-Sized Steps Toward Long-Term Transformation
       </p>
       
       <div className="w-24 h-1 bg-secondary mx-auto mb-8 rounded-full"></div>
