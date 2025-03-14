@@ -57,10 +57,32 @@ const AIToolingReport = () => {
         <title>2025 AI Tooling & Budget Report | GSD at Work</title>
         <meta name="description" content="Discover how to equip your team with AI tools, boost productivity, and stay competitive in 2025. Get comprehensive cost estimates and budget tiers for AI implementation." />
         <meta name="keywords" content="AI tools budget, AI cost estimates, business AI investment, AI productivity tools, AI ROI, AI implementation guide" />
+        
+        {/* Enhanced Open Graph tags for LinkedIn and other social sharing */}
         <meta property="og:title" content="2025 AI Tooling & Budget Report | GSD at Work" />
-        <meta property="og:description" content="A comprehensive guide to budgeting for AI tools in 2025 - from chatbots to coding agents" />
+        <meta property="og:description" content="How to budget for AI tools in 2025: A comprehensive guide to right-sizing AI investments for businesses of all sizes." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://gsdat.work/ai-tooling-report" />
+        <meta property="og:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="2025 AI Tooling & Budget Report Cover" />
+        <meta property="og:site_name" content="GSD at Work" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card data (also used by LinkedIn) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="2025 AI Tooling & Budget Report | GSD at Work" />
+        <meta name="twitter:description" content="How to budget for AI tools in 2025: A comprehensive guide to right-sizing AI investments for businesses of all sizes." />
+        <meta name="twitter:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
+        <meta name="twitter:image:alt" content="2025 AI Tooling & Budget Report Cover" />
+        
+        {/* Article specific metadata */}
+        <meta property="article:published_time" content="2024-08-01T08:00:00-04:00" />
+        <meta property="article:modified_time" content="2024-08-01T08:00:00-04:00" />
+        <meta property="article:author" content="Christian Ulstrup" />
+        <meta property="article:section" content="AI Business" />
+        <meta property="article:tag" content="AI, Budget, Productivity Tools, Business Strategy" />
       </Helmet>
 
       <FloatingNavigation />
