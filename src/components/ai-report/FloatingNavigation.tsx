@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronUp, List, Download, Share, Menu, ChevronRight } from "lucide-react";
+import { ChevronUp, Share, Menu, ChevronRight } from "lucide-react";
 import { 
   Sheet,
   SheetContent,
@@ -10,11 +10,13 @@ import {
   SheetTrigger,
   SheetFooter,
 } from "@/components/ui/sheet";
+import { useToast } from "@/hooks/use-toast";
 
 const FloatingNavigation = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState("introduction");
   const [progress, setProgress] = useState(0);
+  const { toast } = useToast();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -90,6 +92,51 @@ const FloatingNavigation = () => {
     });
   };
 
+  const handleShareReport = () => {
+    const shareData = {
+      title: '2025 AI Tooling & Budget Report',
+      text: 'Check out this comprehensive guide to AI tool budgeting for 2025',
+      url: window.location.href,
+    };
+
+    // Check if navigator.share is available (modern browsers)
+    if (navigator.share) {
+      navigator.share(shareData)
+        .then(() => {
+          toast({
+            title: "Report shared successfully",
+            description: "Thank you for sharing our 2025 AI Tooling & Budget Report!",
+            duration: 3000,
+          });
+        })
+        .catch((error) => {
+          console.log('Error sharing', error);
+          // Fallback to clipboard copy if share fails
+          fallbackShareToCopy();
+        });
+    } else {
+      // Fallback for browsers that don't support navigator.share
+      fallbackShareToCopy();
+    }
+  };
+
+  const fallbackShareToCopy = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      toast({
+        title: "Link copied to clipboard",
+        description: "Share this link with others to view the 2025 AI Tooling & Budget Report.",
+        duration: 3000,
+      });
+    }).catch(() => {
+      toast({
+        variant: "destructive",
+        title: "Failed to copy link",
+        description: "Please manually copy the URL from your browser's address bar.",
+        duration: 3000,
+      });
+    });
+  };
+
   if (!isVisible) return null;
 
   const getReadingProgress = () => {
@@ -161,11 +208,11 @@ const FloatingNavigation = () => {
             ></div>
           </div>
           <SheetFooter className="mt-2 flex-col space-y-3">
-            <Button variant="outline" className="w-full flex items-center justify-center gap-2">
-              <Download className="h-4 w-4" />
-              Download PDF
-            </Button>
-            <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+            <Button 
+              variant="outline" 
+              className="w-full flex items-center justify-center gap-2"
+              onClick={handleShareReport}
+            >
               <Share className="h-4 w-4" />
               Share Report
             </Button>

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { CheckSquare, ArrowRight, FileText, Zap, Clock } from "lucide-react";
+import { CheckSquare, ArrowRight, Zap, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Conclusion = () => {
@@ -12,32 +12,6 @@ const Conclusion = () => {
     "Evaluate ROI: Measure time saved and output quality improvements",
     "Scale gradually: Begin with pilot programs before full deployment"
   ];
-
-  const handleDownloadPDF = () => {
-    toast({
-      title: "PDF download started",
-      description: "Your 2025 AI Tooling & Budget Report is being prepared for download.",
-      duration: 3000,
-    });
-    
-    // Simulate a download after a short delay
-    setTimeout(() => {
-      // Create a dummy PDF download
-      const link = document.createElement('a');
-      link.href = 'https://gsdat.work/2025-ai-tooling-budget-report.pdf';
-      link.setAttribute('download', '2025-AI-Tooling-Budget-Report.pdf');
-      link.setAttribute('target', '_blank');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      toast({
-        title: "Report downloaded",
-        description: "The 2025 AI Tooling & Budget Report PDF has been downloaded.",
-        duration: 3000,
-      });
-    }, 1500);
-  };
 
   const handleScheduleNow = () => {
     window.open("https://calendly.com/gsdatwork/free-consult", "_blank");
@@ -109,36 +83,19 @@ const Conclusion = () => {
           </ol>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full hover:shadow-md transition-all">
-            <div className="bg-primary/10 p-2 rounded-full w-10 h-10 flex items-center justify-center mb-3">
-              <FileText className="h-5 w-5 text-primary" />
-            </div>
-            <h3 className="font-semibold mb-2">Download the Report</h3>
-            <p className="text-sm text-gray-600 mb-4">Get the complete PDF version with additional resources and worksheets.</p>
-            <button 
-              onClick={handleDownloadPDF}
-              className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
-            >
-              Download PDF
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+        <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full hover:shadow-md transition-all">
+          <div className="bg-primary/10 p-2 rounded-full w-10 h-10 flex items-center justify-center mb-3">
+            <Zap className="h-5 w-5 text-primary" />
           </div>
-          
-          <div className="bg-white p-5 rounded-lg border border-gray-100 flex flex-col h-full hover:shadow-md transition-all">
-            <div className="bg-primary/10 p-2 rounded-full w-10 h-10 flex items-center justify-center mb-3">
-              <Zap className="h-5 w-5 text-primary" />
-            </div>
-            <h3 className="font-semibold mb-2">Book a Strategy Session</h3>
-            <p className="text-sm text-gray-600 mb-4">Get personalized guidance on implementing AI tools for your specific needs.</p>
-            <button 
-              onClick={handleScheduleNow}
-              className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
-            >
-              Schedule Now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
-          </div>
+          <h3 className="font-semibold mb-2">Book a Strategy Session</h3>
+          <p className="text-sm text-gray-600 mb-4">Get personalized guidance on implementing AI tools for your specific needs.</p>
+          <button 
+            onClick={handleScheduleNow}
+            className="mt-auto inline-flex items-center text-secondary hover:text-secondary/80 hover:translate-x-1 transition-all"
+          >
+            Schedule Now
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </button>
         </div>
       </div>
     </section>

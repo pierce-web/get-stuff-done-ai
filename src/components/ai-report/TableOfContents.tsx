@@ -19,31 +19,6 @@ const TableOfContents = () => {
     { id: "conclusion", number: "9", title: "Conclusion and Next Steps", icon: <CheckSquare className="h-4 w-4" /> }
   ];
 
-  const handleDownloadPDF = () => {
-    toast({
-      title: "PDF download started",
-      description: "Your 2025 AI Tooling & Budget Report is being prepared for download.",
-      duration: 3000,
-    });
-    
-    // Create a dummy PDF download
-    setTimeout(() => {
-      const link = document.createElement('a');
-      link.href = 'https://gsdat.work/2025-ai-tooling-budget-report.pdf';
-      link.setAttribute('download', '2025-AI-Tooling-Budget-Report.pdf');
-      link.setAttribute('target', '_blank');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      toast({
-        title: "Report downloaded",
-        description: "The 2025 AI Tooling & Budget Report PDF has been downloaded.",
-        duration: 3000,
-      });
-    }, 1500);
-  };
-
   const handleShareReport = () => {
     const shareData = {
       title: '2025 AI Tooling & Budget Report',
@@ -123,18 +98,6 @@ const TableOfContents = () => {
           <span>Estimated reading time: 7 minutes</span>
         </div>
         <div className="flex gap-3">
-          <Button 
-            variant="outline" 
-            className="text-secondary border-secondary hover:bg-secondary/5 flex items-center gap-2"
-            onClick={handleDownloadPDF}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" x2="12" y1="15" y2="3"/>
-            </svg>
-            Download PDF
-          </Button>
           <Button 
             variant="outline" 
             className="text-secondary border-secondary hover:bg-secondary/5 flex items-center gap-2"
