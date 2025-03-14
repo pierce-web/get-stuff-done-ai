@@ -13,7 +13,7 @@ const CoreCategories = () => {
         { name: "ChatGPT", url: "https://openai.com/chatgpt" },
         { name: "Anthropic's Claude", url: "https://claude.ai" },
       ],
-      useCases: "Drafting emails, strategy docs, marketing copy, brainstorming.",
+      useCases: "Deep research, analysis, thought partnership, drafting emails, strategy docs, marketing copy, brainstorming, and general assistance.",
     },
     {
       title: "2. Transcription & Note-Taking",

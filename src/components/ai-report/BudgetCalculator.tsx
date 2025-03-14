@@ -5,17 +5,17 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Calendar, BookOpen, Zap, Headphones, Mic } from "lucide-react";
+import { Calculator, Calendar, BookOpen, Zap, Headphones, Mic, Search } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const BudgetCalculator = () => {
   const [employeeCount, setEmployeeCount] = useState<number>(10);
-  const [powerUserPercentage, setPowerUserPercentage] = useState<number>(5); // Changed default to 5%
+  const [powerUserPercentage, setPowerUserPercentage] = useState<number>(5);
   const [needsCoding, setNeedsCoding] = useState<boolean>(false);
-  const [needsDesign, setNeedsDesign] = useState<boolean>(false);
   const [showResults, setShowResults] = useState<boolean>(false);
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
@@ -26,7 +26,6 @@ const BudgetCalculator = () => {
     const basicUserCost = 100; // $100/month per basic user
     const powerUserCost = 500; // $500/month per power user
     const codingUserCost = needsCoding ? 1000 : 0; // Additional cost if coding tools needed
-    const designUserCost = needsDesign ? 300 : 0; // Additional cost if design tools needed
 
     // Calculate user distribution
     const powerUsers = Math.round(employeeCount * (powerUserPercentage / 100));
@@ -34,7 +33,7 @@ const BudgetCalculator = () => {
 
     // Calculate total costs
     const basicUsersTotalCost = basicUsers * basicUserCost;
-    const powerUsersTotalCost = powerUsers * (powerUserCost + codingUserCost + designUserCost);
+    const powerUsersTotalCost = powerUsers * (powerUserCost + codingUserCost);
     const totalMonthlyCost = basicUsersTotalCost + powerUsersTotalCost;
     const annualCost = totalMonthlyCost * 12;
 
@@ -83,13 +82,13 @@ const BudgetCalculator = () => {
                 Estimate your organization's AI tooling budget based on your specific needs and team composition.
               </p>
             </div>
-            <Button
+            <Button 
               onClick={() => setIsCalculatorOpen(true)}
-              className="bg-primary hover:bg-primary/90 w-full md:w-auto"
+              className="bg-secondary hover:bg-secondary/90 w-full md:w-auto text-white"
               size="lg"
             >
-              <Calculator className="mr-2 h-5 w-5 text-white" />
-              <span className="text-white">Calculate Your Budget</span>
+              <Calculator className="mr-2 h-5 w-5" />
+              <span>Calculate Your Budget</span>
             </Button>
           </div>
 
@@ -97,10 +96,10 @@ const BudgetCalculator = () => {
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
               <div className="bg-primary/10 p-3 rounded-full mb-3">
-                <Headphones className="h-6 w-6 text-primary" />
+                <Zap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">Meeting Transcription</h3>
-              <p className="text-sm text-gray-600">Cultivate high-quality qualitative data assets from meetings and calls.</p>
+              <h3 className="font-semibold mb-2">General-Purpose AI</h3>
+              <p className="text-sm text-gray-600">Essential AI tools that serve as the foundation for productivity gains, research, and analysis.</p>
             </div>
             
             <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
@@ -113,10 +112,10 @@ const BudgetCalculator = () => {
             
             <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
               <div className="bg-primary/10 p-3 rounded-full mb-3">
-                <Zap className="h-6 w-6 text-primary" />
+                <Headphones className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">General-Purpose AI</h3>
-              <p className="text-sm text-gray-600">Essential AI tools that serve as the foundation for productivity gains.</p>
+              <h3 className="font-semibold mb-2">Meeting Transcription</h3>
+              <p className="text-sm text-gray-600">Cultivate high-quality qualitative data assets from meetings and calls.</p>
             </div>
           </div>
         </div>
@@ -203,25 +202,11 @@ const BudgetCalculator = () => {
                     onCheckedChange={setNeedsCoding}
                   />
                 </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col gap-1">
-                    <Label htmlFor="needs-design" className="cursor-pointer">
-                      AI Design Tools
-                    </Label>
-                    <p className="text-sm text-gray-500">Midjourney, DALL-E, etc.</p>
-                  </div>
-                  <Switch
-                    id="needs-design"
-                    checked={needsDesign}
-                    onCheckedChange={setNeedsDesign}
-                  />
-                </div>
               </div>
 
               <Button 
                 onClick={handleCalculate}
-                className="w-full bg-primary hover:bg-primary/90"
+                className="w-full bg-secondary hover:bg-secondary/90 text-white"
               >
                 Calculate Budget Estimate
               </Button>
@@ -269,17 +254,17 @@ const BudgetCalculator = () => {
                     </h4>
                     <ul className="list-disc list-inside text-sm space-y-1">
                       <li>ChatGPT Plus ($20/mo per user)</li>
-                      <li>Fireflies.ai or similar meeting transcription</li>
                       <li>Wispr Flow or similar voice dictation software</li>
+                      <li>Fireflies.ai or similar meeting transcription</li>
                     </ul>
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-3">
                   <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                     <DialogTrigger asChild>
-                      <Button variant="secondary" className="w-full gap-2">
-                        <Zap className="h-4 w-4 text-white" />
-                        <span className="text-white">Get Quick-Win Implementation Plan</span>
+                      <Button variant="secondary" className="w-full gap-2 text-white">
+                        <Zap className="h-4 w-4" />
+                        <span>Get Quick-Win Implementation Plan</span>
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
@@ -302,10 +287,10 @@ const BudgetCalculator = () => {
                       <DialogFooter className="flex flex-col sm:flex-row gap-2">
                         <Button
                           onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
-                          className="bg-secondary hover:bg-secondary/90 gap-2 w-full"
+                          className="bg-secondary hover:bg-secondary/90 gap-2 w-full text-white"
                         >
-                          <Calendar className="h-4 w-4 text-white" />
-                          <span className="text-white">Schedule Free Strategy Session</span>
+                          <Calendar className="h-4 w-4" />
+                          <span>Schedule Free Strategy Session</span>
                         </Button>
                       </DialogFooter>
                     </DialogContent>

@@ -30,7 +30,7 @@ const PerEmployeeBudgeting = () => {
       <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-sm border border-gray-100">
         <h2 className="text-2xl font-bold mb-6 text-primary">6. Scaling Up: Per-Employee Budgeting</h2>
         <p className="mb-6">
-          We recommend segmenting your staff based on how heavily they use AI:
+          We recommend segmenting your staff based on how heavily they use AI. Typically, about 5% of employees are power users:
         </p>
         
         <div className="grid md:grid-cols-2 gap-6">
