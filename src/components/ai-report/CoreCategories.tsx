@@ -55,16 +55,16 @@ const CoreCategories = () => {
       examples: [
         { name: "Gamma", url: "https://gamma.app" },
         { name: "Figma FigJam Boards", url: "https://www.figma.com" },
+        { name: "Lovable", url: "http://lovable.dev" },
       ],
-      useCases: "Rapid slide deck creation, AI-assisted design, prototyping, user flow and architecture illustration.",
+      useCases: "Rapid slide deck creation, AI-assisted design, prototyping, user flow and architecture illustration, building AI-enhanced websites, and brand identity creation.",
     },
     {
-      title: "7. Web & Branding Tools",
+      title: "7. Security & Data Protection",
       examples: [
-        { name: "Lovable", url: "http://lovable.dev" },
         { name: "Crowdstrike cybersecurity coverage via Agency", url: "https://www.getagency.com" },
       ],
-      useCases: "Building AI-enhanced websites, brand identity creation, safeguarding data.",
+      useCases: "Safeguarding sensitive data, protecting digital assets, securing AI workflows, and ensuring proper data protection as you digitize more of your business processes.",
     },
     {
       title: "8. Email & Workspace AI",

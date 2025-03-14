@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -136,7 +135,6 @@ const CostEstimates = () => {
     },
   ];
 
-  // Mobile view with cards instead of a table
   const renderMobileView = () => (
     <div className="space-y-4">
       {toolPricing.map((tool, index) => (
@@ -167,7 +165,6 @@ const CostEstimates = () => {
     </div>
   );
 
-  // Desktop view with table
   const renderDesktopView = () => (
     <div className="overflow-x-auto">
       <Table>
