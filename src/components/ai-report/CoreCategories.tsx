@@ -1,4 +1,3 @@
-
 import React from "react";
 import ToolCategory from "./ToolCategory";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -40,10 +39,10 @@ const CoreCategories = () => {
       icon: <Code className="h-5 w-5 text-secondary mr-2" />,
       examples: [
         { name: "Cursor", url: "https://cursor.sh" },
-        { name: "Windsurf", url: "http://codeium.com" },
+        { name: "Replit", url: "https://replit.com" },
         { name: "orchestrated Claude Code Agents", url: "https://claude.ai/code" },
       ],
-      useCases: "Automating code generation, debugging, development workflows.",
+      useCases: "Automating code generation, debugging, development workflows, and rapid prototyping with voice-to-app capabilities for non-engineers.",
     },
     {
       title: "Audio/Video Editing & Creation",

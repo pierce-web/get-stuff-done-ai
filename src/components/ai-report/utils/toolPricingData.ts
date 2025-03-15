@@ -52,6 +52,12 @@ export const toolPricingData: ToolPrice[] = [
     purpose: "AI-driven coding IDE.",
   },
   {
+    tool: "Replit",
+    url: "https://replit.com",
+    cost: "$20-$30",
+    purpose: "Interactive coding environment with voice-to-app capability. User-friendly for non-engineers to rapidly prototype and share web applications via URL.",
+  },
+  {
     tool: "Figma FigJam Boards",
     url: "https://www.figma.com",
     cost: "$5",
