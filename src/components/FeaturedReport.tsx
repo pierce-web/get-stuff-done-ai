@@ -26,7 +26,13 @@ export const FeaturedReport = () => {
             <div className="flex flex-col lg:flex-row">
               <div className="lg:w-2/5 bg-gradient-to-br from-secondary/20 to-primary/5 p-6 flex items-center justify-center">
                 <div className="text-center">
-                  <FileText className="h-16 w-16 text-secondary mx-auto mb-4" aria-hidden="true" />
+                  <img 
+                    src="/lovable-uploads/621fea6b-e235-4db5-99a0-4570284b0f48.png" 
+                    alt="2025 AI Tooling & Budget Report" 
+                    className="max-w-[200px] mx-auto mb-4 rounded-md shadow-md"
+                    width="200"
+                    height="105"
+                  />
                   <Badge variant="outline" className="px-3 py-1 bg-white text-secondary border-secondary mb-2 shadow-sm">
                     <CalendarDays className="mr-1 h-3 w-3" aria-hidden="true" /> Updated for 2025
                   </Badge>

@@ -62,23 +62,23 @@ const AIToolingReport = () => {
         {/* Enhanced canonical URL */}
         <link rel="canonical" href="https://gsdat.work/ai-tooling-report" />
         
-        {/* Enhanced Open Graph tags for social sharing */}
+        {/* Updated Open Graph tags with new image for social sharing */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content="2025 AI Tooling & Budget Report | Complete Implementation Guide" />
         <meta property="og:description" content="Comprehensive guide to AI tool budgeting in 2025. Learn how to equip your team with the right AI tools, optimize costs, and increase productivity." />
         <meta property="og:url" content="https://gsdat.work/ai-tooling-report" />
-        <meta property="og:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
+        <meta property="og:image" content="https://gsdat.work/lovable-uploads/621fea6b-e235-4db5-99a0-4570284b0f48.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="2025 AI Tooling & Budget Report Cover" />
         <meta property="og:site_name" content="GSD at Work" />
         <meta property="og:locale" content="en_US" />
         
-        {/* Twitter Card data (also used by LinkedIn) */}
+        {/* Twitter Card data (also used by LinkedIn) with updated image */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="2025 AI Tooling & Budget Report | Complete Implementation Guide" />
         <meta name="twitter:description" content="Comprehensive guide to AI tool budgeting in 2025. Learn how to equip your team with the right AI tools, optimize costs, and increase productivity." />
-        <meta name="twitter:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
+        <meta name="twitter:image" content="https://gsdat.work/lovable-uploads/621fea6b-e235-4db5-99a0-4570284b0f48.png" />
         <meta name="twitter:image:alt" content="2025 AI Tooling & Budget Report Cover" />
         
         {/* Article specific metadata */}
@@ -88,7 +88,7 @@ const AIToolingReport = () => {
         <meta property="article:section" content="AI Business" />
         <meta property="article:tag" content="AI, Budget, Productivity Tools, Business Strategy, AI Implementation" />
         
-        {/* Enhanced JSON-LD structured data for rich snippets */}
+        {/* Updated JSON-LD structured data for rich snippets with new image */}
         <script type="application/ld+json">
           {`
             {
@@ -96,7 +96,7 @@ const AIToolingReport = () => {
               "@type": "Article",
               "headline": "The 2025 AI Tooling & Budget Report",
               "description": "How to equip your team for quick wins and right-sized steps toward long-term AI transformation",
-              "image": "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
+              "image": "https://gsdat.work/lovable-uploads/621fea6b-e235-4db5-99a0-4570284b0f48.png",
               "author": {
                 "@type": "Person",
                 "name": "Christian Ulstrup",
