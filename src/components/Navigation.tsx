@@ -62,13 +62,6 @@ export const Navigation = () => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/cases">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Case Studies
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -82,16 +75,6 @@ export const Navigation = () => {
                           </div>
                           <p className="text-sm leading-tight text-white/90">
                             Comprehensive guide to AI tool budgeting for businesses
-                          </p>
-                        </NavigationMenuLink>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/cases">
-                        <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">Case Studies</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Real-world examples of AI implementation success
                           </p>
                         </NavigationMenuLink>
                       </Link>
@@ -141,11 +124,6 @@ export const Navigation = () => {
               <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
                 <Link to="/" className="text-xl font-medium w-full text-center">
                   Home
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
-                <Link to="/cases" className="text-xl font-medium w-full text-center">
-                  Case Studies
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
