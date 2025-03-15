@@ -5,17 +5,34 @@ import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { FeaturedReport } from "@/components/FeaturedReport";
+import { Navigation } from "@/components/Navigation";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Main content sections with subtle transitions between them */}
-      <Hero />
+      <Navigation />
+      
+      {/* Add padding-top to account for the fixed navigation */}
+      <div className="pt-20">
+        <Hero />
+      </div>
+      
       <div className="relative">
-        <TestimonialsCarousel />
-        <FeaturedReport />
-        <Services />
+        {/* Add subtle dividers and consistent spacing between sections */}
+        <div className="bg-gradient-to-b from-background to-gray-50">
+          <TestimonialsCarousel />
+        </div>
+        
+        <div className="bg-gradient-to-b from-gray-50 to-background py-8">
+          <FeaturedReport />
+        </div>
+        
+        <div className="py-8">
+          <Services />
+        </div>
+        
         <About />
+        
         <Footer />
       </div>
     </div>

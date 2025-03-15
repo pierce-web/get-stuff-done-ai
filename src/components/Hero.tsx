@@ -11,7 +11,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative overflow-hidden py-16 sm:py-24 md:py-32 animate-fade-in">
+    <div className="relative overflow-hidden py-24 sm:py-32 md:py-40 animate-fade-in">
       {/* Background gradient elements */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl opacity-70" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-70" />
