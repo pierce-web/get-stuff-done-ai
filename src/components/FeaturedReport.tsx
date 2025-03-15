@@ -8,8 +8,12 @@ import { ArrowRight, BarChart2, FileText, CalendarDays } from "lucide-react";
 
 export const FeaturedReport = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container px-4 mx-auto">
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-1/4 w-72 h-72 bg-secondary/5 rounded-full blur-3xl opacity-80" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-80" />
+      
+      <div className="container px-4 mx-auto relative">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-primary mb-3">Featured Resource</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -18,12 +22,12 @@ export const FeaturedReport = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 relative z-10">
             <div className="flex flex-col lg:flex-row">
               <div className="lg:w-2/5 bg-gradient-to-br from-secondary/20 to-primary/5 p-6 flex items-center justify-center">
                 <div className="text-center">
                   <FileText className="h-16 w-16 text-secondary mx-auto mb-4" aria-hidden="true" />
-                  <Badge variant="outline" className="px-3 py-1 bg-white text-secondary border-secondary mb-2">
+                  <Badge variant="outline" className="px-3 py-1 bg-white text-secondary border-secondary mb-2 shadow-sm">
                     <CalendarDays className="mr-1 h-3 w-3" aria-hidden="true" /> Updated for 2025
                   </Badge>
                   <div className="mt-3 flex items-center justify-center gap-1 text-sm text-gray-500">
@@ -80,13 +84,13 @@ export const FeaturedReport = () => {
                 
                 <CardFooter className="p-0 flex flex-col sm:flex-row gap-3">
                   <Link to="/ai-tooling-report">
-                    <Button className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white">
+                    <Button className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white shadow-md hover:shadow-lg transition-all duration-300">
                       Read The Full Report <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Button 
                     variant="outline" 
-                    className="w-full sm:w-auto border-secondary text-secondary hover:bg-secondary/10"
+                    className="w-full sm:w-auto border-secondary text-secondary hover:bg-secondary/10 shadow-sm hover:shadow transition-all duration-300"
                     onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
                   >
                     Schedule Your Strategy Session
