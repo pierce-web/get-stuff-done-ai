@@ -11,12 +11,12 @@ const Introduction = () => {
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-secondary/5 to-transparent rounded-tr-full"></div>
         
         <div className="relative">
-          <h2 className="text-2xl font-bold mb-4 text-primary">1. Introduction</h2>
+          <h2 className="text-2xl font-bold mb-4 text-primary">1. Introduction to AI Tool Budgeting</h2>
           
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-4">
               <Sparkle className="h-5 w-5 text-secondary" />
-              <h3 className="text-lg font-semibold text-gray-800">The AI Revolution in Business</h3>
+              <h3 className="text-lg font-semibold text-gray-800">The AI Revolution in Business for 2025</h3>
             </div>
             
             <p className="mb-4">
@@ -38,7 +38,7 @@ const Introduction = () => {
                 <Lightbulb className="h-5 w-5 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">What You'll Learn</h3>
-              <p className="text-sm text-gray-600">Discover which AI tools provide the best ROI and how to build a strategic implementation roadmap.</p>
+              <p className="text-sm text-gray-600">Discover which AI tools provide the best ROI and how to build a strategic implementation roadmap for small businesses, mid-market companies, and enterprises.</p>
             </div>
             
             <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 hover:shadow-md transition-all">
@@ -46,7 +46,7 @@ const Introduction = () => {
                 <DollarSign className="h-5 w-5 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Budget Planning</h3>
-              <p className="text-sm text-gray-600">Get realistic cost estimates for AI tools across different user types and company sizes.</p>
+              <p className="text-sm text-gray-600">Get realistic cost estimates for AI tools across different user types and company sizes, from startups to enterprise organizations.</p>
             </div>
             
             <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 hover:shadow-md transition-all">
@@ -54,7 +54,7 @@ const Introduction = () => {
                 <Target className="h-5 w-5 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Implementation Guide</h3>
-              <p className="text-sm text-gray-600">Follow practical steps to introduce AI tools with minimal disruption and maximum adoption.</p>
+              <p className="text-sm text-gray-600">Follow practical steps to introduce AI tools with minimal disruption and maximum adoption for your business in 2025.</p>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import React from "react";
 import ToolCategory from "./ToolCategory";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -96,7 +97,7 @@ const CoreCategories = () => {
   return (
     <section id="core-categories" className="mb-16">
       <div className="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-bold mb-6 sm:mb-8 text-primary">Core AI Tool Categories</h2>
+        <h2 className="text-2xl font-bold mb-6 sm:mb-8 text-primary">Core AI Tool Categories for 2025</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {categories.map((category, index) => (
