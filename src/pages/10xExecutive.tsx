@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -190,31 +191,8 @@ const TenXExecutive: React.FC = () => {
                 Schedule Your Free Consultation
               </Button>
               <p className="mt-4 text-gray-600">
-                Limited availability. Only accepting 5 executives per month.
+                Limited availability. Only accepting 2 executives per quarter.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonial Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto">
-              <blockquote className="relative">
-                <div className="absolute -top-10 -left-10 text-8xl text-secondary/20">"</div>
-                <div className="relative z-10">
-                  <p className="text-xl md:text-2xl italic text-gray-700 mb-6">
-                    Christian's AI coaching has transformed how I work. I'm getting more done in 5 hours than I used to in 15. The personalized approach and step-by-step implementation made all the difference.
-                  </p>
-                  <footer className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-gray-300"></div>
-                    <div>
-                      <div className="font-bold text-primary">Sarah Johnson</div>
-                      <div className="text-gray-600">CEO, TechVision Inc.</div>
-                    </div>
-                  </footer>
-                </div>
-              </blockquote>
             </div>
           </div>
         </section>
