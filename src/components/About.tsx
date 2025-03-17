@@ -80,7 +80,7 @@ export const About = () => {
                   className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 py-6 sm:py-2 transition-all duration-300"
                   onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
                 >
-                  Book a Call
+                  Schedule Strategy Call
                 </Button>
               </div>
             </div>

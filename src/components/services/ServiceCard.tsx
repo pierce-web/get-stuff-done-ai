@@ -45,7 +45,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
             <Button 
               className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 flex items-center gap-2"
             >
-              {service.cta}
+              Learn More
               <ExternalLink className="h-4 w-4" />
             </Button>
           </Link>
@@ -54,10 +54,10 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
         <Button 
           variant="outline"
           className="w-full border border-primary text-primary hover:bg-primary/10 gap-2"
-          onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
+          onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
         >
           <Calendar className="h-4 w-4" />
-          {service.secondaryCta}
+          Schedule Strategy Call
         </Button>
       </CardFooter>
     </Card>
