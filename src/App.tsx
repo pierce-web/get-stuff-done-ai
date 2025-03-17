@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Cases from "./pages/Cases";
 import CaseStudy from "./pages/CaseStudy";
 import AIToolingReport from "./pages/ai-report";
+import TenXExecutive from "./pages/10xExecutive";
 import NotFound from "./pages/NotFound";
 import StrategySessionConfirmed from "./pages/StrategySessionConfirmed";
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/cases" element={<Cases />} />
           <Route path="/cases/:id" element={<CaseStudy />} />
           <Route path="/ai-tooling-report" element={<AIToolingReport />} />
+          <Route path="/10x-executive" element={<TenXExecutive />} />
           <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
