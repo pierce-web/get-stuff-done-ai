@@ -1,6 +1,5 @@
 
 import { ServiceCard } from "./ServiceCard";
-import { ValueMetricsSection } from "./ValueMetricsSection";
 import { services } from "./data";
 
 export const Services = () => {
@@ -20,9 +19,6 @@ export const Services = () => {
             <ServiceCard key={service.title} service={service} />
           ))}
         </div>
-
-        {/* Value-Based Pricing Section */}
-        <ValueMetricsSection />
       </div>
     </section>
   );

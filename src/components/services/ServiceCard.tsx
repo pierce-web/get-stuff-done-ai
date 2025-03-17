@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Phone, MessageSquare, ExternalLink, Calendar } from "lucide-react";
+import { Calendar, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -40,7 +40,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
         </div>
       </CardContent>
       <CardFooter className="pt-4 flex flex-col gap-3">
-        {service.learnMoreLink ? (
+        {service.learnMoreLink && (
           <Link to={service.learnMoreLink} className="w-full">
             <Button 
               className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 flex items-center gap-2"
@@ -49,26 +49,15 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
               <ExternalLink className="h-4 w-4" />
             </Button>
           </Link>
-        ) : (
-          <Button 
-            className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 flex items-center gap-2"
-            onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
-          >
-            <Calendar className="h-4 w-4" />
-            {service.title === "2-Hour AI Action Workshop" ? "Schedule Free Consultation" : "Schedule Strategy Call"}
-          </Button>
         )}
-        <Button
+        
+        <Button 
           variant="outline"
-          className="w-full border border-primary text-primary hover:bg-primary/10 gap-2 text-sm"
-          onClick={() => window.location.href = "tel:+18482610259"}
+          className="w-full border border-primary text-primary hover:bg-primary/10 gap-2"
+          onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
         >
-          <Phone className="h-4 w-4" />
-          <span>
-            {service.title === "2-Hour AI Action Workshop" 
-              ? "Speak with our AI Assistant" 
-              : service.secondaryCta}
-          </span>
+          <Calendar className="h-4 w-4" />
+          {service.secondaryCta}
         </Button>
       </CardFooter>
     </Card>

@@ -15,9 +15,10 @@ export const services: ServiceType[] = [
       "Access to state-of-the-art AI tools and templates",
       "Includes pre-session discovery and post-session support",
     ],
-    cta: "Schedule Free Consultation",
-    secondaryCta: "Not sure yet? Talk to our AI Assistant",
+    cta: "Learn More",
+    secondaryCta: "Schedule a Consultation",
     calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    learnMoreLink: "/ai-action-workshop",
   },
   {
     title: "10x Effective Executive",
@@ -34,7 +35,7 @@ export const services: ServiceType[] = [
     ],
     cta: "Learn More",
     secondaryCta: "Schedule a Consultation",
-    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    calendlyLink: "https://calendly.com/gsdatwork/10x-executive-consult",
     learnMoreLink: "/10x-executive",
   },
   {
@@ -50,9 +51,10 @@ export const services: ServiceType[] = [
       "Team training and change management",
       "ROI-focused metrics and tracking",
     ],
-    cta: "Schedule Strategy Call",
-    secondaryCta: "Have questions? Call our AI Assistant",
+    cta: "Learn More",
+    secondaryCta: "Schedule a Strategy Call",
     calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    learnMoreLink: "/triple-a-transformation",
   },
 ];
 
