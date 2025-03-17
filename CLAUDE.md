@@ -31,3 +31,12 @@
 - **State Management**: React Query for server state, React context for shared app state
 - **Styling**: Tailwind CSS with class-variance-authority for component variants
 - **Routing**: React Router with kebab-case routes (e.g., `/ai-tooling-report`, `/triple-a-transformation`)
+
+## Design System
+- **Design Tokens**: Use design tokens from `@/lib/design-tokens.ts` instead of hardcoding styles
+- **Shadows**: Use consistent shadow classes (e.g., `shadows.buttonEffect`, `shadows.cardEffect`)
+- **Gradients**: Use predefined gradients (e.g., `gradients.primaryLight`, `gradients.secondaryStrong`)
+- **Buttons**: Apply consistent button styling (e.g., `buttonStyles.primary`, `buttonStyles.outline.secondary`)
+- **Spacing**: Use standard spacing values (e.g., `spacing.section.md`)
+- **Animations**: Use standard animation classes (e.g., `animations.fadeIn`, `animations.transition`)
+- **Borders**: Use standard border radii (e.g., `borderRadius.md`, `borderRadius.full`)

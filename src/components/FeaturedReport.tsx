@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, BarChart2, FileText, CalendarDays } from "lucide-react";
+import { shadows, gradients, buttonStyles, animations, spacing, borderRadius } from "@/lib/design-tokens";
 
 export const FeaturedReport = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className={`${spacing.section.sm} ${gradients.subtle} relative overflow-hidden`}>
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-secondary/5 rounded-full blur-3xl opacity-80" />
       <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-80" />
@@ -22,18 +23,18 @@ export const FeaturedReport = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 relative z-10">
+          <Card className={`overflow-hidden border-none ${shadows.cardEffect} relative z-10`}>
             <div className="flex flex-col lg:flex-row">
-              <div className="lg:w-2/5 bg-gradient-to-br from-secondary/20 to-primary/5 p-6 flex items-center justify-center">
+              <div className={`lg:w-2/5 ${gradients.secondaryLight} p-6 flex items-center justify-center`}>
                 <div className="text-center">
                   <img 
                     src="/lovable-uploads/621fea6b-e235-4db5-99a0-4570284b0f48.png" 
                     alt="2025 AI Tooling & Budget Report" 
-                    className="max-w-[200px] mx-auto mb-4 rounded-md shadow-md"
+                    className={`max-w-[200px] mx-auto mb-4 ${borderRadius.md} ${shadows.sm}`}
                     width="200"
                     height="105"
                   />
-                  <Badge variant="outline" className="px-3 py-1 bg-white text-secondary border-secondary mb-2 shadow-sm">
+                  <Badge variant="outline" className={`px-3 py-1 bg-white text-secondary border-secondary mb-2 ${shadows.sm}`}>
                     <CalendarDays className="mr-1 h-3 w-3" aria-hidden="true" /> Updated for 2025
                   </Badge>
                   <div className="mt-3 flex items-center justify-center gap-1 text-sm text-gray-500">
@@ -62,7 +63,7 @@ export const FeaturedReport = () => {
                   
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-start">
-                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center mr-2 mt-0.5">
+                      <div className={`flex-shrink-0 h-5 w-5 ${borderRadius.full} bg-green-100 flex items-center justify-center mr-2 mt-0.5`}>
                         <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -70,7 +71,7 @@ export const FeaturedReport = () => {
                       <span className="text-gray-600">Cost estimates for all major AI tool categories</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center mr-2 mt-0.5">
+                      <div className={`flex-shrink-0 h-5 w-5 ${borderRadius.full} bg-green-100 flex items-center justify-center mr-2 mt-0.5`}>
                         <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -78,7 +79,7 @@ export const FeaturedReport = () => {
                       <span className="text-gray-600">Budgeting frameworks for different company sizes</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center mr-2 mt-0.5">
+                      <div className={`flex-shrink-0 h-5 w-5 ${borderRadius.full} bg-green-100 flex items-center justify-center mr-2 mt-0.5`}>
                         <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -90,13 +91,13 @@ export const FeaturedReport = () => {
                 
                 <CardFooter className="p-0 flex flex-col sm:flex-row gap-3">
                   <Link to="/ai-tooling-report">
-                    <Button className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white shadow-md hover:shadow-lg transition-all duration-300">
+                    <Button className={`w-full sm:w-auto ${buttonStyles.primary} ${shadows.buttonEffect}`}>
                       Read The Full Report <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Button 
                     variant="outline" 
-                    className="w-full sm:w-auto border-secondary text-secondary hover:bg-secondary/10 shadow-sm hover:shadow transition-all duration-300"
+                    className={`w-full sm:w-auto ${buttonStyles.outline.secondary} ${shadows.buttonEffect}`}
                     onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
                   >
                     Schedule Your Strategy Session
