@@ -2,6 +2,7 @@
 import React from "react";
 import { CheckSquare, ArrowRight, Zap, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Conclusion = () => {
   const { toast } = useToast();
@@ -47,6 +48,18 @@ const Conclusion = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          
+          {/* New executive program cross-promotion */}
+          <div className="bg-primary/5 p-6 rounded-lg border border-primary/10 mb-6">
+            <h3 className="text-xl font-semibold mb-2 text-primary">Looking for a Hands-On Executive Approach?</h3>
+            <p className="mb-4">
+              Want personalized guidance on harnessing these AI tools at an executive level? Our 10x Effective Executive program provides a structured approach for busy leaders seeking to implement AI tools for maximum impact.
+            </p>
+            <Link to="/10x-executive" className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium hover:underline">
+              Learn more about the 10x Effective Executive program
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
         

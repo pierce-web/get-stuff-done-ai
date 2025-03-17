@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -65,6 +66,55 @@ export const Navigation = () => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    <li className="row-span-3">
+                      <Link to="/10x-executive">
+                        <NavigationMenuLink
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary/60 to-primary/90 p-6 no-underline outline-none focus:shadow-md"
+                        >
+                          <div className="mt-4 mb-2 text-lg font-medium text-white">
+                            10x Effective Executive
+                          </div>
+                          <p className="text-sm leading-tight text-white/90">
+                            AI-powered transformation program for busy leaders
+                          </p>
+                        </NavigationMenuLink>
+                      </Link>
+                    </li>
+                    
+                    <li>
+                      <Link to="/#services">
+                        <NavigationMenuLink
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">AI Action Workshop</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            2-hour hands-on session with immediate AI implementation
+                          </p>
+                        </NavigationMenuLink>
+                      </Link>
+                    </li>
+                    
+                    <li>
+                      <Link to="/#services">
+                        <NavigationMenuLink
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Triple-A Transformation</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Complete organizational AI implementation program
+                          </p>
+                        </NavigationMenuLink>
+                      </Link>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -72,7 +122,7 @@ export const Navigation = () => {
                     <li className="row-span-3">
                       <Link to="/ai-tooling-report">
                         <NavigationMenuLink
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary/60 to-primary/90 p-6 no-underline outline-none focus:shadow-md"
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-secondary/60 to-secondary/90 p-6 no-underline outline-none focus:shadow-md"
                         >
                           <div className="mt-4 mb-2 text-lg font-medium text-white">
                             2025 AI Tooling & Budget Report
@@ -105,7 +155,7 @@ export const Navigation = () => {
             className="ml-2 bg-secondary hover:bg-secondary/90 text-white"
             onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
           >
-            Book a Call
+            Book a Strategy Call
           </Button>
         </nav>
 
@@ -139,6 +189,11 @@ export const Navigation = () => {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
+                <Link to="/10x-executive" className="text-xl font-medium w-full text-center">
+                  10x Executive Program
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
                 <Link to="/ai-tooling-report" className="text-xl font-medium w-full text-center">
                   AI Tooling Report
                 </Link>
@@ -148,7 +203,7 @@ export const Navigation = () => {
                   className="w-full bg-secondary hover:bg-secondary/90 text-white"
                   onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
                 >
-                  Book a Call
+                  Book a Strategy Call
                 </Button>
                 <Button
                   variant="outline"

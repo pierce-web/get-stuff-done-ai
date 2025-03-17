@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Phone, MessageSquare, ExternalLink } from "lucide-react";
+import { Phone, MessageSquare, ExternalLink, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -26,7 +26,10 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
       </CardHeader>
       <CardContent>
         {service.extraText && (
-          <p className="mb-4 text-gray-600">{service.extraText}</p>
+          <p className="mb-4 text-gray-700 bg-secondary/5 p-3 rounded-md border border-secondary/10 text-sm">
+            <strong className="text-secondary">ROI: </strong>
+            {service.extraText}
+          </p>
         )}
         <ServiceFeaturesList features={service.features} />
         <div className="mt-6">
@@ -48,19 +51,24 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
           </Link>
         ) : (
           <Button 
-            className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6"
+            className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 flex items-center gap-2"
             onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
           >
-            {service.cta}
+            <Calendar className="h-4 w-4" />
+            {service.title === "2-Hour AI Action Workshop" ? "Schedule Free Consultation" : "Schedule Strategy Call"}
           </Button>
         )}
         <Button
           variant="outline"
           className="w-full border border-primary text-primary hover:bg-primary/10 gap-2 text-sm"
-          onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
+          onClick={() => window.location.href = "tel:+18482610259"}
         >
           <Phone className="h-4 w-4" />
-          <span>{service.secondaryCta}</span>
+          <span>
+            {service.title === "2-Hour AI Action Workshop" 
+              ? "Speak with our AI Assistant" 
+              : service.secondaryCta}
+          </span>
         </Button>
       </CardFooter>
     </Card>
