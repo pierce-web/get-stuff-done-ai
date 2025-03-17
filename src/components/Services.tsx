@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Phone, MessageSquare } from "lucide-react";
+import { Phone, MessageSquare, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -27,6 +28,24 @@ const services = [
     cta: "Book Workshop",
     secondaryCta: "Not sure yet? Talk to our AI Assistant",
     calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
+  },
+  {
+    title: "10x Effective Executive",
+    description: "A 10-week AI-powered transformation program to accelerate productivity, reclaim time, and master AI tools that keep you ahead",
+    price: "$10,000",
+    subtext: "One-time engagement fee",
+    extraText: "Ready for a systematic approach to AI adoption? Our 10-week program delivers measurable results for busy executives.",
+    features: [
+      "Weekly 1:1 coaching sessions (50 minutes each)",
+      "Personalized AI tool stack tailored to your needs",
+      "Cut email handling time by 50-80%",
+      "Amplify your authority with AI-powered content",
+      "Measurable outcomes tied to your key results",
+    ],
+    cta: "Learn More",
+    secondaryCta: "Schedule a Consultation",
+    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    learnMoreLink: "/10x-executive", // Link to the dedicated page
   },
   {
     title: "Triple-A Transformation Program",
@@ -67,7 +86,7 @@ export const Services = () => {
             Choose the right path for your AI transformation journey
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
           {services.map((service) => (
             <Card key={service.title} className="flex flex-col justify-between">
               <CardHeader>
@@ -104,16 +123,27 @@ export const Services = () => {
                 </div>
               </CardContent>
               <CardFooter className="pt-4 flex flex-col gap-3">
-                <Button 
-                  className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6"
-                  onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
-                >
-                  {service.cta}
-                </Button>
+                {service.learnMoreLink ? (
+                  <Link to={service.learnMoreLink} className="w-full">
+                    <Button 
+                      className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 flex items-center gap-2"
+                    >
+                      {service.cta}
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button 
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6"
+                    onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
+                  >
+                    {service.cta}
+                  </Button>
+                )}
                 <Button
                   variant="outline"
                   className="w-full border border-primary text-primary hover:bg-primary/10 gap-2 text-sm"
-                  onClick={() => window.location.href = "tel:+18482610259"}
+                  onClick={() => service.calendlyLink && window.open(service.calendlyLink, '_blank')}
                 >
                   <Phone className="h-4 w-4" />
                   <span>{service.secondaryCta}</span>
