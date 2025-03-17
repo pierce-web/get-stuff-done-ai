@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Helmet } from "react-helmet";
 
@@ -31,10 +32,15 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     ? title 
     : `${title} | Get Stuff Done with AI`;
 
-  const baseUrl = canonicalUrl.split("/")[0];
-  const resolvedCanonicalUrl = canonicalUrl.startsWith("http") 
-    ? canonicalUrl 
-    : `https://gsdat.work${canonicalUrl.startsWith("/") ? canonicalUrl : `/${canonicalUrl}`}`;
+  // Ensure canonical URL is properly formatted
+  const resolvedCanonicalUrl = (() => {
+    if (canonicalUrl.startsWith("http")) {
+      return canonicalUrl;
+    }
+    
+    const baseUrl = "https://gsdat.work";
+    return `${baseUrl}${canonicalUrl.startsWith("/") ? canonicalUrl : `/${canonicalUrl}`}`;
+  })();
 
   return (
     <Helmet>
