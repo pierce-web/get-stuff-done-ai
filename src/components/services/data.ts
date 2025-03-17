@@ -7,7 +7,7 @@ export const services: ServiceType[] = [
     description: "Hands-on working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution",
     price: "$2,499 per session",
     subtext: "Satisfaction Guaranteed",
-    extraText: "Within the first 30 days, participants typically reclaim 5+ hours/week and reduce meeting overhead by up to 20%.",
+    extraText: "100-2000% efficiency gain for targeted tasks. Participants develop transferable SOPs, reduce cycle times, and maintain significantly higher energy levels throughout the workday.",
     features: [
       "Achieve concrete results with hands-on AI implementation",
       "Get coached through rapid implementation with proven frameworks",
@@ -24,7 +24,7 @@ export const services: ServiceType[] = [
     description: "A 10-week AI-powered transformation program to accelerate productivity, reclaim time, and master AI tools that keep you ahead",
     price: "$10,000",
     subtext: "One-time engagement fee",
-    extraText: "Participants typically cut email handling time by 50-80% and reclaim 10+ hours weekly for high-impact strategic work.",
+    extraText: "Cut email handling time by 50-80%, reclaim 10+ hours weekly for high-impact strategic work, and dramatically improve meeting quality with AI-enhanced preparation and follow-through.",
     features: [
       "Weekly 1:1 coaching sessions (50 minutes each)",
       "Personalized AI tool stack tailored to your needs",
@@ -42,7 +42,7 @@ export const services: ServiceType[] = [
     description: "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption)",
     price: "Starting at $25,000 + Performance Incentives",
     subtext: "Pricing tied to measurable business outcomes",
-    extraText: "Organizations achieve 30-40% cost reduction in target processes and often see 25%+ growth in revenue-generating activities.",
+    extraText: "Organization-wide efficiency gains leading to significant cost reduction, accelerated growth in new markets, greater velocity in delivering offerings, and elevated employee energy levels across teams.",
     features: [
       "Fractional Chief AI Officer services",
       "Comprehensive AI opportunity assessment",
