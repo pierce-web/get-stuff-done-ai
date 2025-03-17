@@ -27,7 +27,7 @@ export const DesktopNavigation = () => {
           
           <NavigationMenuItem>
             <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuContent className="bg-white">
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <li className="col-span-2">
                   <Link to="/ai-action-workshop">
@@ -73,7 +73,7 @@ export const DesktopNavigation = () => {
           
           <NavigationMenuItem>
             <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuContent className="bg-white">
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <li className="row-span-3">
                   <Link to="/ai-tooling-report">
