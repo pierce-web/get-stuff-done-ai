@@ -25,10 +25,10 @@ const ReportLayout: React.FC<ReportLayoutProps> = ({ children }) => {
               <span className="flex items-center">
                 <img 
                   src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
-                  alt="GSD at Work" 
+                  alt="GSD" 
                   className="h-6 w-6 mr-1"
                 />
-                Back to Home
+                <span>Back to <span className="font-medium">at Work</span></span>
               </span>
             </Link>
           </div>
