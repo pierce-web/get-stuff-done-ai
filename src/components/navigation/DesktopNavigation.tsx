@@ -29,41 +29,39 @@ export const DesktopNavigation = () => {
             <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <li>
+                <li className="col-span-2">
                   <Link to="/ai-action-workshop">
                     <NavigationMenuLink
-                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      className="block select-none space-y-1 rounded-md bg-gradient-to-b from-primary/10 to-primary/5 p-4 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
-                      <div className="text-sm font-medium leading-none">AI Action Workshop</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      <div className="text-base font-medium leading-none text-primary">AI Action Workshop</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
                         2-hour hands-on session with immediate AI implementation
                       </p>
                     </NavigationMenuLink>
                   </Link>
                 </li>
-                
+
                 <li>
                   <Link to="/10x-executive">
                     <NavigationMenuLink
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div className="text-sm font-medium leading-none">10x Effective Executive</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                         AI-powered transformation program for busy leaders
                       </p>
                     </NavigationMenuLink>
                   </Link>
                 </li>
-
-                <li className="row-span-3">
+                
+                <li>
                   <Link to="/triple-a-transformation">
                     <NavigationMenuLink
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary/60 to-primary/90 p-6 no-underline outline-none focus:shadow-md"
+                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
-                      <div className="mt-4 mb-2 text-lg font-medium text-white">
-                        Triple-A Transformation
-                      </div>
-                      <p className="text-sm leading-tight text-white/90">
+                      <div className="text-sm font-medium leading-none">Triple-A Transformation</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                         Complete organizational AI implementation program
                       </p>
                     </NavigationMenuLink>
