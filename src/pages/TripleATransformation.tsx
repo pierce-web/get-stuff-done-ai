@@ -5,14 +5,58 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { ServiceFeaturesList } from "@/components/services/ServiceFeaturesList";
 import { services, valueMetrics } from "@/components/services/data";
+import { SEOHead } from "@/components/SEOHead";
+import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 
 const TripleATransformation = () => {
   const program = services.find(s => s.title === "Triple-A Transformation Program");
   
   if (!program) return null;
 
+  // Generate structured data
+  const serviceStructuredData = generateServicePageStructuredData(
+    program.title,
+    program.description,
+    "https://gsdat.work/triple-a-transformation",
+    "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
+    "Get Stuff Done AI",
+    program.price
+  );
+
+  // FAQ structured data
+  const faqStructuredData = generateFAQStructuredData([
+    {
+      question: "What is the Triple-A Transformation Program?",
+      answer: "The Triple-A Transformation Program (Accelerated AI Adoption) is a 14-week program designed to revolutionize your organization's operations with AI. It provides comprehensive AI opportunity assessment, custom implementation roadmap, team training, and change management to deliver measurable business outcomes."
+    },
+    {
+      question: "How much does the Triple-A Transformation Program cost?",
+      answer: program.price + ". " + program.subtext
+    },
+    {
+      question: "What are the components of the Triple-A Transformation Program?",
+      answer: "The program includes fractional Chief AI Officer services, comprehensive AI opportunity assessment, custom implementation roadmap, team training and change management, and ROI-focused metrics and tracking."
+    },
+    {
+      question: "What is the timeline for the Triple-A Transformation Program?",
+      answer: "The program consists of three phases over 14 weeks: Assessment Phase (2 weeks) for evaluating AI readiness and opportunity mapping, Implementation Phase (8 weeks) for deploying AI solutions and team training, and Optimization Phase (4 weeks) for refining implementations and establishing sustainable AI governance."
+    },
+    {
+      question: "How does the value-based pricing model work?",
+      answer: "After the initial engagement, we offer flexible pricing structures tied to measurable business outcomes such as cost reduction (30-40% on target processes), direct revenue impact (25%+ growth in target areas), productivity gains (3x faster execution on key tasks), time saved (15+ hours per week per team), and ROI delivered (5-10x return)."
+    }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Triple-A Transformation Program"
+        description="A 14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption). From opportunity assessment to implementation, we deliver measurable business outcomes."
+        canonicalUrl="/triple-a-transformation"
+        keywords="AI transformation, enterprise AI, AI adoption, organizational AI, AI implementation, business AI strategy, accelerated AI adoption"
+        structuredData={[serviceStructuredData, faqStructuredData]}
+      />
+      
       <Navigation />
       
       <div className="pt-28 pb-20">

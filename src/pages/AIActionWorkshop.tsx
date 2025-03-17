@@ -5,14 +5,54 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { ServiceFeaturesList } from "@/components/services/ServiceFeaturesList";
 import { services } from "@/components/services/data";
+import { SEOHead } from "@/components/SEOHead";
+import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 
 const AIActionWorkshop = () => {
   const workshop = services.find(s => s.title === "2-Hour AI Action Workshop");
   
   if (!workshop) return null;
 
+  // Generate structured data
+  const serviceStructuredData = generateServicePageStructuredData(
+    workshop.title,
+    workshop.description,
+    "https://gsdat.work/ai-action-workshop",
+    "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
+    "Get Stuff Done AI",
+    workshop.price
+  );
+
+  // FAQ structured data
+  const faqStructuredData = generateFAQStructuredData([
+    {
+      question: "What is the 2-Hour AI Action Workshop?",
+      answer: "The 2-Hour AI Action Workshop is a hands-on working session where you'll implement real AI solutions and leave with concrete results. It focuses on immediate execution with expert guidance to deliver tangible outcomes."
+    },
+    {
+      question: "How much does the AI Action Workshop cost?",
+      answer: workshop.price + ". " + workshop.subtext
+    },
+    {
+      question: "What can I expect to achieve during the workshop?",
+      answer: "You'll achieve concrete results with hands-on AI implementation, get coached through rapid implementation with proven frameworks, develop repeatable processes and SOPs for your team, and gain access to state-of-the-art AI tools and templates."
+    },
+    {
+      question: "How does the workshop process work?",
+      answer: "The process includes three steps: 1) A discovery call to discuss your specific challenges and identify the most impactful area for AI implementation, 2) The 2-hour hands-on implementation session where you'll build real AI solutions with expert guidance, and 3) Follow-up support with access to guides, templates, and a check-in to ensure continued value."
+    }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="2-Hour AI Action Workshop"
+        description="Hands-on AI implementation working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution."
+        canonicalUrl="/ai-action-workshop"
+        keywords="AI workshop, AI implementation, hands-on AI, AI solutions, AI execution, AI coaching, rapid AI implementation"
+        structuredData={[serviceStructuredData, faqStructuredData]}
+      />
+      
       <Navigation />
       
       <div className="pt-28 pb-20">
