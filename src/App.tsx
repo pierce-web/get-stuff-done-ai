@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Cases from "./pages/Cases";
 import CaseStudy from "./pages/CaseStudy";
-import AIToolingReport from "./pages/AIToolingReport";
+import AIToolingReport from "./pages/ai-report";
 import NotFound from "./pages/NotFound";
 import StrategySessionConfirmed from "./pages/StrategySessionConfirmed";
 
