@@ -7,6 +7,14 @@
 - `npm run lint` - Run ESLint
 - `npm run preview` - Preview production build
 
+## CI/CD Workflow
+- **Development**: Create feature branches from `main` (e.g., `feature/my-feature`)
+- **Pull Requests**: All changes should be submitted via PR to `main`
+- **Checks**: Linting and build verification run automatically on PRs
+- **Preview**: Netlify creates preview deployments for all branches and PRs
+- **Production**: Merging to `main` automatically deploys to production
+- **Branches**: Delete feature branches after merging
+
 ## Code Style Guidelines
 - **Imports**: Use `@/` alias for src imports (e.g., `import { Button } from "@/components/ui/button"`)
 - **Components**: React functional components with arrow function syntax and default exports
