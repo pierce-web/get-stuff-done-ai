@@ -18,10 +18,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { 
+  Sheet, 
+  SheetContent, 
+  SheetTrigger 
+} from "@/components/ui/sheet";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +78,19 @@ export const Navigation = () => {
                 <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    <li>
+                      <Link to="/ai-action-workshop">
+                        <NavigationMenuLink
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">AI Action Workshop</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            2-hour hands-on session with immediate AI implementation
+                          </p>
+                        </NavigationMenuLink>
+                      </Link>
+                    </li>
+                    
                     <li className="row-span-3">
                       <Link to="/10x-executive">
                         <NavigationMenuLink
@@ -85,22 +105,9 @@ export const Navigation = () => {
                         </NavigationMenuLink>
                       </Link>
                     </li>
-                    
+
                     <li>
-                      <Link to="/#services">
-                        <NavigationMenuLink
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">AI Action Workshop</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            2-hour hands-on session with immediate AI implementation
-                          </p>
-                        </NavigationMenuLink>
-                      </Link>
-                    </li>
-                    
-                    <li>
-                      <Link to="/#services">
+                      <Link to="/triple-a-transformation">
                         <NavigationMenuLink
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
@@ -159,55 +166,52 @@ export const Navigation = () => {
           </Button>
         </nav>
 
-        {/* Mobile menu button */}
-        <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-          <DropdownMenuTrigger asChild className="md:hidden">
+        {/* Mobile menu using Sheet component instead of DropdownMenu */}
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon">
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              <Menu className="h-6 w-6" />
             </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="w-screen h-screen mt-2 bg-white md:hidden"
-          >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              <div className="mb-6 flex flex-col items-center">
+          </SheetTrigger>
+          <SheetContent side="left" className="w-[300px] sm:w-[350px] bg-white p-0">
+            <div className="flex flex-col h-full">
+              <div className="flex flex-col items-center justify-center pt-12 pb-8">
                 <img 
                   src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
                   alt="GSD" 
-                  className="h-16 w-16 mx-auto" 
+                  className="h-16 w-16" 
                 />
                 <span className="text-xl font-bold text-primary mt-2">at Work</span>
               </div>
-              <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
-                <Link to="/" className="text-xl font-medium w-full text-center">
+              
+              <div className="flex flex-col space-y-6 px-6">
+                <Link to="/" className="text-lg font-medium">
                   Home
                 </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
-                <Link to="/10x-executive" className="text-xl font-medium w-full text-center">
+                <Link to="/ai-action-workshop" className="text-lg font-medium">
+                  AI Action Workshop
+                </Link>
+                <Link to="/10x-executive" className="text-lg font-medium">
                   10x Executive Program
                 </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
-                <Link to="/ai-tooling-report" className="text-xl font-medium w-full text-center">
+                <Link to="/triple-a-transformation" className="text-lg font-medium">
+                  Triple-A Transformation
+                </Link>
+                <Link to="/ai-tooling-report" className="text-lg font-medium">
                   AI Tooling Report
                 </Link>
-              </DropdownMenuItem>
-              <div className="flex flex-col gap-4 w-64 pt-8">
+              </div>
+              
+              <div className="mt-auto px-6 pb-8 pt-12 flex flex-col gap-4">
                 <Button
-                  className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                  className="w-full bg-secondary hover:bg-secondary/90 text-white py-6"
                   onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
                 >
                   Book a Strategy Call
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border border-primary text-primary hover:bg-primary/10 gap-2"
+                  className="w-full border border-primary text-primary hover:bg-primary/10 gap-2 py-6"
                   onClick={() => window.location.href = "tel:+18482610259"}
                 >
                   <Phone className="h-4 w-4" />
@@ -215,8 +219,8 @@ export const Navigation = () => {
                 </Button>
               </div>
             </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
