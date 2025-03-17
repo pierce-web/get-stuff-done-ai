@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
                 className="bg-secondary hover:bg-secondary/90 text-white shadow-md"
                 onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
               >
-                Apply For This Program
+                Schedule a Strategy Call
               </Button>
               <Button
                 variant="outline"

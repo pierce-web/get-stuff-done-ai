@@ -88,7 +88,7 @@ export const ProgramStructure: React.FC = () => {
                 className="bg-secondary hover:bg-secondary/90 text-white shadow-md px-8 py-2"
                 onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
               >
-                Apply For This Program
+                Schedule a Strategy Call
               </Button>
             </div>
           </div>

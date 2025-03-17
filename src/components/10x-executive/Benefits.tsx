@@ -56,7 +56,7 @@ export const Benefits: React.FC = () => {
             className="bg-secondary hover:bg-secondary/90 text-white shadow-md px-8 py-6 text-lg"
             onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
           >
-            Schedule Your Free Consultation
+            Schedule a Strategy Call
           </Button>
           <p className="mt-4 text-gray-600">
             Limited availability. Only accepting 2 executives per quarter.
