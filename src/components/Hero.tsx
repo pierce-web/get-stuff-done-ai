@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { shadows, gradients, buttonStyles, animations, spacing } from "@/lib/design-tokens";
 
 export const Hero = () => {
   const scrollToServices = () => {
@@ -11,10 +12,10 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative overflow-hidden py-24 sm:py-32 md:py-40 animate-fade-in">
+    <div className={`relative overflow-hidden ${spacing.section.lg} ${animations.fadeIn}`}>
       {/* Background gradient elements */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl opacity-70" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-70" />
+      <div className={`absolute -top-24 -right-24 w-96 h-96 ${gradients.decorative.secondary}`} />
+      <div className={`absolute -bottom-24 -left-24 w-96 h-96 ${gradients.decorative.primary}`} />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-3xl text-center">
@@ -29,21 +30,21 @@ export const Hero = () => {
           </p>
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
-              className="py-5 bg-secondary hover:bg-secondary/90 text-white font-semibold text-base w-full sm:w-auto sm:px-8 shadow-md hover:shadow-lg transition-all duration-300"
+              className={`${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold w-full sm:w-auto ${shadows.buttonEffect}`}
               onClick={scrollToServices}
             >
               See How We Execute
             </Button>
             <Button
               variant="outline"
-              className="py-5 border-2 border-secondary text-secondary hover:bg-secondary/10 text-base w-full sm:w-auto sm:px-8 shadow-sm hover:shadow transition-all duration-300"
+              className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} w-full sm:w-auto ${shadows.buttonEffect}`}
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
               Schedule Strategic Planning Call
             </Button>
             <Button
               variant="outline"
-              className="py-5 border border-primary text-primary hover:bg-primary/10 gap-2 text-base w-full sm:w-auto sm:px-8 shadow-sm hover:shadow transition-all duration-300"
+              className={`${buttonStyles.outline.primary} ${buttonStyles.sizes.large} gap-2 w-full sm:w-auto ${shadows.buttonEffect}`}
               onClick={() => window.location.href = "tel:+18482610259"}
             >
               <Phone className="h-4 w-4" />
