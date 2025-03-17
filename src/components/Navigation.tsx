@@ -47,7 +47,12 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span className="text-xl font-bold text-primary">GSD at Work</span>
+          <img 
+            src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
+            alt="GSD at Work" 
+            className="h-10 w-10" 
+          />
+          <span className="text-xl font-bold text-primary ml-2">GSD at Work</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -121,6 +126,13 @@ export const Navigation = () => {
             className="w-screen h-screen mt-2 bg-white md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8">
+              <div className="mb-6">
+                <img 
+                  src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
+                  alt="GSD at Work" 
+                  className="h-16 w-16 mx-auto" 
+                />
+              </div>
               <DropdownMenuItem asChild className="hover:bg-transparent cursor-pointer">
                 <Link to="/" className="text-xl font-medium w-full text-center">
                   Home
