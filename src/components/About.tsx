@@ -37,7 +37,7 @@ export const About = () => {
 
             <div className="space-y-8 text-gray-600">
               <p>
-                As a former MIT AI Conference Co-Chair and startup executive, Christian brings deep expertise in translating AI possibilities into concrete business outcomes.
+                As a former MIT AI Conference Co-Chair and startup executive, Christian brings deep expertise in translating AI possibilities into concrete business results.
               </p>
               <p className="mb-12">
                 Working with enterprise and growth-stage companies across regulated industries, he has consistently delivered transformative outcomes: 30-40% cost reduction in target processes, and productivity gains ranging from 100% to 2,000%. His focus is on quick wins that build momentum for larger transformations.
