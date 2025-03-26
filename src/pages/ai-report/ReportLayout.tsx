@@ -4,12 +4,15 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import FloatingNavigation from "@/components/ai-report/FloatingNavigation";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ReportLayoutProps {
   children: React.ReactNode;
 }
 
 const ReportLayout: React.FC<ReportLayoutProps> = ({ children }) => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="min-h-screen bg-background">
       <FloatingNavigation />
@@ -28,7 +31,7 @@ const ReportLayout: React.FC<ReportLayoutProps> = ({ children }) => {
                   alt="GSD" 
                   className="h-6 w-6 mr-1"
                 />
-                <span>GSD <span className="font-medium">at Work</span></span>
+                <span className={`${isMobile ? "text-sm" : ""} font-medium`}>at Work</span>
               </span>
             </Link>
           </div>
