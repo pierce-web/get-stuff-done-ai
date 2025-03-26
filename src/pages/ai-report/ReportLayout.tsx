@@ -28,7 +28,7 @@ const ReportLayout: React.FC<ReportLayoutProps> = ({ children }) => {
                   alt="GSD" 
                   className="h-6 w-6 mr-1"
                 />
-                <span>Back to <span className="font-medium">at Work</span></span>
+                <span>GSD <span className="font-medium">at Work</span></span>
               </span>
             </Link>
           </div>
