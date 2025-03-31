@@ -220,101 +220,113 @@ async function processPosts() {
             title = title.substring(0, 67) + '...';
           }
           
-          // We'll take a completely different approach - parse the LinkedIn post more carefully
-          // Start by normalizing newlines and cleaning up escaped characters
+          // Looking at the LinkedIn export more carefully, the original posts are formatted
+          // much more simply than our previous approaches. Let's try a direct approach:
+          
+          // Start by cleaning up the content
           let content = row.ShareCommentary;
           
-          // Normalize line endings
+          // First, normalize and clean up any escape characters
           content = content.replace(/\r\n/g, '\n');
           content = content.replace(/\r/g, '\n');
-          
-          // Clean up any escaped characters
           content = content.replace(/\\n/g, '\n');
           content = content.replace(/\\"/g, '"');
           content = content.replace(/\\'/g, "'");
           content = content.replace(/\\t/g, '\t');
           content = content.replace(/\\(.)/g, '$1');
           
-          // Detect if we have numbered list items
-          const hasNumberedItems = /^\d+\.\s/m.test(content);
+          // Remove abnormal quote characters (sometimes present in LinkedIn exports)
+          content = content.replace(/"{2,}/g, '"');
+          content = content.replace(/'{2,}/g, "'");
           
-          // Detect if we have bulleted list items
+          // Detect the structure of the post
+          const hasNumberedItems = /^\d+\.\s/m.test(content);
           const hasBulletItems = /^-\s/m.test(content);
           
-          // Split the content into paragraphs and process each one
-          const paragraphs = content.split(/\n\n+/);
-          const processedParagraphs = [];
+          // Handle the content based on its structure
+          let formattedContent = '';
           
-          let inNumberedList = false;
-          let inBulletList = false;
-          let listItems = [];
-          
-          for (let paragraph of paragraphs) {
-            // Skip empty paragraphs
-            if (!paragraph.trim()) continue;
+          if (hasNumberedItems || hasBulletItems) {
+            // This is a list-based post, process it line by line
+            const lines = content.split('\n');
+            let inList = false;
+            let listType = '';
+            let currentListItems = [];
             
-            // Check if this is a numbered list item
-            if (/^\d+\.\s/.test(paragraph)) {
-              // If we weren't in a list before, start a new one
-              if (!inNumberedList) {
-                if (inBulletList) {
-                  // Close previous bullet list
-                  processedParagraphs.push('<ul>' + listItems.join('') + '</ul>');
-                  listItems = [];
-                  inBulletList = false;
+            for (let i = 0; i < lines.length; i++) {
+              const line = lines[i].trim();
+              
+              if (!line) {
+                // Empty line - if we're in a list, close it
+                if (inList) {
+                  formattedContent += `<${listType}>${currentListItems.join('')}</${listType}>`;
+                  inList = false;
+                  currentListItems = [];
                 }
-                inNumberedList = true;
+                continue;
               }
               
-              // Add this item to the list
-              const itemText = paragraph.replace(/^\d+\.\s/, '');
-              listItems.push('<li>' + itemText + '</li>');
-              continue;
-            }
-            
-            // Check if this is a bullet list item
-            if (/^-\s/.test(paragraph)) {
-              // If we weren't in a bullet list before, start a new one
-              if (!inBulletList) {
-                if (inNumberedList) {
-                  // Close previous numbered list
-                  processedParagraphs.push('<ol>' + listItems.join('') + '</ol>');
-                  listItems = [];
-                  inNumberedList = false;
+              // Check if this is a numbered list item
+              const numberedMatch = line.match(/^(\d+)\.\s(.+)$/);
+              if (numberedMatch) {
+                if (!inList || listType !== 'ol') {
+                  // If we were in a different type of list, close it
+                  if (inList) {
+                    formattedContent += `<${listType}>${currentListItems.join('')}</${listType}>`;
+                    currentListItems = [];
+                  }
+                  
+                  inList = true;
+                  listType = 'ol';
                 }
-                inBulletList = true;
+                
+                currentListItems.push(`<li>${numberedMatch[2]}</li>`);
+                continue;
               }
               
-              // Add this item to the list
-              const itemText = paragraph.replace(/^-\s/, '');
-              listItems.push('<li>' + itemText + '</li>');
-              continue;
+              // Check if this is a bullet list item
+              const bulletMatch = line.match(/^-\s(.+)$/);
+              if (bulletMatch) {
+                if (!inList || listType !== 'ul') {
+                  // If we were in a different type of list, close it
+                  if (inList) {
+                    formattedContent += `<${listType}>${currentListItems.join('')}</${listType}>`;
+                    currentListItems = [];
+                  }
+                  
+                  inList = true;
+                  listType = 'ul';
+                }
+                
+                currentListItems.push(`<li>${bulletMatch[1]}</li>`);
+                continue;
+              }
+              
+              // Not a list item - if we were in a list, close it
+              if (inList) {
+                formattedContent += `<${listType}>${currentListItems.join('')}</${listType}>`;
+                inList = false;
+                currentListItems = [];
+              }
+              
+              // Add as a paragraph
+              formattedContent += `<p>${line}</p>`;
             }
             
-            // If we were in a list but this isn't a list item, close the list
-            if (inNumberedList) {
-              processedParagraphs.push('<ol>' + listItems.join('') + '</ol>');
-              listItems = [];
-              inNumberedList = false;
-            } else if (inBulletList) {
-              processedParagraphs.push('<ul>' + listItems.join('') + '</ul>');
-              listItems = [];
-              inBulletList = false;
+            // If we ended still in a list, close it
+            if (inList) {
+              formattedContent += `<${listType}>${currentListItems.join('')}</${listType}>`;
             }
+          } else {
+            // This is a regular post - process it as paragraphs
+            const paragraphs = content.split(/\n\n+/);
             
-            // Process regular paragraphs
-            processedParagraphs.push('<p>' + paragraph + '</p>');
+            formattedContent = paragraphs
+              .filter(p => p.trim()) // Remove empty paragraphs
+              .map(p => `<p>${p.trim()}</p>`)
+              .join('');
           }
-          
-          // If we ended while still in a list, close it
-          if (inNumberedList) {
-            processedParagraphs.push('<ol>' + listItems.join('') + '</ol>');
-          } else if (inBulletList) {
-            processedParagraphs.push('<ul>' + listItems.join('') + '</ul>');
-          }
-          
-          // Join all the processed paragraphs
-          content = processedParagraphs.join('\n');
+          // content is now our formatted HTML
           
           // Clean up any newlines in the HTML
           content = content.replace(/\\n/g, '');

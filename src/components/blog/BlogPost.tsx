@@ -73,9 +73,7 @@ export default function BlogPost({ post }: BlogPostProps) {
                 prose-ul:my-8 prose-ul:pl-8 prose-ul:list-disc prose-ul:space-y-4
                 prose-li:my-3 prose-li:pl-2 prose-li:marker:text-blue-600
                 prose-img:rounded-md prose-img:shadow-md prose-img:my-10
-                [&>br]:my-6
-                [&>p>br]:hidden
-                [&>p]:whitespace-pre-line"
+                space-y-8"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
             
