@@ -1,0 +1,6 @@
+# Allow all search engines to index the website
+User-agent: *
+Allow: /
+
+# Specify sitemap location
+Sitemap: https://getstuffdone.ai/sitemap.xml

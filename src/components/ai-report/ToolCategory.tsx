@@ -7,13 +7,20 @@ interface ToolCategoryProps {
   icon?: React.ReactNode;
   examples: { name: string; url: string }[];
   useCases: string;
+  // Allow any other props to pass through
+  [x: string]: any;
 }
 
-const ToolCategory: React.FC<ToolCategoryProps> = ({ title, icon, examples, useCases }) => {
+const ToolCategory: React.FC<ToolCategoryProps> = ({ title, icon, examples, useCases, ...rest }) => {
   const isMobile = useIsMobile();
   
+  // Filter out Lovable editor props that shouldn't be passed to DOM elements
+  const domProps = Object.fromEntries(
+    Object.entries(rest).filter(([key]) => !key.startsWith('data-lov'))
+  );
+  
   return (
-    <div className="bg-gray-50 p-4 sm:p-6 rounded-lg transition-all hover:shadow-md">
+    <div className="bg-gray-50 p-4 sm:p-6 rounded-lg transition-all hover:shadow-md" {...domProps}>
       <h3 className="text-xl font-semibold mb-3 flex items-center">
         {icon}
         {title}

@@ -12,17 +12,17 @@ import { ProgramStructure } from "@/components/10x-executive/ProgramStructure";
 import { FAQ } from "@/components/10x-executive/FAQ";
 
 const TenXExecutive: React.FC = () => {
-  // Service structured data
+  // Service structured data with updated price and enhanced description
   const serviceData = generateServicePageStructuredData(
     "10x Effective Executive Program",
     "A 10-week AI-powered transformation program to accelerate productivity, reclaim time, and master AI tools that keep you ahead.",
     "https://gsdat.work/10x-executive",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
-    "$10,000"
+    "$9,999"
   );
 
-  // FAQ structured data
+  // FAQ structured data - enhanced with additional questions from our implementation
   const faqData = generateFAQStructuredData([
     {
       question: "How much time will I need to commit each week?",
@@ -43,6 +43,14 @@ const TenXExecutive: React.FC = () => {
     {
       question: "What kind of results can I expect?",
       answer: "Most participants see 10+ hours saved weekly, 50-80% reduction in email handling time, and significant improvements in meeting productivity within the first 4 weeks. By program completion, many report working 20-30 fewer hours while accomplishing more."
+    },
+    {
+      question: "I'm already too busy. Adding a weekly session feels like more work.",
+      answer: "These sessions save you time. By front-loading the coaching and setups, you'll quickly reclaim hours each week—and that net gain appears fast."
+    },
+    {
+      question: "What if I'm already using some AI tools?",
+      answer: "Perfect. We'll refine and integrate them into a cohesive system that's more than just random prompts. The goal is consistency, reliability, and real ROI."
     }
   ]);
 

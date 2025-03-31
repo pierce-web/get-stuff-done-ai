@@ -27,6 +27,61 @@
 [context.staging] # 'staging' is a branch name
   command = "npm run build:dev"
 
+# Define explicit routes first - these must come before the SPA fallback
+# Static routes redirects
+[[redirects]]
+  from = "/blog"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/cases"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/cases/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai-tooling-report"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/10x-executive"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai-action-workshop"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/triple-a-transformation"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/strategy-session-confirmed"
+  to = "/index.html"
+  status = 200
+
+# Use Netlify Function for 404 handling when path doesn't match known routes
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/handle-404"
+  status = 404
+  force = false
+
+# Final fallback for SPA navigation (lowest priority)
 [[redirects]]
   from = "/*"
   to = "/index.html"

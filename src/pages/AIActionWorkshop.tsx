@@ -12,8 +12,11 @@ const AIActionWorkshop = () => {
   const workshop = services.find(s => s.title === "2-Hour AI Action Workshop");
   
   if (!workshop) return null;
+  
+  // Current date for dateModified schema property
+  const currentDate = new Date().toISOString().split('T')[0];
 
-  // Generate structured data
+  // Generate structured data with enhanced descriptions from our Helmet implementation
   const serviceStructuredData = generateServicePageStructuredData(
     workshop.title,
     workshop.description,
@@ -23,19 +26,27 @@ const AIActionWorkshop = () => {
     workshop.price
   );
 
-  // FAQ structured data
+  // Enhanced FAQ structured data with more comprehensive answers
   const faqStructuredData = generateFAQStructuredData([
     {
       question: "What is the 2-Hour AI Action Workshop?",
-      answer: "The 2-Hour AI Action Workshop is a hands-on working session where you'll implement real AI solutions and leave with concrete results. It focuses on immediate execution with expert guidance to deliver tangible outcomes."
+      answer: "The 2-Hour AI Action Workshop is a hands-on working session where you'll implement real AI solutions to your specific business challenges. Unlike theoretical discussions, this workshop focuses on pure execution with concrete results you can see by the end of the session."
+    },
+    {
+      question: "Who should attend the AI Action Workshop?",
+      answer: "The workshop is ideal for business professionals, executives, and teams who want to quickly implement AI solutions for specific workflows or processes. It's perfect for those who prefer learning by doing rather than theoretical discussions."
+    },
+    {
+      question: "What will I accomplish during the workshop?",
+      answer: "During the 2-hour session, you'll: 1) Identify a specific business challenge or process to optimize, 2) Implement an AI solution with expert guidance, 3) Develop a repeatable process or SOP, and 4) Learn how to scale the solution across your organization."
+    },
+    {
+      question: "What results can I expect from the workshop?",
+      answer: "Participants typically achieve 100-2000% efficiency gains for targeted tasks. You'll develop transferable SOPs, reduce cycle times, and maintain higher energy levels throughout your workday by eliminating tedious tasks."
     },
     {
       question: "How much does the AI Action Workshop cost?",
       answer: workshop.price + ". " + workshop.subtext
-    },
-    {
-      question: "What can I expect to achieve during the workshop?",
-      answer: "You'll achieve concrete results with hands-on AI implementation, get coached through rapid implementation with proven frameworks, develop repeatable processes and SOPs for your team, and gain access to state-of-the-art AI tools and templates."
     },
     {
       question: "How does the workshop process work?",
