@@ -107,6 +107,10 @@ async function processArticles() {
     articleContent = articleContent.replace(/<p class="created">.*?<\/p>/s, '');
     articleContent = articleContent.replace(/<p class="published">.*?<\/p>/s, '');
     
+    // Find all paragraphs with class="created" or class="published"
+    articleContent = articleContent.replace(/<p[^>]*class="created"[^>]*>.*?<\/p>/gs, '');
+    articleContent = articleContent.replace(/<p[^>]*class="published"[^>]*>.*?<\/p>/gs, '');
+    
     // Fix common formatting issues
     articleContent = articleContent.replace(/&quot;/g, '"');
     articleContent = articleContent.replace(/&amp;/g, '&');
@@ -206,14 +210,30 @@ async function processPosts() {
           // Format content as HTML with better quote handling
           let content = row.ShareCommentary;
           
+          // Remove literal '\n' strings that might be in the text
+          content = content.replace(/\\n/g, '\n');
+          
+          // Remove duplicate quotes (replace with just one)
+          content = content.replace(/""+/g, '"');
+          
+          // Remove any literal "\n" sequences
+          content = content.replace(/\\n/g, '\n');
+          
           // Fix escaped quotes
           content = content.replace(/\\"/g, '"');
           
-          // Handle nested quotes like """"text""""
-          content = content.replace(/"{4}([^"]*)"{4}/g, '<blockquote>$1</blockquote>');
+          // Replace any backslash plus character with just the character
+          content = content.replace(/\\(.)/g, '$1');
           
-          // Handle regular quotes
-          content = content.replace(/"{2}([^"]*)"{2}/g, '<blockquote>$1</blockquote>');
+          // Handle quoted text better by checking for runs of quotes
+          content = content.replace(/"([^"]+)"/g, function(match, text) {
+            // If it looks like a quotation, make it a blockquote
+            if (text.length > 20) {
+              return '<blockquote>' + text + '</blockquote>';
+            }
+            // Otherwise return as-is with proper curly quotes
+            return '"' + text + '"';
+          });
           
           // Handle numbered lists that start with "1. ", "2. ", etc.
           let hasNumberedList = /\d+\.\s/.test(content);
@@ -275,14 +295,29 @@ async function processPosts() {
             content = processedParts.join('\\n');
           }
           
+          // Clean up any \n\n\n sequences (more than 2 newlines) to just \n\n
+          content = content.replace(/\n{3,}/g, '\n\n');
+          
+          // Clean up any literal "\n"
+          content = content.replace(/\\n/g, '\n');
+          
+          // Find any "1. ", "2. " pattern at the start of a line and make sure it has proper spacing
+          content = content.replace(/\n(\d+\.\s)/g, '\n\n$1');
+          
+          // Same for "- " bullets
+          content = content.replace(/\n(-\s)/g, '\n\n$1');
+          
           // Handle line breaks and paragraphs - double newlines become new paragraphs
-          content = "<p>" + content.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + "</p>";
+          content = "<p>" + content.replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br />') + "</p>";
           
           // Clean up any empty paragraphs
           content = content.replace(/<p>\s*<\/p>/g, '');
           
           // Add spacing between paragraphs for better readability
-          content = content.replace(/<\/p><p>/g, '</p>\\n<p>');
+          content = content.replace(/<\/p><p>/g, '</p>\n\n<p>');
+          
+          // Remove any literal '\n' characters in the HTML markup
+          content = content.replace(/\\n/g, '');
           
           posts.push({
             id: "post-" + date + "-" + shareId.replace(/[^a-zA-Z0-9-]/g, '-'),

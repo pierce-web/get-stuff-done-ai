@@ -62,17 +62,18 @@ export default function BlogPost({ post }: BlogPostProps) {
             </header>
             
             <div 
-              className="post-content prose prose-lg max-w-none
-                prose-headings:font-bold prose-headings:text-blue-900 prose-headings:mt-8 prose-headings:mb-4
-                prose-p:my-4 prose-p:leading-relaxed prose-p:text-gray-800
+              className="post-content prose prose-lg max-w-none leading-relaxed
+                prose-headings:font-bold prose-headings:text-blue-900 prose-headings:mt-10 prose-headings:mb-6
+                prose-p:my-6 prose-p:leading-relaxed prose-p:text-gray-800 prose-p:text-lg
                 prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
                 prose-blockquote:bg-blue-50 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 
-                prose-blockquote:px-4 prose-blockquote:py-2 prose-blockquote:my-6 prose-blockquote:italic
+                prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:text-gray-700
                 prose-strong:text-blue-800 prose-em:text-blue-800
-                prose-ol:my-6 prose-ol:pl-6 prose-ol:list-decimal
-                prose-ul:my-6 prose-ul:pl-6 prose-ul:list-disc
-                prose-li:my-2 prose-li:marker:text-blue-600
-                prose-img:rounded-md prose-img:shadow-md prose-img:my-8"
+                prose-ol:my-8 prose-ol:pl-8 prose-ol:list-decimal
+                prose-ul:my-8 prose-ul:pl-8 prose-ul:list-disc
+                prose-li:my-3 prose-li:pl-2 prose-li:marker:text-blue-600
+                prose-img:rounded-md prose-img:shadow-md prose-img:my-10
+                [&>br]:my-6"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
             
