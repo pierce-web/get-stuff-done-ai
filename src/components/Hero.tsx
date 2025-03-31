@@ -40,7 +40,7 @@ export const Hero = () => {
               className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} w-full sm:w-auto ${shadows.buttonEffect}`}
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
-              Schedule Strategic Planning Call
+              Schedule a Strategy Call
             </Button>
             <Button
               variant="outline"
