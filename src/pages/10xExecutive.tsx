@@ -267,7 +267,7 @@ const TenXExecutive: React.FC = () => {
               <div className="bg-white rounded-xl shadow-md p-8 mb-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold">$10,000 USD</h3>
+                    <h3 className="text-2xl font-bold">$9,999 USD</h3>
                     <p className="text-gray-600">One-time engagement fee</p>
                   </div>
                   <Button 

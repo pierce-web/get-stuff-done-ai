@@ -1,5 +1,15 @@
 # Get Stuff Done AI Codebase Guidelines
 
+## SEO Guidelines
+- **Meta Tags**: Always include title, description, canonical URL and Open Graph tags in pages
+- **Structured Data**: Follow schema.org guidelines for structured data implementation
+- **URLs**: Use kebab-case for URLs (e.g., `/ai-tooling-report`, `/triple-a-transformation`)
+- **404 Handling**: Ensure proper 404 status codes for non-existent pages through Netlify config
+- **LinkedIn Content**: See LINKEDIN-GUIDE.md for instructions on updating blog content from LinkedIn exports
+- **Domain**: All URLs should use the gsdat.work domain, not getstuffdone.ai
+- **Sitemap**: Generated automatically during build via sitemap.xml.cjs
+- **RSS Feed**: Generated automatically during build via feed.xml.cjs
+
 ## Build Commands
 - `npm run dev` - Start development server
 - `npm run build` - Production build

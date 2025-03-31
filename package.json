@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "build": "vite build && node public/sitemap.xml.cjs && node public/feed.xml.cjs && cp public/_redirects dist/ && cp public/404.html dist/ && cp public/reviews-schema.js dist/",
+    "build:dev": "vite build --mode development && cp public/_redirects dist/ && cp public/404.html dist/",
     "lint": "eslint .",
     "preview": "vite preview",
-    "process-linkedin": "node scripts/process-linkedin.cjs"
+    "process-linkedin": "node scripts/process-linkedin.cjs",
+    "generate:sitemap": "node public/sitemap.xml.cjs",
+    "generate:rss": "node public/feed.xml.cjs",
+    "generate:seo": "npm run generate:sitemap && npm run generate:rss"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

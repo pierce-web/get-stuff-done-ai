@@ -5,14 +5,120 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { ServiceFeaturesList } from "@/components/services/ServiceFeaturesList";
 import { services } from "@/components/services/data";
+import { Helmet } from "react-helmet";
 
 const AIActionWorkshop = () => {
   const workshop = services.find(s => s.title === "2-Hour AI Action Workshop");
   
   if (!workshop) return null;
+  
+  // Current date for dateModified schema property
+  const currentDate = new Date().toISOString().split('T')[0];
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{workshop.title} | Get Stuff Done AI</title>
+        <meta 
+          name="description" 
+          content={workshop.description}
+        />
+        <link rel="canonical" href="https://gsdat.work/ai-action-workshop" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${workshop.title} | Get Stuff Done AI`} />
+        <meta property="og:description" content={workshop.description} />
+        <meta property="og:url" content="https://gsdat.work/ai-action-workshop" />
+        <meta property="og:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
+        <meta property="og:site_name" content="Get Stuff Done AI" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${workshop.title} | Get Stuff Done AI`} />
+        <meta name="twitter:description" content={workshop.description} />
+        <meta name="twitter:image" content="https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png" />
+        
+        {/* Structured Data - Service */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "${workshop.title}",
+            "url": "https://gsdat.work/ai-action-workshop",
+            "provider": {
+              "@type": "Organization", 
+              "name": "Get Stuff Done AI",
+              "url": "https://gsdat.work"
+            },
+            "serviceType": "AI Implementation Workshop",
+            "areaServed": "Worldwide",
+            "description": "${workshop.description}",
+            "offers": {
+              "@type": "Offer",
+              "price": "2499",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://gsdat.work/ai-action-workshop",
+              "validFrom": "2024-01-01"
+            },
+            "termsOfService": "https://gsdat.work/terms",
+            "serviceOutput": "AI implementation, process optimization, productivity gains",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://gsdat.work/ai-action-workshop"
+            },
+            "image": "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Business Professionals, Executives, Teams"
+            }
+          }
+        `}</script>
+        
+        {/* FAQ Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the 2-Hour AI Action Workshop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The 2-Hour AI Action Workshop is a hands-on working session where you'll implement real AI solutions to your specific business challenges. Unlike theoretical discussions, this workshop focuses on pure execution with concrete results you can see by the end of the session."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who should attend the AI Action Workshop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The workshop is ideal for business professionals, executives, and teams who want to quickly implement AI solutions for specific workflows or processes. It's perfect for those who prefer learning by doing rather than theoretical discussions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What will I accomplish during the workshop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "During the 2-hour session, you'll: 1) Identify a specific business challenge or process to optimize, 2) Implement an AI solution with expert guidance, 3) Develop a repeatable process or SOP, and 4) Learn how to scale the solution across your organization."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What results can I expect from the workshop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Participants typically achieve 100-2000% efficiency gains for targeted tasks. You'll develop transferable SOPs, reduce cycle times, and maintain higher energy levels throughout your workday by eliminating tedious tasks."
+                }
+              }
+            ]
+          }
+        `}</script>
+      </Helmet>
+      
       <Navigation />
       
       <div className="pt-28 pb-20">

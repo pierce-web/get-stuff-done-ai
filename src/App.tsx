@@ -35,6 +35,7 @@ const App = () => (
           <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
+          <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
