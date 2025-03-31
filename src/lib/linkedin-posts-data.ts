@@ -1,18 +1,9 @@
 // Generated from LinkedIn export
-// Last updated: 2025-03-31T16:47:02.084Z
+// Last updated: 2025-03-31T16:50:22.246Z
 
 import { LinkedInPost } from './linkedin-data';
 
 export const linkedInPosts: LinkedInPost[] = [
-  {
-    "id": "post-2025-02-08-7294030896783851520",
-    "title": "Gen AI integration / applied AI has thus far been about:\"\n\"\"\n\"1",
-    "date": "2025-02-08",
-    "content": "Gen AI integration / applied AI has thus far been about:\"\n\"\n1. Arming curious power users with state-of-the-art general tools that allow them to move 10x faster and \"discover\" new AI-native workflows (highest ROI and where most of your time / $ should be invested) and\n\"\n2. Finding slices of (mostly clerical) workflows that can now be handled by computers and traditional automation—with flexible/probabilistic characteristics—but with the genuinely novel benefit of \"word-crunching\" and a sort-of simulated inductive, if not abductive, reasoning capability (as a complement to traditional number crunching and deductive logic).\n\"\nAgents\" (really LLMs models with variable test-time compute and tool use) unlock a third type of integration initiative that is different and, IMO, significantly more interesting (but fits nicely between 1 and 2): software systems that can—on demand, on a recurring cron job, or in response to events—compose workflows, on-the-fly and without the need for detailed specification, that include autonomous retrieval of \"just-in-time\" information from existing grounded (and, at best, proprietary) sources and even generate NEW information through action in the world, probably initially mediated by other humans interacting with the system.\n\"\nIn practice, then, beyond familiarity with the general tools and formalization of existing workflows, anyone (and any organization) that wants to take advantage of what's afforded to them by 3 should:\n\"\n- clearly articulate their unifying (and then proximal) objectives,\n\"\n- take stock of their constraints and cornered resources (including proprietary data sources, programmatic interface specs, and reliable business logic, all of which can be encoded as functions or \"tools\"), and\n\"\n- bundle these into units (likely as a Model Context Protocol server or something like it) that are nicely integrated (think of them as the 21st century version of corporate functions) into a package that can be invoked as needed by an executive superintelligence.\n\"\n\"Agents don't yet exist (though you can catch a glimpse of what's coming with OpenAI's Deep Research feature); they are coming.",
-    "excerpt": "Gen AI integration / applied AI has thus far been about:\" \"\" \"1. Arming curious power users with state-of-the-art general tools that allow them to move 10x...",
-    "type": "post",
-    "originalUrl": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7294030896783851520"
-  },
   {
     "id": "post-2025-02-06-7293313409922580480",
     "title": "Was a blast being on the AI and OKR panel!\"\n\"\"\n\"Such a lively discu...",
@@ -1709,7 +1700,7 @@ export const linkedInPosts: LinkedInPost[] = [
     "id": "post-2024-08-02-7225243336540889088",
     "title": "\"[I've come to view] the challenge [of AI transformation] as a \"thr...",
     "date": "2024-08-02",
-    "content": "[I've come to view] the challenge [of AI transformation] as a \"three-body problem\" — a complex system where three interdependent factors must be considered (and reconsidered) continuously:\n\"\n1. Strategic Direction: Where should your organization go?\n\"\n2. AI Capabilities: What new possibilities does AI unlock specific to your internal / external context?\n\"\n3. Organizational Structure: How should roles and teams ultimately be reconfigured? [and how can we get there without encountering catastrophe along the way...]",
+    "content": "[I've come to view] the challenge [of AI transformation] as a \"three-body problem\" — a complex system where three interdependent factors must be considered (and reconsidered) continuously:\"\n\"\n1. Strategic Direction: Where should your organization go?\n\"\n2. AI Capabilities: What new possibilities does AI unlock specific to your internal / external context?\n\"\n\"3. Organizational Structure: How should roles and teams ultimately be reconfigured? [and how can we get there without encountering catastrophe along the way...]",
     "excerpt": "\"[I've come to view] the challenge [of AI transformation] as a \"three-body problem\" — a complex system where three interdependent factors must be considered...",
     "type": "post",
     "originalUrl": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7225243336540889088"
@@ -3428,7 +3419,7 @@ export const linkedInPosts: LinkedInPost[] = [
     "id": "post-2023-11-11-7129183255861325824",
     "title": "\"If there's one thing you take away from my posts on LinkedIn and e...",
     "date": "2023-11-11",
-    "content": "If there's one thing you take away from my posts on LinkedIn and elsewhere over the past year...it's an invitation to really consider the following question:\n'When AI affords you the ability to become 2–20x as efficient and digital media becomes more immersive, discursive, and personal, what are you going to do with all that extra time?'\n\"\nSome thoughts on AI, compression, tectonic shifts in the internet economy, and a few other topics to chew on as 2023 comes to an end:\n\"",
+    "content": "If there's one thing you take away from my posts on LinkedIn and elsewhere over the past year...it's an invitation to really consider the following question:\"\n'When AI affords you the ability to become 2–20x as efficient and digital media becomes more immersive, discursive, and personal, what are you going to do with all that extra time?'\n\"\nSome thoughts on AI, compression, tectonic shifts in the internet economy, and a few other topics to chew on as 2023 comes to an end:\n",
     "excerpt": "\"If there's one thing you take away from my posts on LinkedIn and elsewhere over the past year...it's an invitation to really consider the following question:\"...",
     "type": "post",
     "originalUrl": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7129183255861325824"

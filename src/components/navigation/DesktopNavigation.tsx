@@ -19,11 +19,11 @@ export const DesktopNavigation = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink asChild>
+              <Link to="/" className={navigationMenuTriggerStyle()}>
                 Home
-              </NavigationMenuLink>
-            </Link>
+              </Link>
+            </NavigationMenuLink>
           </NavigationMenuItem>
           
           <NavigationMenuItem>
@@ -31,42 +31,42 @@ export const DesktopNavigation = () => {
             <NavigationMenuContent className="bg-white">
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <li className="col-span-2">
-                  <Link to="/ai-action-workshop">
-                    <NavigationMenuLink
+                  <NavigationMenuLink asChild>
+                    <Link to="/ai-action-workshop" 
                       className={`block select-none space-y-1 ${borderRadius.md} ${gradients.primaryLight} p-4 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
                       <div className="text-base font-medium leading-none text-primary">AI Action Workshop</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
                         2-hour hands-on session with immediate AI implementation
                       </p>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </li>
 
                 <li>
-                  <Link to="/10x-executive">
-                    <NavigationMenuLink
+                  <NavigationMenuLink asChild>
+                    <Link to="/10x-executive"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
                       <div className="text-sm font-medium leading-none">10x Effective Executive</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                         AI-powered transformation program for busy leaders
                       </p>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </li>
                 
                 <li>
-                  <Link to="/triple-a-transformation">
-                    <NavigationMenuLink
+                  <NavigationMenuLink asChild>
+                    <Link to="/triple-a-transformation"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
                       <div className="text-sm font-medium leading-none">Triple-A Transformation</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                         Complete organizational AI implementation program
                       </p>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -77,8 +77,8 @@ export const DesktopNavigation = () => {
             <NavigationMenuContent className="bg-white">
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <li className="row-span-3">
-                  <Link to="/ai-tooling-report">
-                    <NavigationMenuLink
+                  <NavigationMenuLink asChild>
+                    <Link to="/ai-tooling-report"
                       className={`flex h-full w-full select-none flex-col justify-end ${borderRadius.md} ${gradients.secondaryStrong} p-6 no-underline outline-none ${shadows.hoverEffect}`}
                     >
                       <div className="mt-4 mb-2 text-lg font-medium text-white">
@@ -87,20 +87,20 @@ export const DesktopNavigation = () => {
                       <p className="text-sm leading-tight text-white/90">
                         Comprehensive guide to AI tool budgeting for businesses
                       </p>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </li>
                 <li>
-                  <Link to="/blog">
-                    <NavigationMenuLink
+                  <NavigationMenuLink asChild>
+                    <Link to="/blog"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
                       <div className="text-sm font-medium leading-none">Professional Insights</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                         Articles and posts on AI strategy and digital transformation
                       </p>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </li>
               </ul>
             </NavigationMenuContent>
