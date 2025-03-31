@@ -90,6 +90,18 @@ export const DesktopNavigation = () => {
                     </NavigationMenuLink>
                   </Link>
                 </li>
+                <li>
+                  <Link to="/blog">
+                    <NavigationMenuLink
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="text-sm font-medium leading-none">Professional Insights</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                        Articles and posts on AI strategy and digital transformation
+                      </p>
+                    </NavigationMenuLink>
+                  </Link>
+                </li>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>

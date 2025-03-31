@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# LinkedIn export data (contains personal information)
+linkedin-llm-txt/
