@@ -117,23 +117,36 @@ async function processArticles() {
     articleContent = articleContent.replace(/&lt;/g, '<');
     articleContent = articleContent.replace(/&gt;/g, '>');
     
-    // Improve blockquote formatting
-    articleContent = articleContent.replace(/<p><em>(.*?)<\/em><\/p>/g, '<blockquote><p>$1</p></blockquote>');
+    // More aggressive cleanup of the HTML
     
-    // Clean up unnecessary tags
+    // Replace direct <div> elements with paragraphs for better formatting
+    articleContent = articleContent.replace(/<div>([^<]+)<\/div>/g, '<p>$1</p>');
+    
+    // Remove unnecessary divs
     articleContent = articleContent.replace(/<div>/g, '');
     articleContent = articleContent.replace(/<\/div>/g, '');
     
+    // Improve blockquote formatting - look for patterns that indicate quotes
+    articleContent = articleContent.replace(/<p><em>(.*?)<\/em><\/p>/g, '<blockquote><p>$1</p></blockquote>');
+    
+    // If there's a <p> with quotes around entire content, it's probably a blockquote
+    articleContent = articleContent.replace(/<p>"(.*?)"<\/p>/g, '<blockquote><p>$1</p></blockquote>');
+    
+    // Clean up empty paragraphs
+    articleContent = articleContent.replace(/<p>\s*<\/p>/g, '');
+    
+    // Standardize whitespace
+    articleContent = articleContent.replace(/\s{2,}/g, ' ');
+    
     // Add space between paragraphs
-    articleContent = articleContent.replace(/<\/p><p>/g, '</p>\n<p>');
+    articleContent = articleContent.replace(/<\/p><p>/g, '</p>\n\n<p>');
     
     // Ensure proper spacing around headings
-    articleContent = articleContent.replace(/<\/h(\d)><h(\d)>/g, '</h$1>\n<h$2>');
-    articleContent = articleContent.replace(/<\/p><h(\d)>/g, '</p>\n<h$1>');
-    articleContent = articleContent.replace(/<\/h(\d)><p>/g, '</h$1>\n<p>');
+    articleContent = articleContent.replace(/<\/h(\d)><h(\d)>/g, '</h$1>\n\n<h$2>');
+    articleContent = articleContent.replace(/<\/p><h(\d)>/g, '</p>\n\n<h$1>');
+    articleContent = articleContent.replace(/<\/h(\d)><p>/g, '</h$1>\n\n<p>');
     
-    // Clean up any double spaces or excessive newlines
-    articleContent = articleContent.replace(/\s{2,}/g, ' ');
+    // Clean up excessive newlines
     articleContent = articleContent.replace(/\n{3,}/g, '\n\n');
     
     // Create ID from filename
@@ -207,117 +220,109 @@ async function processPosts() {
             title = title.substring(0, 67) + '...';
           }
           
-          // Format content as HTML with better quote handling
+          // We'll take a completely different approach - parse the LinkedIn post more carefully
+          // Start by normalizing newlines and cleaning up escaped characters
           let content = row.ShareCommentary;
           
-          // Remove literal '\n' strings that might be in the text
+          // Normalize line endings
+          content = content.replace(/\r\n/g, '\n');
+          content = content.replace(/\r/g, '\n');
+          
+          // Clean up any escaped characters
           content = content.replace(/\\n/g, '\n');
-          
-          // Remove duplicate quotes (replace with just one)
-          content = content.replace(/""+/g, '"');
-          
-          // Remove any literal "\n" sequences
-          content = content.replace(/\\n/g, '\n');
-          
-          // Fix escaped quotes
           content = content.replace(/\\"/g, '"');
-          
-          // Replace any backslash plus character with just the character
+          content = content.replace(/\\'/g, "'");
+          content = content.replace(/\\t/g, '\t');
           content = content.replace(/\\(.)/g, '$1');
           
-          // Handle quoted text better by checking for runs of quotes
-          content = content.replace(/"([^"]+)"/g, function(match, text) {
-            // If it looks like a quotation, make it a blockquote
-            if (text.length > 20) {
-              return '<blockquote>' + text + '</blockquote>';
-            }
-            // Otherwise return as-is with proper curly quotes
-            return '"' + text + '"';
-          });
+          // Detect if we have numbered list items
+          const hasNumberedItems = /^\d+\.\s/m.test(content);
           
-          // Handle numbered lists that start with "1. ", "2. ", etc.
-          let hasNumberedList = /\d+\.\s/.test(content);
-          if (hasNumberedList) {
-            let parts = content.split(/\n/);
-            let inList = false;
-            let processedParts = [];
+          // Detect if we have bulleted list items
+          const hasBulletItems = /^-\s/m.test(content);
+          
+          // Split the content into paragraphs and process each one
+          const paragraphs = content.split(/\n\n+/);
+          const processedParagraphs = [];
+          
+          let inNumberedList = false;
+          let inBulletList = false;
+          let listItems = [];
+          
+          for (let paragraph of paragraphs) {
+            // Skip empty paragraphs
+            if (!paragraph.trim()) continue;
             
-            for (let part of parts) {
-              if (/^\d+\.\s/.test(part)) {
-                if (!inList) {
-                  processedParts.push('<ol>');
-                  inList = true;
+            // Check if this is a numbered list item
+            if (/^\d+\.\s/.test(paragraph)) {
+              // If we weren't in a list before, start a new one
+              if (!inNumberedList) {
+                if (inBulletList) {
+                  // Close previous bullet list
+                  processedParagraphs.push('<ul>' + listItems.join('') + '</ul>');
+                  listItems = [];
+                  inBulletList = false;
                 }
-                processedParts.push('<li>' + part.replace(/^\d+\.\s/, '') + '</li>');
-              } else {
-                if (inList) {
-                  processedParts.push('</ol>');
-                  inList = false;
-                }
-                processedParts.push(part);
+                inNumberedList = true;
               }
+              
+              // Add this item to the list
+              const itemText = paragraph.replace(/^\d+\.\s/, '');
+              listItems.push('<li>' + itemText + '</li>');
+              continue;
             }
             
-            if (inList) {
-              processedParts.push('</ol>');
+            // Check if this is a bullet list item
+            if (/^-\s/.test(paragraph)) {
+              // If we weren't in a bullet list before, start a new one
+              if (!inBulletList) {
+                if (inNumberedList) {
+                  // Close previous numbered list
+                  processedParagraphs.push('<ol>' + listItems.join('') + '</ol>');
+                  listItems = [];
+                  inNumberedList = false;
+                }
+                inBulletList = true;
+              }
+              
+              // Add this item to the list
+              const itemText = paragraph.replace(/^-\s/, '');
+              listItems.push('<li>' + itemText + '</li>');
+              continue;
             }
             
-            content = processedParts.join('\\n');
+            // If we were in a list but this isn't a list item, close the list
+            if (inNumberedList) {
+              processedParagraphs.push('<ol>' + listItems.join('') + '</ol>');
+              listItems = [];
+              inNumberedList = false;
+            } else if (inBulletList) {
+              processedParagraphs.push('<ul>' + listItems.join('') + '</ul>');
+              listItems = [];
+              inBulletList = false;
+            }
+            
+            // Process regular paragraphs
+            processedParagraphs.push('<p>' + paragraph + '</p>');
           }
           
-          // Handle bulleted lists that start with "- "
-          let hasBulletList = /^-\s/m.test(content);
-          if (hasBulletList) {
-            let parts = content.split(/\n/);
-            let inList = false;
-            let processedParts = [];
-            
-            for (let part of parts) {
-              if (/^-\s/.test(part)) {
-                if (!inList) {
-                  processedParts.push('<ul>');
-                  inList = true;
-                }
-                processedParts.push('<li>' + part.replace(/^-\s/, '') + '</li>');
-              } else {
-                if (inList) {
-                  processedParts.push('</ul>');
-                  inList = false;
-                }
-                processedParts.push(part);
-              }
-            }
-            
-            if (inList) {
-              processedParts.push('</ul>');
-            }
-            
-            content = processedParts.join('\\n');
+          // If we ended while still in a list, close it
+          if (inNumberedList) {
+            processedParagraphs.push('<ol>' + listItems.join('') + '</ol>');
+          } else if (inBulletList) {
+            processedParagraphs.push('<ul>' + listItems.join('') + '</ul>');
           }
           
-          // Clean up any \n\n\n sequences (more than 2 newlines) to just \n\n
-          content = content.replace(/\n{3,}/g, '\n\n');
+          // Join all the processed paragraphs
+          content = processedParagraphs.join('\n');
           
-          // Clean up any literal "\n"
-          content = content.replace(/\\n/g, '\n');
-          
-          // Find any "1. ", "2. " pattern at the start of a line and make sure it has proper spacing
-          content = content.replace(/\n(\d+\.\s)/g, '\n\n$1');
-          
-          // Same for "- " bullets
-          content = content.replace(/\n(-\s)/g, '\n\n$1');
-          
-          // Handle line breaks and paragraphs - double newlines become new paragraphs
-          content = "<p>" + content.replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br />') + "</p>";
-          
-          // Clean up any empty paragraphs
-          content = content.replace(/<p>\s*<\/p>/g, '');
-          
-          // Add spacing between paragraphs for better readability
-          content = content.replace(/<\/p><p>/g, '</p>\n\n<p>');
-          
-          // Remove any literal '\n' characters in the HTML markup
+          // Clean up any newlines in the HTML
           content = content.replace(/\\n/g, '');
+          
+          // Final cleanup - remove any leftover quotes that look like LinkedIn export artifacts
+          content = content.replace(/\\"/g, '"');
+          content = content.replace(/"{2,}/g, '"');
+          content = content.replace(/^"(.+?)"$/gm, '$1');
           
           posts.push({
             id: "post-" + date + "-" + shareId.replace(/[^a-zA-Z0-9-]/g, '-'),

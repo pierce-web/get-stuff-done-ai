@@ -69,11 +69,13 @@ export default function BlogPost({ post }: BlogPostProps) {
                 prose-blockquote:bg-blue-50 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 
                 prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:text-gray-700
                 prose-strong:text-blue-800 prose-em:text-blue-800
-                prose-ol:my-8 prose-ol:pl-8 prose-ol:list-decimal
-                prose-ul:my-8 prose-ul:pl-8 prose-ul:list-disc
+                prose-ol:my-8 prose-ol:pl-8 prose-ol:list-decimal prose-ol:space-y-4
+                prose-ul:my-8 prose-ul:pl-8 prose-ul:list-disc prose-ul:space-y-4
                 prose-li:my-3 prose-li:pl-2 prose-li:marker:text-blue-600
                 prose-img:rounded-md prose-img:shadow-md prose-img:my-10
-                [&>br]:my-6"
+                [&>br]:my-6
+                [&>p>br]:hidden
+                [&>p]:whitespace-pre-line"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
             
