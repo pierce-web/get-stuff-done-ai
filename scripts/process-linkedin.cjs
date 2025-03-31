@@ -243,6 +243,7 @@ async function processPosts() {
           content = content.replace(/'{2,}/g, "'");
           
           // Special case fix for posts that have strange formatting
+          let specialCasePost = false;
           if (content.includes('Gen AI integration') && content.includes('been about:')) {
             // This is the specific post we're seeing the issue with - custom handle it
             content = `
@@ -259,7 +260,20 @@ async function processPosts() {
                 <li>bundle these into units (likely as a Model Context Protocol server or something like it) that are nicely integrated (think of them as the 21st century version of corporate functions) into a package that can be invoked as needed by an executive superintelligence.</li>
               </ul>
               <p>Agents don't yet exist (though you can catch a glimpse of what's coming with OpenAI's Deep Research feature); they are coming.</p>`;
-            return content;
+            specialCasePost = true;
+          }
+          
+          // Also add special case for the enterprise leader post
+          if (content.includes("If you're an enterprise leader") && content.includes("decentralize IT, stat")) {
+            content = `
+              <p>If you're an enterprise leader, you need to take measures to decentralize IT, stat.</p>
+              <p>If you don't, you will lose out on the upside potential of AI and possibly the org's top talent.</p>
+              <p>Adoption is a function of top-down mandates that encourage, not restrict, use — and bottoms-up, user-led innovation, whereby pioneering SMEs and operators figure out how to use state-of-the art general tools to move 10x faster in the right direction; success is charismatic, and conservative peers will follow.</p>
+              <p>One power user with, e.g., ChatGPT Pro and <a href="https://superwhisper.com" target="_blank" rel="noopener noreferrer">superwhisper</a>, is worth 100 colleagues racking up recurring enterprise Copilot licenses but aren't using them.</p>
+              <p>Don't let IT be a bottleneck; empower the curious, ambitious frontline employees who have the mindset and skillset to set the pace for the rest of the organization and catalyze meaningful transformation with the tools they need to get stuff done.</p>
+              <p>If you don't, a lean team that does will get in your OODA loop and eat your lunch, no matter how strong you think your incumbent position is.</p>
+              <p>Model capabilities are growing at an accelerating rate. Now is the time to act, lest you get caught flat-footed.</p>`;
+            specialCasePost = true;
           }
           
           // Detect the structure of the post
@@ -269,7 +283,10 @@ async function processPosts() {
           // Handle the content based on its structure
           let formattedContent = '';
           
-          if (hasNumberedItems || hasBulletItems) {
+          if (specialCasePost) {
+            // For special cases, we've already formatted the content
+            formattedContent = content;
+          } else if (hasNumberedItems || hasBulletItems) {
             // This is a list-based post, process it line by line
             const lines = content.split('\n');
             let inList = false;
