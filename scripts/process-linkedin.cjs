@@ -216,6 +216,26 @@ async function processPosts() {
           
           // Create title from first sentence or first 50 chars
           let title = row.ShareCommentary.split('.')[0];
+          
+          // Special cases for specific posts with known titles
+          if (row.ShareCommentary.includes('Gen AI integration') && row.ShareCommentary.includes('been about:')) {
+            title = "Gen AI integration / applied AI has thus far been about";
+          } else if (row.ShareCommentary.includes("Was a blast being on the AI and OKR panel")) {
+            title = "Was a blast being on the AI and OKR panel!";
+          } else if (row.ShareCommentary.includes("Times, they are a-changin")) {
+            title = "Times, they are a-changin', certainly";
+          } else if (row.ShareCommentary.includes("If you're an enterprise leader")) {
+            title = "Decentralize IT for AI adoption";
+          } else {
+            // Clean up the title - remove quotes and newlines
+            title = title.replace(/\n/g, ' '); // Replace newlines with spaces
+            title = title.replace(/\s+/g, ' '); // Replace multiple spaces with a single space
+            title = title.replace(/"{2,}/g, ''); // Remove double quotes
+            title = title.replace(/\\"/g, ''); // Remove escaped quotes
+            title = title.replace(/"/g, ''); // Remove all quotes
+          }
+          
+          // Limit title length
           if (title.length > 70) {
             title = title.substring(0, 67) + '...';
           }
@@ -273,6 +293,28 @@ async function processPosts() {
               <p>Don't let IT be a bottleneck; empower the curious, ambitious frontline employees who have the mindset and skillset to set the pace for the rest of the organization and catalyze meaningful transformation with the tools they need to get stuff done.</p>
               <p>If you don't, a lean team that does will get in your OODA loop and eat your lunch, no matter how strong you think your incumbent position is.</p>
               <p>Model capabilities are growing at an accelerating rate. Now is the time to act, lest you get caught flat-footed.</p>`;
+            specialCasePost = true;
+          }
+          
+          // Special case for "Times, they are a-changin" post
+          if (content.includes("Times, they are a-changin") && content.includes("re-engineered")) {
+            content = `
+              <p>Times, they are a-changin', certainly.</p>
+              <p>And although AI is, in a growing number of cases, a direct substitute for bureaucratic labor, humans have a set of tremendous comparative advantages that complements these new computer capabilities; the tricky part is figuring out exactly what that is for YOU — there's no playbook to turn to...</p>
+              <p>If you can delegate more reading, writing, and reasoning tasks to technology, then it means necessarily the scope of what you can do expands, and so does the size of the challenge you can confront and overcome.</p>
+              <p>Economically valuable work will continue to be that which generates better outcomes for customers, clients, or patients without having to be too distracted by compliance, busy work, or vestigial corporate rituals, many of which emerged necessarily to support the scaling of pre-IT public and private sector institutions, but now strangle innovation, halt progress, benefit rent-seekers, and incur enormous opportunity costs.</p>
+              <p>The genie is out of the bottle; there is no other option than to retool, but that doesn't have mean starting from scratch, either (although keeping your fixed costs and liabilities low is something I'd strongly recommend).</p>
+              <p>It means identifying those things that you're good at, that give you joy, that give you energy, and then pointing them—catalyzed by AI—at challenges that stand in the way of the people around you and their own good goals.</p>
+              <p>Yes, old roles will disintegrate, and by extension, so will large parts of incumbent enterprises, and existing knowledge work processes will be obliterated and need to be re-engineered, but on the other side of this transformation is greater economic upside, and frankly meaningful work for everyone.</p>`;
+            specialCasePost = true;
+          }
+          
+          // Add more special cases for other posts that need specific formatting
+          if (content.includes("Was a blast being on the AI and OKR panel")) {
+            content = `
+              <p>Was a blast being on the AI and OKR panel!</p>
+              <p>Such a lively discussion — keep an eye out for recordings and clips...</p>
+              <p>Thanks for hosting, Elie Casamitjana.</p>`;
             specialCasePost = true;
           }
           
