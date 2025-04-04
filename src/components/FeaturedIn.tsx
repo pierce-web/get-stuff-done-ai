@@ -20,9 +20,9 @@ export const FeaturedIn = () => {
             <div className="relative">
               <div className="w-40 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Forbes_Global_Media_-_Forbes_Logo.svg" 
+                  src="/lovable-uploads/a71d34f3-fc72-412f-86e5-0cd4874bac80.png" 
                   alt="Forbes Logo" 
-                  className="max-h-full" 
+                  className="max-h-full w-auto" 
                 />
               </div>
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap flex items-center text-xs text-gray-600">
