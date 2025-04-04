@@ -1,0 +1,41 @@
+
+import React from "react";
+import { ExternalLink } from "lucide-react";
+
+export const FeaturedIn = () => {
+  return (
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold tracking-tight text-primary text-center mb-10">
+          As Featured In
+        </h2>
+        
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          <a 
+            href="https://www.forbes.com/sites/josipamajic/2025/04/04/how-venture-capital-funds-can-leverage-ai-to-save-time-cut-costs-and-boost-returns/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <div className="relative">
+              <div className="w-40 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Forbes_Global_Media_-_Forbes_Logo.svg" 
+                  alt="Forbes Logo" 
+                  className="max-h-full" 
+                />
+              </div>
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap flex items-center text-xs text-gray-600">
+                <span>Read article</span>
+                <ExternalLink className="ml-1 h-3 w-3" />
+              </div>
+            </div>
+          </a>
+          
+          {/* Placeholder for additional logos in the future */}
+          {/* You can easily add more logos by duplicating the above <a> element */}
+        </div>
+      </div>
+    </div>
+  );
+};

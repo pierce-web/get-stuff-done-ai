@@ -6,6 +6,7 @@ import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { FeaturedReport } from "@/components/FeaturedReport";
 import { Navigation } from "@/components/Navigation";
+import { FeaturedIn } from "@/components/FeaturedIn";
 
 const Index = () => {
   return (
@@ -22,6 +23,9 @@ const Index = () => {
         <div className="bg-gradient-to-b from-background to-gray-50">
           <TestimonialsCarousel />
         </div>
+        
+        {/* Add the new FeaturedIn component here */}
+        <FeaturedIn />
         
         <div className="bg-gradient-to-b from-gray-50 to-background py-8">
           <FeaturedReport />
