@@ -38,43 +38,43 @@ const generateSitemap = () => {
   // Main website URLs
   const mainUrls = [
     { 
-      url: 'https://getstuffdone.ai/', 
+      url: 'https://gsdat.work/', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '1.0'
     },
     { 
-      url: 'https://getstuffdone.ai/cases', 
+      url: 'https://gsdat.work/cases', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.8'
     },
     { 
-      url: 'https://getstuffdone.ai/ai-tooling-report', 
+      url: 'https://gsdat.work/ai-tooling-report', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.8'
     },
     { 
-      url: 'https://getstuffdone.ai/10x-executive', 
+      url: 'https://gsdat.work/10x-executive', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.8'
     },
     { 
-      url: 'https://getstuffdone.ai/ai-action-workshop', 
+      url: 'https://gsdat.work/ai-action-workshop', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.8'
     },
     { 
-      url: 'https://getstuffdone.ai/triple-a-transformation', 
+      url: 'https://gsdat.work/triple-a-transformation', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.8'
     },
     { 
-      url: 'https://getstuffdone.ai/blog', 
+      url: 'https://gsdat.work/blog', 
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.9'
@@ -94,7 +94,7 @@ const generateSitemap = () => {
   // Generate blog post URLs
   const blogUrls = posts.map(post => {
     return {
-      url: `https://getstuffdone.ai/blog/${post.id}`,
+      url: `https://gsdat.work/blog/${post.id}`,
       lastmod: post.date,
       changefreq: 'yearly',
       priority: '0.7'
