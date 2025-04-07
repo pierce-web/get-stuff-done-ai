@@ -1,6 +1,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
+import { generateFAQStructuredData } from "@/lib/seo-utils";
 
 interface FAQItem {
   question: string;
@@ -28,11 +30,28 @@ export const FAQ: React.FC = () => {
     {
       question: "What kind of results can I expect?",
       answer: "Most participants see 10+ hours saved weekly, 50-80% reduction in email handling time, and significant improvements in meeting productivity within the first 4 weeks. By program completion, many report working 20-30 fewer hours while accomplishing more."
+    },
+    {
+      question: "I'm already too busy. Adding a weekly session feels like more work.",
+      answer: "These sessions save you time. By front-loading the coaching and setups, you'll quickly reclaim hours each week—and that net gain appears fast."
+    },
+    {
+      question: "What if I'm already using some AI tools?",
+      answer: "Perfect. We'll refine and integrate them into a cohesive system that's more than just random prompts. The goal is consistency, reliability, and real ROI."
     }
   ];
 
+  // Generate FAQ structured data
+  const faqData = generateFAQStructuredData(faqItems);
+
   return (
     <section className="py-16 md:py-24 bg-gray-50">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqData)}
+        </script>
+      </Helmet>
+      
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-8 text-center">Frequently Asked Questions</h2>

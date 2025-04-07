@@ -3,7 +3,7 @@ import React from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
+import { generateServicePageStructuredData } from "@/lib/seo-utils";
 
 // Import refactored components
 import { Hero } from "@/components/10x-executive/Hero";
@@ -22,38 +22,6 @@ const TenXExecutive: React.FC = () => {
     "$9,999"
   );
 
-  // FAQ structured data - enhanced with additional questions from our implementation
-  const faqData = generateFAQStructuredData([
-    {
-      question: "How much time will I need to commit each week?",
-      answer: "Beyond the weekly 50-minute coaching session, you'll need approximately 2-3 hours per week for implementation. However, this time investment will quickly pay for itself as your new AI systems begin saving you 10+ hours weekly."
-    },
-    {
-      question: "Do I need technical expertise to benefit from this program?",
-      answer: "No technical background is required. The program is specifically designed for busy executives who want results without needing to become AI experts. All implementations are practical, guided, and focused on your specific workflow."
-    },
-    {
-      question: "How is this different from just taking an AI course?",
-      answer: "Unlike generic courses, this program provides personalized coaching and implementation specific to your role, industry, and challenges. We focus on implementation rather than theory, with direct accountability and support throughout."
-    },
-    {
-      question: "Will the AI tools integrate with my existing systems?",
-      answer: "Yes. We carefully select tools that integrate with your current technology stack. The program includes integration assistance to ensure seamless adoption without disrupting your existing workflows."
-    },
-    {
-      question: "What kind of results can I expect?",
-      answer: "Most participants see 10+ hours saved weekly, 50-80% reduction in email handling time, and significant improvements in meeting productivity within the first 4 weeks. By program completion, many report working 20-30 fewer hours while accomplishing more."
-    },
-    {
-      question: "I'm already too busy. Adding a weekly session feels like more work.",
-      answer: "These sessions save you time. By front-loading the coaching and setups, you'll quickly reclaim hours each week—and that net gain appears fast."
-    },
-    {
-      question: "What if I'm already using some AI tools?",
-      answer: "Perfect. We'll refine and integrate them into a cohesive system that's more than just random prompts. The goal is consistency, reliability, and real ROI."
-    }
-  ]);
-
   return (
     <>
       <SEOHead 
@@ -61,7 +29,7 @@ const TenXExecutive: React.FC = () => {
         description="A 10-week AI-powered transformation program to accelerate productivity, reclaim time, and master AI tools that keep executives ahead in their field."
         canonicalUrl="/10x-executive"
         keywords="AI executive coaching, AI productivity, executive AI program, AI transformation, AI for executives, AI implementation, time-saving AI"
-        structuredData={[serviceData, faqData]}
+        structuredData={[serviceData]}
         ogType="article"
       />
       
