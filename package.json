@@ -10,9 +10,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "process-linkedin": "node scripts/process-linkedin.cjs",
-    "generate:sitemap": "node public/sitemap.xml.cjs",
+    "generate:sitemap": "node scripts/regenerate-sitemap.cjs",
     "generate:rss": "node public/feed.xml.cjs",
-    "generate:seo": "npm run generate:sitemap && npm run generate:rss"
+    "generate:seo": "npm run generate:sitemap && npm run generate:rss",
+    "fix:seo": "npm run generate:sitemap && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

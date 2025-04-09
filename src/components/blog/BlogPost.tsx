@@ -60,7 +60,9 @@ export default function BlogPost({ post }: BlogPostProps) {
         <meta name="keywords" content={`AI implementation, generative AI, business productivity, AI tools, digital transformation, ${post.title.substring(0, 50)}`} />
         
         {/* Enhanced SEO Tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
         <meta name="copyright" content={`© ${new Date().getFullYear()} Get Stuff Done AI. All rights reserved.`} />
@@ -200,7 +202,7 @@ export default function BlogPost({ post }: BlogPostProps) {
                 <span itemProp="name">{post.title}</span>
                 <meta 
                   itemProp="item" 
-                  content={`https://getstuffdone.ai/blog/${post.id}`} 
+                  content={`https://gsdat.work/blog/${post.id}`} 
                 />
                 <meta itemProp="position" content="3" />
               </li>
@@ -224,7 +226,7 @@ export default function BlogPost({ post }: BlogPostProps) {
             <meta itemProp="datePublished" content={`${formattedDate}T00:00:00Z`} />
             <meta itemProp="dateModified" content={`${formattedDate}T00:00:00Z`} />
             <meta itemProp="publisher" content="Get Stuff Done AI" />
-            <meta itemProp="image" content="https://getstuffdone.ai/og-image.png" />
+            <meta itemProp="image" content="https://gsdat.work/og-image.png" />
             
             <header className="mb-8">
               <h1 className="text-4xl font-bold mb-4 break-words" itemProp="headline">{post.title}</h1>
