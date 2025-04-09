@@ -93,10 +93,13 @@ const generateSitemap = () => {
   
   // Generate blog post URLs
   const blogUrls = posts.map(post => {
+    // Ensure we have the correct date format for lastmod (YYYY-MM-DD)
+    const lastmod = new Date(post.date).toISOString().split('T')[0];
+    
     return {
       url: `https://gsdat.work/blog/${post.id}`,
-      lastmod: post.date,
-      changefreq: 'yearly',
+      lastmod: lastmod,
+      changefreq: 'monthly', // Changed from yearly to monthly for better crawl frequency
       priority: '0.7'
     };
   });

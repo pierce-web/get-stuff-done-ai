@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Specify sitemap location
-Sitemap: https://getstuffdone.ai/sitemap.xml
+Sitemap: https://gsdat.work/sitemap.xml

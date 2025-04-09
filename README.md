@@ -67,3 +67,15 @@ Simply open [Lovable](https://lovable.dev/projects/3901f669-c06d-4a25-b658-0a6ac
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+## SEO Optimization
+
+To ensure proper indexing by search engines:
+
+1. **Regenerate Sitemap**: Run `npm run generate:sitemap` to update the sitemap with all blog posts
+2. **Fix SEO Issues**: Run `npm run fix:seo` to regenerate sitemap and rebuild the site
+3. **Domain Consistency**: All URLs use `gsdat.work` domain (not `getstuffdone.ai`)
+4. **URL Format**: Blog posts use format `/blog/post-YYYY-MM-DD-POSTID`
+5. **Check Indexing Status**: Monitor Google Search Console for "Crawled - not indexed" issues
+
+Important: The sitemap is automatically generated during build, but you can manually update it with `npm run generate:seo`.
