@@ -9,12 +9,13 @@ import { generateServicePageStructuredData } from "@/lib/seo-utils";
 const AILegalWorkshop: React.FC = () => {
   const eventbriteUrl = "https://www.eventbrite.com/e/ai-in-action-for-lawyers-live-workflow-transformation-session-tickets-1321545932459";
   const meliorUrl = "https://www.getmelior.com";
+  const homeUrl = "https://gsdat.work";
   
   const structuredData = generateServicePageStructuredData(
     "AI in Action for Lawyers: Live Workflow Transformation Session",
     "Witness AI transform a legal workflow LIVE! Join GSD & Melior for a hands-on session for lawyers. One attendee's workflow featured!",
     "https://gsdat.work/ai-legal-workshop",
-    "https://gsdat.work/lovable-uploads/bc20d384-c5d1-4054-8049-2421aec18eb5.png",
+    "https://gsdat.work/lovable-uploads/bde19514-d59a-41ee-8213-67b208023d15.png",
     "GSD at Work LLC",
     "$299 - $499"
   );
@@ -26,7 +27,7 @@ const AILegalWorkshop: React.FC = () => {
         description="Witness AI transform a legal workflow LIVE! Join Christian Ulstrup (GSD at Work) & Ryan Markman (Melior) for a hands-on session specifically for lawyers on May 20th. See real legal workflows transformed, not just talked about."
         canonicalUrl="https://gsdat.work/ai-legal-workshop"
         ogType="website"
-        ogImage="https://gsdat.work/lovable-uploads/bc20d384-c5d1-4054-8049-2421aec18eb5.png"
+        ogImage="https://gsdat.work/lovable-uploads/bde19514-d59a-41ee-8213-67b208023d15.png"
         ogImageAlt="AI in Action for Lawyers workshop banner with Christian Ulstrup and Ryan Markman"
         keywords="legal AI, law firm AI, AI for lawyers, legal technology, legal workflow automation, AI implementation for law, legal efficiency"
         structuredData={[structuredData]}
@@ -71,7 +72,7 @@ const AILegalWorkshop: React.FC = () => {
               <div className="lg:w-1/2">
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/bc20d384-c5d1-4054-8049-2421aec18eb5.png" 
+                    src="/lovable-uploads/bde19514-d59a-41ee-8213-67b208023d15.png" 
                     alt="AI in Action for Lawyers Workshop" 
                     className="rounded-xl shadow-lg w-full"
                   />
@@ -93,30 +94,36 @@ const AILegalWorkshop: React.FC = () => {
                 <p className="text-gray-500 text-sm uppercase font-medium mb-2">Co-hosted by</p>
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <div className="flex flex-col items-center">
-                    <img 
-                      src="/lovable-uploads/43198a75-4248-4d5e-8c90-32a39c77889e.png" 
-                      alt="Melior Logo" 
-                      className="h-12 mb-2"
-                    />
                     <a 
                       href={meliorUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-secondary hover:underline"
+                      className="flex flex-col items-center"
                     >
-                      www.getmelior.com
+                      <div className="bg-gray-800 p-2 rounded-md mb-2">
+                        <img 
+                          src="/lovable-uploads/43198a75-4248-4d5e-8c90-32a39c77889e.png" 
+                          alt="Melior Logo" 
+                          className="h-10"
+                        />
+                      </div>
+                      <span className="text-sm text-secondary hover:underline">
+                        www.getmelior.com
+                      </span>
                     </a>
                   </div>
                   <div className="flex items-center">
                     <span className="text-gray-400 mx-4 hidden md:block">&</span>
                   </div>
                   <div className="flex flex-col items-center mt-4 md:mt-0">
-                    <div className="font-bold text-xl text-primary">GSD at Work</div>
                     <a 
-                      href="https://gsdat.work"
-                      className="text-sm text-secondary hover:underline"
+                      href={homeUrl}
+                      className="flex flex-col items-center"
                     >
-                      www.gsdat.work
+                      <div className="font-bold text-xl text-primary mb-2">GSD at Work</div>
+                      <span className="text-sm text-secondary hover:underline">
+                        www.gsdat.work
+                      </span>
                     </a>
                   </div>
                 </div>
