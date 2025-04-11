@@ -9,10 +9,10 @@ import {
 
 export const FAQSection: React.FC = () => {
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-16 bg-slate-50" aria-labelledby="faq-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-primary">
+          <h2 id="faq-heading" className="text-2xl md:text-3xl font-bold mb-8 text-center text-primary">
             Frequently Asked Questions
           </h2>
           
