@@ -1,3 +1,4 @@
+
 import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
 import { Helmet } from "react-helmet";
 import { Footer } from "../Footer";
@@ -45,6 +46,8 @@ export default function BlogPost({ post }: BlogPostProps) {
         <meta property="og:description" content={`${textContent.substring(0, 155)}...`} />
         <meta property="og:url" content={`https://gsdat.work/blog/${post.id}`} />
         <meta property="og:image" content="https://gsdat.work/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="article:published_time" content={`${formattedDate}T00:00:00Z`} />
         <meta property="article:author" content="https://www.linkedin.com/in/christianulstrup/" />
         <meta property="og:site_name" content="Get Stuff Done AI" />

@@ -1,6 +1,12 @@
+
 # Allow all search engines to index the website
 User-agent: *
 Allow: /
 
 # Specify sitemap location
 Sitemap: https://gsdat.work/sitemap.xml
+
+# Ensure images are crawlable
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
