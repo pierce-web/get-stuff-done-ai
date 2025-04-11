@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Navigation } from "@/components/navigation/Navigation";
 import { Footer } from "@/components/Footer";
@@ -9,6 +8,7 @@ import { generateServicePageStructuredData } from "@/lib/seo-utils";
 
 const AILegalWorkshop: React.FC = () => {
   const eventbriteUrl = "https://www.eventbrite.com/e/ai-in-action-for-lawyers-live-workflow-transformation-session-tickets-1321545932459";
+  const meliorUrl = "https://www.getmelior.com";
   
   const structuredData = generateServicePageStructuredData(
     "AI in Action for Lawyers: Live Workflow Transformation Session",
@@ -78,6 +78,46 @@ const AILegalWorkshop: React.FC = () => {
                   <div className="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-lg shadow-md flex items-center gap-2 border border-gray-100">
                     <Video className="h-5 w-5 text-secondary" />
                     <span className="font-medium">Online via Zoom</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Co-Hosted Section */}
+        <section className="py-8 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 border-t border-b border-gray-100 py-6">
+              <div className="text-center md:text-left">
+                <p className="text-gray-500 text-sm uppercase font-medium mb-2">Co-hosted by</p>
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="flex flex-col items-center">
+                    <img 
+                      src="/lovable-uploads/43198a75-4248-4d5e-8c90-32a39c77889e.png" 
+                      alt="Melior Logo" 
+                      className="h-12 mb-2"
+                    />
+                    <a 
+                      href={meliorUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-secondary hover:underline"
+                    >
+                      www.getmelior.com
+                    </a>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-gray-400 mx-4 hidden md:block">&</span>
+                  </div>
+                  <div className="flex flex-col items-center mt-4 md:mt-0">
+                    <div className="font-bold text-xl text-primary">GSD at Work</div>
+                    <a 
+                      href="https://gsdat.work"
+                      className="text-sm text-secondary hover:underline"
+                    >
+                      www.gsdat.work
+                    </a>
                   </div>
                 </div>
               </div>
