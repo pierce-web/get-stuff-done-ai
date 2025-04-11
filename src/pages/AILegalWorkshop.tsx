@@ -13,7 +13,7 @@ const AILegalWorkshop: React.FC = () => {
   
   const structuredData = generateServicePageStructuredData(
     "AI in Action for Lawyers: Live Workflow Transformation Session",
-    "Witness AI transform a legal workflow LIVE! Join GSD & Melior for a hands-on session for lawyers. One attendee's workflow featured!",
+    "Witness AI transform a legal workflow LIVE! Join GSD & Melior for a hands-on session specifically for lawyers on May 20th. See real legal workflows transformed, not just talked about.",
     "https://gsdat.work/ai-legal-workshop",
     "https://gsdat.work/lovable-uploads/bde19514-d59a-41ee-8213-67b208023d15.png",
     "GSD at Work LLC",
@@ -93,37 +93,35 @@ const AILegalWorkshop: React.FC = () => {
               <div className="text-center md:text-left">
                 <p className="text-gray-500 text-sm uppercase font-medium mb-2">Co-hosted by</p>
                 <div className="flex flex-col md:flex-row items-center gap-6">
-                  <div className="flex flex-col items-center">
+                  <div className="flex items-center">
                     <a 
                       href={meliorUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center"
+                      className="hover:opacity-80 transition-opacity"
                     >
-                      <div className="bg-gray-800 p-2 rounded-md mb-2">
+                      <div className="bg-gray-800 p-2 rounded-md">
                         <img 
                           src="/lovable-uploads/43198a75-4248-4d5e-8c90-32a39c77889e.png" 
                           alt="Melior Logo" 
                           className="h-10"
                         />
                       </div>
-                      <span className="text-sm text-secondary hover:underline">
-                        www.getmelior.com
-                      </span>
                     </a>
                   </div>
                   <div className="flex items-center">
                     <span className="text-gray-400 mx-4 hidden md:block">&</span>
                   </div>
-                  <div className="flex flex-col items-center mt-4 md:mt-0">
+                  <div className="flex items-center mt-4 md:mt-0">
                     <a 
                       href={homeUrl}
-                      className="flex flex-col items-center"
+                      className="hover:opacity-80 transition-opacity"
                     >
-                      <div className="font-bold text-xl text-primary mb-2">GSD at Work</div>
-                      <span className="text-sm text-secondary hover:underline">
-                        www.gsdat.work
-                      </span>
+                      <img 
+                        src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
+                        alt="GSD at Work Logo" 
+                        className="h-12"
+                      />
                     </a>
                   </div>
                 </div>
