@@ -65,6 +65,11 @@
   status = 200
 
 [[redirects]]
+  from = "/ai-legal-workshop"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
   from = "/triple-a-transformation"
   to = "/index.html"
   status = 200

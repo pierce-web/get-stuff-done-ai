@@ -1,3 +1,4 @@
+
 # Netlify _redirects file
 # This is a more specific version of the redirects in netlify.toml
 # Known routes for the SPA
@@ -9,6 +10,7 @@
 /ai-tooling-report              /index.html                       200
 /10x-executive                  /index.html                       200
 /ai-action-workshop             /index.html                       200
+/ai-legal-workshop              /index.html                       200
 /triple-a-transformation        /index.html                       200
 /strategy-session-confirmed     /index.html                       200
 /not-found                      /index.html                       200

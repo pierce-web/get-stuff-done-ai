@@ -1,3 +1,4 @@
+
 /**
  * This script generates a sitemap.xml file for the website
  * including dynamically generated links for all LinkedIn blog posts
@@ -63,6 +64,12 @@ const generateSitemap = () => {
     },
     { 
       url: 'https://gsdat.work/ai-action-workshop', 
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.8'
+    },
+    { 
+      url: 'https://gsdat.work/ai-legal-workshop', 
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.8'
