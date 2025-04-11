@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import StrategySessionConfirmed from "./pages/StrategySessionConfirmed";
 import BlogPage from "./pages/blog";
 import BlogPostPage from "./pages/blog/[id]";
+import AILegalWorkshop from "./pages/AILegalWorkshop";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/ai-tooling-report" element={<AIToolingReport />} />
           <Route path="/10x-executive" element={<TenXExecutive />} />
           <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
+          <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
           <Route path="/triple-a-transformation" element={<TripleATransformation />} />
           <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
           <Route path="/blog" element={<BlogPage />} />
