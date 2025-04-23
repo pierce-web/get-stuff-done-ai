@@ -42,6 +42,19 @@ export const DesktopNavigation = () => {
                     </Link>
                   </NavigationMenuLink>
                 </li>
+                
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link to="/qualitative-data-insights-workshop"
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="text-sm font-medium leading-none">Qualitative Data Insights</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                        AI-powered analysis of customer conversations and feedback
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
 
                 <li>
                   <NavigationMenuLink asChild>

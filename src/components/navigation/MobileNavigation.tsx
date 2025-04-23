@@ -34,6 +34,9 @@ export const MobileNavigation = () => {
             <Link to="/ai-action-workshop" className="text-lg font-medium">
               AI Action Workshop
             </Link>
+            <Link to="/qualitative-data-insights-workshop" className="text-lg font-medium">
+              Qualitative Data Insights
+            </Link>
             <Link to="/10x-executive" className="text-lg font-medium">
               10x Executive Program
             </Link>

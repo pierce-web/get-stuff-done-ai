@@ -144,6 +144,27 @@ const AIActionWorkshop = () => {
         </div>
       </div>
       
+      {/* Cross-Link to Qualitative Data Insights Workshop */}
+      <div className="container mx-auto px-4 pb-12">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-primary-50 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-primary mb-2">
+              Looking for qualitative data analysis?
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Check out our specialized AI Action Workshop focused on extracting insights from customer conversations, feedback, and qualitative data.
+            </p>
+            <Button 
+              variant="outline" 
+              className="border-secondary text-secondary hover:bg-secondary/10"
+              onClick={() => window.location.href = "/qualitative-data-insights-workshop"}
+            >
+              Learn about our Qualitative Data Insights Workshop
+            </Button>
+          </div>
+        </div>
+      </div>
+      
       <Footer />
     </div>
   );
