@@ -211,7 +211,7 @@ const QualitativeDataInsightsWorkshop = () => {
             </h2>
             
             <p className="text-xl text-center text-gray-700 mb-12 max-w-4xl mx-auto">
-              This intensive, hands-on workshop leverages the power of advanced AI models (like Google's Gemini Pro 1.5 and Anthropic's Claude 3) to rapidly process and analyze large volumes of your qualitative data.
+              This intensive, hands-on workshop leverages the power of advanced AI models (like Claude Code (Sonnet 3.7), Gemini 2.5 Pro (via Google AI Studio), and o3 (OpenAI)) to rapidly process and analyze large volumes of your qualitative data.
             </p>
             
             <div className="space-y-8">
