@@ -27,80 +27,61 @@
 [context.staging] # 'staging' is a branch name
   command = "npm run build:dev"
 
-# Define explicit routes first - these must come before the SPA fallback
-# Static routes redirects
+# Static files with their own handling
 [[redirects]]
-  from = "/blog"
-  to = "/index.html"
+  from = "/feed.xml"
+  to = "/feed.xml"
   status = 200
 
 [[redirects]]
-  from = "/blog/*"
-  to = "/index.html"
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
   status = 200
 
 [[redirects]]
-  from = "/cases"
-  to = "/index.html"
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+# First, handle static assets directly
+[[redirects]]
+  from = "/*.js"
+  to = "/:splat"
   status = 200
 
 [[redirects]]
-  from = "/cases/*"
-  to = "/index.html"
+  from = "/*.css"
+  to = "/:splat"
   status = 200
 
 [[redirects]]
-  from = "/ai-tooling-report"
-  to = "/index.html"
+  from = "/*.ico"
+  to = "/:splat"
   status = 200
 
 [[redirects]]
-  from = "/10x-executive"
-  to = "/index.html"
+  from = "/*.png"
+  to = "/:splat"
   status = 200
 
 [[redirects]]
-  from = "/ai-action-workshop"
-  to = "/index.html"
+  from = "/*.svg"
+  to = "/:splat"
   status = 200
 
+# Use Netlify Function for 404 handling only when truly not found
 [[redirects]]
-  from = "/ai-legal-workshop"
-  to = "/index.html"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
-[[redirects]]
-  from = "/triple-a-transformation"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/strategy-session-confirmed"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/associate-call-confirmed"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/not-found"
-  to = "/index.html"
-  status = 200
-
-# Use Netlify Function for 404 handling when path doesn't match known routes
+# SPA fallback - this will handle ALL React routes automatically
+# without needing to manually list each one
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/handle-404"
-  status = 404
+  to = "/index.html"
+  status = 200
   force = false
-
-# Final fallback for SPA navigation (lowest priority)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 [[headers]]
   for = "/*"

@@ -1,8 +1,12 @@
+
 // Netlify Function to properly handle 404 errors
 // This ensures search engines receive proper 404 status codes
 exports.handler = async function(event, context) {
   // Get the path from the event
   const path = event.path || '/';
+  
+  // Check if the path exists in our application routes
+  // If not, return a 404 status
   
   // This response tells Netlify to return a 404 status
   // while still rendering the SPA's 404 page

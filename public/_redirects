@@ -1,30 +1,17 @@
 
 # Netlify _redirects file
-# This is a more specific version of the redirects in netlify.toml
-# Known routes for the SPA
-/                               /index.html                       200
-/blog                           /index.html                       200
-/blog/*                         /index.html                       200
-/cases                          /index.html                       200
-/cases/*                        /index.html                       200
-/ai-tooling-report              /index.html                       200
-/10x-executive                  /index.html                       200
-/ai-action-workshop             /index.html                       200
-/ai-legal-workshop              /index.html                       200
-/triple-a-transformation        /index.html                       200
-/strategy-session-confirmed     /index.html                       200
-/associate-call-confirmed       /index.html                       200
-/not-found                      /index.html                       200
+# This handles static files first
 /feed.xml                       /feed.xml                         200
 /sitemap.xml                    /sitemap.xml                      200
 /robots.txt                     /robots.txt                       200
 
-# Static files
-/*.js                           /index.html                       200
-/*.css                          /index.html                       200
-/*.ico                          /index.html                       200
-/*.png                          /index.html                       200
-/*.svg                          /index.html                       200
+# Handle assets directly
+/*.js                           /:splat                           200
+/*.css                          /:splat                           200
+/*.ico                          /:splat                           200
+/*.png                          /:splat                           200
+/*.svg                          /:splat                           200
 
-# All other paths should return a 404
-/*                              /.netlify/functions/handle-404    404
+# SPA fallback - this will handle ALL React routes automatically
+# without manual listing of each route
+/*                              /index.html                       200
