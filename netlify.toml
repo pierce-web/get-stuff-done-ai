@@ -1,4 +1,3 @@
-
 [build]
   command = "npm run build"
   publish = "dist"
@@ -79,6 +78,11 @@
   to = "/index.html"
   status = 200
 
+[[redirects]]
+  from = "/associate-call-confirmed"
+  to = "/index.html"
+  status = 200
+
 # Use Netlify Function for 404 handling when path doesn't match known routes
 [[redirects]]
   from = "/*"
@@ -105,4 +109,3 @@
     Access-Control-Allow-Headers = "*"
     X-Robots-Tag = "all"
     Cache-Control = "public, max-age=300, must-revalidate"
-

@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,6 +15,7 @@ import StrategySessionConfirmed from "./pages/StrategySessionConfirmed";
 import BlogPage from "./pages/blog";
 import BlogPostPage from "./pages/blog/[id]";
 import AILegalWorkshop from "./pages/AILegalWorkshop";
+import AssociateCallConfirmed from "./pages/AssociateCallConfirmed";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +38,7 @@ const App = () => (
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/not-found" element={<NotFound />} />
+          <Route path="/associate-call-confirmed" element={<AssociateCallConfirmed />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
