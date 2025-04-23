@@ -1,3 +1,4 @@
+
 [build]
   command = "npm run build"
   publish = "dist"
@@ -80,6 +81,11 @@
 
 [[redirects]]
   from = "/associate-call-confirmed"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/not-found"
   to = "/index.html"
   status = 200
 
