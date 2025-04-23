@@ -13,8 +13,8 @@ import {
 } from "lucide-react";
 
 const QualitativeDataInsightsWorkshop = () => {
-  // Calendly links (to be updated with actual links)
-  const workshopCalendlyLink = "https://calendly.com/gsdatwork/qualitative-data-insights-workshop"; // Replace with actual link
+  // Calendly links
+  const workshopCalendlyLink = "https://calendly.com/gsdatwork/ai-workshop"; 
   const consultationCalendlyLink = "https://calendly.com/gsdatwork/free-consult";
 
   // Current date for dateModified schema property
@@ -132,7 +132,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <BrainCircuit className="h-8 w-8 text-secondary" />
                   </div>
                   <img 
-                    src="/analytics.png" 
+                    src="/analytics.png?v=1" 
                     alt="AI Data Analysis Visualization" 
                     className="w-full rounded-lg"
                   />
