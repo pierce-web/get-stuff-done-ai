@@ -19,6 +19,16 @@ export const EventDetailsSection: React.FC = () => {
             Join AI implementation experts Christian Ulstrup (Principal, GSD at Work LLC) and Ryan Markman (CEO, Melior) for a dynamic, live working session – think of it as an "AI Cooking Show" specifically for lawyers. We won't just talk about AI; we'll demonstrate its power in real-time by tackling a genuine legal workflow submitted by one selected attendee.
           </p>
           
+          <div className="bg-blue-50 border-l-4 border-secondary p-6 mb-6 rounded-r-lg">
+            <h3 className="text-xl font-bold text-primary mb-3">The $2,500 Live Workflow Transformation Opportunity</h3>
+            <p className="text-gray-700 mb-4">
+              One participant will receive an invaluable <span className="font-semibold">live, hands-on workflow transformation</span> during the session, guided by Christian Ulstrup. This is the same process offered in our private 2-Hour AI Action Workshops, valued at $2,500. You'll work directly with Christian to analyze one of <em>your</em> firm's specific workflows (using anonymized data/examples for confidentiality) and see how AI tools can be implemented step-by-step to drive efficiency. This is an unparalleled chance to get personalized, expert AI implementation insight for your practice.
+            </p>
+            <p className="text-gray-700">
+              <span className="font-semibold">How is the participant selected?</span> Attendees who express interest in being the live participant will be considered. We will contact potential candidates before the event to briefly discuss their workflow and ensure it's a good fit for the live demonstration, benefiting both the participant and all attendees.
+            </p>
+          </div>
+          
           <div className="bg-slate-50 rounded-xl p-6 my-8">
             <h3 className="text-xl font-bold mb-4 text-primary">What Makes This Session Different?</h3>
             <ul className="space-y-3">

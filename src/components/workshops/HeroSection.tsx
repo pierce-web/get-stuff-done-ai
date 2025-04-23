@@ -23,7 +23,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ eventbriteUrl }) => {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-700">
-              Witness AI transform a legal workflow LIVE! Join GSD & Melior for a hands-on session for lawyers. One attendee's workflow featured!
+              Witness AI transform a legal workflow LIVE! Join GSD & Melior for a hands-on session for lawyers. One attendee's workflow featured! <span className="font-semibold">Plus, one lucky attendee will be selected for a LIVE workflow transformation – a $2,500 value!</span> Limited spots available for this unique, hands-on experience.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -34,9 +34,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ eventbriteUrl }) => {
                 Reserve Your Spot
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
-              <div className="bg-secondary/10 text-secondary font-medium rounded-lg px-4 py-2 flex items-center justify-center">
-                <span className="font-bold">$299</span> - <span className="font-bold">$499</span>
-                <span className="ml-2 text-sm bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full">Early bird discount</span>
+              <div className="flex flex-col">
+                <div className="bg-secondary/10 text-secondary font-medium rounded-lg px-4 py-2 flex items-center justify-center">
+                  <span className="font-bold">$299</span> - <span className="font-bold">$499</span>
+                  <span className="ml-2 text-sm bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full">Early bird discount</span>
+                </div>
+                <p className="text-sm font-semibold text-red-600 mt-2 text-center">Spaces are strictly limited!</p>
               </div>
             </div>
           </div>

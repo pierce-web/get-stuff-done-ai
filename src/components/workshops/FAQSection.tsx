@@ -61,6 +61,15 @@ export const FAQSection: React.FC = () => {
                 Yes. For the live participant, we'll work with anonymized data and generic examples. All attendees can rest assured that client confidentiality will be maintained throughout the session.
               </AccordionContent>
             </AccordionItem>
+            
+            <AccordionItem value="item-6" className="bg-white rounded-xl shadow-sm">
+              <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                <h3 className="text-lg font-bold text-left">What is the $2,500 live workflow transformation opportunity?</h3>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4 text-gray-700">
+                This is a unique chance for one selected attendee to have their actual legal workflow analyzed and transformed using AI tools live during the session, guided by expert Christian Ulstrup. It mirrors our private AI Action Workshop ($2,500 value). You'll see the practical application of AI on a real-world legal process, gaining insights applicable to your own firm. Participants interested in this opportunity will be contacted beforehand to discuss details and ensure confidentiality.
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
       </div>

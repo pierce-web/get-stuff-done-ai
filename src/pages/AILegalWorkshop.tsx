@@ -62,6 +62,14 @@ const AILegalWorkshop: React.FC = () => {
           "@type": "Answer",
           "text": "Yes. For the live participant, we'll work with anonymized data and generic examples. All attendees can rest assured that client confidentiality will be maintained throughout the session."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the $2,500 live workflow transformation opportunity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is a unique chance for one selected attendee to have their actual legal workflow analyzed and transformed using AI tools live during the session, guided by expert Christian Ulstrup. It mirrors our private AI Action Workshop ($2,500 value). You'll see the practical application of AI on a real-world legal process, gaining insights applicable to your own firm. Participants interested in this opportunity will be contacted beforehand to discuss details and ensure confidentiality."
+        }
       }
     ]
   };

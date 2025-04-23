@@ -60,8 +60,14 @@ export const WhoShouldAttendSection: React.FC = () => {
           </div>
           
           <p className="text-gray-700 mt-8 text-center font-medium">
-            Bridge the gap between AI's potential and your firm's reality. See how to leverage this technology effectively and gain a competitive edge.
+            Bridge the gap between AI's potential and your firm's reality. See how to leverage this technology effectively, gain a competitive edge, <span className="text-secondary font-semibold">and potentially walk away with a $2,500 workflow makeover.</span>
           </p>
+          
+          <div className="bg-blue-50 border border-secondary/20 rounded-lg p-6 mt-8 text-center">
+            <p className="text-gray-800 font-medium">
+              <span className="font-bold text-secondary">Bonus:</span> Witness a live $2,500 value workflow transformation and learn how to apply the same process to your own firm's operations.
+            </p>
+          </div>
         </div>
       </div>
     </section>

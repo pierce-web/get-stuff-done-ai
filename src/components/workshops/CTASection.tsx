@@ -16,7 +16,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ eventbriteUrl }) => {
             Reserve Your Spot Today
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Limited spaces available. Don't miss this opportunity to see AI transform legal workflows in real-time.
+            Limited spaces available for this unique session. Don't miss the chance to see AI transform legal workflows in real-time <span className="font-semibold">and the opportunity for one attendee to receive a live $2,500 workflow makeover.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -33,7 +33,11 @@ export const CTASection: React.FC<CTASectionProps> = ({ eventbriteUrl }) => {
             </div>
           </div>
           
-          <p className="text-sm text-gray-600 mt-6">
+          <p className="text-sm font-semibold text-red-600 mt-4">
+            Secure your spot before they're gone!
+          </p>
+          
+          <p className="text-sm text-gray-600 mt-2">
             Refund Policy: Full refunds available up to 7 days before the event.
           </p>
         </div>
