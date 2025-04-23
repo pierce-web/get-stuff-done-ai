@@ -27,7 +27,7 @@ const QualitativeDataInsightsWorkshop = () => {
     "https://gsdat.work/qualitative-data-insights-workshop",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
-    "$2,500"
+    "$2,499"
   );
 
   // FAQ structured data
@@ -50,7 +50,7 @@ const QualitativeDataInsightsWorkshop = () => {
     },
     {
       question: "How much does the Qualitative Data Insights Workshop cost?",
-      answer: "$2,500 for a focused 2-hour AI Action Workshop with satisfaction guaranteed."
+      answer: "$2,499 for a focused 2-hour AI Action Workshop with satisfaction guaranteed."
     }
   ]);
 
@@ -92,7 +92,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <DollarSign className="h-5 w-5 text-secondary" />
                     </div>
-                    <span className="font-medium">$2,500 Flat Fee</span>
+                    <span className="font-medium">$2,499 Flat Fee</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
@@ -132,7 +132,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <BrainCircuit className="h-8 w-8 text-secondary" />
                   </div>
                   <img 
-                    src="/placeholder.svg" 
+                    src="/analytics.png" 
                     alt="AI Data Analysis Visualization" 
                     className="w-full rounded-lg"
                   />
@@ -322,7 +322,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <DollarSign className="h-6 w-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">High ROI Initial Engagement</h3>
-                  <p className="text-gray-700">A cost-effective way ($2,500) to experience the power of AI and get immediate value.</p>
+                  <p className="text-gray-700">A cost-effective way ($2,499) to experience the power of AI and get immediate value.</p>
                 </div>
               </div>
             </div>
@@ -434,95 +434,6 @@ const QualitativeDataInsightsWorkshop = () => {
           </div>
         </section>
         
-        {/* Real Results Section */}
-        <section className="container mx-auto px-4 mb-20">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
-              Real Results: Case Studies
-            </h2>
-            
-            <div className="space-y-8">
-              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                <div className="bg-secondary/5 p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-2">Logistics/Shipping Company</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Email Analysis</span>
-                    <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Process Improvement</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="grid md:grid-cols-3 gap-4 mb-6">
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Challenge:</h4>
-                      <p className="text-gray-700">High volume of customer service emails, suspected scheduling issues but unclear root cause.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Solution:</h4>
-                      <p className="text-gray-700">2-Hour Workshop analyzing email data dump.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Result:</h4>
-                      <p className="text-gray-700">AI analysis pinpointed a specific flaw in the scheduling system's exception handling logic, providing the tech team with a clear target for product improvement.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                <div className="bg-secondary/5 p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-2">Healthcare Technology Provider</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Call Transcripts</span>
-                    <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Performance Coaching</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="grid md:grid-cols-3 gap-4 mb-6">
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Challenge:</h4>
-                      <p className="text-gray-700">Variance in vet performance and client satisfaction across different practices. Needed data-driven coaching insights.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Solution:</h4>
-                      <p className="text-gray-700">2-Hour Workshop analyzing AI Scribe transcripts from consultations.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Result:</h4>
-                      <p className="text-gray-700">Correlated specific communication patterns (clarity, decisiveness) with higher patient satisfaction and revenue. Developed targeted coaching materials based on top performers.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                <div className="bg-secondary/5 p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-2">Financial Services Institution</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Call Center Analysis</span>
-                    <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Compliance</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="grid md:grid-cols-3 gap-4 mb-6">
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Challenge:</h4>
-                      <p className="text-gray-700">Needed to understand call drivers and identify service gaps/compliance risks from thousands of daily call center interactions, hampered by limited CRM logging.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Solution:</h4>
-                      <p className="text-gray-700">2-Hour Workshop analyzing raw call transcripts via AWS Bedrock/Claude.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Result:</h4>
-                      <p className="text-gray-700">Rapidly identified top call themes missed by manual logging, flagged potential compliance issues, and generated insights for improving QA processes and self-service options.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* CTA Section */}
         <section className="bg-primary-50 py-16 mb-20">
           <div className="container mx-auto px-4">
@@ -532,7 +443,7 @@ const QualitativeDataInsightsWorkshop = () => {
               </h2>
               
               <div className="mb-8">
-                <span className="text-4xl font-bold text-secondary">$2,500</span>
+                <span className="text-4xl font-bold text-secondary">$2,499</span>
                 <p className="text-gray-700 mt-2">For a focused 2-hour AI Action Workshop</p>
                 <p className="text-sm font-medium text-secondary mt-1">Satisfaction Guaranteed</p>
               </div>
