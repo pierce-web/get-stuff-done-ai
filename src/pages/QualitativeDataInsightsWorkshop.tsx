@@ -132,7 +132,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <BrainCircuit className="h-8 w-8 text-secondary" />
                   </div>
                   <img 
-                    src="/analytics.png?v=1" 
+                    src="/analytics-copy.png" 
                     alt="AI Data Analysis Visualization" 
                     className="w-full rounded-lg"
                   />
