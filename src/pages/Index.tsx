@@ -7,11 +7,13 @@ import { Footer } from "@/components/Footer";
 import { FeaturedReport } from "@/components/FeaturedReport";
 import { Navigation } from "@/components/Navigation";
 import { FeaturedIn } from "@/components/FeaturedIn";
+import { LegalWorkshopPromo } from "@/components/promotions/LegalWorkshopPromo";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <LegalWorkshopPromo />
       
       {/* Add padding-top to account for the fixed navigation */}
       <div className="pt-20">
