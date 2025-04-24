@@ -3,6 +3,7 @@ import React from "react";
 import { Navigation } from "@/components/navigation/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { Button } from "@/components/ui/button";
 import { generateServicePageStructuredData } from "@/lib/seo-utils";
 import { HeroSection } from "@/components/workshops/HeroSection";
 import { CoHostedSection } from "@/components/workshops/CoHostedSection";
