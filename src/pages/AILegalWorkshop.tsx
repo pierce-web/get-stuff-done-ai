@@ -106,6 +106,29 @@ const AILegalWorkshop: React.FC = () => {
         <WhoShouldAttendSection />
         <FAQSection />
         <CTASection eventbriteUrl={eventbriteUrl} />
+        
+        {/* Cross-promotion */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-blue-50 border border-secondary/20 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">Also Interested in Data Analysis?</h3>
+                <p className="text-gray-700 mb-4">
+                  Check out our <span className="font-semibold">Qualitative Data Insights AI Workshop</span> – a specialized 2-hour session focused on extracting actionable insights from customer conversations, feedback, and qualitative data.
+                </p>
+                <div className="mt-4">
+                  <Button
+                    variant="outline"
+                    className="border-secondary text-secondary hover:bg-secondary/10"
+                    onClick={() => window.location.href = "/qualitative-data-insights-workshop"}
+                  >
+                    Learn about our Qualitative Data Insights Workshop
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />

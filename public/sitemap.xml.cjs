@@ -85,6 +85,12 @@ const generateSitemap = () => {
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.9'
+    },
+    {
+      url: 'https://gsdat.work/qualitative-data-insights-workshop',
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.8'
     }
   ];
   

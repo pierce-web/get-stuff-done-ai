@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation } from "@/components/Navigation";
+import { Navigation } from "@/components/navigation/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
@@ -59,7 +59,7 @@ const QualitativeDataInsightsWorkshop = () => {
       <SEOHead 
         title="Qualitative Data Insights AI Workshop | GSD at Work"
         description="Turn messy qualitative data (calls, emails, surveys) into clear, actionable business insights in just 2 hours with our AI-powered workshop. Drive data-driven decisions faster."
-        canonicalUrl="/qualitative-data-insights-workshop"
+        canonicalUrl="https://gsdat.work/qualitative-data-insights-workshop"
         keywords="qualitative data analysis AI, call transcript analysis, customer insight mining, AI workshop, sentiment analysis, data insights"
         structuredData={[serviceStructuredData, faqStructuredData]}
       />
@@ -132,7 +132,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <BrainCircuit className="h-8 w-8 text-secondary" />
                   </div>
                   <img 
-                    src="/analytics-copy.png" 
+                    src="/data-insights-analytics.png" 
                     alt="AI Data Analysis Visualization" 
                     className="w-full rounded-lg"
                   />
