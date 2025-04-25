@@ -8,10 +8,16 @@ import { FeaturedReport } from "@/components/FeaturedReport";
 import { Navigation } from "@/components/Navigation";
 import { FeaturedIn } from "@/components/FeaturedIn";
 import { LegalWorkshopPromo } from "@/components/promotions/LegalWorkshopPromo";
+import { SEOHead } from "@/components/SEOHead";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Get Stuff Done with AI"
+        description="Transform your business with AI implementation expertise. From insight to action in minutes, not months."
+        canonicalUrl="https://gsdat.work/"
+      />
       <Navigation />
       <LegalWorkshopPromo />
       
