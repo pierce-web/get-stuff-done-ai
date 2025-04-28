@@ -5,7 +5,7 @@ import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { FeaturedReport } from "@/components/FeaturedReport";
-import { Navigation } from "@/components/Navigation";
+import { Navigation } from "@/components/navigation/Navigation";
 import { FeaturedIn } from "@/components/FeaturedIn";
 import { LegalWorkshopPromo } from "@/components/promotions/LegalWorkshopPromo";
 import { SEOHead } from "@/components/SEOHead";

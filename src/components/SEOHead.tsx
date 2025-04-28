@@ -42,6 +42,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     return `${baseUrl}${canonicalUrl.startsWith("/") ? canonicalUrl : `/${canonicalUrl}`}`;
   })();
 
+  // Add a console log to debug the OG image URL being used
+  console.log("SEOHead using OG image:", ogImage);
+
   return (
     <Helmet>
       {/* Basic Metadata */}

@@ -17,6 +17,7 @@ const AILegalWorkshop: React.FC = () => {
   const eventbriteUrl = "https://www.eventbrite.com/e/ai-in-action-for-lawyers-live-workflow-transformation-session-tickets-1321545932459";
   const meliorUrl = "https://www.getmelior.com";
   const homeUrl = "https://gsdat.work";
+  // Make sure to use the absolute URL for the workshop image
   const workshopImageUrl = "https://gsdat.work/lovable-uploads/bde19514-d59a-41ee-8213-67b208023d15.png";
   
   // Generate FAQ schema for rich results
