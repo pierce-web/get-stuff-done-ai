@@ -43,6 +43,14 @@
   to = "/robots.txt"
   status = 200
 
+# Protect private files directory listing but allow direct file access
+[[headers]]
+  for = "/private-files/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
 # First, handle static assets directly
 [[redirects]]
   from = "/*.js"
