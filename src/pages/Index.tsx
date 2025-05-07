@@ -3,22 +3,20 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { About } from "@/components/About";
-import { Footer } from "@/components/Footer";
 import { FeaturedReport } from "@/components/FeaturedReport";
-import { Navigation } from "@/components/navigation/Navigation";
 import { FeaturedIn } from "@/components/FeaturedIn";
 import { LegalWorkshopPromo } from "@/components/promotions/LegalWorkshopPromo";
 import { SEOHead } from "@/components/SEOHead";
+import { Layout } from "@/components/Layout";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <Layout>
       <SEOHead 
         title="Get Stuff Done with AI"
         description="Transform your business with AI implementation expertise. From insight to action in minutes, not months."
         canonicalUrl="https://gsdat.work/"
       />
-      <Navigation />
       <LegalWorkshopPromo />
       
       {/* Add padding-top to account for the fixed navigation */}
@@ -44,10 +42,8 @@ const Index = () => {
         </div>
         
         <About />
-        
-        <Footer />
       </div>
-    </div>
+    </Layout>
   );
 };
 

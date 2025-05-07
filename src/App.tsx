@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,12 +18,14 @@ import BlogPostPage from "./pages/blog/[id]";
 import AILegalWorkshop from "./pages/AILegalWorkshop";
 import AssociateCallConfirmed from "./pages/AssociateCallConfirmed";
 import QualitativeDataInsightsWorkshop from "./pages/QualitativeDataInsightsWorkshop";
+import { HeadManager } from "./components/head/HeadManager";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <HeadManager />
       <Toaster />
       <Sonner />
       <BrowserRouter>
