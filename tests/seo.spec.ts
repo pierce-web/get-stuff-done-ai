@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 // Define key pages to test
 const pagesToTest = [
   { path: '/', expectedTitleContent: 'Get Stuff Done' },
-  { path: '/blog', expectedTitleContent: 'Blog' },
+  { path: '/blog', expectedTitleContent: 'Professional Insights' },
 ];
 
 test.describe('SEO Tests', () => {
