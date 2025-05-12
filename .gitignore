@@ -25,3 +25,13 @@ dist-ssr
 
 # LinkedIn export data (contains personal information)
 linkedin-llm-txt/
+
+# Playwright
+playwright-report/
+test-results/
+/playwright/.cache/
+
+**/.claude/settings.local.json
+
+# Debug files
+context/

@@ -13,7 +13,16 @@
     "generate:sitemap": "node scripts/regenerate-sitemap.cjs",
     "generate:rss": "node public/feed.xml.cjs",
     "generate:seo": "npm run generate:sitemap && npm run generate:rss",
-    "fix:seo": "npm run generate:sitemap && npm run build"
+    "fix:seo": "npm run generate:sitemap && npm run build",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:seo": "playwright test seo.spec.ts",
+    "test:a11y": "playwright test accessibility.spec.ts",
+    "test:perf": "playwright test performance.spec.ts",
+    "test:run": "./scripts/run-local-tests.sh",
+    "test:ci": "playwright test --project=chromium",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -69,6 +78,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@playwright/test": "^1.52.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
@@ -80,6 +90,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "husky": "^8.0.3",
     "jsdom": "^23.2.0",
     "lovable-tagger": "^1.1.3",
     "postcss": "^8.4.47",

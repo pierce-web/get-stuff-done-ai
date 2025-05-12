@@ -1,72 +1,72 @@
-# Welcome to your Lovable project
+# Get Stuff Done AI
 
-## Project info
+**URL**: https://gsdat.work
 
-**URL**: https://lovable.dev/projects/3901f669-c06d-4a25-b658-0a6ac59aac3a
+## Project Overview
 
-## How can I edit this code?
+This is the codebase for Get Stuff Done AI, a consulting business focused on AI implementation expertise.
 
-There are several ways of editing your application.
+## Technologies
 
-**Use Lovable**
+- Vite + React + TypeScript
+- Tailwind CSS with shadcn/ui components
+- SEO optimization with metadata
+- React Router for routing
+- Netlify for CI/CD and hosting
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3901f669-c06d-4a25-b658-0a6ac59aac3a) and start prompting.
+## Development Setup
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Install dependencies
+npm install
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Testing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project uses Playwright for end-to-end testing:
 
-**Use GitHub Codespaces**
+```bash
+# Install Playwright browsers
+npx playwright install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Run all tests
+npm test
 
-## What technologies are used for this project?
+# Run tests with UI
+npm run test:ui
 
-This project is built with .
+# Run tests in headed browsers
+npm run test:headed
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Run only SEO tests
+npm run test:seo
+```
 
-## How can I deploy this project?
+## CI Pipeline
 
-Simply open [Lovable](https://lovable.dev/projects/3901f669-c06d-4a25-b658-0a6ac59aac3a) and click on Share -> Publish.
+Tests are automatically run on:
+- Pull requests to the main branch
+- Push to the main branch
 
-## I want to use a custom domain - is that possible?
+The GitHub Actions workflow checks:
+- Linting with ESLint
+- End-to-end tests with Playwright
+- Test reports are uploaded as artifacts
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## Deploy
+
+This project is automatically deployed to Netlify:
+- Production: Merging to `main` triggers a production deploy
+- Preview: Pull requests generate preview deployments
 
 ## SEO Optimization
 
