@@ -1,6 +1,6 @@
 
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData } from "@/lib/seo-utils";
@@ -11,6 +11,7 @@ interface CaseStudy {
   subtitle: string;
   industry: string;
   client?: string; // Make client optional
+  clientUrl?: string; // Add client URL
   challenge: string;
   solution: string;
   results: string[];
@@ -42,6 +43,7 @@ const casesData: Record<string, CaseStudy> = {
     subtitle: "AI implementation drives significant efficiency gains in key areas",
     industry: "Wellness & Social Bathhouse",
     client: "Othership (Robbie Bent, CEO & Team)",
+    clientUrl: "https://www.othership.us",
     challenge: "Rapid growth leading to operational bottlenecks, inefficiencies in key processes (recruiting, construction management, creative development), and a desire to leverage AI for strategic advantage.",
     solution: "Targeted AI adoption coaching and implementation sprints led by Christian Ulstrup, GSD at Work LLC Founder & Principal, focusing on practical application, workflow automation, and strategic AI integration.",
     results: [
@@ -55,6 +57,17 @@ const casesData: Record<string, CaseStudy> = {
       <p class="mb-4">
         Othership, a rapidly expanding social bathhouse experience, faced the classic challenges of scaling: operational bottlenecks, time-consuming manual processes, and the need to maintain quality and efficiency across diverse functions like recruitment, construction, and creative development. CEO Robbie Bent and his team partnered with AI adoption consultant Christian Ulstrup to identify high-impact areas where AI could provide immediate value. Through a series of collaborative workshops and hands-on coaching sessions tailored to specific departmental needs (Growth/Partnerships, Recruiting, Construction, Creative), Othership implemented practical AI workflows. Key outcomes included reducing pre-screening cycle time for a key open role, accelerating class creation by over 2x, improving communication efficiency via AI-assisted drafting and dictation, and establishing processes for leveraging AI in construction analysis and operational oversight. The engagement empowered the Othership team with tangible AI skills and delivered measurable productivity improvements.
       </p>
+
+      <div class="my-8 flex flex-col md:flex-row items-center gap-6 justify-center">
+        <a href="https://www.othership.us" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors">
+          <img src="/lovable-uploads/7c90134e-205f-43e0-a801-914a4c367808.png" 
+               alt="Othership Logo" 
+               class="max-h-24 w-auto"
+               width="100"
+               height="100" />
+        </a>
+      </div>
 
       <h2 class="text-2xl font-semibold mt-8 mb-4">About Othership</h2>
       <p class="mb-4">
@@ -176,7 +189,7 @@ const casesData: Record<string, CaseStudy> = {
           <li>Significantly accelerating the writing process through dictation (Whisper Flow).</li>
         </ul>
         <p class="mb-4">
-          <span class="font-medium">Outcome:</span> The Co-founder reported a 2-2.5x increase in class writing efficiency, finding the process significantly "funner" and less cognitively draining. AI proved highly effective at generating ideas and drafting high-quality prose, allowing him to focus on structure and refinement. Dictation was a "game changer," increasing productivity "fourfold" for communication tasks. (High enthusiasm: "Legendary... $%&!ing insane... Hugely instrumental").
+          <span class="font-medium">Outcome:</span> The Co-founder reported a 2-2.5x increase in class writing efficiency, finding the process significantly "funner" and less cognitively draining. AI proved highly effective at generating ideas and drafting high-quality prose, allowing him to focus on structure and refinement. Dictation was a "game changer," increasing productivity "fourfold" for communication tasks. (High enthusiasm: "Legendary... insane... Hugely instrumental").
         </p>
       </div>
 
@@ -205,28 +218,28 @@ const casesData: Record<string, CaseStudy> = {
       <h2 class="text-2xl font-semibold mt-8 mb-4">Direct Quotes</h2>
       <div class="bg-gray-50 p-6 rounded-lg mb-8 space-y-4">
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
-          "What it helps for me to relieve is like the beautiful prose... This tool is hugely instrumental... It feels funner as a result. Doesn't feel as like just like intense and just like a draw of my cognitive strain... [Dictation increased productivity] even like fourfold. It's fucking insane."
-          <footer class="font-medium mt-2">— Harrison Taylor</footer>
+          "What it helps for me to relieve is like the beautiful prose... This tool is hugely instrumental... It feels funner as a result. Doesn't feel as like just like intense and just like a draw of my cognitive strain... [Dictation increased productivity] even like fourfold. It's insane."
+          <footer class="font-medium mt-2">— Harrison</footer>
         </blockquote>
         
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
           "[The automation is] very straightforward and also like, surprisingly, like, such a time save... It's just kind of cool to see it in action." (Rated session 5/5)
-          <footer class="font-medium mt-2">— Kelsea Knowles</footer>
+          <footer class="font-medium mt-2">— Kelsea</footer>
         </blockquote>
         
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
           "[AI-drafted meeting follow-up] is insane... That's actually so, so good." (Rated session 4/5)
-          <footer class="font-medium mt-2">— Shannon Bent</footer>
+          <footer class="font-medium mt-2">— Shannon</footer>
         </blockquote>
         
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
           "[Generating table from transcript] This is amazing... Perfect... Definitely gave good start point for sure... helpful information." (Rated session 4-5/5)
-          <footer class="font-medium mt-2">— Chad Halfaker</footer>
+          <footer class="font-medium mt-2">— Chad</footer>
         </blockquote>
         
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
           "[Seeing Shannon's results] It's amazing when you have, like, your first moment and you're just like, what?... Wait until it's also, like, trained on your voice and, like, we have the templates in and it's just gonna be... It's going to be so sick."
-          <footer class="font-medium mt-2">— Robbie Bent (Observing)</footer>
+          <footer class="font-medium mt-2">— Robbie (Observing)</footer>
         </blockquote>
       </div>
 
@@ -282,7 +295,7 @@ const CaseStudy = () => {
       <div className="min-h-screen bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Link to="/cases" className="inline-block mb-8">
-            <Button variant="outline">
+            <Button variant="secondary">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Cases
             </Button>
@@ -298,7 +311,20 @@ const CaseStudy = () => {
                 {caseStudy.client && (
                   <div>
                     <dt className="font-medium text-gray-900">Client</dt>
-                    <dd className="text-gray-600">{caseStudy.client}</dd>
+                    <dd className="text-gray-600 flex items-center gap-2">
+                      {caseStudy.client}
+                      {caseStudy.clientUrl && (
+                        <a 
+                          href={caseStudy.clientUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-secondary hover:text-secondary/80"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          <span className="sr-only">Visit {caseStudy.client.split(' ')[0]}'s website</span>
+                        </a>
+                      )}
+                    </dd>
                   </div>
                 )}
                 <div>
@@ -312,6 +338,10 @@ const CaseStudy = () => {
                 <div>
                   <dt className="font-medium text-gray-900">Solution</dt>
                   <dd className="text-gray-600">{caseStudy.solution}</dd>
+                </div>
+                <div>
+                  <dt className="font-medium text-gray-900">Date</dt>
+                  <dd className="text-gray-600">May 2025</dd>
                 </div>
               </dl>
             </div>

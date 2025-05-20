@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, FileText, CalendarDays } from "lucide-react";
@@ -54,7 +55,7 @@ const Cases = () => {
                   
                   <div className="flex items-center text-sm text-gray-500">
                     <CalendarDays className="mr-2 h-4 w-4" />
-                    <span>May 2023</span>
+                    <span>May 2025</span>
                   </div>
                 </div>
                 
