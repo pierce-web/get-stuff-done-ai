@@ -5,8 +5,20 @@ import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData } from "@/lib/seo-utils";
 
+// Define a TypeScript interface for our case study data structure
+interface CaseStudy {
+  title: string;
+  subtitle: string;
+  industry: string;
+  client?: string; // Make client optional
+  challenge: string;
+  solution: string;
+  results: string[];
+  content: string;
+}
+
 // This is our case studies data structure
-const casesData = {
+const casesData: Record<string, CaseStudy> = {
   "enterprise-ai-transformation": {
     title: "Enterprise AI Transformation",
     subtitle: "30-40% cost reduction in target processes",
