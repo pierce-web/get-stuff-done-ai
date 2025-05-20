@@ -4,6 +4,8 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData } from "@/lib/seo-utils";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 // Define a TypeScript interface for our case study data structure
 interface CaseStudy {
@@ -16,6 +18,7 @@ interface CaseStudy {
   solution: string;
   results: string[];
   content: string;
+  images?: string[]; // Add images array
 }
 
 // This is our case studies data structure
@@ -52,29 +55,33 @@ const casesData: Record<string, CaseStudy> = {
       "Established frameworks for AI-driven operational analysis",
       "Empowered team members with practical AI skills, saving time and reducing cognitive load"
     ],
+    images: [
+      "/lovable-uploads/283d4388-2ef1-45f2-a71e-beb881d9d1e5.png",
+      "/lovable-uploads/644343d3-9cb9-4381-b623-c7cf3474f0a0.png"
+    ],
     content: `
       <h2 class="text-2xl font-semibold mt-8 mb-4">Executive Summary</h2>
       <p class="mb-4">
         Othership, a rapidly expanding social bathhouse experience, faced the classic challenges of scaling: operational bottlenecks, time-consuming manual processes, and the need to maintain quality and efficiency across diverse functions like recruitment, construction, and creative development. CEO Robbie Bent and his team partnered with AI adoption consultant Christian Ulstrup to identify high-impact areas where AI could provide immediate value. Through a series of collaborative workshops and hands-on coaching sessions tailored to specific departmental needs (Growth/Partnerships, Recruiting, Construction, Creative), Othership implemented practical AI workflows. Key outcomes included reducing pre-screening cycle time for a key open role, accelerating class creation by over 2x, improving communication efficiency via AI-assisted drafting and dictation, and establishing processes for leveraging AI in construction analysis and operational oversight. The engagement empowered the Othership team with tangible AI skills and delivered measurable productivity improvements.
       </p>
 
-      <div class="my-8 flex justify-end">
-        <a href="https://www.othership.us" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors">
-          <span>Visit Othership</span>
-          <ExternalLink className="h-4 w-4" />
-          <img src="/lovable-uploads/7c90134e-205f-43e0-a801-914a4c367808.png" 
-               alt="Othership Logo" 
-               class="h-8 w-auto ml-2"
-               width="32"
-               height="32" />
-        </a>
-      </div>
-
       <h2 class="text-2xl font-semibold mt-8 mb-4">About Othership</h2>
       <p class="mb-4">
         Othership is pioneering the concept of the social bathhouse, creating unique wellness experiences centered around sauna, ice baths, and community connection. With popular locations and ambitious expansion plans, the company is navigating rapid growth while striving to maintain its unique brand ethos and operational excellence.
       </p>
+      
+      <div class="my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="/lovable-uploads/283d4388-2ef1-45f2-a71e-beb881d9d1e5.png" 
+             alt="Othership bathhouse with ice bath and sauna" 
+             class="w-full h-auto rounded-lg shadow-md"
+             width="600" 
+             height="400" />
+        <img src="/lovable-uploads/644343d3-9cb9-4381-b623-c7cf3474f0a0.png" 
+             alt="Othership sauna interior" 
+             class="w-full h-auto rounded-lg shadow-md"
+             width="600" 
+             height="400" />
+      </div>
 
       <h2 class="text-2xl font-semibold mt-8 mb-4">The Challenge: Scaling Pains and Untapped AI Potential</h2>
       <p class="mb-4">
@@ -191,7 +198,7 @@ const casesData: Record<string, CaseStudy> = {
           <li>Significantly accelerating the writing process through dictation (Whisper Flow).</li>
         </ul>
         <p class="mb-4">
-          <span class="font-medium">Outcome:</span> The Co-founder reported a 2-2.5x increase in class writing efficiency, finding the process significantly "funner" and less cognitively draining. AI proved highly effective at generating ideas and drafting high-quality prose, allowing him to focus on structure and refinement. Dictation was a "game changer," increasing productivity "fourfold" for communication tasks. (High enthusiasm: "Legendary... insane... Hugely instrumental").
+          <span class="font-medium">Outcome:</span> The Co-founder reported a 2-2.5x increase in class writing efficiency, finding the process significantly more enjoyable and less cognitively draining. AI proved highly effective at generating ideas and drafting high-quality prose, allowing him to focus on structure and refinement. Dictation was a "game changer," increasing productivity "fourfold" for communication tasks. (High enthusiasm: "Legendary... insane... Hugely instrumental").
         </p>
       </div>
 
@@ -204,7 +211,7 @@ const casesData: Record<string, CaseStudy> = {
           <span class="font-medium">Empowered Team:</span> Team members gained hands-on experience and confidence using practical AI tools (ChatGPT, Whisper Flow, Zapier, Fathom analysis) integrated into their daily workflows.
         </li>
         <li>
-          <span class="font-medium">Reduced Cognitive Load:</span> AI assistance in tasks like drafting emails, summarizing meetings, and generating creative content freed up mental bandwidth for higher-level strategic thinking. Harrison noted it removed "my cognitive strain."
+          <span class="font-medium">Reduced Cognitive Load:</span> AI assistance in tasks like drafting emails, summarizing meetings, and generating creative content freed up mental bandwidth for higher-level strategic thinking. Harrison noted it removed "cognitive strain."
         </li>
         <li>
           <span class="font-medium">Improved Communication:</span> AI-generated meeting summaries and email drafts improved clarity and speed of communication, both internally and externally.
@@ -220,7 +227,7 @@ const casesData: Record<string, CaseStudy> = {
       <h2 class="text-2xl font-semibold mt-8 mb-4">Direct Quotes</h2>
       <div class="bg-gray-50 p-6 rounded-lg mb-8 space-y-4">
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
-          "What it helps for me to relieve is like the beautiful prose... This tool is hugely instrumental... It feels funner as a result. Doesn't feel as like just like intense and just like a draw of my cognitive strain... [Dictation increased productivity] even like fourfold. It's insane."
+          "What it helps for me to relieve is like the beautiful prose... This tool is hugely instrumental... It feels more enjoyable as a result. Doesn't feel as like just like intense and just like a draw of my cognitive strain... [Dictation increased productivity] even like fourfold. It's insane."
           <footer class="font-medium mt-2">— Harrison</footer>
         </blockquote>
         
@@ -240,7 +247,7 @@ const casesData: Record<string, CaseStudy> = {
         </blockquote>
         
         <blockquote class="italic border-l-4 border-gray-300 pl-4">
-          "[Seeing Shannon's results] It's amazing when you have, like, your first moment and you're just like, what?... Wait until it's also, like, trained on your voice and, like, we have the templates in and it's just gonna be... It's going to be so sick."
+          "[Seeing Shannon's results] It's amazing when you have, like, your first moment and you're just like, what?... Wait until it's also, like, trained on your voice and, like, we have the templates in and it's just gonna be... It's going to be so great."
           <footer class="font-medium mt-2">— Robbie (Observing)</footer>
         </blockquote>
       </div>
@@ -259,17 +266,21 @@ const CaseStudy = () => {
 
   if (!caseStudy) {
     return (
-      <div className="min-h-screen bg-background py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-primary">Case Study Not Found</h1>
-          <Link to="/cases" className="mt-8 inline-block">
-            <Button variant="outline">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Cases
-            </Button>
-          </Link>
+      <>
+        <Navigation />
+        <div className="min-h-screen bg-background py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h1 className="text-4xl font-bold text-primary">Case Study Not Found</h1>
+            <Link to="/cases" className="mt-8 inline-block">
+              <Button variant="outline">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Cases
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 
@@ -293,6 +304,8 @@ const CaseStudy = () => {
         structuredData={[caseStudySchema]}
         ogType="article"
       />
+      
+      <Navigation />
       
       <div className="min-h-screen bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
@@ -378,8 +391,33 @@ const CaseStudy = () => {
 
             <div className="mt-8" dangerouslySetInnerHTML={{ __html: caseStudy.content }} />
           </article>
+          
+          {/* Additional call to action */}
+          <div className="bg-secondary/5 border border-secondary/20 rounded-lg p-8 mt-12">
+            <h2 className="text-2xl font-bold mb-4 text-primary">Ready to transform your business with AI?</h2>
+            <p className="mb-6 text-gray-700">
+              Learn how we can help you implement practical AI solutions that drive real results, just like we did for Othership.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                className="bg-secondary hover:bg-secondary/90 text-white"
+                onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
+              >
+                Book a Strategy Call
+              </Button>
+              <Button 
+                variant="outline" 
+                className="border-secondary text-secondary hover:bg-secondary/10"
+                onClick={() => window.location.href = "/ai-tooling-report"}
+              >
+                Read our AI Tooling Report
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
+      
+      <Footer />
     </>
   );
 };

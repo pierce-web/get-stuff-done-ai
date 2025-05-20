@@ -98,7 +98,7 @@ const Cases = () => {
                   </div>
                 </div>
                 <Link to="/ai-tooling-report">
-                  <Button className="w-full bg-secondary hover:bg-secondary/90">
+                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-white">
                     Read the Full Report <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
