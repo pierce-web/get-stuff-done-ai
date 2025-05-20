@@ -5,7 +5,6 @@ import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { About } from "@/components/About";
 import { FeaturedReport } from "@/components/FeaturedReport";
 import { FeaturedIn } from "@/components/FeaturedIn";
-import { LegalWorkshopPromo } from "@/components/promotions/LegalWorkshopPromo";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
 
@@ -17,7 +16,6 @@ const Index = () => {
         description="Transform your business with AI implementation expertise. From insight to action in minutes, not months."
         canonicalUrl="https://gsdat.work/"
       />
-      <LegalWorkshopPromo />
       
       {/* Add padding-top to account for the fixed navigation */}
       <div className="pt-20">
