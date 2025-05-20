@@ -1,14 +1,18 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, FileText, CalendarDays } from "lucide-react";
+import { ArrowRight, CalendarDays, FileText, Filter, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { shadows, gradients } from "@/lib/design-tokens";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 const Cases = () => {
+  const [filterOpen, setFilterOpen] = useState(false);
+  
   return (
     <>
       <SEOHead 
@@ -20,21 +24,50 @@ const Cases = () => {
       
       <Navigation />
       
-      <div className="min-h-screen bg-background py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="min-h-screen bg-background py-24 sm:py-32 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-70 z-0"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-70 z-0"></div>
+        
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-2xl text-center mb-16">
+            <Badge variant="outline" className="bg-secondary/10 text-secondary border-secondary/20 mb-4">
+              Success Stories
+            </Badge>
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
               Case Studies
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Real-world examples of AI implementation success stories.
+              Real-world examples of AI implementation success stories that drive measurable business outcomes.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12 mb-16">
+          {/* Filters Row */}
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+            <div className="relative max-w-md w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input 
+                placeholder="Search case studies..." 
+                className="pl-10 bg-white/80 backdrop-blur-sm border-gray-200" 
+                disabled
+              />
+            </div>
+            
+            <Button 
+              variant="outline" 
+              className="gap-2 group"
+              onClick={() => setFilterOpen(!filterOpen)}
+            >
+              <Filter className="h-4 w-4 text-gray-600 group-hover:text-primary transition-colors" />
+              Filter by Industry
+              <Badge className="ml-1 bg-secondary/20 text-secondary hover:bg-secondary/30 border-0">Coming Soon</Badge>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12 mb-20">
             {/* Othership Case Study Card */}
-            <Card className="overflow-hidden border border-gray-200 transition-all hover:shadow-md">
-              <CardHeader className="bg-gradient-to-r from-secondary/10 to-secondary/5 pb-4">
+            <Card className={`overflow-hidden border border-gray-200 ${shadows.cardEffect}`}>
+              <CardHeader className={`${gradients.secondaryLight} pb-4`}>
                 <div className="mb-2">
                   <Badge variant="outline" className="bg-secondary/10 text-secondary border-secondary/20">
                     Wellness Industry
@@ -53,9 +86,14 @@ const Cases = () => {
                     How a rapidly growing social bathhouse experience transformed key operational processes through targeted AI adoption coaching and implementation sprints.
                   </p>
                   
-                  <div className="flex items-center text-sm text-gray-500">
-                    <CalendarDays className="mr-2 h-4 w-4" />
-                    <span>May 2025</span>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <CalendarDays className="mr-2 h-4 w-4" />
+                      <span>May 2025</span>
+                    </div>
+                    <Badge variant="outline" className="text-gray-500">
+                      Featured
+                    </Badge>
                   </div>
                 </div>
                 
@@ -71,7 +109,7 @@ const Cases = () => {
             </Card>
             
             {/* AI Tooling Report Card */}
-            <Card className="bg-secondary/5 border-secondary/20">
+            <Card className={`bg-secondary/5 border-secondary/20 ${shadows.cardEffect}`}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="h-5 w-5" />
@@ -106,12 +144,20 @@ const Cases = () => {
             </Card>
           </div>
           
-          {/* Coming soon section */}
-          <div className="mx-auto max-w-2xl mt-24 text-center">
+          {/* Coming soon section with improved styling */}
+          <div className={`mx-auto max-w-2xl my-24 text-center p-10 rounded-xl ${gradients.primaryLight} border border-gray-200/50 ${shadows.md}`}>
             <h2 className="text-2xl font-bold mb-4">More Case Studies Coming Soon</h2>
             <p className="text-gray-600 mb-8">
               We're continuously documenting our client success stories. Check back for additional case studies demonstrating the practical impact of AI implementation.
             </p>
+            <Button 
+              variant="outline" 
+              className="gap-2 border-primary/20 text-primary bg-white hover:bg-primary/5"
+              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+            >
+              Want to be our next case study? Book a call
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </div>
