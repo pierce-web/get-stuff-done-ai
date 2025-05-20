@@ -58,14 +58,16 @@ const casesData: Record<string, CaseStudy> = {
         Othership, a rapidly expanding social bathhouse experience, faced the classic challenges of scaling: operational bottlenecks, time-consuming manual processes, and the need to maintain quality and efficiency across diverse functions like recruitment, construction, and creative development. CEO Robbie Bent and his team partnered with AI adoption consultant Christian Ulstrup to identify high-impact areas where AI could provide immediate value. Through a series of collaborative workshops and hands-on coaching sessions tailored to specific departmental needs (Growth/Partnerships, Recruiting, Construction, Creative), Othership implemented practical AI workflows. Key outcomes included reducing pre-screening cycle time for a key open role, accelerating class creation by over 2x, improving communication efficiency via AI-assisted drafting and dictation, and establishing processes for leveraging AI in construction analysis and operational oversight. The engagement empowered the Othership team with tangible AI skills and delivered measurable productivity improvements.
       </p>
 
-      <div class="my-8 flex flex-col md:flex-row items-center gap-6 justify-center">
+      <div class="my-8 flex justify-end">
         <a href="https://www.othership.us" target="_blank" rel="noopener noreferrer" 
            class="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors">
+          <span>Visit Othership</span>
+          <ExternalLink className="h-4 w-4" />
           <img src="/lovable-uploads/7c90134e-205f-43e0-a801-914a4c367808.png" 
                alt="Othership Logo" 
-               class="max-h-24 w-auto"
-               width="100"
-               height="100" />
+               class="h-8 w-auto ml-2"
+               width="32"
+               height="32" />
         </a>
       </div>
 
@@ -294,12 +296,33 @@ const CaseStudy = () => {
       
       <div className="min-h-screen bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <Link to="/cases" className="inline-block mb-8">
-            <Button variant="secondary">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Cases
-            </Button>
-          </Link>
+          <div className="flex justify-between items-center mb-8">
+            <Link to="/cases">
+              <Button variant="secondary" className="text-white bg-secondary hover:bg-secondary/90">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Cases
+              </Button>
+            </Link>
+            
+            {caseStudy.clientUrl && (
+              <a 
+                href={caseStudy.clientUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors"
+              >
+                <span className="hidden sm:inline">Visit {caseStudy.client?.split(' ')[0] || 'Client'}</span>
+                <ExternalLink className="h-4 w-4" />
+                <img 
+                  src="/lovable-uploads/7c90134e-205f-43e0-a801-914a4c367808.png" 
+                  alt="Othership Logo" 
+                  className="h-8 w-auto"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            )}
+          </div>
 
           <article className="prose prose-lg max-w-none">
             <h1 className="text-4xl font-bold text-primary mb-4">{caseStudy.title}</h1>
@@ -311,20 +334,7 @@ const CaseStudy = () => {
                 {caseStudy.client && (
                   <div>
                     <dt className="font-medium text-gray-900">Client</dt>
-                    <dd className="text-gray-600 flex items-center gap-2">
-                      {caseStudy.client}
-                      {caseStudy.clientUrl && (
-                        <a 
-                          href={caseStudy.clientUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-secondary hover:text-secondary/80"
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                          <span className="sr-only">Visit {caseStudy.client.split(' ')[0]}'s website</span>
-                        </a>
-                      )}
-                    </dd>
+                    <dd className="text-gray-600">{caseStudy.client}</dd>
                   </div>
                 )}
                 <div>

@@ -61,7 +61,7 @@ const Cases = () => {
                 
                 <div className="mt-6">
                   <Link to="/cases/othership-ai-partnership">
-                    <Button className="w-full gap-2">
+                    <Button className="w-full gap-2 bg-secondary hover:bg-secondary/90 text-white">
                       Read Case Study
                       <ArrowRight className="h-4 w-4" />
                     </Button>
