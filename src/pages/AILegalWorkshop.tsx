@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigation } from "@/components/navigation/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -11,14 +11,25 @@ import { EventDetailsSection } from "@/components/workshops/EventDetailsSection"
 import { AgendaSection } from "@/components/workshops/AgendaSection";
 import { WhoShouldAttendSection } from "@/components/workshops/WhoShouldAttendSection";
 import { FAQSection } from "@/components/workshops/FAQSection";
-import { CTASection } from "@/components/workshops/CTASection";
+import { FormSection } from "@/components/workshops/FormSection";
 
 const AILegalWorkshop: React.FC = () => {
-  const eventbriteUrl = "https://www.eventbrite.com/e/ai-in-action-for-lawyers-live-workflow-transformation-session-tickets-1321545932459";
   const meliorUrl = "https://www.getmelior.com";
   const homeUrl = "https://gsdat.work";
-  // Make sure to use the absolute URL for the workshop image
   const workshopImageUrl = "https://gsdat.work/lovable-uploads/bde19514-d59a-41ee-8213-67b208023d15.png";
+  
+  // Add HubSpot script to the page
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://js-na2.hsforms.net/forms/embed/242078229.js";
+    script.defer = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      // Clean up when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
   
   // Generate FAQ schema for rich results
   const faqSchema = {
@@ -30,70 +41,62 @@ const AILegalWorkshop: React.FC = () => {
         "name": "Is this just another theoretical AI presentation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not at all. This is a hands-on, practical demonstration where you'll see real AI tools applied to a real legal workflow in real-time. You'll witness the transformation process from start to finish."
+          "text": "Not at all. This is a hands-on, practical demonstration where you can see real AI tools applied to a real legal workflow. You'll witness the transformation process from start to finish."
         }
       },
       {
         "@type": "Question",
-        "name": "How will the \"live participant\" whose workflow is used be chosen?",
+        "name": "What specific legal workflows are covered?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "One attendee will be selected from those who express interest. We'll reach out before the session to gather information about your workflow, ensuring it's representative and beneficial for the broader audience."
+          "text": "The recording covers a genuine legal workflow which includes elements of intake analysis, discovery review, document drafting, or case preparation. The principles demonstrated are applicable across multiple practice areas."
         }
       },
       {
         "@type": "Question",
-        "name": "What specific legal workflows will be covered?",
+        "name": "Do I need to be highly technical to benefit from this recording?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The exact workflow will depend on the selected participant, but could include intake analysis, discovery review, document drafting, case preparation, client communication, or legal research. The principles demonstrated will be applicable across multiple practice areas."
+          "text": "Not at all. This session was specifically designed for legal professionals, not technologists. We focus on practical applications that don't require coding knowledge or deep technical expertise."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need to be highly technical to benefit from this session?",
+        "name": "How can I implement similar solutions at my firm?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not at all. This session is specifically designed for legal professionals, not technologists. We focus on practical applications that don't require coding knowledge or deep technical expertise."
+          "text": "After watching the replay, you'll have a much clearer understanding of how to identify AI opportunities in your practice. For further assistance with implementation, GSD and Melior offer consulting services and workshops tailored to your specific needs."
         }
       },
       {
         "@type": "Question",
-        "name": "Is it safe/confidential to discuss workflows in this session?",
+        "name": "What is the $2,500 workflow transformation shown in the replay?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. For the live participant, we'll work with anonymized data and generic examples. All attendees can rest assured that client confidentiality will be maintained throughout the session."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the $2,500 live workflow transformation opportunity?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "This is a unique chance for one selected attendee to have their actual legal workflow analyzed and transformed using AI tools live during the session, guided by expert Christian Ulstrup. It mirrors our private AI Action Workshop ($2,500 value). You'll see the practical application of AI on a real-world legal process, gaining insights applicable to your own firm. Participants interested in this opportunity will be contacted beforehand to discuss details and ensure confidentiality."
+          "text": "In the recording, you'll see a comprehensive workflow transformation guided by expert Christian Ulstrup. This mirrors our private AI Action Workshop (valued at $2,500) where we analyze and transform a specific legal workflow using AI tools. By watching the replay, you'll gain insights into this process that you can apply to your own firm's operations."
         }
       }
     ]
   };
   
   const structuredData = generateServicePageStructuredData(
-    "AI in Action for Lawyers: Live Workflow Transformation Session",
-    "Witness AI transform a legal workflow LIVE! Join GSD & Melior for a hands-on session specifically for lawyers on May 20th. See real legal workflows transformed, not just talked about.",
+    "AI in Action for Lawyers: Webinar Replay",
+    "Access the full recording of our hands-on workshop where we transformed a real legal workflow using AI. See practical AI applications for your law firm.",
     "https://gsdat.work/ai-legal-workshop",
     workshopImageUrl,
     "GSD at Work LLC",
-    "$299 - $499"
+    "Free"
   );
 
   return (
     <>
       <SEOHead 
-        title="AI in Action for Lawyers: Live Workflow Transformation"
-        description="Witness AI transform a legal workflow LIVE! Join Christian Ulstrup (GSD at Work) & Ryan Markman (Melior) for a hands-on session specifically for lawyers on May 20th. See real legal workflows transformed, not just talked about."
+        title="Watch the Replay: AI in Action for Lawyers"
+        description="Access the recording of our hands-on workshop where you'll see a real legal workflow transformed with AI. Learn practical applications for your law firm."
         canonicalUrl="https://gsdat.work/ai-legal-workshop"
         ogType="website"
         ogImage={workshopImageUrl}
-        ogImageAlt="AI in Action for Lawyers workshop banner with Christian Ulstrup and Ryan Markman"
+        ogImageAlt="AI in Action for Lawyers workshop with Christian Ulstrup and Ryan Markman"
         keywords="legal AI, law firm AI, AI for lawyers, legal technology, legal workflow automation, AI implementation for law, legal efficiency"
         structuredData={[structuredData, faqSchema]}
       />
@@ -101,13 +104,13 @@ const AILegalWorkshop: React.FC = () => {
       <Navigation />
       
       <main className="pt-24">
-        <HeroSection eventbriteUrl={eventbriteUrl} />
+        <HeroSection showReplayForm={true} />
         <CoHostedSection meliorUrl={meliorUrl} homeUrl={homeUrl} />
         <EventDetailsSection />
         <AgendaSection />
         <WhoShouldAttendSection />
         <FAQSection />
-        <CTASection eventbriteUrl={eventbriteUrl} />
+        <FormSection />
         
         {/* Cross-promotion */}
         <section className="py-16 bg-white">

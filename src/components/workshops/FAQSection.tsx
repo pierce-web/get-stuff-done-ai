@@ -22,52 +22,43 @@ export const FAQSection: React.FC = () => {
                 <h3 className="text-lg font-bold text-left">Is this just another theoretical AI presentation?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 text-gray-700">
-                Not at all. This is a hands-on, practical demonstration where you'll see real AI tools applied to a real legal workflow in real-time. You'll witness the transformation process from start to finish.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2" className="bg-white rounded-xl shadow-sm">
-              <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <h3 className="text-lg font-bold text-left">How will the "live participant" whose workflow is used be chosen?</h3>
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pb-4 text-gray-700">
-                One attendee will be selected from those who express interest. We'll reach out before the session to gather information about your workflow, ensuring it's representative and beneficial for the broader audience.
+                Not at all. This is a hands-on, practical demonstration where you can see real AI tools applied to a real legal workflow. You'll witness the transformation process from start to finish.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-3" className="bg-white rounded-xl shadow-sm">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <h3 className="text-lg font-bold text-left">What specific legal workflows will be covered?</h3>
+                <h3 className="text-lg font-bold text-left">What specific legal workflows are covered?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 text-gray-700">
-                The exact workflow will depend on the selected participant, but could include intake analysis, discovery review, document drafting, case preparation, client communication, or legal research. The principles demonstrated will be applicable across multiple practice areas.
+                The recording covers a genuine legal workflow which includes elements of intake analysis, discovery review, document drafting, or case preparation. The principles demonstrated are applicable across multiple practice areas.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-4" className="bg-white rounded-xl shadow-sm">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <h3 className="text-lg font-bold text-left">Do I need to be highly technical to benefit from this session?</h3>
+                <h3 className="text-lg font-bold text-left">Do I need to be highly technical to benefit from this recording?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 text-gray-700">
-                Not at all. This session is specifically designed for legal professionals, not technologists. We focus on practical applications that don't require coding knowledge or deep technical expertise.
+                Not at all. This session was specifically designed for legal professionals, not technologists. We focus on practical applications that don't require coding knowledge or deep technical expertise.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-5" className="bg-white rounded-xl shadow-sm">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <h3 className="text-lg font-bold text-left">Is it safe/confidential to discuss workflows in this session?</h3>
+                <h3 className="text-lg font-bold text-left">How can I implement similar solutions at my firm?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 text-gray-700">
-                Yes. For the live participant, we'll work with anonymized data and generic examples. All attendees can rest assured that client confidentiality will be maintained throughout the session.
+                After watching the replay, you'll have a much clearer understanding of how to identify AI opportunities in your practice. For further assistance with implementation, GSD and Melior offer consulting services and workshops tailored to your specific needs.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-6" className="bg-white rounded-xl shadow-sm">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <h3 className="text-lg font-bold text-left">What is the $2,500 live workflow transformation opportunity?</h3>
+                <h3 className="text-lg font-bold text-left">What is the $2,500 workflow transformation shown in the replay?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 text-gray-700">
-                This is a unique chance for one selected attendee to have their actual legal workflow analyzed and transformed using AI tools live during the session, guided by expert Christian Ulstrup. It mirrors our private AI Action Workshop ($2,500 value). You'll see the practical application of AI on a real-world legal process, gaining insights applicable to your own firm. Participants interested in this opportunity will be contacted beforehand to discuss details and ensure confidentiality.
+                In the recording, you'll see a comprehensive workflow transformation guided by expert Christian Ulstrup. This mirrors our private AI Action Workshop (valued at $2,500) where we analyze and transform a specific legal workflow using AI tools. By watching the replay, you'll gain insights into this process that you can apply to your own firm's operations.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

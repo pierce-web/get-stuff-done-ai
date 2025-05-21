@@ -8,11 +8,11 @@ export const WhoShouldAttendSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-primary">
-            Who Should Attend?
+            Who Should Watch?
           </h2>
           
           <p className="text-gray-700 mb-6 text-center">
-            This session is designed for forward-thinking legal professionals, including:
+            This recording is valuable for forward-thinking legal professionals, including:
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -60,12 +60,12 @@ export const WhoShouldAttendSection: React.FC = () => {
           </div>
           
           <p className="text-gray-700 mt-8 text-center font-medium">
-            Bridge the gap between AI's potential and your firm's reality. See how to leverage this technology effectively, gain a competitive edge, <span className="text-secondary font-semibold">and potentially walk away with a $2,500 workflow makeover.</span>
+            Bridge the gap between AI's potential and your firm's reality. See how to leverage this technology effectively, gain a competitive edge, <span className="text-secondary font-semibold">and see a $2,500 value workflow transformation demonstrated.</span>
           </p>
           
           <div className="bg-blue-50 border border-secondary/20 rounded-lg p-6 mt-8 text-center">
             <p className="text-gray-800 font-medium">
-              <span className="font-bold text-secondary">Bonus:</span> Witness a live $2,500 value workflow transformation and learn how to apply the same process to your own firm's operations.
+              <span className="font-bold text-secondary">In this replay:</span> Witness a $2,500 value workflow transformation and learn how to apply the same process to your own firm's operations.
             </p>
           </div>
         </div>
