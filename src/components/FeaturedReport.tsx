@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, BarChart2, FileText, CalendarDays } from "lucide-react";
 import { shadows, gradients, buttonStyles, animations, spacing, borderRadius } from "@/lib/design-tokens";
+import { AnimatedReveal } from "@/components/ui/animated-reveal";
 
 export const FeaturedReport = () => {
   return (
@@ -15,15 +16,18 @@ export const FeaturedReport = () => {
       <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-80" />
       
       <div className="container px-4 mx-auto relative">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-primary mb-3">Featured Resource</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our latest insights to help you implement AI effectively in your organization
-          </p>
-        </div>
+        <AnimatedReveal animation="slideInUp">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary mb-3">Featured Resource</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Discover our latest insights to help you implement AI effectively in your organization
+            </p>
+          </div>
+        </AnimatedReveal>
         
         <div className="max-w-4xl mx-auto">
-          <Card className={`overflow-hidden border-none ${shadows.cardEffect} relative z-10`}>
+          <AnimatedReveal animation="scaleIn" delay={200}>
+            <Card className={`overflow-hidden border-none ${shadows.cardEffect} relative z-10 ${animations.hoverLift}`}>
             <div className="flex flex-col lg:flex-row">
               <div className={`lg:w-2/5 ${gradients.secondaryLight} p-6 flex items-center justify-center`}>
                 <div className="text-center">
@@ -91,13 +95,13 @@ export const FeaturedReport = () => {
                 
                 <CardFooter className="p-0 flex flex-col sm:flex-row gap-3">
                   <Link to="/ai-tooling-report">
-                    <Button className={`w-full sm:w-auto ${buttonStyles.primary} ${shadows.buttonEffect}`}>
-                      Read The Full Report <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className={`w-full sm:w-auto ${buttonStyles.primary} ${shadows.buttonEffect} ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}>
+                      Read The Full Report <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
                   <Button 
                     variant="outline" 
-                    className={`w-full sm:w-auto ${buttonStyles.outline.secondary} ${shadows.buttonEffect}`}
+                    className={`w-full sm:w-auto ${buttonStyles.outline.secondary} ${shadows.buttonEffect} ${animations.hoverLift} hover:border-secondary/70 hover:bg-secondary/5`}
                     onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
                   >
                     Schedule Your Strategy Session
@@ -105,7 +109,8 @@ export const FeaturedReport = () => {
                 </CardFooter>
               </div>
             </div>
-          </Card>
+            </Card>
+          </AnimatedReveal>
         </div>
       </div>
     </section>

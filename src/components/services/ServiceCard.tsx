@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { ServiceType } from "./types";
 import { ServiceFeaturesList } from "./ServiceFeaturesList";
+import { animations } from "@/lib/design-tokens";
 
 interface ServiceCardProps {
   service: ServiceType;
@@ -19,7 +20,7 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
-    <Card className="flex flex-col justify-between">
+    <Card className={`flex flex-col justify-between ${animations.hoverLift} ${animations.hoverGlow}`}>
       <CardHeader>
         <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
         <CardDescription className="mt-2">{service.description}</CardDescription>

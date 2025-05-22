@@ -24,8 +24,8 @@ export const Navigation = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white shadow-sm py-3"
-          : "bg-white py-5"
+          ? "bg-white/80 backdrop-blur-lg border-b border-white/20 shadow-sm py-3"
+          : "bg-white/90 backdrop-blur-sm py-5"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
