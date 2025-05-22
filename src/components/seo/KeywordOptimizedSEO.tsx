@@ -16,7 +16,7 @@ interface KeywordOptimizedSEOProps {
   author?: string;
   datePublished?: string;
   dateModified?: string;
-  structuredData?: Record<string, any>[];
+  structuredData?: Record<string, unknown>[];
   ogType?: "website" | "article";
   ogImage?: string;
   ogImageAlt?: string;

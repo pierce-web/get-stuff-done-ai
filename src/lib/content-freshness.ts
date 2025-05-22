@@ -99,7 +99,7 @@ export const generateFreshnessMeta = (freshnessData: ContentFreshnessData) => {
  * Add structured data for content freshness
  */
 export const addFreshnessToStructuredData = (
-  structuredData: any,
+  structuredData: Record<string, unknown>,
   freshnessData: ContentFreshnessData
 ) => {
   return {
