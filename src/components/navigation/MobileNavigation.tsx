@@ -21,7 +21,7 @@ export const MobileNavigation = () => {
           <div className="flex flex-col items-center justify-center pt-12 pb-8">
             <img 
               src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
-              alt="GSD" 
+              alt="GSD at Work Logo" 
               className="h-16 w-16" 
             />
             <span className="text-xl font-bold text-primary mt-2">at Work</span>

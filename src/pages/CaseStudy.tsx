@@ -4,8 +4,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { generateServicePageStructuredData } from "@/lib/seo-utils";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { Layout } from "@/components/Layout";
 
 // Define a TypeScript interface for our case study data structure
 interface CaseStudy {
@@ -266,8 +265,12 @@ const CaseStudy = () => {
 
   if (!caseStudy) {
     return (
-      <>
-        <Navigation />
+      <Layout>
+        <SEOHead 
+          title="Case Study Not Found"
+          description="The requested case study could not be found. Browse our other AI implementation success stories and case studies."
+          canonicalUrl={`https://gsdat.work/cases/${id}`}
+        />
         <div className="min-h-screen bg-background py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold text-primary">Case Study Not Found</h1>
@@ -279,34 +282,79 @@ const CaseStudy = () => {
             </Link>
           </div>
         </div>
-        <Footer />
-      </>
+      </Layout>
     );
   }
 
-  // Create structured data for SEO
-  const caseStudySchema = generateServicePageStructuredData(
-    caseStudy.title,
-    caseStudy.subtitle,
-    `https://gsdat.work/cases/${id}`,
-    "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-    "Get Stuff Done AI",
-    ""
-  );
+  // Generate structured data for the case study  
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": caseStudy.title,
+      "description": caseStudy.subtitle,
+      "author": {
+        "@type": "Person",
+        "name": "Christian Ulstrup",
+        "jobTitle": "AI Implementation Expert",
+        "url": "https://www.linkedin.com/in/christianulstrup/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "GSD at Work",
+        "url": "https://gsdat.work"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://gsdat.work/cases/${id}`
+      },
+      "datePublished": new Date().toISOString(),
+      "dateModified": new Date().toISOString(),
+      "articleSection": "Case Studies",
+      "keywords": `AI implementation, ${caseStudy.industry}, business transformation, case study`,
+      "about": {
+        "@type": "Thing",
+        "name": "AI Implementation",
+        "description": "Artificial Intelligence implementation in business operations"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gsdat.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case Studies",
+          "item": "https://gsdat.work/cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": caseStudy.title,
+          "item": `https://gsdat.work/cases/${id}`
+        }
+      ]
+    }
+  ];
 
   return (
-    <>
+    <Layout>
       <SEOHead 
-        title={`${caseStudy.title} | GSD AI Case Study`}
-        description={`${caseStudy.subtitle} - See how ${caseStudy.client || 'our client'} in the ${caseStudy.industry} industry overcame challenges through AI implementation.`}
-        canonicalUrl={`/cases/${id}`}
-        keywords={`AI case study, ${caseStudy.industry}, AI implementation, ${caseStudy.title.toLowerCase()}, business transformation, efficiency gains`}
-        structuredData={[caseStudySchema]}
+        title={`${caseStudy.title} | AI Implementation Case Study`}
+        description={`${caseStudy.subtitle} - Learn how we helped a ${caseStudy.industry} company achieve remarkable results through strategic AI implementation.`}
+        canonicalUrl={`https://gsdat.work/cases/${id}`}
         ogType="article"
+        keywords={`AI case study, ${caseStudy.industry} AI, AI implementation, business transformation, AI consulting, practical AI solutions`}
+        structuredData={structuredData}
+        author="Christian Ulstrup"
       />
-      
-      <Navigation />
-      
       <div className="min-h-screen bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
@@ -416,9 +464,7 @@ const CaseStudy = () => {
           </div>
         </div>
       </div>
-      
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

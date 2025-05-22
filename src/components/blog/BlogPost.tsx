@@ -4,12 +4,13 @@ import DOMPurify from 'dompurify';
 import { Footer } from "../Footer";
 import { Separator } from "../ui/separator";
 import { Navigation } from "../navigation/Navigation";
-import { BlogPostSEO } from "./BlogPostSEO";
+import { SEOHead } from "../SEOHead";
 import { BlogBreadcrumb } from "./BlogBreadcrumb";
 import { BackToBlogs } from "./BackToBlogs";
 import { BlogPostHeader } from "./BlogPostHeader";
 import { OriginalPostLink } from "./OriginalPostLink";
-import CTASection from "./CTASection";
+import EnhancedCTASection from "./EnhancedCTASection";
+import { RelatedPosts } from "./RelatedPosts";
 
 interface BlogPostProps {
   post: {
@@ -20,9 +21,16 @@ interface BlogPostProps {
     type: "article" | "post";
     originalUrl?: string;
   };
+  allPosts?: Array<{
+    id: string;
+    title: string;
+    date: string;
+    content: string;
+    type: "article" | "post";
+  }>;
 }
 
-export default function BlogPost({ post }: BlogPostProps) {
+export default function BlogPost({ post, allPosts = [] }: BlogPostProps) {
   // Calculate estimated reading time
   const wordsPerMinute = 200;
   const textContent = post.content.replace(/<[^>]*>/g, '');
@@ -34,12 +42,12 @@ export default function BlogPost({ post }: BlogPostProps) {
 
   return (
     <>
-      <BlogPostSEO 
-        post={post}
-        formattedDate={formattedDate}
-        textContent={textContent}
-        wordCount={wordCount}
-        readingTime={readingTime}
+      <SEOHead 
+        title={`${post.title} | Professional Insights | Christian Ulstrup`}
+        description={textContent.substring(0, 160)}
+        canonicalUrl={`https://gsdat.work/blog/${post.id}`}
+        keywords={`AI implementation, ${post.title.split(' ').slice(0, 3).join(', ')}`}
+        ogType="article"
       />
 
       <div className="flex flex-col min-h-screen">
@@ -55,11 +63,16 @@ export default function BlogPost({ post }: BlogPostProps) {
             itemScope 
             itemType="https://schema.org/BlogPosting"
           >
+            <meta itemProp="headline" content={post.title} />
             <meta itemProp="author" content="Christian Ulstrup" />
             <meta itemProp="datePublished" content={`${formattedDate}T00:00:00Z`} />
             <meta itemProp="dateModified" content={`${formattedDate}T00:00:00Z`} />
-            <meta itemProp="publisher" content="Get Stuff Done AI" />
+            <meta itemProp="publisher" content="GSD at Work" />
             <meta itemProp="image" content="https://gsdat.work/og-image.png" />
+            <meta itemProp="wordCount" content={wordCount.toString()} />
+            <meta itemProp="timeRequired" content={`PT${readingTime}M`} />
+            <meta itemProp="inLanguage" content="en-US" />
+            <meta itemProp="genre" content="AI Implementation" />
             
             <BlogPostHeader 
               title={post.title}
@@ -87,10 +100,22 @@ export default function BlogPost({ post }: BlogPostProps) {
               itemProp="articleBody"
             />
             
-            <CTASection />
+            <EnhancedCTASection 
+              blogTitle={post.title}
+              blogContent={post.content}
+              blogType={post.type}
+            />
             
             <OriginalPostLink url={post.originalUrl} />
           </article>
+          
+          {/* Related Posts Section */}
+          {allPosts.length > 0 && (
+            <RelatedPosts 
+              currentPost={post}
+              allPosts={allPosts}
+            />
+          )}
         </main>
         
         <Separator />

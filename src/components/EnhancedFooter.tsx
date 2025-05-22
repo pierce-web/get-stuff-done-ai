@@ -1,0 +1,231 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Phone, MessageSquare, Linkedin, ArrowRight, ExternalLink } from "lucide-react";
+import { Separator } from "./ui/separator";
+
+export const EnhancedFooter = () => {
+  const currentYear = new Date().getFullYear();
+  
+  const navigationLinks = {
+    services: [
+      { name: "AI Action Workshop", href: "/ai-action-workshop", description: "2-hour intensive implementation" },
+      { name: "10x Executive Program", href: "/10x-executive", description: "Executive productivity transformation" },
+      { name: "Triple-A Transformation", href: "/triple-a-transformation", description: "Complete organizational AI adoption" },
+      { name: "Qualitative Data Insights", href: "/qualitative-data-insights-workshop", description: "Turn data into actionable insights" },
+    ],
+    resources: [
+      { name: "AI Tooling Report", href: "/ai-tooling-report", description: "2025 implementation guide" },
+      { name: "Professional Insights", href: "/blog", description: "Expert AI implementation blog" },
+      { name: "Case Studies", href: "/cases", description: "Real-world success stories" },
+      { name: "Free Consultation", href: "https://calendly.com/gsdatwork/free-consult", external: true, description: "Schedule your strategy session" },
+    ],
+    company: [
+      { name: "About Christian", href: "/#about", description: "AI implementation expert" },
+      { name: "Contact Us", href: "mailto:hello@gsdat.work", external: true, description: "Get in touch directly" },
+      { name: "LinkedIn", href: "https://www.linkedin.com/in/christianulstrup/", external: true, description: "Follow our updates" },
+    ]
+  };
+
+  return (
+    <footer className="bg-gradient-to-br from-gray-50 to-white border-t border-gray-200" itemScope itemType="https://schema.org/WPFooter">
+      <div className="container mx-auto px-4 py-16">
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          {/* Company Info */}
+          <div className="md:col-span-1">
+            <div className="mb-6">
+              <Link to="/" className="flex items-center">
+                <img 
+                  src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
+                  alt="GSD at Work Logo" 
+                  className="h-10 w-10 mr-2"
+                />
+                <span className="text-xl font-bold text-primary">at Work</span>
+              </Link>
+            </div>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Expert AI consulting and implementation services. From insight to action in minutes, not months.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <a
+                href="tel:+18482610259"
+                className="flex items-center text-primary hover:text-secondary transition-colors group"
+                aria-label="Call our AI Assistant"
+              >
+                <Phone className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+                <span className="font-medium">AI Assistant: (848) 261-0259</span>
+              </a>
+              <a
+                href="mailto:hello@gsdat.work"
+                className="flex items-center text-primary hover:text-secondary transition-colors group"
+                aria-label="Email Us"
+              >
+                <MessageSquare className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+                <span>hello@gsdat.work</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-4">Services</h3>
+            <nav className="space-y-3">
+              {navigationLinks.services.map((link) => (
+                <div key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="group flex items-start hover:text-secondary transition-colors"
+                  >
+                    <ArrowRight className="h-3 w-3 mt-1 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div>
+                      <div className="font-medium">{link.name}</div>
+                      <div className="text-xs text-gray-500">{link.description}</div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </nav>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-4">Resources</h3>
+            <nav className="space-y-3">
+              {navigationLinks.resources.map((link) => (
+                <div key={link.name}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start hover:text-secondary transition-colors"
+                    >
+                      <ExternalLink className="h-3 w-3 mt-1 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="font-medium">{link.name}</div>
+                        <div className="text-xs text-gray-500">{link.description}</div>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="group flex items-start hover:text-secondary transition-colors"
+                    >
+                      <ArrowRight className="h-3 w-3 mt-1 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="font-medium">{link.name}</div>
+                        <div className="text-xs text-gray-500">{link.description}</div>
+                      </div>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+
+          {/* Company & Social */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-4">Company</h3>
+            <nav className="space-y-3 mb-6">
+              {navigationLinks.company.map((link) => (
+                <div key={link.name}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start hover:text-secondary transition-colors"
+                    >
+                      <ExternalLink className="h-3 w-3 mt-1 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="font-medium">{link.name}</div>
+                        <div className="text-xs text-gray-500">{link.description}</div>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="group flex items-start hover:text-secondary transition-colors"
+                    >
+                      <ArrowRight className="h-3 w-3 mt-1 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="font-medium">{link.name}</div>
+                        <div className="text-xs text-gray-500">{link.description}</div>
+                      </div>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+            
+            {/* Social Links */}
+            <div>
+              <h4 className="font-medium text-primary mb-3">Follow Us</h4>
+              <a
+                href="https://www.linkedin.com/in/christianulstrup/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#0A66C2]/90 transition-colors"
+              >
+                <Linkedin className="h-4 w-4 mr-2" />
+                <span>Connect on LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <Separator className="mb-8" />
+
+        {/* CTA Section */}
+        <div className="text-center mb-8">
+          <h3 className="text-xl font-semibold text-primary mb-2">
+            Ready to Transform Your Business with AI?
+          </h3>
+          <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
+            Schedule a free consultation to discuss your specific needs and discover how AI can accelerate your success.
+          </p>
+          <a
+            href="https://calendly.com/gsdatwork/free-consult"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-colors shadow-sm hover:shadow-md"
+          >
+            Schedule Free Consultation
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+        </div>
+
+        <Separator className="mb-6" />
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+          <div className="flex items-center gap-4">
+            <span>© {currentYear} GSD at Work LLC</span>
+            <span>•</span>
+            <span>All Rights Reserved</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link to="/blog" className="hover:text-secondary transition-colors">
+              Latest Insights
+            </Link>
+            <span>•</span>
+            <Link to="/ai-tooling-report" className="hover:text-secondary transition-colors">
+              AI Report
+            </Link>
+            <span>•</span>
+            <a 
+              href="https://calendly.com/gsdatwork/free-consult" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-secondary transition-colors"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};

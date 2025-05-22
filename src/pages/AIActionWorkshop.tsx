@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { ServiceFeaturesList } from "@/components/services/ServiceFeaturesList";
 import { services } from "@/components/services/data";
-import { SEOHead } from "@/components/SEOHead";
+import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
+import { ServiceRecommendation } from "@/components/internal-linking/ServiceRecommendation";
 
 const AIActionWorkshop = () => {
   const workshop = services.find(s => s.title === "2-Hour AI Action Workshop");
@@ -56,12 +57,13 @@ const AIActionWorkshop = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
+      <KeywordOptimizedSEO 
         title="2-Hour AI Action Workshop"
-        description="Hands-on AI implementation working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution."
-        canonicalUrl="/ai-action-workshop"
-        keywords="AI workshop, AI implementation, hands-on AI, AI solutions, AI execution, AI coaching, rapid AI implementation"
+        content="Hands-on AI implementation working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution. This intensive workshop focuses on practical AI implementation, business automation, and workflow optimization for immediate results."
+        canonicalUrl="https://gsdat.work/ai-action-workshop"
+        pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}
+        ogType="website"
       />
       
       <Navigation />
@@ -70,12 +72,22 @@ const AIActionWorkshop = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              {workshop.title}
+              AI Implementation Workshop: 2-Hour Hands-On Action Session
             </h1>
             
             <p className="text-xl text-gray-700 mb-8">
-              {workshop.description}
+              Transform your business with practical AI implementation. This intensive hands-on workshop delivers immediate results through proven AI solutions and business automation strategies.
             </p>
+            
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
+              <h2 className="text-lg font-semibold text-blue-900 mb-3">🎯 Perfect for Business Leaders Who Want:</h2>
+              <ul className="space-y-2 text-blue-800">
+                <li>• <strong>Immediate AI implementation</strong> with working solutions</li>
+                <li>• <strong>Practical automation strategies</strong> for workflow optimization</li>
+                <li>• <strong>Hands-on experience</strong> with proven AI tools and frameworks</li>
+                <li>• <strong>Executable roadmaps</strong> for scaling AI across your organization</li>
+              </ul>
+            </div>
             
             <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20 mb-12">
               <h2 className="text-2xl font-semibold text-secondary mb-4">Results You Can Expect</h2>
@@ -144,25 +156,25 @@ const AIActionWorkshop = () => {
         </div>
       </div>
       
-      {/* Cross-Link to Qualitative Data Insights Workshop */}
-      <div className="container mx-auto px-4 pb-12">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-primary-50 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-primary mb-2">
-              Looking for qualitative data analysis?
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Check out our specialized AI Action Workshop focused on extracting insights from customer conversations, feedback, and qualitative data.
-            </p>
-            <Button 
-              variant="outline" 
-              className="border-secondary text-secondary hover:bg-secondary/10"
-              onClick={() => window.location.href = "/qualitative-data-insights-workshop"}
-            >
-              Learn about our Qualitative Data Insights Workshop
-            </Button>
-          </div>
-        </div>
+      {/* Enhanced Service Recommendations */}
+      <div className="container mx-auto px-4 pb-16">
+        <ServiceRecommendation 
+          currentService="ai-action-workshop"
+          recommendationType="upsell"
+          maxServices={2}
+          title="Ready to Scale Your AI Success?"
+          description="Great results start with action. Now accelerate your AI transformation with these comprehensive programs."
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 pb-16">
+        <ServiceRecommendation 
+          currentService="ai-action-workshop"
+          recommendationType="crosssell"
+          maxServices={1}
+          title="Specialized Workshops"
+          description="Explore our other hands-on workshops designed for specific use cases."
+        />
       </div>
       
       <Footer />

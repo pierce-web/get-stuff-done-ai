@@ -2,7 +2,7 @@
 import React from "react";
 import { HeadManager } from "./head/HeadManager";
 import { Navigation } from "./navigation/Navigation";
-import { Footer } from "./Footer";
+import { EnhancedFooter } from "./EnhancedFooter";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <HeadManager />
       <Navigation />
       <main>{children}</main>
-      <Footer />
+      <EnhancedFooter />
     </div>
   );
 };

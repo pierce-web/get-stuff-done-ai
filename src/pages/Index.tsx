@@ -5,16 +5,29 @@ import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { About } from "@/components/About";
 import { FeaturedReport } from "@/components/FeaturedReport";
 import { FeaturedIn } from "@/components/FeaturedIn";
-import { SEOHead } from "@/components/SEOHead";
+import { LegalWorkshopPromo } from "@/components/promotions/LegalWorkshopPromo";
+import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { Layout } from "@/components/Layout";
+import { generateOrganizationStructuredData, generateLocalBusinessStructuredData, generateWebSiteStructuredData } from "@/lib/seo-utils";
+import { ServiceComparison } from "@/components/internal-linking/ServiceComparison";
 
 const Index = () => {
+  // Generate comprehensive structured data for homepage
+  const structuredData = [
+    generateOrganizationStructuredData(),
+    generateLocalBusinessStructuredData(),
+    generateWebSiteStructuredData()
+  ];
+
   return (
     <Layout>
-      <SEOHead 
-        title="Get Stuff Done with AI"
-        description="Transform your business with AI implementation expertise. From insight to action in minutes, not months."
+      <KeywordOptimizedSEO 
+        title="AI Implementation Services | Expert AI Consulting & Business Automation"
+        content="Transform your business with expert AI implementation services and consulting. We help organizations accelerate AI adoption, optimize business processes, and achieve measurable results through proven automation strategies, executive productivity programs, and hands-on AI workshops. From strategy to implementation, we deliver practical AI solutions that get stuff done."
         canonicalUrl="https://gsdat.work/"
+        pageType="landing"
+        structuredData={structuredData}
+        ogType="website"
       />
       
       {/* Add padding-top to account for the fixed navigation */}
@@ -38,6 +51,11 @@ const Index = () => {
         <div className="py-8">
           <Services />
         </div>
+        
+        <ServiceComparison 
+          title="Find Your Perfect AI Implementation Path"
+          description="Whether you're just getting started or ready for full transformation, we have the right program to accelerate your success."
+        />
         
         <About />
       </div>
