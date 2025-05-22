@@ -2,6 +2,7 @@
 import React from "react";
 import { ServiceCard } from "./ServiceCard";
 import { services } from "./data";
+import { animations } from "@/lib/design-tokens";
 
 export const Services = React.memo(() => {
   return (
@@ -16,8 +17,17 @@ export const Services = React.memo(() => {
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.title} service={service} />
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className={`${animations.slideInUp}`}
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                animationFillMode: 'both'
+              }}
+            >
+              <ServiceCard service={service} />
+            </div>
           ))}
         </div>
       </div>

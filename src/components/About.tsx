@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { GraduationCap, CircuitBoard, TrendingUp, File } from "lucide-react";
+import { animations, gradients } from "@/lib/design-tokens";
 
 export const About = () => {
   return (
@@ -45,23 +46,35 @@ export const About = () => {
 
               {/* Credentials */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 py-12">
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
-                  <GraduationCap className="w-8 h-8 text-secondary mb-3" />
+                <div 
+                  className={`flex flex-col items-center text-center p-6 ${gradients.cardGlass} rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] ${animations.hoverLift} ${animations.hoverGlow} hover:bg-white/90 h-full group ${animations.scaleIn}`}
+                  style={{ animationDelay: '0.1s', animationFillMode: 'both' }}
+                >
+                  <GraduationCap className="w-8 h-8 text-secondary mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-semibold text-primary">MIT Sloan MBA</span>
                   <span className="text-sm text-gray-500">Graduate</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
-                  <CircuitBoard className="w-8 h-8 text-secondary mb-3" />
+                <div 
+                  className={`flex flex-col items-center text-center p-6 ${gradients.cardGlass} rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] ${animations.hoverLift} ${animations.hoverGlow} hover:bg-white/90 h-full group ${animations.scaleIn}`}
+                  style={{ animationDelay: '0.2s', animationFillMode: 'both' }}
+                >
+                  <CircuitBoard className="w-8 h-8 text-secondary mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-semibold text-primary">MIT AI</span>
                   <span className="text-sm text-gray-500">Former Co-Chair</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
-                  <TrendingUp className="w-8 h-8 text-secondary mb-3" />
+                <div 
+                  className={`flex flex-col items-center text-center p-6 ${gradients.cardGlass} rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] ${animations.hoverLift} ${animations.hoverGlow} hover:bg-white/90 h-full group ${animations.scaleIn}`}
+                  style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
+                >
+                  <TrendingUp className="w-8 h-8 text-secondary mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-semibold text-primary">Productivity Gains</span>
                   <span className="text-sm text-gray-500">100-2,000% Improvement</span>
                 </div>
-                <div className="flex flex-col items-center text-center p-6 bg-gray-50/80 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] hover:shadow-md hover:scale-[1.02] transition-all duration-300 hover:bg-gray-100 h-full">
-                  <File className="w-8 h-8 text-secondary mb-3" />
+                <div 
+                  className={`flex flex-col items-center text-center p-6 ${gradients.cardGlass} rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] ${animations.hoverLift} ${animations.hoverGlow} hover:bg-white/90 h-full group ${animations.scaleIn}`}
+                  style={{ animationDelay: '0.4s', animationFillMode: 'both' }}
+                >
+                  <File className="w-8 h-8 text-secondary mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-semibold text-primary">Patent Holder</span>
                   <span className="text-sm text-gray-500">Medical Imaging AI</span>
                 </div>
@@ -70,14 +83,14 @@ export const About = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-10">
                 <Button
-                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 sm:py-2 transition-all duration-300"
+                  className={`w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 sm:py-2 ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}
                   onClick={() => window.open("https://www.linkedin.com/in/christianulstrup/", "_blank")}
                 >
                   Connect on LinkedIn
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 py-6 sm:py-2 transition-all duration-300"
+                  className={`w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 py-6 sm:py-2 ${animations.hoverLift} hover:border-secondary/70`}
                   onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
                 >
                   Schedule Strategy Call
