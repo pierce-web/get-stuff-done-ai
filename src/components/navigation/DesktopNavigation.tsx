@@ -9,8 +9,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "@/lib/navigation-menu-variants";
 import { shadows, gradients, buttonStyles, animations, borderRadius } from "@/lib/design-tokens";
 
 export const DesktopNavigation = () => {

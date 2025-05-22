@@ -1,8 +1,9 @@
 
+import React from "react";
 import { ServiceCard } from "./ServiceCard";
 import { services } from "./data";
 
-export const Services = () => {
+export const Services = React.memo(() => {
   return (
     <section id="services" className="py-24 sm:py-32 animate-fade-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -22,4 +23,6 @@ export const Services = () => {
       </div>
     </section>
   );
-};
+});
+
+Services.displayName = 'Services';

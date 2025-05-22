@@ -8,7 +8,7 @@ interface ToolCategoryProps {
   examples: { name: string; url: string }[];
   useCases: string;
   // Allow any other props to pass through
-  [x: string]: any;
+  [x: string]: unknown;
 }
 
 const ToolCategory: React.FC<ToolCategoryProps> = ({ title, icon, examples, useCases, ...rest }) => {

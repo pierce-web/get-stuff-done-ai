@@ -1,9 +1,14 @@
 
+import React, { useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { useEffect } from "react";
 
-export const TestimonialsCarousel = () => {
+export const TestimonialsCarousel = React.memo(() => {
+  const handleScriptCleanup = useCallback(() => {
+    const scripts = document.querySelectorAll('script[src*="senja.io"]');
+    scripts.forEach(script => script.remove());
+  }, []);
+
   useEffect(() => {
     // Load Senja widget script
     const script = document.createElement("script");
@@ -11,11 +16,8 @@ export const TestimonialsCarousel = () => {
     script.async = true;
     document.body.appendChild(script);
 
-    return () => {
-      // Cleanup script when component unmounts
-      document.body.removeChild(script);
-    };
-  }, []);
+    return handleScriptCleanup;
+  }, [handleScriptCleanup]);
 
   return (
     <div className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -48,4 +50,6 @@ export const TestimonialsCarousel = () => {
       </div>
     </div>
   );
-};
+});
+
+TestimonialsCarousel.displayName = 'TestimonialsCarousel';
