@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 import { Footer } from "../Footer";
 import { Separator } from "../ui/separator";
 import { Navigation } from "../navigation/Navigation";
-import { EnhancedBlogPostSEO } from "./EnhancedBlogPostSEO";
+import { SEOHead } from "../SEOHead";
 import { BlogBreadcrumb } from "./BlogBreadcrumb";
 import { BackToBlogs } from "./BackToBlogs";
 import { BlogPostHeader } from "./BlogPostHeader";
@@ -42,12 +42,12 @@ export default function BlogPost({ post, allPosts = [] }: BlogPostProps) {
 
   return (
     <>
-      <EnhancedBlogPostSEO 
-        post={post}
-        formattedDate={formattedDate}
-        textContent={textContent}
-        wordCount={wordCount}
-        readingTime={readingTime}
+      <SEOHead 
+        title={`${post.title} | Professional Insights | Christian Ulstrup`}
+        description={textContent.substring(0, 160)}
+        canonicalUrl={`https://gsdat.work/blog/${post.id}`}
+        keywords={`AI implementation, ${post.title.split(' ').slice(0, 3).join(', ')}`}
+        ogType="article"
       />
 
       <div className="flex flex-col min-h-screen">

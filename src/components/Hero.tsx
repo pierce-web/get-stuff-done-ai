@@ -25,7 +25,12 @@ export const Hero = () => {
             AI Implementation Services: Get Stuff Done with AI
           </h1>
           <p className="mt-3 text-lg sm:text-xl font-semibold text-secondary">
-            From <span className="font-bold">Strategy</span> to <span className="font-bold">Implementation</span> in <em>minutes</em>, not months
+            <TypingAnimation 
+              text="From Insight to Action in minutes, not months"
+              startDelay={500}
+              speed={50}
+              className="font-bold"
+            />
           </p>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600 px-2 sm:px-0">
             Expert AI consulting and implementation services that deliver measurable business results. We help organizations accelerate AI adoption with proven strategies, hands-on implementation, and practical automation solutions.

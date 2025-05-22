@@ -190,7 +190,7 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
           <meta property="article:author" content="https://www.linkedin.com/in/christianulstrup/" />
           <meta property="article:section" content="AI Implementation" />
           {keywordAnalysis.optimization.primary.map((keyword, index) => (
-            <meta key={index} property="article:tag" content={keyword} />
+            <meta key={`tag-${index}`} property="article:tag" content={String(keyword)} />
           ))}
         </>
       )}
@@ -206,7 +206,7 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
       
       {/* Content Freshness Meta Tags */}
       {freshnessMeta.map((meta, index) => (
-        <meta key={index} {...meta} />
+        <meta key={`freshness-${index}`} name={meta.name} content={String(meta.content)} />
       ))}
       
       {/* Advanced SEO Meta Tags */}
@@ -220,7 +220,7 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
       
       {/* Enhanced JSON-LD Structured Data */}
       {enhancedStructuredData.map((data, index) => (
-        <script key={index} type="application/ld+json">
+        <script key={`schema-${index}`} type="application/ld+json">
           {JSON.stringify(data, null, 0)}
         </script>
       ))}

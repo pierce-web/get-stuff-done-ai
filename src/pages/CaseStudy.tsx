@@ -462,29 +462,6 @@ const CaseStudy = () => {
               </Button>
             </div>
           </div>
-          
-          {/* Additional call to action */}
-          <div className="bg-secondary/5 border border-secondary/20 rounded-lg p-8 mt-12">
-            <h2 className="text-2xl font-bold mb-4 text-primary">Ready to transform your business with AI?</h2>
-            <p className="mb-6 text-gray-700">
-              Learn how we can help you implement practical AI solutions that drive real results, just like we did for Othership.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                className="bg-secondary hover:bg-secondary/90 text-white"
-                onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
-              >
-                Book a Strategy Call
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-secondary text-secondary hover:bg-secondary/10"
-                onClick={() => window.location.href = "/ai-tooling-report"}
-              >
-                Read our AI Tooling Report
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </Layout>

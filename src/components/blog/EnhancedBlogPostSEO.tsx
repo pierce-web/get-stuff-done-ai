@@ -46,15 +46,18 @@ export const EnhancedBlogPostSEO: React.FC<EnhancedBlogPostSEOProps> = ({
     ? `${post.title} | AI Implementation Guide | Christian Ulstrup`
     : `${post.title} | Christian Ulstrup | AI Expert Insights`;
   
+  // Ensure all data is properly serialized before passing to Helmet
+  const cleanStructuredData = JSON.parse(JSON.stringify([structuredData]));
+  
   return (
     <KeywordOptimizedSEO 
-      title={post.title}
-      content={`${post.content} ${metaDescription}`}
+      title={String(post.title)}
+      content={String(`${post.content} ${metaDescription}`)}
       canonicalUrl={`https://gsdat.work/blog/${post.id}`}
       pageType="blog"
       datePublished={`${formattedDate}T00:00:00Z`}
       dateModified={`${formattedDate}T00:00:00Z`}
-      structuredData={[structuredData]}
+      structuredData={cleanStructuredData}
       ogType="article"
     />
   );
