@@ -22,19 +22,28 @@ export const Hero = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            Get Stuff Done with AI
+            AI Implementation Services: Get Stuff Done with AI
           </h1>
           <p className="mt-3 text-lg sm:text-xl font-semibold text-secondary">
-            <TypingAnimation 
-              text="From Insight to Action in minutes, not months"
-              startDelay={500}
-              speed={50}
-              className="font-bold"
-            />
+            From <span className="font-bold">Strategy</span> to <span className="font-bold">Implementation</span> in <em>minutes</em>, not months
           </p>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600 px-2 sm:px-0">
-            Turn AI possibilities into real business results. We help you identify what matters and execute 10x faster. From strategy to implementation, we're obsessed with GSD (Getting Stuff Done).
+            Expert AI consulting and implementation services that deliver measurable business results. We help organizations accelerate AI adoption with proven strategies, hands-on implementation, and practical automation solutions.
           </p>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+            <div className="flex items-center justify-center gap-2 text-gray-600">
+              <span className="w-2 h-2 bg-secondary rounded-full"></span>
+              <span>AI Implementation</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-gray-600">
+              <span className="w-2 h-2 bg-secondary rounded-full"></span>
+              <span>Business Automation</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-gray-600">
+              <span className="w-2 h-2 bg-secondary rounded-full"></span>
+              <span>Executive Productivity</span>
+            </div>
+          </div>
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
               className={`${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold w-full sm:w-auto ${shadows.buttonEffect} ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}

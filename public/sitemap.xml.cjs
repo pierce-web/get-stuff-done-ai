@@ -36,12 +36,12 @@ const generateSitemap = () => {
   // Get today's date formatted as YYYY-MM-DD
   const today = new Date().toISOString().split('T')[0];
   
-  // Main website URLs
+  // Main website URLs with enhanced freshness signals
   const mainUrls = [
     { 
       url: 'https://gsdat.work/', 
       lastmod: today,
-      changefreq: 'monthly',
+      changefreq: 'weekly', // Homepage updated more frequently
       priority: '1.0'
     },
     { 
@@ -65,20 +65,20 @@ const generateSitemap = () => {
     { 
       url: 'https://gsdat.work/ai-action-workshop', 
       lastmod: today,
-      changefreq: 'monthly',
-      priority: '0.8'
+      changefreq: 'weekly', // Service pages updated weekly
+      priority: '0.9'
     },
     { 
       url: 'https://gsdat.work/ai-legal-workshop', 
       lastmod: today,
-      changefreq: 'monthly',
-      priority: '0.8'
+      changefreq: 'weekly',
+      priority: '0.9'
     },
     { 
       url: 'https://gsdat.work/triple-a-transformation', 
       lastmod: today,
-      changefreq: 'monthly',
-      priority: '0.8'
+      changefreq: 'weekly',
+      priority: '0.9'
     },
     { 
       url: 'https://gsdat.work/blog', 

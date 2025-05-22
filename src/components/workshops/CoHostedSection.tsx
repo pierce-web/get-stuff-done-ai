@@ -24,7 +24,7 @@ export const CoHostedSection: React.FC<CoHostedSectionProps> = ({ meliorUrl, hom
                   <div className="bg-gray-800 p-2 rounded-md">
                     <img 
                       src="/lovable-uploads/43198a75-4248-4d5e-8c90-32a39c77889e.png" 
-                      alt="Melior Logo" 
+                      alt="Melior Legal Technology - Workshop Co-host Logo" 
                       className="h-10"
                     />
                   </div>

@@ -3,6 +3,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Linkedin, Phone } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
+import { Layout } from "@/components/Layout";
 
 const StrategySessionConfirmed = () => {
   // Track conversion with Google Analytics
@@ -20,7 +22,14 @@ const StrategySessionConfirmed = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center py-24 sm:py-32">
+    <Layout>
+      <SEOHead 
+        title="Strategy Session Confirmed | Next Steps"
+        description="Your AI strategy session is confirmed. Learn what to expect and important next steps to prepare for our conversation about AI implementation."
+        canonicalUrl="https://gsdat.work/strategy-session-confirmed"
+        keywords="AI strategy session, AI consulting, AI implementation consultation, business transformation"
+      />
+      <div className="min-h-screen bg-background flex items-center justify-center py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:px-8 text-center">
         <CheckCircle2 className="mx-auto h-16 w-16 text-secondary mb-6" />
         <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-4">
@@ -81,7 +90,8 @@ const StrategySessionConfirmed = () => {
           </a>
         </div>
       </div>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

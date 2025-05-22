@@ -14,5 +14,5 @@ export default function BlogPostPage() {
     return <Navigate to="/blog" replace />;
   }
   
-  return <BlogPost post={post} />;
+  return <BlogPost post={post} allPosts={linkedInPosts} />;
 }

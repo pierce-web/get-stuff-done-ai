@@ -1,11 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CalendarDays, FileText, Filter, Search } from "lucide-react";
+import { ArrowRight, CalendarDays, FileText, Filter, Search, Construction } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { Layout } from "@/components/Layout";
 import { shadows, gradients } from "@/lib/design-tokens";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -13,17 +12,47 @@ import { Input } from "@/components/ui/input";
 const Cases = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "AI Implementation Case Studies",
+      "description": "Collection of real-world AI implementation case studies and success stories from GSD at Work clients.",
+      "url": "https://gsdat.work/cases",
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 0,
+        "itemListElement": []
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://gsdat.work/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://gsdat.work/cases"
+          }
+        ]
+      }
+    }
+  ];
+
   return (
-    <>
+    <Layout>
       <SEOHead 
         title="Case Studies | AI Implementation Success Stories"
-        description="Discover real-world AI implementation success stories from Get Stuff Done AI. See how our clients achieved significant productivity gains and operational efficiency."
-        canonicalUrl="/cases"
-        keywords="AI case studies, AI implementation examples, business transformation, AI success stories, AI ROI, productivity gains"
+        description="Real-world AI implementation case studies and success stories. Learn how businesses transform with practical AI solutions from GSD at Work. Detailed case studies coming soon."
+        canonicalUrl="https://gsdat.work/cases"
+        keywords="AI case studies, AI implementation success stories, business transformation AI, AI consulting results, practical AI solutions"
+        structuredData={structuredData}
       />
-      
-      <Navigation />
-      
       <div className="min-h-screen bg-background py-24 sm:py-32 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-70 z-0"></div>
@@ -161,9 +190,9 @@ const Cases = () => {
           </div>
         </div>
       </div>
-      
-      <Footer />
-    </>
+      </div>
+      </div>
+    </Layout>
   );
 };
 

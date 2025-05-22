@@ -28,7 +28,7 @@ const ReportLayout: React.FC<ReportLayoutProps> = ({ children }) => {
               <span className="flex items-center">
                 <img 
                   src="/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png" 
-                  alt="GSD" 
+                  alt="GSD at Work Logo" 
                   className="h-6 w-6 mr-1"
                 />
                 <span className={`${isMobile ? "text-sm" : ""} font-medium`}>at Work</span>

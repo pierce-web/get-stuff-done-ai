@@ -2,15 +2,20 @@
 import { Button } from "@/components/ui/button";
 import { GraduationCap, CircuitBoard, TrendingUp, File } from "lucide-react";
 import { animations, gradients } from "@/lib/design-tokens";
+import { SEOHeading, SEOParagraph, KeywordRichContent } from "@/components/seo/KeywordRichContent";
 
 export const About = () => {
   return (
     <div className="py-16 sm:py-24 bg-gray-50/50 animate-fade-in">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            About
-          </h2>
+          <SEOHeading 
+            level={2} 
+            className="text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+            keywords={["AI implementation expert", "AI consulting", "business automation"]}
+          >
+            About Christian Ulstrup - AI Implementation Expert
+          </SEOHeading>
         </div>
 
         <div className="mt-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
