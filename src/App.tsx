@@ -19,34 +19,37 @@ import AILegalWorkshop from "./pages/AILegalWorkshop";
 import AssociateCallConfirmed from "./pages/AssociateCallConfirmed";
 import QualitativeDataInsightsWorkshop from "./pages/QualitativeDataInsightsWorkshop";
 import { HeadManager } from "./components/head/HeadManager";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <HeadManager />
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/cases" element={<Cases />} />
-          <Route path="/cases/:id" element={<CaseStudy />} />
-          <Route path="/ai-tooling-report" element={<AIToolingReport />} />
-          <Route path="/10x-executive" element={<TenXExecutive />} />
-          <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
-          <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
-          <Route path="/qualitative-data-insights-workshop" element={<QualitativeDataInsightsWorkshop />} />
-          <Route path="/triple-a-transformation" element={<TripleATransformation />} />
-          <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<BlogPostPage />} />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route path="/associate-call-confirmed" element={<AssociateCallConfirmed />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <ErrorBoundary>
+        <HeadManager />
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/cases" element={<Cases />} />
+            <Route path="/cases/:id" element={<CaseStudy />} />
+            <Route path="/ai-tooling-report" element={<AIToolingReport />} />
+            <Route path="/10x-executive" element={<TenXExecutive />} />
+            <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
+            <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
+            <Route path="/qualitative-data-insights-workshop" element={<QualitativeDataInsightsWorkshop />} />
+            <Route path="/triple-a-transformation" element={<TripleATransformation />} />
+            <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogPostPage />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="/associate-call-confirmed" element={<AssociateCallConfirmed />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ErrorBoundary>
     </TooltipProvider>
   </QueryClientProvider>
 );

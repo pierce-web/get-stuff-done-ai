@@ -7,9 +7,9 @@ import { CheckCircle2, Linkedin, Phone } from "lucide-react";
 const StrategySessionConfirmed = () => {
   // Track conversion with Google Analytics
   React.useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error - gtag is loaded dynamically by Google Analytics
     if (window.gtag) {
-      // @ts-ignore
+      // @ts-expect-error - gtag is loaded dynamically by Google Analytics
       window.gtag('event', 'conversion', {
         'send_to': 'G-ZVF8V8Y4X0',
         'event_category': 'Strategy Session',

@@ -1,5 +1,6 @@
 
 import React from "react";
+import DOMPurify from 'dompurify';
 import { Footer } from "../Footer";
 import { Separator } from "../ui/separator";
 import { Navigation } from "../navigation/Navigation";
@@ -82,7 +83,7 @@ export default function BlogPost({ post }: BlogPostProps) {
                 [&>ol]:list-decimal [&>ul]:list-disc [&>ol]:pl-8 [&>ul]:pl-8
                 [&>ol>li]:my-4 [&>ul>li]:my-4 [&>ol]:my-8 [&>ul]:my-8 [&>ol]:space-y-4 [&>ul]:space-y-4
                 space-y-8"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
               itemProp="articleBody"
             />
             

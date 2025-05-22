@@ -10,7 +10,7 @@ interface SEOHeadProps {
   ogImage?: string;
   ogImageAlt?: string;
   keywords?: string;
-  structuredData?: Record<string, any>[];
+  structuredData?: Record<string, unknown>[];
   author?: string;
 }
 
