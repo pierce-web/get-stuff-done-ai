@@ -20,33 +20,10 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
 }) => {
   const services = [
     {
-      id: "ai-action-workshop",
-      name: "AI Action Workshop",
-      subtitle: "Quick Start Implementation",
-      price: "$2,497",
-      duration: "2 hours",
-      ideal: "Individual contributors, small teams",
-      icon: <Target className="h-6 w-6" />,
-      color: "bg-blue-500",
-      link: "/ai-action-workshop",
-      features: [
-        "Immediate hands-on implementation",
-        "Working AI solution by end of session",
-        "Transferable frameworks and SOPs",
-        "Follow-up support and templates",
-        "Perfect for testing our approach"
-      ],
-      outcomes: [
-        "100-2000% efficiency gains",
-        "Concrete results in 2 hours",
-        "Ready-to-use processes"
-      ]
-    },
-    {
       id: "qualitative-data-workshop",
       name: "Qualitative Data Insights",
       subtitle: "Specialized Data Workshop",
-      price: "$1,997",
+      price: "$2,499",
       duration: "2 hours",
       ideal: "Teams with unstructured data",
       icon: <Clock className="h-6 w-6" />,
@@ -63,6 +40,29 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
         "Clear data-driven insights",
         "Faster decision making",
         "Automated analysis processes"
+      ]
+    },
+    {
+      id: "ai-action-workshop",
+      name: "AI Action Workshop",
+      subtitle: "Quick Start Implementation",
+      price: "$2,499",
+      duration: "2 hours",
+      ideal: "Individual contributors, small teams",
+      icon: <Target className="h-6 w-6" />,
+      color: "bg-blue-500",
+      link: "/ai-action-workshop",
+      features: [
+        "Immediate hands-on implementation",
+        "Working AI solution by end of session",
+        "Transferable frameworks and SOPs",
+        "Follow-up support and templates",
+        "Perfect for testing our approach"
+      ],
+      outcomes: [
+        "100-2000% efficiency gains",
+        "Concrete results in 2 hours",
+        "Ready-to-use processes"
       ]
     },
     {

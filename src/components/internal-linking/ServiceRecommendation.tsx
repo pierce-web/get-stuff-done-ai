@@ -32,23 +32,23 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
 }) => {
   // Define all services with their relationships
   const allServices: Record<string, Service> = {
-    "ai-action-workshop": {
-      id: "ai-action-workshop",
-      title: "2-Hour AI Action Workshop",
-      description: "Hands-on AI implementation working session with immediate results",
-      price: "$2,497",
-      link: "/ai-action-workshop",
-      badge: "Quick Start",
-      features: ["2-hour intensive session", "Immediate implementation", "Proven frameworks"]
-    },
     "qualitative-data-workshop": {
       id: "qualitative-data-workshop", 
       title: "Qualitative Data Insights Workshop",
       description: "Transform messy qualitative data into actionable business insights",
-      price: "$1,997",
+      price: "$2,499",
       link: "/qualitative-data-insights-workshop",
       badge: "Specialized",
       features: ["Data transformation", "AI-powered analysis", "Clear insights"]
+    },
+    "ai-action-workshop": {
+      id: "ai-action-workshop",
+      title: "2-Hour AI Action Workshop",
+      description: "Hands-on AI implementation working session with immediate results",
+      price: "$2,499",
+      link: "/ai-action-workshop",
+      badge: "Quick Start",
+      features: ["2-hour intensive session", "Immediate implementation", "Proven frameworks"]
     },
     "10x-executive": {
       id: "10x-executive",

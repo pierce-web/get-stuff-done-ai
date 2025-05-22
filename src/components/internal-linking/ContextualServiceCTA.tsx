@@ -33,11 +33,22 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
   // Define services with their targeting keywords
   const services: ServiceCTA[] = [
     {
+      id: "qualitative-data-workshop",
+      title: "Qualitative Data Insights Workshop",
+      description: "Turn unstructured data into actionable business intelligence",
+      link: "/qualitative-data-insights-workshop",
+      price: "$2,499",
+      icon: <BarChart3 className="h-6 w-6" />,
+      keywords: ["data", "insights", "analysis", "research", "qualitative", "feedback", "survey", "interview", "analytics", "intelligence"],
+      cta: "Unlock Your Data Insights",
+      badge: "Data Focused"
+    },
+    {
       id: "ai-action-workshop",
       title: "2-Hour AI Action Workshop",
       description: "Transform your ideas into immediate results with hands-on AI implementation",
       link: "/ai-action-workshop",
-      price: "$2,497",
+      price: "$2,499",
       icon: <Zap className="h-6 w-6" />,
       keywords: ["implementation", "practical", "hands-on", "execute", "action", "immediate", "workflow", "process", "tools", "automation"],
       cta: "Get Hands-On Implementation",
@@ -64,17 +75,6 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
       keywords: ["transformation", "organization", "enterprise", "team", "scale", "adoption", "culture", "change", "roi", "company"],
       cta: "Transform Your Organization",
       badge: "Enterprise Solution"
-    },
-    {
-      id: "qualitative-data-workshop",
-      title: "Qualitative Data Insights Workshop",
-      description: "Turn unstructured data into actionable business intelligence",
-      link: "/qualitative-data-insights-workshop",
-      price: "$1,997",
-      icon: <BarChart3 className="h-6 w-6" />,
-      keywords: ["data", "insights", "analysis", "research", "qualitative", "feedback", "survey", "interview", "analytics", "intelligence"],
-      cta: "Unlock Your Data Insights",
-      badge: "Data Focused"
     }
   ];
 

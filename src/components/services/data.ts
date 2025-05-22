@@ -3,6 +3,24 @@ import { ServiceType } from "./types";
 
 export const services: ServiceType[] = [
   {
+    title: "Qualitative Data Insights Workshop",
+    description: "Transform messy qualitative data into actionable business insights with AI-powered analysis techniques and custom processing workflows",
+    price: "$2,499 per session",
+    subtext: "Satisfaction Guaranteed",
+    extraText: "Turn unstructured data into clear insights for faster decision making. Participants learn AI-powered analysis techniques and develop automated processes for ongoing data transformation.",
+    features: [
+      "Transform messy qualitative data into actionable insights",
+      "Learn AI-powered analysis techniques and workflows", 
+      "Develop automated data processing systems",
+      "Extract clear patterns from unstructured information",
+      "Includes pre-session data review and post-session templates",
+    ],
+    cta: "Learn More",
+    secondaryCta: "Schedule a Consultation",
+    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    learnMoreLink: "/qualitative-data-insights-workshop",
+  },
+  {
     title: "2-Hour AI Action Workshop",
     description: "Hands-on working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution",
     price: "$2,499 per session",
