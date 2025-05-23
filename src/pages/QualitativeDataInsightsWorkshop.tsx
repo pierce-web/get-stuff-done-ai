@@ -23,7 +23,7 @@ const QualitativeDataInsightsWorkshop = () => {
   // Service structured data
   const serviceStructuredData = generateServicePageStructuredData(
     "Qualitative Data Insights AI Workshop",
-    "Turn messy qualitative data (calls, emails, surveys) into clear, actionable business insights in just 2 hours with our AI-powered workshop. Drive data-driven decisions faster.",
+    "Transform messy qualitative data (calls, emails, surveys) into clear, actionable business insights with our AI-powered workshop. Drive data-driven decisions faster.",
     "https://gsdat.work/qualitative-data-insights-workshop",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
@@ -34,14 +34,14 @@ const QualitativeDataInsightsWorkshop = () => {
   const faqStructuredData = generateFAQStructuredData([
     {
       question: "What is the Qualitative Data Insights AI Workshop?",
-      answer: "The Qualitative Data Insights AI Workshop is a focused 2-hour session where we use advanced AI models to rapidly analyze your qualitative data (like call transcripts, emails, and surveys) to extract actionable business insights. It's a hands-on, guided session where you'll see your own data transformed into clear, actionable intelligence."
+      answer: "The Qualitative Data Insights AI Workshop is an intensive session where we use advanced AI models to rapidly analyze your qualitative data (like call transcripts, emails, and surveys) to extract actionable business insights. It's a hands-on, guided session where you'll see your own data transformed into clear, actionable intelligence."
     },
     {
       question: "What kind of data can be analyzed in this workshop?",
       answer: "We can analyze virtually any text-based data, including call center transcripts, customer support chats, email threads, survey responses, support tickets, and internal meeting notes. We work with data from tools like Dialpad, Five9, Gong, AI Scribe, Intercom, LiveChat, Zendesk, and more."
     },
     {
-      question: "How much data can we analyze in 2 hours?",
+      question: "How much data can we analyze in the workshop?",
       answer: "Using AI, we can process and analyze significantly more data than would be possible manually - typically hundreds or even thousands of interactions. The exact volume depends on the complexity of your data and the specific insights you're seeking."
     },
     {
@@ -50,7 +50,7 @@ const QualitativeDataInsightsWorkshop = () => {
     },
     {
       question: "How much does the Qualitative Data Insights Workshop cost?",
-      answer: "$2,499 for a focused 2-hour AI Action Workshop with satisfaction guaranteed."
+      answer: "$2,499 for an intensive AI Action Workshop with satisfaction guaranteed."
     }
   ]);
 
@@ -58,7 +58,7 @@ const QualitativeDataInsightsWorkshop = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Qualitative Data Insights AI Workshop | GSD at Work"
-        description="Turn messy qualitative data (calls, emails, surveys) into clear, actionable business insights in just 2 hours with our AI-powered workshop. Drive data-driven decisions faster."
+        description="Transform messy qualitative data (calls, emails, surveys) into clear, actionable business insights with our AI-powered workshop. Drive data-driven decisions faster."
         canonicalUrl="https://gsdat.work/qualitative-data-insights-workshop"
         keywords="qualitative data analysis AI, call transcript analysis, customer insight mining, AI workshop, sentiment analysis, data insights"
         structuredData={[serviceStructuredData, faqStructuredData]}
@@ -78,7 +78,7 @@ const QualitativeDataInsightsWorkshop = () => {
                 </h1>
                 
                 <p className="text-xl text-gray-700">
-                  Our focused 2-Hour AI Action Workshop uses cutting-edge AI to rapidly analyze call transcripts, emails, surveys, and more – revealing surprising insights you can act on immediately.
+                  Our intensive AI Action Workshop uses cutting-edge AI to rapidly analyze call transcripts, emails, surveys, and more – revealing surprising insights you can act on immediately.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4 mt-8">
@@ -86,7 +86,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Clock className="h-5 w-5 text-secondary" />
                     </div>
-                    <span className="font-medium">2-Hour Intensive Session</span>
+                    <span className="font-medium">Intensive Results Session</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
@@ -170,7 +170,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">Slow Manual Analysis</h3>
-                      <p className="text-gray-700">Teams spend weeks, not hours, sifting through transcripts or surveys, delaying critical decisions.</p>
+                      <p className="text-gray-700">Teams spend weeks sifting through transcripts or surveys, delaying critical decisions.</p>
                     </div>
                   </div>
                 </div>
@@ -207,11 +207,11 @@ const QualitativeDataInsightsWorkshop = () => {
         <section className="container mx-auto px-4 mb-20">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 text-center">
-              Go From Raw Data to Actionable Insights in Just 2 Hours
+              Transform Raw Data into Actionable Insights Fast
             </h2>
             
             <p className="text-xl text-center text-gray-700 mb-12 max-w-4xl mx-auto">
-              This intensive, hands-on workshop leverages the power of advanced AI models (like Claude Code (Sonnet 3.7), Gemini 2.5 Pro (via Google AI Studio), and o3 (OpenAI)) to rapidly process and analyze large volumes of your qualitative data.
+              This intensive, hands-on workshop leverages the power of advanced AI models (like Claude Code (Sonnet 3.7), Gemini 2.5 Pro (via Google AI Studio), and o3 (OpenAI)) to rapidly process and analyze large volumes of your qualitative data, delivering results you can act on immediately.
             </p>
             
             <div className="space-y-8">
@@ -282,7 +282,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <Rocket className="h-6 w-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Speed</h3>
-                  <p className="text-gray-700">Get actionable insights in 2 hours, not weeks or months.</p>
+                  <p className="text-gray-700">Get actionable insights immediately, not weeks or months later.</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-xl shadow-sm">
@@ -322,7 +322,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <DollarSign className="h-6 w-6 text-secondary" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">High ROI Initial Engagement</h3>
-                  <p className="text-gray-700">A cost-effective way ($2,499) to experience the power of AI and get immediate value.</p>
+                  <p className="text-gray-700">A cost-effective investment ($2,499) to experience the power of AI and get immediate value.</p>
                 </div>
               </div>
             </div>
@@ -444,7 +444,7 @@ const QualitativeDataInsightsWorkshop = () => {
               
               <div className="mb-8">
                 <span className="text-4xl font-bold text-secondary">$2,499</span>
-                <p className="text-gray-700 mt-2">For a focused 2-hour AI Action Workshop</p>
+                <p className="text-gray-700 mt-2">For an intensive AI Action Workshop</p>
                 <p className="text-sm font-medium text-secondary mt-1">Satisfaction Guaranteed</p>
               </div>
               

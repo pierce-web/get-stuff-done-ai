@@ -37,7 +37,7 @@ export const DesktopNavigation = () => {
                     >
                       <div className="text-base font-medium leading-none text-primary">AI Action Workshop</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
-                        2-hour hands-on session with immediate AI implementation
+                        Quick win in a box - 10X transformation guaranteed
                       </p>
                     </Link>
                   </NavigationMenuLink>

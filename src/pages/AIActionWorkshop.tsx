@@ -10,7 +10,7 @@ import { generateServicePageStructuredData, generateFAQStructuredData } from "@/
 import { ServiceRecommendation } from "@/components/internal-linking/ServiceRecommendation";
 
 const AIActionWorkshop = () => {
-  const workshop = services.find(s => s.title === "2-Hour AI Action Workshop");
+  const workshop = services.find(s => s.title === "AI Action Workshop");
   
   if (!workshop) return null;
   
@@ -30,8 +30,8 @@ const AIActionWorkshop = () => {
   // Enhanced FAQ structured data with more comprehensive answers
   const faqStructuredData = generateFAQStructuredData([
     {
-      question: "What is the 2-Hour AI Action Workshop?",
-      answer: "The 2-Hour AI Action Workshop is a hands-on working session where you'll implement real AI solutions to your specific business challenges. Unlike theoretical discussions, this workshop focuses on pure execution with concrete results you can see by the end of the session."
+      question: "What is the AI Action Workshop?",
+      answer: "The AI Action Workshop is your quick win in a box - a hands-on session where you'll break your four-minute mile with AI. Transform tasks that take days or weeks into victories achieved in hours, while gaining the know-how to replicate this success across your organization."
     },
     {
       question: "Who should attend the AI Action Workshop?",
@@ -39,7 +39,7 @@ const AIActionWorkshop = () => {
     },
     {
       question: "What will I accomplish during the workshop?",
-      answer: "During the 2-hour session, you'll: 1) Identify a specific business challenge or process to optimize, 2) Implement an AI solution with expert guidance, 3) Develop a repeatable process or SOP, and 4) Learn how to scale the solution across your organization."
+      answer: "You'll achieve your own four-minute mile moment: 1) Identify your highest-leverage AI opportunity, 2) Transform a 2-day task into a 2-hour victory, 3) Create documented SOPs and templates your team can use, 4) Learn to fish - gain the skills to replicate this success independently."
     },
     {
       question: "What results can I expect from the workshop?",
@@ -51,15 +51,15 @@ const AIActionWorkshop = () => {
     },
     {
       question: "How does the workshop process work?",
-      answer: "The process includes three steps: 1) A discovery call to discuss your specific challenges and identify the most impactful area for AI implementation, 2) The 2-hour hands-on implementation session where you'll build real AI solutions with expert guidance, and 3) Follow-up support with access to guides, templates, and a check-in to ensure continued value."
+      answer: "The process is designed for maximum impact: 1) Discovery call to identify what takes you 2 days that we'll do in 2 hours, 2) AI Action Workshop where you'll experience your 10X transformation firsthand and create reusable processes, and 3) Follow-up support to ensure your success becomes charismatic - spreading throughout your organization."
     }
   ]);
 
   return (
     <div className="min-h-screen bg-background">
       <KeywordOptimizedSEO 
-        title="2-Hour AI Action Workshop"
-        content="Hands-on AI implementation working session where you'll implement real AI solutions and leave with concrete results—no theoretical discussions, just pure execution. This intensive workshop focuses on practical AI implementation, business automation, and workflow optimization for immediate results."
+        title="AI Action Workshop | Quick Win in a Box"
+        content="Quick win in a box: Break your four-minute mile with AI. Transform tasks that take days into victories achieved in hours. This hands-on workshop delivers 10X productivity gains while teaching you to fish - giving you the know-how to replicate success across your organization."
         canonicalUrl="https://gsdat.work/ai-action-workshop"
         pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}
@@ -72,11 +72,11 @@ const AIActionWorkshop = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              AI Implementation Workshop: 2-Hour Hands-On Action Session
+              AI Action Workshop: Your Quick Win in a Box
             </h1>
             
             <p className="text-xl text-gray-700 mb-8">
-              Transform your business with practical AI implementation. This intensive hands-on workshop delivers immediate results through proven AI solutions and business automation strategies.
+              Break your four-minute mile with AI. Turn what takes days or weeks into hours of focused execution. Learn to fish while achieving immediate, game-changing results that inspire your entire organization.
             </p>
             
             <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
@@ -93,6 +93,31 @@ const AIActionWorkshop = () => {
               <h2 className="text-2xl font-semibold text-secondary mb-4">Results You Can Expect</h2>
               <p className="text-gray-700 mb-0">
                 {workshop.extraText}
+              </p>
+            </div>
+            
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl border-2 border-blue-200 mb-12">
+              <h2 className="text-3xl font-bold text-center text-primary mb-6">🎯 Quick Win in a Box</h2>
+              
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Your Challenge</h3>
+                  <p className="text-gray-600">Something that takes you 2 days or 2 weeks</p>
+                </div>
+                
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Our Workshop</h3>
+                  <p className="text-gray-600">Get it done in hours with 10X transformation</p>
+                </div>
+                
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Your Victory</h3>
+                  <p className="text-gray-600">Break your four-minute mile & inspire others</p>
+                </div>
+              </div>
+              
+              <p className="text-center mt-6 text-lg font-medium text-gray-800">
+                Experience success so compelling it becomes charismatic - spreading throughout your organization
               </p>
             </div>
             
@@ -120,6 +145,16 @@ const AIActionWorkshop = () => {
                     Discuss your specific needs and explore if this workshop is right for you
                   </p>
                 </div>
+                
+                <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="text-sm font-medium text-blue-900">
+                    🎯 Volume Discounts Available
+                  </p>
+                  <p className="text-sm text-blue-800 mt-1">
+                    Planning multiple workshops? Bundle pricing available starting at 10 workshops. 
+                    Ask about our organizational transformation packages.
+                  </p>
+                </div>
               </div>
             </div>
             
@@ -138,8 +173,8 @@ const AIActionWorkshop = () => {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold">2</div>
                   <div>
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">2-Hour Workshop</h3>
-                    <p className="text-gray-700">Hands-on implementation session where you'll build real AI solutions with expert guidance, leaving with working processes and concrete results.</p>
+                    <h3 className="text-xl font-medium text-gray-900 mb-2">AI Action Workshop</h3>
+                    <p className="text-gray-700">Experience your 10X transformation: What normally takes 2 days gets done in 2 hours. Build real solutions, create reusable SOPs, and gain the confidence to replicate this success. Your victory becomes charismatic - inspiring others to follow.</p>
                   </div>
                 </div>
                 
