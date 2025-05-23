@@ -24,7 +24,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       name: "Qualitative Data Insights",
       subtitle: "Specialized Data Workshop",
       price: "$2,499",
-      duration: "2 hours",
+      duration: "Quick Win Implementation",
       ideal: "Teams with unstructured data",
       icon: <Clock className="h-6 w-6" />,
       color: "bg-green-500",
@@ -47,7 +47,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       name: "AI Action Workshop",
       subtitle: "Quick Start Implementation",
       price: "$2,499",
-      duration: "2 hours",
+      duration: "Quick Win Implementation",
       ideal: "Individual contributors, small teams",
       icon: <Target className="h-6 w-6" />,
       color: "bg-blue-500",
@@ -61,7 +61,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       ],
       outcomes: [
         "100-2000% efficiency gains",
-        "Concrete results in 2 hours",
+        "10X transformation in hours not days",
         "Ready-to-use processes"
       ]
     },

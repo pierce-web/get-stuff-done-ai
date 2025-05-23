@@ -8,7 +8,7 @@ export const EnhancedFooter = () => {
   
   const navigationLinks = {
     services: [
-      { name: "AI Action Workshop", href: "/ai-action-workshop", description: "2-hour intensive implementation" },
+      { name: "AI Action Workshop", href: "/ai-action-workshop", description: "Quick win in a box" },
       { name: "10x Executive Program", href: "/10x-executive", description: "Executive productivity transformation" },
       { name: "Triple-A Transformation", href: "/triple-a-transformation", description: "Complete organizational AI adoption" },
       { name: "Qualitative Data Insights", href: "/qualitative-data-insights-workshop", description: "Turn data into actionable insights" },
