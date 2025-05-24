@@ -31,6 +31,9 @@ playwright-report/
 test-results/
 /playwright/.cache/
 
+# Test coverage
+coverage/
+
 **/.claude/settings.local.json
 
 # Debug files

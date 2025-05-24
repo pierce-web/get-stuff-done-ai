@@ -26,6 +26,9 @@ jobs:
       run: npm run lint || echo "Linting issues found, but continuing build process"
       continue-on-error: true
     
+    - name: Run unit tests
+      run: npm run test:unit:coverage
+    
     - name: Build project
       run: npm run build
       
