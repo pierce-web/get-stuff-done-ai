@@ -20,6 +20,7 @@ import AssociateCallConfirmed from "./pages/AssociateCallConfirmed";
 import QualitativeDataInsightsWorkshop from "./pages/QualitativeDataInsightsWorkshop";
 import { HeadManager } from "./components/head/HeadManager";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/cases" element={<Cases />} />
