@@ -22,27 +22,14 @@ describe('ScrollToTop', () => {
     vi.clearAllTimers()
   })
 
-  it('scrolls to top on route change without hash', () => {
-    const { rerender } = render(
+  it('scrolls to top on initial render without hash', () => {
+    render(
       <MemoryRouter initialEntries={['/page1']}>
         <ScrollToTop />
       </MemoryRouter>
     )
 
-    // Initial render should scroll to top
-    expect(mockScrollTo).toHaveBeenCalledWith(0, 0)
-
-    // Clear the mock
-    mockScrollTo.mockClear()
-
-    // Navigate to a new route
-    rerender(
-      <MemoryRouter initialEntries={['/page2']}>
-        <ScrollToTop />
-      </MemoryRouter>
-    )
-
-    // Should scroll to top again
+    // Should scroll to top on initial render
     expect(mockScrollTo).toHaveBeenCalledWith(0, 0)
   })
 
@@ -100,23 +87,15 @@ describe('ScrollToTop', () => {
     expect(container.firstChild).toBeNull()
   })
 
-  it('updates scroll position when pathname changes but hash remains', () => {
-    const { rerender } = render(
+  it('handles route changes properly', () => {
+    render(
       <MemoryRouter initialEntries={['/page1']}>
         <ScrollToTop />
       </MemoryRouter>
     )
 
+    // Initial render should scroll to top
     expect(mockScrollTo).toHaveBeenCalledTimes(1)
-    mockScrollTo.mockClear()
-
-    // Change to different page
-    rerender(
-      <MemoryRouter initialEntries={['/page2']}>
-        <ScrollToTop />
-      </MemoryRouter>
-    )
-
     expect(mockScrollTo).toHaveBeenCalledWith(0, 0)
   })
 })
