@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 
 // Define key pages to test
 const pagesToTest = [
-  { path: '/', expectedTitleContent: 'Get Stuff Done' },
+  { path: '/', expectedTitleContent: 'AI Implementation Services' },
   { path: '/blog', expectedTitleContent: 'Professional Insights' },
   { path: '/cases', expectedTitleContent: 'Case Studies' },
   { path: '/cases/othership-ai-partnership', expectedTitleContent: 'Othership' },
