@@ -81,6 +81,10 @@ const QualitativeDataInsightsWorkshop = () => {
                   Our intensive AI Action Workshop uses cutting-edge AI to rapidly analyze call transcripts, emails, surveys, and more – revealing surprising insights you can act on immediately.
                 </p>
                 
+                <p className="text-lg font-semibold text-secondary">
+                  Turn your customer conversations into competitive advantage
+                </p>
+                
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
