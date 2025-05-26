@@ -35,6 +35,9 @@ export const Hero = () => {
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600 px-2 sm:px-0">
             Expert AI consulting and implementation services that deliver measurable business results. We help organizations accelerate AI adoption with proven strategies, hands-on implementation, and practical automation solutions.
           </p>
+          <p className="mt-4 text-lg font-semibold text-secondary">
+            Turn your customer conversations into competitive advantage
+          </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
             <div className="flex items-center justify-center gap-2 text-gray-600">
               <span className="w-2 h-2 bg-secondary rounded-full"></span>
