@@ -1,3 +1,4 @@
+
 import { ReactNode } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { animations } from '@/lib/design-tokens';
@@ -26,7 +27,7 @@ export const AnimatedReveal = ({
   
   return (
     <div
-      ref={targetRef}
+      ref={targetRef as React.RefObject<HTMLDivElement>}
       className={`${className} ${isIntersecting ? animationClass : 'opacity-0'}`}
       style={{
         animationDelay: isIntersecting ? `${delay}ms` : undefined,

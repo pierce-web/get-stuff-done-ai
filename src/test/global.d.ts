@@ -1,4 +1,14 @@
+
 // Global type definitions for testing
+import type { vi } from 'vitest'
+
+declare global {
+  var vi: typeof vi
+  var beforeEach: typeof import('vitest').beforeEach
+  var describe: typeof import('vitest').describe
+  var it: typeof import('vitest').it
+  var expect: typeof import('vitest').expect
+}
 
 interface Window {
   // HubSpot
@@ -40,3 +50,5 @@ declare global {
     hj: jest.Mock
   }
 }
+
+export {}
