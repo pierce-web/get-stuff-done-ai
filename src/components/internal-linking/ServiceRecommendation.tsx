@@ -224,7 +224,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
                 </ul>
                 
                 <Link to={service.link}>
-                  <Button className="w-full bg-secondary hover:bg-secondary/90 group-hover:shadow-md transition-all">
+                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-white group-hover:shadow-md transition-all">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
