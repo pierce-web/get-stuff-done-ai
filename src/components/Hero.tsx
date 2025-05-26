@@ -16,8 +16,12 @@ export const Hero = () => {
   return (
     <div className={`relative overflow-hidden ${spacing.section.lg} ${animations.fadeIn}`}>
       {/* Background gradient elements with parallax */}
-      <ParallaxElement speed={0.3} className={`absolute -top-24 -right-24 w-96 h-96 ${gradients.decorative.secondary}`} />
-      <ParallaxElement speed={0.2} className={`absolute -bottom-24 -left-24 w-96 h-96 ${gradients.decorative.primary}`} />
+      <ParallaxElement speed={0.3} className={`absolute -top-24 -right-24 w-96 h-96 ${gradients.decorative.secondary}`}>
+        <div />
+      </ParallaxElement>
+      <ParallaxElement speed={0.2} className={`absolute -bottom-24 -left-24 w-96 h-96 ${gradients.decorative.primary}`}>
+        <div />
+      </ParallaxElement>
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-3xl text-center">

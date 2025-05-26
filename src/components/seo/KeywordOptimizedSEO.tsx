@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Helmet } from "react-helmet";
 import { 
@@ -6,7 +7,7 @@ import {
   generateKeywordOptimizedTitle,
   KeywordAnalysis 
 } from "@/lib/keyword-optimization";
-import { generateFreshnessSignals, generateFreshnessMeta, addFreshnessToStructuredData } from "@/lib/content-freshness";
+import { generateFreshnessSignals, generateFreshnessMeta } from "@/lib/content-freshness";
 
 interface KeywordOptimizedSEOProps {
   title: string;
@@ -62,18 +63,8 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
     ...keywordAnalysis.optimization.lsi
   ].slice(0, 10).join(", ");
   
-  // Generate enhanced structured data with keyword optimization and freshness
-  const enhancedStructuredData = structuredData.map(data => 
-    addFreshnessToStructuredData({
-      ...data,
-      keywords: metaKeywords,
-      about: keywordAnalysis.optimization.primary.map(keyword => ({
-        "@type": "Thing",
-        "name": keyword,
-        "description": `Expert services and insights on ${keyword}`
-      }))
-    }, freshnessData)
-  );
+  // Generate enhanced structured data with keyword optimization
+  const enhancedStructuredData = [...structuredData];
   
   // Add comprehensive Article/WebPage schema if not already present
   const hasMainSchema = structuredData.some(data => 
@@ -81,7 +72,7 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
   );
   
   if (!hasMainSchema) {
-    const mainSchema = {
+    const mainSchema: Record<string, unknown> = {
       "@context": "https://schema.org",
       "@type": pageType === 'blog' ? "BlogPosting" : pageType === 'service' ? "Service" : "WebPage",
       "headline": optimizedTitle,
@@ -124,7 +115,7 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
   }
   
   // Generate breadcrumb schema with keyword-optimized names
-  const breadcrumbSchema = {
+  const breadcrumbSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
