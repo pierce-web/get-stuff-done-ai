@@ -12,7 +12,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 // Configuration
-const LINKEDIN_EXPORT_DIR = path.resolve(__dirname, '../linkedin-llm-txt/LinkedIn export - 20250213');
+const LINKEDIN_EXPORT_DIR = path.resolve(__dirname, '../linkedin-llm-txt/[new] Complete_LinkedInDataExport_06-07-2025.zip');
 const OUTPUT_FILE = path.resolve(__dirname, '../src/lib/linkedin-posts-data.ts');
 const ARTICLES_OUTPUT_DIR = path.resolve(__dirname, '../src/data/linkedin-articles');
 
@@ -1275,6 +1275,13 @@ function generateHTMLFromStructure(structure, aiTools) {
 function linkifyContent(text, aiTools) {
   if (!text) return '';
   
+  // Check if the text already contains HTML anchor tags
+  const hasExistingLinks = /<a\s+[^>]*>.*?<\/a>/i.test(text);
+  if (hasExistingLinks) {
+    // If there are already links, return as-is to prevent nested links
+    return text;
+  }
+  
   let processedText = text;
   
   // Add links to AI tools referenced in the content
@@ -1336,7 +1343,11 @@ async function main() {
         // Fix quotes at the beginning of paragraph tags
         .replace(/<p>\"(.*?)<\/p>/g, '<p>$1</p>')
         // Remove escaped quotes
-        .replace(/\\"/g, '"');
+        .replace(/\\"/g, '"')
+        // Fix nested anchor tags - remove the outer anchor tag when nested
+        .replace(/<a[^>]*>(<a[^>]*>.*?<\/a>)<\/a>/g, '$1')
+        // Fix the specific Wispr Flow pattern
+        .replace(/<a href="https:\/\/whisperflow\.com"[^>]*><a href="https:\/\/whisperflow\.com"[^>]*>Wispr<\/a> Flow<\/a>/g, '<a href="https://whisperflow.com" target="_blank" rel="noopener noreferrer">Wispr Flow</a>');
       
       return item;
     });
