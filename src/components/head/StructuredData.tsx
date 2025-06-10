@@ -84,11 +84,11 @@ export const StructuredData: React.FC = () => {
             "description": "A 10-week AI-powered transformation program to accelerate productivity, reclaim time, and master AI tools that keep you ahead.",
             "offers": {
               "@type": "Offer",
-              "price": "9999",
+              "price": "19999",
               "priceCurrency": "USD",
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "9999",
+                "price": "19999",
                 "priceCurrency": "USD",
                 "valueAddedTaxIncluded": "true"
               }
@@ -104,11 +104,11 @@ export const StructuredData: React.FC = () => {
             "description": "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption).",
             "offers": {
               "@type": "Offer",
-              "price": "24999",
+              "price": "49999",
               "priceCurrency": "USD",
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "24999",
+                "price": "49999",
                 "priceCurrency": "USD",
                 "valueAddedTaxIncluded": "true"
               }
