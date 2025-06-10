@@ -104,12 +104,12 @@ export const workshopAsEntryPoint = {
     step2: {
       name: "Pilot Program",
       outcome: "Department-wide implementation",
-      investment: "$9,999-$19,999"
+      investment: "$19,999-$29,999"
     },
     step3: {
       name: "Triple-A Transformation",
       outcome: "Enterprise-wide AI adoption",
-      investment: "$39,999+"
+      investment: "$49,999+"
     }
   },
   
