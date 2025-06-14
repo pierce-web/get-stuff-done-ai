@@ -20,26 +20,26 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
 }) => {
   const services = [
     {
-      id: "qualitative-data-workshop",
-      name: "Qualitative Data Insights",
-      subtitle: "Specialized Data Workshop",
+      id: "ai-oracle-session",
+      name: "AI Oracle Session",
+      subtitle: "Executive Intelligence System",
       price: "$2,499",
-      duration: "Quick Win Implementation",
-      ideal: "Teams with unstructured data",
+      duration: "Setup & Integration",
+      ideal: "C-suite & senior leadership",
       icon: <Clock className="h-6 w-6" />,
       color: "bg-green-500",
-      link: "/qualitative-data-insights-workshop",
+      link: "/ai-oracle-session",
       features: [
-        "Transform messy qualitative data",
-        "Extract actionable business insights",
-        "AI-powered analysis techniques",
-        "Custom data processing workflows",
-        "Immediate implementation"
+        "AI-powered executive intelligence",
+        "Strategic foresight & risk detection",
+        "Integrate into executive syncs",
+        "Interactive scenario testing",
+        "Organizational visibility"
       ],
       outcomes: [
-        "Clear data-driven insights",
-        "Faster decision making",
-        "Automated analysis processes"
+        "Proactive strategic planning",
+        "Data-driven alignment",
+        "AI as C-suite participant"
       ]
     },
     {

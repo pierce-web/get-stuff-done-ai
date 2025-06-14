@@ -32,14 +32,14 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
 }) => {
   // Define all services with their relationships
   const allServices: Record<string, Service> = {
-    "qualitative-data-workshop": {
-      id: "qualitative-data-workshop", 
-      title: "Qualitative Data Insights Workshop",
-      description: "Transform messy qualitative data into actionable business insights",
+    "ai-oracle-session": {
+      id: "ai-oracle-session", 
+      title: "AI Oracle Session",
+      description: "Executive intelligence system for strategic decision-making",
       price: "$2,499",
-      link: "/qualitative-data-insights-workshop",
-      badge: "Specialized",
-      features: ["Data transformation", "AI-powered analysis", "Clear insights"]
+      link: "/ai-oracle-session",
+      badge: "Executive",
+      features: ["Strategic foresight", "Organizational visibility", "C-suite integration"]
     },
     "ai-action-workshop": {
       id: "ai-action-workshop",
@@ -79,11 +79,11 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
         if (recommendationType === "upsell") {
           recommendations.push(allServices["10x-executive"], allServices["triple-a-transformation"]);
         } else if (recommendationType === "crosssell") {
-          recommendations.push(allServices["qualitative-data-workshop"]);
+          recommendations.push(allServices["ai-oracle-session"]);
         }
         break;
         
-      case "qualitative-data-workshop":
+      case "ai-oracle-session":
         if (recommendationType === "upsell") {
           recommendations.push(allServices["10x-executive"]);
         } else if (recommendationType === "crosssell") {
@@ -97,7 +97,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
         } else if (recommendationType === "upsell") {
           recommendations.push(allServices["triple-a-transformation"]);
         } else if (recommendationType === "crosssell") {
-          recommendations.push(allServices["qualitative-data-workshop"]);
+          recommendations.push(allServices["ai-oracle-session"]);
         }
         break;
         
@@ -105,14 +105,14 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
         if (recommendationType === "alternative" || recommendationType === "starter") {
           recommendations.push(allServices["ai-action-workshop"], allServices["10x-executive"]);
         } else if (recommendationType === "crosssell") {
-          recommendations.push(allServices["qualitative-data-workshop"]);
+          recommendations.push(allServices["ai-oracle-session"]);
         }
         break;
         
       default:
         // If no current service (e.g., blog post), show popular services
         if (recommendationType === "starter") {
-          recommendations.push(allServices["ai-action-workshop"], allServices["qualitative-data-workshop"]);
+          recommendations.push(allServices["ai-action-workshop"], allServices["ai-oracle-session"]);
         } else {
           recommendations.push(allServices["10x-executive"], allServices["triple-a-transformation"]);
         }

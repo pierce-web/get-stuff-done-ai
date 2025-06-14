@@ -3,22 +3,22 @@ import { ServiceType } from "./types";
 
 export const services: ServiceType[] = [
   {
-    title: "Qualitative Data Insights Workshop",
-    description: "Transform messy qualitative data into actionable business insights with AI-powered analysis techniques and custom processing workflows",
+    title: "AI Oracle Session",
+    description: "Transform executive decision-making with AI-powered organizational insights that integrate into your leadership cadence",
     price: "$2,499 per session",
-    subtext: "Satisfaction Guaranteed",
-    extraText: "Turn unstructured data into clear insights for faster decision making. Participants learn AI-powered analysis techniques and develop automated processes for ongoing data transformation.",
+    subtext: "Executive Intelligence System",
+    extraText: "See what others miss. AI Oracle provides C-suite teams with strategic foresight, identifies hidden risks and opportunities, and becomes an ongoing participant in executive decision-making.",
     features: [
-      "Transform messy qualitative data into actionable insights",
-      "Learn AI-powered analysis techniques and workflows", 
-      "Develop automated data processing systems",
-      "Extract clear patterns from unstructured information",
-      "Includes pre-session data review and post-session templates",
+      "Gain unprecedented organizational visibility",
+      "AI-powered strategic foresight and risk detection",
+      "Operationalize into weekly executive syncs",
+      "Interactive scenario testing and assumption validation",
+      "Create data-driven organizational alignment",
     ],
     cta: "Learn More",
-    secondaryCta: "Schedule a Consultation",
+    secondaryCta: "Schedule Executive Briefing",
     calendlyLink: "https://calendly.com/gsdatwork/free-consult",
-    learnMoreLink: "/qualitative-data-insights-workshop",
+    learnMoreLink: "/ai-oracle-session",
   },
   {
     title: "AI Action Workshop",

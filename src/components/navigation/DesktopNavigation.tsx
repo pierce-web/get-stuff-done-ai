@@ -45,12 +45,12 @@ export const DesktopNavigation = () => {
                 
                 <li>
                   <NavigationMenuLink asChild>
-                    <Link to="/qualitative-data-insights-workshop"
+                    <Link to="/ai-oracle-session"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
-                      <div className="text-sm font-medium leading-none">Qualitative Data Insights</div>
+                      <div className="text-sm font-medium leading-none">AI Oracle Session</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-                        AI-powered analysis of customer conversations and feedback
+                        AI-powered executive intelligence system
                       </p>
                     </Link>
                   </NavigationMenuLink>

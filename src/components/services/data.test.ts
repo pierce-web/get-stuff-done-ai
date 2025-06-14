@@ -67,10 +67,10 @@ describe('services data', () => {
 
   it('contains expected workshop services', () => {
     const workshopTitles = services
-      .filter(s => s.title.includes('Workshop'))
+      .filter(s => s.title.includes('Workshop') || s.title.includes('Session'))
       .map(s => s.title)
     
-    expect(workshopTitles).toContain('Qualitative Data Insights Workshop')
+    expect(workshopTitles).toContain('AI Oracle Session')
     expect(workshopTitles).toContain('AI Action Workshop')
     expect(workshopTitles).toHaveLength(2)
   })
@@ -86,23 +86,23 @@ describe('services data', () => {
   })
 
   it('workshops have consistent pricing', () => {
-    const workshops = services.filter(s => s.title.includes('Workshop'))
+    const workshops = services.filter(s => s.title.includes('Workshop') || s.title === 'AI Oracle Session')
     workshops.forEach((workshop) => {
       expect(workshop.price).toBe('$2,499 per session')
-      expect(workshop.subtext).toBe('Satisfaction Guaranteed')
+      expect(['Satisfaction Guaranteed', 'Executive Intelligence System']).toContain(workshop.subtext)
     })
   })
 
   it('all services have CTAs', () => {
     services.forEach((service) => {
       expect(service.cta).toBe('Learn More')
-      expect(['Schedule a Consultation', 'Schedule a Strategy Call']).toContain(service.secondaryCta)
+      expect(['Schedule a Consultation', 'Schedule a Strategy Call', 'Schedule Executive Briefing']).toContain(service.secondaryCta)
     })
   })
 
   it('all services have learn more links pointing to correct routes', () => {
     const expectedRoutes = {
-      'Qualitative Data Insights Workshop': '/qualitative-data-insights-workshop',
+      'AI Oracle Session': '/ai-oracle-session',
       'AI Action Workshop': '/ai-action-workshop',
       '10x Effective Executive': '/10x-executive',
       'Triple-A Transformation Program': '/triple-a-transformation'

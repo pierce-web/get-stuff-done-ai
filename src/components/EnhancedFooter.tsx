@@ -11,7 +11,7 @@ export const EnhancedFooter = () => {
       { name: "AI Action Workshop", href: "/ai-action-workshop", description: "Quick win in a box" },
       { name: "10x Executive Program", href: "/10x-executive", description: "Executive productivity transformation" },
       { name: "Triple-A Transformation", href: "/triple-a-transformation", description: "Complete organizational AI adoption" },
-      { name: "Qualitative Data Insights", href: "/qualitative-data-insights-workshop", description: "Turn data into actionable insights" },
+      { name: "AI Oracle Session", href: "/ai-oracle-session", description: "Executive intelligence system" },
     ],
     resources: [
       { name: "AI Tooling Report", href: "/ai-tooling-report", description: "2025 implementation guide" },
