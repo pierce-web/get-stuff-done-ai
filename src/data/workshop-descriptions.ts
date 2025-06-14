@@ -41,29 +41,29 @@ export const workshopDescriptions = {
     }
   },
   
-  qualitativeData: {
-    title: "Qualitative Data Insights Workshop",
-    tagline: "Transform Messy Data into Strategic Insights",
-    shortDescription: "Turn your unstructured data into actionable business intelligence through AI-powered analysis techniques.",
+  aiOracle: {
+    title: "AI Oracle Session",
+    tagline: "Your AI-Powered Executive Intelligence System",
+    shortDescription: "Transform executive decision-making with AI that provides strategic foresight and organizational intelligence.",
     
     valueProps: [
-      "Extract clear insights from complex qualitative data",
-      "Build automated analysis workflows",
-      "Create data-driven decision frameworks",
-      "Develop repeatable analysis processes",
-      "Generate immediate, actionable recommendations"
+      "Gain unprecedented organizational visibility",
+      "AI-powered strategic foresight and risk detection",
+      "Integrate AI into executive decision cadence",
+      "Test assumptions and explore scenarios interactively",
+      "Create data-driven organizational alignment"
     ],
     
     outcomes: {
       immediate: [
-        "Comprehensive analysis of your data",
-        "Key insights and recommendations",
-        "Automated analysis templates"
+        "AI Oracle configured for your strategic priorities",
+        "Initial strategic insights and hidden opportunities",
+        "Integration roadmap for executive meetings"
       ],
       longTerm: [
-        "Ongoing capability for data analysis",
-        "Faster, more informed decisions",
-        "Competitive advantage through insights"
+        "Ongoing executive intelligence capability",
+        "Proactive rather than reactive leadership",
+        "AI as participant in C-suite decisions"
       ]
     }
   }

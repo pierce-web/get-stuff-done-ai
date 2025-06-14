@@ -12,7 +12,7 @@ import {
   Users, ArrowRight
 } from "lucide-react";
 
-const QualitativeDataInsightsWorkshop = () => {
+const AIOracleSession = () => {
   // Calendly links
   const workshopCalendlyLink = "https://calendly.com/gsdatwork/ai-workshop"; 
   const consultationCalendlyLink = "https://calendly.com/gsdatwork/free-consult";
@@ -22,9 +22,9 @@ const QualitativeDataInsightsWorkshop = () => {
 
   // Service structured data
   const serviceStructuredData = generateServicePageStructuredData(
-    "Qualitative Data Insights AI Workshop",
-    "Transform messy qualitative data (calls, emails, surveys) into clear, actionable business insights with our AI-powered workshop. Drive data-driven decisions faster.",
-    "https://gsdat.work/qualitative-data-insights-workshop",
+    "AI Oracle Session - Executive Intelligence System",
+    "Transform your executive decision-making with AI-powered organizational insights. Turn data into strategic foresight with our C-suite intelligence system.",
+    "https://gsdat.work/ai-oracle-session",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
     "$2,499"
@@ -33,8 +33,8 @@ const QualitativeDataInsightsWorkshop = () => {
   // FAQ structured data
   const faqStructuredData = generateFAQStructuredData([
     {
-      question: "What is the Qualitative Data Insights AI Workshop?",
-      answer: "The Qualitative Data Insights AI Workshop is an intensive session where we use advanced AI models to rapidly analyze your qualitative data (like call transcripts, emails, and surveys) to extract actionable business insights. It's a hands-on, guided session where you'll see your own data transformed into clear, actionable intelligence."
+      question: "What is the AI Oracle Session?",
+      answer: "The AI Oracle Session is an executive intelligence system that transforms your organization's data into strategic foresight. It's a comprehensive session where we set up AI to act as a digital advisor, providing C-suite teams with unprecedented organizational visibility and insights that can be integrated into your regular executive decision-making cadence."
     },
     {
       question: "What kind of data can be analyzed in this workshop?",
@@ -49,18 +49,18 @@ const QualitativeDataInsightsWorkshop = () => {
       answer: "You'll leave with a concise summary of key insights discovered in your data, identification of surprising trends or patterns, a prioritized list of actionable recommendations, and a repeatable process framework for future analysis."
     },
     {
-      question: "How much does the Qualitative Data Insights Workshop cost?",
-      answer: "$2,499 for an intensive AI Action Workshop with satisfaction guaranteed."
+      question: "How much does the AI Oracle Session cost?",
+      answer: "$2,499 for the initial setup and training session with satisfaction guaranteed. This includes setting up the system for ongoing use in your executive meetings."
     }
   ]);
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Qualitative Data Insights AI Workshop | GSD at Work"
-        description="Transform messy qualitative data (calls, emails, surveys) into clear, actionable business insights with our AI-powered workshop. Drive data-driven decisions faster."
-        canonicalUrl="https://gsdat.work/qualitative-data-insights-workshop"
-        keywords="qualitative data analysis AI, call transcript analysis, customer insight mining, AI workshop, sentiment analysis, data insights"
+        title="AI Oracle Session - Executive Intelligence System | GSD at Work"
+        description="Transform your executive decision-making with AI-powered organizational insights. Turn data into strategic foresight with our C-suite intelligence system."
+        canonicalUrl="https://gsdat.work/ai-oracle-session"
+        keywords="AI executive intelligence, C-suite AI advisor, organizational insights AI, strategic AI oracle, executive decision support, AI-powered leadership"
         structuredData={[serviceStructuredData, faqStructuredData]}
       />
       
@@ -74,15 +74,15 @@ const QualitativeDataInsightsWorkshop = () => {
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
               <div className="lg:w-3/5 space-y-6">
                 <h1 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-                  Unlock Hidden Insights from Your Customer Data with AI
+                  Your AI-Powered Executive Intelligence System
                 </h1>
                 
                 <p className="text-xl text-gray-700">
-                  Our intensive AI Action Workshop uses cutting-edge AI to rapidly analyze call transcripts, emails, surveys, and more – revealing surprising insights you can act on immediately.
+                  Transform executive decision-making with AI that sees across your entire organization. Get strategic insights, uncover hidden patterns, and make data-informed decisions with AI as your digital advisor.
                 </p>
                 
                 <p className="text-lg font-semibold text-secondary">
-                  Turn your customer conversations into competitive advantage
+                  See What Others Miss. Decide With Confidence.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4 mt-8">
@@ -90,7 +90,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Clock className="h-5 w-5 text-secondary" />
                     </div>
-                    <span className="font-medium">Intensive Results Session</span>
+                    <span className="font-medium">Executive Strategy Session</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
@@ -102,13 +102,13 @@ const QualitativeDataInsightsWorkshop = () => {
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Zap className="h-5 w-5 text-secondary" />
                     </div>
-                    <span className="font-medium">Hands-On Implementation</span>
+                    <span className="font-medium">Operationalized for Weekly Use</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Target className="h-5 w-5 text-secondary" />
                     </div>
-                    <span className="font-medium">Actionable Insights Guaranteed</span>
+                    <span className="font-medium">C-Suite Ready Intelligence</span>
                   </div>
                 </div>
                 
@@ -117,7 +117,7 @@ const QualitativeDataInsightsWorkshop = () => {
                     className="bg-secondary hover:bg-secondary/90 text-white font-semibold py-6"
                     onClick={() => workshopCalendlyLink && window.open(workshopCalendlyLink, '_blank')}
                   >
-                    Book Your Insights Workshop
+                    Book Your AI Oracle Session
                   </Button>
                   
                   <Button 
@@ -151,7 +151,7 @@ const QualitativeDataInsightsWorkshop = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
-                Is Your Valuable Customer Data Going Unused?
+                Executive Blind Spots Are Costing You Millions
               </h2>
               
               <div className="grid md:grid-cols-2 gap-8">
@@ -161,8 +161,8 @@ const QualitativeDataInsightsWorkshop = () => {
                       <Database className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Fragmented Data Sources</h3>
-                      <p className="text-gray-700">Calls in Dialpad, chats in Intercom, emails elsewhere? Bringing it all together manually is slow and painful.</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Organizational Silos</h3>
+                      <p className="text-gray-700">Critical insights trapped in departmental data. Your teams know things leadership doesn't, creating strategic blind spots.</p>
                     </div>
                   </div>
                 </div>
@@ -173,8 +173,8 @@ const QualitativeDataInsightsWorkshop = () => {
                       <Clock className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Slow Manual Analysis</h3>
-                      <p className="text-gray-700">Teams spend weeks sifting through transcripts or surveys, delaying critical decisions.</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Delayed Intelligence</h3>
+                      <p className="text-gray-700">By the time insights reach the C-suite, the opportunity has passed. Markets move faster than your reporting cycles.</p>
                     </div>
                   </div>
                 </div>
@@ -185,8 +185,8 @@ const QualitativeDataInsightsWorkshop = () => {
                       <Search className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Hidden Issues & Opportunities</h3>
-                      <p className="text-gray-700">Critical customer pain points, operational bottlenecks, or product ideas are buried in thousands of interactions.</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Invisible Risks & Opportunities</h3>
+                      <p className="text-gray-700">Customer churn risks, competitive threats, and growth opportunities hide in plain sight across your data.</p>
                     </div>
                   </div>
                 </div>
@@ -197,8 +197,8 @@ const QualitativeDataInsightsWorkshop = () => {
                       <UserRound className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Data Overload, Insight Deficit</h3>
-                      <p className="text-gray-700">You have the data, but lack the time or tools to extract meaningful, actionable intelligence consistently.</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Reactive Leadership</h3>
+                      <p className="text-gray-700">Without proactive intelligence, you're always playing catch-up instead of staying ahead of the curve.</p>
                     </div>
                   </div>
                 </div>
@@ -211,11 +211,11 @@ const QualitativeDataInsightsWorkshop = () => {
         <section className="container mx-auto px-4 mb-20">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 text-center">
-              Transform Raw Data into Actionable Insights Fast
+              AI Oracle: Your Digital Executive Advisor
             </h2>
             
             <p className="text-xl text-center text-gray-700 mb-12 max-w-4xl mx-auto">
-              This intensive, hands-on workshop leverages the power of advanced AI models (like Claude Code (Sonnet 3.7), Gemini 2.5 Pro (via Google AI Studio), and o3 (OpenAI)) to rapidly process and analyze large volumes of your qualitative data, delivering results you can act on immediately.
+              We set up an AI-powered intelligence system that becomes part of your executive team. Do it once, then operationalize it into your weekly executive syncs for ongoing strategic advantage.
             </p>
             
             <div className="space-y-8">
@@ -224,8 +224,8 @@ const QualitativeDataInsightsWorkshop = () => {
                   1
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Define Objective</h3>
-                  <p className="text-gray-700">We start by clarifying the key business question you want to answer.</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Executive Alignment</h3>
+                  <p className="text-gray-700">Define your strategic priorities and key questions the AI Oracle should monitor.</p>
                 </div>
               </div>
               
@@ -234,8 +234,8 @@ const QualitativeDataInsightsWorkshop = () => {
                   2
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Data Preparation</h3>
-                  <p className="text-gray-700">You provide a data dump (transcripts, CSVs, text files). We guide light preprocessing if needed.</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Full Data Inventory</h3>
+                  <p className="text-gray-700">Map all organizational data sources - from customer interactions to internal communications.</p>
                 </div>
               </div>
               
@@ -244,8 +244,8 @@ const QualitativeDataInsightsWorkshop = () => {
                   3
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">AI Analysis (Live)</h3>
-                  <p className="text-gray-700">Together, we use powerful AI tools to query, summarize, categorize, and analyze your data in real-time.</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">AI Oracle Setup</h3>
+                  <p className="text-gray-700">Configure AI to surface strategic insights, test assumptions, and identify cross-functional patterns.</p>
                 </div>
               </div>
               
@@ -254,8 +254,8 @@ const QualitativeDataInsightsWorkshop = () => {
                   4
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Insight Generation</h3>
-                  <p className="text-gray-700">We collaboratively identify surprising patterns, key themes, sentiment trends, and critical anomalies.</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Interactive Intelligence</h3>
+                  <p className="text-gray-700">Ask questions, test hypotheses, and let AI ask YOU the questions that matter.</p>
                 </div>
               </div>
               
@@ -264,8 +264,8 @@ const QualitativeDataInsightsWorkshop = () => {
                   5
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Action Planning</h3>
-                  <p className="text-gray-700">We translate insights into concrete, prioritized recommendations and next steps.</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">Operationalization</h3>
+                  <p className="text-gray-700">Integrate AI Oracle into your executive meetings for ongoing strategic intelligence.</p>
                 </div>
               </div>
             </div>
@@ -277,7 +277,7 @@ const QualitativeDataInsightsWorkshop = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
-                Why Choose the Qualitative Data Insights Workshop?
+                Why Leading Executives Choose AI Oracle
               </h2>
               
               <div className="grid md:grid-cols-3 gap-8">
@@ -285,48 +285,48 @@ const QualitativeDataInsightsWorkshop = () => {
                   <div className="bg-secondary/10 p-3 rounded-full w-fit mb-4">
                     <Rocket className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Speed</h3>
-                  <p className="text-gray-700">Get actionable insights immediately, not weeks or months later.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Strategic Foresight</h3>
+                  <p className="text-gray-700">See emerging trends and risks before they impact your business.</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-xl shadow-sm">
                   <div className="bg-secondary/10 p-3 rounded-full w-fit mb-4">
                     <BrainCircuit className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Objectivity & Scale</h3>
-                  <p className="text-gray-700">AI processes vast data without human bias, uncovering patterns missed by manual review.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Executive Legibility</h3>
+                  <p className="text-gray-700">Gain unprecedented visibility across your entire organization.</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-xl shadow-sm">
                   <div className="bg-secondary/10 p-3 rounded-full w-fit mb-4">
                     <Lightbulb className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Uncover the Unknown</h3>
-                  <p className="text-gray-700">Find surprising pain points, operational flaws, or hidden opportunities you weren't looking for.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Data-Driven Alignment</h3>
+                  <p className="text-gray-700">Create emergent alignment as all decisions are grounded in organizational data.</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-xl shadow-sm">
                   <div className="bg-secondary/10 p-3 rounded-full w-fit mb-4">
                     <Target className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Actionable Recommendations</h3>
-                  <p className="text-gray-700">Leave with clear, prioritized steps based directly on your data.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Decision Intelligence</h3>
+                  <p className="text-gray-700">AI becomes a participant in executive meetings, offering data-backed perspectives.</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-xl shadow-sm">
                   <div className="bg-secondary/10 p-3 rounded-full w-fit mb-4">
                     <Users className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Build Internal Capability</h3>
-                  <p className="text-gray-700">Your team learns the process and tools, enabling ongoing internal analysis.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Living Intelligence System</h3>
+                  <p className="text-gray-700">Not a one-time analysis but an ongoing executive intelligence capability.</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-xl shadow-sm">
                   <div className="bg-secondary/10 p-3 rounded-full w-fit mb-4">
                     <DollarSign className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">High ROI Initial Engagement</h3>
-                  <p className="text-gray-700">A cost-effective investment ($2,499) to experience the power of AI and get immediate value.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Executive-Ready Implementation</h3>
+                  <p className="text-gray-700">Designed specifically for C-suite needs and integrated into your leadership cadence.</p>
                 </div>
               </div>
             </div>
@@ -342,65 +342,65 @@ const QualitativeDataInsightsWorkshop = () => {
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span>Teams with large volumes of text-based customer interactions (Call Centers, Customer Support, Sales, UX Research)</span>
+                    <span>C-Suite executives seeking data-driven strategic advantage</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span>Organizations struggling with fragmented data silos (e.g., separate systems for calls, chat, email)</span>
+                    <span>Senior leadership teams wanting better organizational visibility</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span>Leaders seeking faster, deeper insights into customer experience, operational efficiency, or product feedback</span>
+                    <span>Organizations in reflection or strategic planning phases</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span>Companies wanting a low-risk, high-impact way to start leveraging AI for business intelligence</span>
+                    <span>Companies seeking to identify bottlenecks, risks, and hidden opportunities</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span>Businesses using tools like Dialpad, Intercom, Zendesk, Gong, AI Scribe, or collecting survey data</span>
+                    <span>Executive teams wanting AI as an ongoing strategic advisor</span>
                   </li>
                 </ul>
               </div>
               
               <div>
-                <h3 className="text-2xl font-semibold text-primary mb-6">Data We Can Analyze:</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-6">Intelligence Sources:</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Phone className="h-5 w-5 text-secondary" />
                     </div>
-                    <span>Call Center Transcripts</span>
+                    <span>Customer Interactions</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <MessageSquare className="h-5 w-5 text-secondary" />
                     </div>
-                    <span>Chat Logs</span>
+                    <span>Internal Communications</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Mail className="h-5 w-5 text-secondary" />
                     </div>
-                    <span>Email Threads</span>
+                    <span>Market Intelligence</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <FileText className="h-5 w-5 text-secondary" />
                     </div>
-                    <span>Survey Responses</span>
+                    <span>Employee Feedback</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Clipboard className="h-5 w-5 text-secondary" />
                     </div>
-                    <span>Support Tickets</span>
+                    <span>Operational Data</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-secondary/10 p-2 rounded-full">
                       <Users className="h-5 w-5 text-secondary" />
                     </div>
-                    <span>Meeting Notes / Transcripts</span>
+                    <span>Strategic Documents</span>
                   </div>
                 </div>
               </div>
@@ -412,25 +412,25 @@ const QualitativeDataInsightsWorkshop = () => {
         <section className="bg-gray-50 py-16 mb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <h3 className="text-2xl font-semibold text-primary mb-8 text-center">What You'll Leave With:</h3>
+              <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Your Executive Intelligence System Includes:</h3>
               
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700">A concise summary of the key insights discovered.</p>
+                    <p className="text-gray-700">AI Oracle configured for your strategic priorities</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700">Identification of surprising trends, patterns, or anomalies.</p>
+                    <p className="text-gray-700">Integration roadmap for weekly executive syncs</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700">A prioritized list of actionable recommendations.</p>
+                    <p className="text-gray-700">Initial strategic insights and hidden opportunities</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700">A repeatable process framework for future analysis.</p>
+                    <p className="text-gray-700">Ongoing executive intelligence capability</p>
                   </div>
                 </div>
               </div>
@@ -443,12 +443,12 @@ const QualitativeDataInsightsWorkshop = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Ready to Unlock Your Data's Potential?
+                Ready to See What Others Miss?
               </h2>
               
               <div className="mb-8">
                 <span className="text-4xl font-bold text-secondary">$2,499</span>
-                <p className="text-gray-700 mt-2">For an intensive AI Action Workshop</p>
+                <p className="text-gray-700 mt-2">Initial AI Oracle Setup & Training</p>
                 <p className="text-sm font-medium text-secondary mt-1">Satisfaction Guaranteed</p>
               </div>
               
@@ -457,7 +457,7 @@ const QualitativeDataInsightsWorkshop = () => {
                   className="bg-secondary hover:bg-secondary/90 text-white font-semibold py-6"
                   onClick={() => workshopCalendlyLink && window.open(workshopCalendlyLink, '_blank')}
                 >
-                  Book Your Insights Workshop Now
+                  Schedule Your AI Oracle Session
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 
@@ -466,7 +466,7 @@ const QualitativeDataInsightsWorkshop = () => {
                   className="border-secondary text-secondary hover:bg-secondary/10"
                   onClick={() => consultationCalendlyLink && window.open(consultationCalendlyLink, '_blank')}
                 >
-                  Have Questions? Schedule a Free Consultation
+                  Explore How AI Oracle Fits Your C-Suite
                 </Button>
               </div>
             </div>
@@ -479,4 +479,4 @@ const QualitativeDataInsightsWorkshop = () => {
   );
 };
 
-export default QualitativeDataInsightsWorkshop;
+export default AIOracleSession;

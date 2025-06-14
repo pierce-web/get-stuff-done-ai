@@ -59,15 +59,15 @@ export const workshopToAAAAlignment = {
     ]
   },
   
-  qualitativeDataWorkshop: {
+  aiOracleSession: {
     primaryPhase: "assess",
-    role: "Assessment Accelerator",
-    description: "The Qualitative Data Insights Workshop aligns with the Assessment Phase by revealing hidden opportunities in existing data and demonstrating AI's analytical power.",
+    role: "Executive Intelligence System",
+    description: "The AI Oracle Session transforms executive decision-making by providing strategic foresight and organizational intelligence that integrates into leadership cadence.",
     alignmentPoints: [
-      "Uncovers data-driven opportunities",
-      "Demonstrates AI analytical capabilities",
-      "Identifies high-value use cases",
-      "Provides assessment foundation"
+      "Provides executive-level organizational visibility",
+      "Enables proactive strategic planning",
+      "Integrates AI into C-suite decision processes",
+      "Creates data-driven alignment across leadership"
     ]
   },
   

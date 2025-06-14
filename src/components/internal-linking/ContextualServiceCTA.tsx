@@ -33,15 +33,15 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
   // Define services with their targeting keywords
   const services: ServiceCTA[] = [
     {
-      id: "qualitative-data-workshop",
-      title: "Qualitative Data Insights Workshop",
-      description: "Turn unstructured data into actionable business intelligence",
-      link: "/qualitative-data-insights-workshop",
+      id: "ai-oracle-session",
+      title: "AI Oracle Session",
+      description: "Transform executive decision-making with AI-powered organizational intelligence",
+      link: "/ai-oracle-session",
       price: "$2,499",
       icon: <BarChart3 className="h-6 w-6" />,
-      keywords: ["data", "insights", "analysis", "research", "qualitative", "feedback", "survey", "interview", "analytics", "intelligence"],
-      cta: "Unlock Your Data Insights",
-      badge: "Data Focused"
+      keywords: ["executive", "strategy", "decision", "leadership", "intelligence", "foresight", "c-suite", "visibility", "alignment", "planning"],
+      cta: "Schedule Your AI Oracle Session",
+      badge: "Executive Focus"
     },
     {
       id: "ai-action-workshop",
