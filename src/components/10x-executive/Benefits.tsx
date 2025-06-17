@@ -6,28 +6,28 @@ import { CheckCircle } from "lucide-react";
 export const Benefits: React.FC = () => {
   const benefits = [
     {
-      title: "Email Mastery",
-      description: "Cut your email handling time by 50-80% with AI-powered systems that organize, draft, and respond effectively.",
+      title: "Email Mastery for Teams",
+      description: "Cut your organization's email handling time by 50-80% with AI-powered systems that your entire team can leverage.",
     },
     {
-      title: "Meeting Effectiveness",
-      description: "Transform meetings with AI-assisted agenda setting, note-taking, summarization, and follow-up automation.",
+      title: "Meeting Transformation",
+      description: "Transform team meetings with AI-assisted agenda setting, note-taking, summarization, and automated follow-ups.",
     },
     {
-      title: "Delegate to AI",
-      description: "Learn to delegate appropriate tasks to AI, freeing you to focus on the highest-impact activities only you can perform.",
+      title: "Scalable AI Delegation",
+      description: "Build systems where your entire team learns to delegate to AI, multiplying productivity across departments.",
     },
     {
       title: "Strategic Decision-Making",
-      description: "Leverage AI to gather better intelligence, analyze complex data, and make more informed decisions, faster.",
+      description: "Empower your organization with AI-driven intelligence gathering and analysis for faster, better decisions.",
     },
     {
-      title: "Content Amplification",
-      description: "Amplify your authority with AI-powered content creation that maintains your voice while saving hours.",
+      title: "Content & Knowledge Amplification",
+      description: "Create AI-powered content systems that maintain your organization's voice while scaling thought leadership.",
     },
     {
-      title: "Customized Workflow",
-      description: "Develop a personalized AI workflow that integrates seamlessly with your existing processes and tools.",
+      title: "Organization-Wide Workflows",
+      description: "Develop AI workflows that integrate seamlessly across teams, spreading best practices virally.",
     }
   ];
 
@@ -35,9 +35,9 @@ export const Benefits: React.FC = () => {
     <section id="benefits" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold text-primary mb-4">Transform How You Work</h2>
+          <h2 className="text-3xl font-bold text-primary mb-4">Transform How Your Organization Works</h2>
           <p className="text-lg text-gray-600">
-            The 10x Effective Executive program delivers proven systems to help busy leaders harness AI for exponential productivity, without technical complexity.
+            The 10x Effective Executive program delivers proven systems to help leaders and their teams harness AI for exponential productivity gains across the entire organization.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export const Benefits: React.FC = () => {
             Schedule a Strategy Call
           </Button>
           <p className="mt-4 text-gray-600">
-            Limited availability. Only accepting 2 executives per quarter.
+            Transform your executive leadership to drive organization-wide AI adoption.
           </p>
         </div>
       </div>

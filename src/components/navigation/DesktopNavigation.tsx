@@ -63,7 +63,7 @@ export const DesktopNavigation = () => {
                     >
                       <div className="text-sm font-medium leading-none">10x Effective Executive</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-                        AI-powered transformation program for busy leaders
+                        AI transformation for executives and their teams
                       </p>
                     </Link>
                   </NavigationMenuLink>

@@ -68,24 +68,24 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
     {
       id: "10x-executive",
       name: "10x Executive Program",
-      subtitle: "Executive Transformation",
-      price: "$19,999",
+      subtitle: "Executive & Team Transformation",
+      price: "$20,000",
       duration: "10 weeks",
-      ideal: "Executives, senior managers",
+      ideal: "Executives and their teams",
       icon: <Users className="h-6 w-6" />,
       color: "bg-purple-500",
       link: "/10x-executive",
       features: [
-        "Comprehensive productivity transformation",
-        "1:1 executive coaching sessions",
-        "AI-powered decision making frameworks",
-        "Advanced automation implementations",
-        "Ongoing support and optimization"
+        "5 bi-weekly sessions (2 hours each)",
+        "Team members welcome to join",
+        "Organization-wide AI implementation",
+        "Scalable automation frameworks",
+        "Session recordings for knowledge sharing"
       ],
       outcomes: [
-        "10x productivity improvements",
-        "Enhanced strategic thinking",
-        "Mastery of AI tools"
+        "10x productivity across teams",
+        "Organization-wide AI adoption",
+        "Scalable AI processes"
       ]
     },
     {
