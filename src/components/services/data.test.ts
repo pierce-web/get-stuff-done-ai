@@ -55,9 +55,11 @@ describe('services data', () => {
     })
   })
 
-  it('all services have exactly 5 features', () => {
+  it('all services have at least 5 features', () => {
     services.forEach((service) => {
-      expect(service.features).toHaveLength(5)
+      expect(service.features.length).toBeGreaterThanOrEqual(5)
+      // 10x Executive has 6 features due to team participation feature
+      expect(service.features.length).toBeLessThanOrEqual(6)
       service.features.forEach((feature) => {
         expect(typeof feature).toBe('string')
         expect(feature.length).toBeGreaterThan(0)

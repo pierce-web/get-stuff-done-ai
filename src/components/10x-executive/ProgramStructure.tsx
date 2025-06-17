@@ -10,50 +10,62 @@ export const ProgramStructure: React.FC = () => {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-4 text-center">Program Structure</h2>
           <p className="text-lg text-gray-600 text-center mb-12">
-            A proven 10-week framework designed to deliver rapid, sustainable results
+            5 intensive bi-weekly sessions over 10 weeks to transform your organization's productivity
           </p>
 
           <div className="space-y-12">
             <div className="border-l-4 border-secondary pl-6 relative">
               <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-secondary"></div>
-              <h3 className="text-xl font-bold text-primary mb-2">Weeks 1-2: Assessment & Setup</h3>
+              <h3 className="text-xl font-bold text-primary mb-2">Session 1: Foundation & Quick Wins</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Comprehensive workflow audit and bottleneck identification</li>
-                <li>• Personalized AI toolset selection and setup</li>
-                <li>• Initial quick wins implementation</li>
+                <li>• Comprehensive workflow audit for executive and key team members</li>
+                <li>• AI toolset selection and initial setup</li>
+                <li>• Immediate productivity gains implementation</li>
+                <li>• Team readiness assessment and engagement planning</li>
               </ul>
             </div>
 
             <div className="border-l-4 border-secondary pl-6 relative">
               <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-secondary"></div>
-              <h3 className="text-xl font-bold text-primary mb-2">Weeks 3-6: Core Systems Implementation</h3>
+              <h3 className="text-xl font-bold text-primary mb-2">Session 2: Core Systems Implementation</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Email management system setup and optimization</li>
-                <li>• Meeting effectiveness protocols implementation</li>
-                <li>• Decision-making frameworks and AI-assisted intelligence gathering</li>
-                <li>• Content creation and amplification systems</li>
+                <li>• Email and communication systems optimization</li>
+                <li>• Meeting effectiveness protocols for teams</li>
+                <li>• Team collaboration enhancement with AI tools</li>
+                <li>• Knowledge sharing processes setup</li>
               </ul>
             </div>
 
             <div className="border-l-4 border-secondary pl-6 relative">
               <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-secondary"></div>
-              <h3 className="text-xl font-bold text-primary mb-2">Weeks 7-9: Advanced Integration & Optimization</h3>
+              <h3 className="text-xl font-bold text-primary mb-2">Session 3: Strategic AI Integration</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Team delegation and collaboration enhancement</li>
-                <li>• Custom workflow automation</li>
-                <li>• Personalized prompting strategies and advanced AI usage</li>
-                <li>• Metrics tracking and system refinement</li>
+                <li>• Decision-making frameworks with AI</li>
+                <li>• Content creation and thought leadership amplification</li>
+                <li>• Delegation strategies (both to AI and team)</li>
+                <li>• Cross-functional process optimization</li>
               </ul>
             </div>
 
             <div className="border-l-4 border-secondary pl-6 relative">
               <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-secondary"></div>
-              <h3 className="text-xl font-bold text-primary mb-2">Week 10: Sustainability & Future Growth</h3>
+              <h3 className="text-xl font-bold text-primary mb-2">Session 4: Advanced Automation & Scaling</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Long-term sustainability planning</li>
-                <li>• Creating your personal AI roadmap</li>
-                <li>• Measuring and communicating ROI</li>
-                <li>• Final optimization and review</li>
+                <li>• Custom workflow automation across the organization</li>
+                <li>• Advanced prompting strategies for teams</li>
+                <li>• Metrics and ROI tracking setup</li>
+                <li>• Department-specific AI implementation</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-secondary pl-6 relative">
+              <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-secondary"></div>
+              <h3 className="text-xl font-bold text-primary mb-2">Session 5: Sustainability & Expansion</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Long-term AI roadmap for the organization</li>
+                <li>• Knowledge transfer protocols</li>
+                <li>• Future growth planning and capability building</li>
+                <li>• Final optimization and success celebration</li>
               </ul>
             </div>
           </div>
@@ -63,15 +75,19 @@ export const ProgramStructure: React.FC = () => {
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                <span>10 weekly one-on-one coaching sessions (50 minutes each)</span>
+                <span>5 bi-weekly intensive sessions (2 hours each)</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                <span>Custom AI toolset recommendations and implementation</span>
+                <span>Flexible team participation - bring relevant team members to each session</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                <span>Implementation guides and process templates</span>
+                <span>Custom AI toolset for your entire organization</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                <span>Implementation guides and scalable process templates</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
@@ -79,7 +95,7 @@ export const ProgramStructure: React.FC = () => {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                <span>Lifetime access to program resources and updates</span>
+                <span>Session recordings for knowledge sharing</span>
               </li>
             </ul>
 

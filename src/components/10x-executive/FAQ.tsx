@@ -12,32 +12,44 @@ interface FAQItem {
 export const FAQ: React.FC = () => {
   const faqItems: FAQItem[] = [
     {
-      question: "How much time will I need to commit each week?",
-      answer: "Beyond the weekly 50-minute coaching session, you'll need approximately 2-3 hours per week for implementation. However, this time investment will quickly pay for itself as your new AI systems begin saving you 10+ hours weekly."
+      question: "Can my team members join the sessions?",
+      answer: "Absolutely! Team participation is encouraged. You can bring relevant team members to each session based on the topics being covered. This helps spread AI adoption throughout your organization more effectively."
     },
     {
-      question: "Do I need technical expertise to benefit from this program?",
-      answer: "No technical background is required. The program is specifically designed for busy executives who want results without needing to become AI experts. All implementations are practical, guided, and focused on your specific workflow."
+      question: "How do we decide who should attend each session?",
+      answer: "We'll work with you to identify the right participants for each session based on the topics and your organizational structure. For example, your operations lead might join the workflow automation session, while your content team joins the content amplification session."
+    },
+    {
+      question: "How much time will we need to commit?",
+      answer: "The program consists of 5 bi-weekly sessions (2 hours each) over 10 weeks, plus approximately 2-3 hours per week for implementation. This investment quickly pays for itself as your team begins saving 10+ hours weekly through AI automation."
+    },
+    {
+      question: "Do we need technical expertise to benefit from this program?",
+      answer: "No technical background is required. The program is designed for busy executives and their teams who want practical results without becoming AI experts. All implementations are guided and focused on your specific workflows."
     },
     {
       question: "How is this different from just taking an AI course?",
-      answer: "Unlike generic courses, this program provides personalized coaching and implementation specific to your role, industry, and challenges. We focus on implementation rather than theory, with direct accountability and support throughout."
+      answer: "Unlike generic courses, this program provides personalized coaching and implementation specific to your organization, industry, and challenges. We focus on practical implementation with your actual work, not theory, with direct accountability and support throughout."
     },
     {
-      question: "Will the AI tools integrate with my existing systems?",
+      question: "Will the AI tools integrate with our existing systems?",
       answer: "Yes. We carefully select tools that integrate with your current technology stack. The program includes integration assistance to ensure seamless adoption without disrupting your existing workflows."
     },
     {
-      question: "What kind of results can I expect?",
-      answer: "Most participants see 10+ hours saved weekly, 50-80% reduction in email handling time, and significant improvements in meeting productivity within the first 4 weeks. By program completion, many report working 20-30 fewer hours while accomplishing more."
+      question: "What kind of results can organizations expect?",
+      answer: "Most organizations see 10+ hours saved weekly per participant, 50-80% reduction in email handling time across teams, and significant improvements in meeting productivity within the first 4 weeks. By program completion, many teams report accomplishing significantly more with less effort."
     },
     {
-      question: "I'm already too busy. Adding a weekly session feels like more work.",
-      answer: "These sessions save you time. By front-loading the coaching and setups, you'll quickly reclaim hours each week—and that net gain appears fast."
+      question: "Is the program still valuable if only the executive attends some sessions?",
+      answer: "Yes. While team participation amplifies the benefits, executives who attend solo can still achieve significant personal productivity gains and learn how to cascade AI practices throughout their organization."
     },
     {
-      question: "What if I'm already using some AI tools?",
-      answer: "Perfect. We'll refine and integrate them into a cohesive system that's more than just random prompts. The goal is consistency, reliability, and real ROI."
+      question: "How do we cascade the learnings to the broader organization?",
+      answer: "The program includes creation of scalable processes, documentation templates, and best practices designed to spread throughout your organization. Session recordings are provided for knowledge sharing, and we'll help you build internal champions."
+    },
+    {
+      question: "What if we're already using some AI tools?",
+      answer: "Perfect. We'll refine and integrate them into a cohesive organizational system. The goal is to move beyond random usage to consistent, reliable processes that deliver measurable ROI across your entire team."
     }
   ];
 
