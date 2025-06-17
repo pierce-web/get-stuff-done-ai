@@ -69,7 +69,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       id: "10x-executive",
       name: "10x Executive Program",
       subtitle: "Executive & Team Transformation",
-      price: "$20,000",
+      price: "$19,999",
       duration: "10 weeks",
       ideal: "Executives and their teams",
       icon: <Users className="h-6 w-6" />,

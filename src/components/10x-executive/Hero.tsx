@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
                   </li>
                 </ul>
                 <div className="mt-6 pt-6 border-t border-gray-100">
-                  <div className="text-2xl font-bold text-secondary mb-1">$20,000</div>
+                  <div className="text-2xl font-bold text-secondary mb-1">$19,999</div>
                   <div className="text-gray-600 text-sm">One-time engagement fee</div>
                 </div>
               </div>

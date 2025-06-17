@@ -19,7 +19,7 @@ const TenXExecutive: React.FC = () => {
     "https://gsdat.work/10x-executive",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
-    "$20,000"
+    "$19,999"
   );
 
   return (

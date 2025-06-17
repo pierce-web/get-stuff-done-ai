@@ -41,7 +41,7 @@ export const services: ServiceType[] = [
   {
     title: "10x Effective Executive",
     description: "A 10-week AI-powered transformation program for executives and their teams to accelerate productivity, reclaim time, and master AI tools organization-wide",
-    price: "$20,000",
+    price: "$19,999",
     subtext: "One-time engagement fee",
     extraText: "Transform your organization's productivity through executive leadership. Cut email handling time by 50-80%, reclaim 10+ hours weekly for strategic work, and create scalable AI systems that benefit your entire team.",
     features: [
