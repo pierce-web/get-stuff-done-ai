@@ -1,5 +1,5 @@
 
-import { ServiceType } from "./types";
+import { ServiceType, PricingTier } from "./types";
 
 export const services: ServiceType[] = [
   {
@@ -23,8 +23,23 @@ export const services: ServiceType[] = [
   {
     title: "AI Action Workshop",
     description: "Quick win in a box: Transform what takes days or weeks into hours. Break your four-minute mile with AI and gain the know-how to replicate success across your organization",
-    price: "$2,499 per session",
-    subtext: "Satisfaction Guaranteed",
+    price: "Starting at $1,199",
+    pricingTiers: [
+      {
+        label: "Founder-Led Workshop",
+        price: "$2,499",
+        description: "With Christian Ulstrup",
+        calendlyLink: "https://calendly.com/gsdatwork/ai-workshop",
+        availability: "Limited availability"
+      },
+      {
+        label: "Associate-Led Workshop", 
+        price: "$1,199",
+        description: "With a GSD Certified Associate",
+        availability: "More scheduling flexibility"
+      }
+    ],
+    subtext: "Same workshop, different leaders",
     extraText: "100-2000% efficiency gain for targeted tasks. Participants develop transferable SOPs, reduce cycle times, and maintain significantly higher energy levels throughout the workday.",
     features: [
       "Turn 2-day tasks into 2-hour victories with 10X transformation",

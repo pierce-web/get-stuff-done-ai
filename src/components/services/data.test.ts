@@ -87,11 +87,16 @@ describe('services data', () => {
     expect(programTitles).toHaveLength(2)
   })
 
-  it('workshops have consistent pricing', () => {
+  it('workshops have appropriate pricing', () => {
     const workshops = services.filter(s => s.title.includes('Workshop') || s.title === 'AI Oracle Session')
     workshops.forEach((workshop) => {
-      expect(workshop.price).toBe('$2,499 per session')
-      expect(['Satisfaction Guaranteed', 'Executive Intelligence System']).toContain(workshop.subtext)
+      if (workshop.title === 'AI Action Workshop') {
+        expect(workshop.price).toBe('Starting at $1,199')
+        expect(workshop.subtext).toBe('Same workshop, different leaders')
+      } else if (workshop.title === 'AI Oracle Session') {
+        expect(workshop.price).toBe('$2,499 per session')
+        expect(workshop.subtext).toBe('Executive Intelligence System')
+      }
     })
   })
 

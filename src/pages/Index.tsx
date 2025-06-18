@@ -10,6 +10,7 @@ import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { Layout } from "@/components/Layout";
 import { generateOrganizationStructuredData, generateLocalBusinessStructuredData, generateWebSiteStructuredData } from "@/lib/seo-utils";
 import { ServiceComparison } from "@/components/internal-linking/ServiceComparison";
+import { EngagementLevels } from "@/components/EngagementLevels";
 
 const Index = () => {
   // Generate comprehensive structured data for homepage
@@ -47,6 +48,8 @@ const Index = () => {
         <div className="bg-gradient-to-b from-gray-50 to-background py-8">
           <FeaturedReport />
         </div>
+        
+        <EngagementLevels />
         
         <div className="py-8">
           <Services />

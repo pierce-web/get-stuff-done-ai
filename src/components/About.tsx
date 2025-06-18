@@ -104,6 +104,62 @@ export const About = () => {
             </div>
           </div>
         </div>
+        
+        {/* GSD Associates Section */}
+        <div className="mt-24 pt-16 border-t border-gray-200">
+          <div className="mx-auto max-w-4xl text-center">
+            <h3 className="text-3xl font-bold text-primary mb-6">
+              Expanding Our Impact Through GSD Associates
+            </h3>
+            
+            <div className="text-left space-y-6 text-gray-600">
+              <p className="text-lg">
+                To meet the growing demand for AI transformation services, we've established the GSD Associate Program. 
+                Our associates are carefully selected professionals who share our commitment to delivering practical, 
+                results-driven AI implementations.
+              </p>
+              
+              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                <h4 className="text-xl font-semibold text-blue-900 mb-4">
+                  GSD Certified Associates:
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2 mt-1">•</span>
+                    <span>Are hand-selected based on their expertise and alignment with our methodology</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2 mt-1">•</span>
+                    <span>Complete rigorous training in the GSD AI Action Workshop framework</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2 mt-1">•</span>
+                    <span>Deliver the same transformative results at a more accessible price point</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-2 mt-1">•</span>
+                    <span>Operate with Christian's oversight to ensure quality and consistency</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <p className="text-lg font-semibold text-secondary text-center pt-4">
+                This expansion allows us to serve more organizations while maintaining our 
+                commitment to exceptional results and client satisfaction.
+              </p>
+              
+              <div className="mt-6 text-center">
+                <Button
+                  variant="outline"
+                  className={`border-2 border-secondary text-secondary hover:bg-secondary/10 ${animations.hoverLift}`}
+                  onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                >
+                  Learn More About Working With Associates
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

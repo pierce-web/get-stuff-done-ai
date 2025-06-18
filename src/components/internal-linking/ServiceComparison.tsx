@@ -46,7 +46,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       id: "ai-action-workshop",
       name: "AI Action Workshop",
       subtitle: "Quick Start Implementation",
-      price: "$2,499",
+      price: "Starting at $1,199",
       duration: "Quick Win Implementation",
       ideal: "Individual contributors, small teams",
       icon: <Target className="h-6 w-6" />,
