@@ -45,7 +45,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
       id: "ai-action-workshop",
       title: "2-Hour AI Action Workshop",
       description: "Hands-on AI implementation working session with immediate results",
-      price: "$2,499",
+      price: "Starting at $1,199",
       link: "/ai-action-workshop",
       badge: "Quick Start",
       features: ["2-hour intensive session", "Immediate implementation", "Proven frameworks"]
@@ -54,7 +54,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
       id: "10x-executive",
       title: "10x Effective Executive Program",
       description: "10-week AI-powered transformation program for executive productivity",
-      price: "$9,999",
+      price: "$19,999",
       link: "/10x-executive",
       badge: "Premium",
       features: ["10-week program", "1:1 coaching", "Executive focus"]

@@ -35,7 +35,10 @@ export const DesktopNavigation = () => {
                     <Link to="/ai-action-workshop" 
                       className={`block select-none space-y-1 ${borderRadius.md} ${gradients.primaryLight} p-4 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
-                      <div className="text-base font-medium leading-none text-primary">AI Action Workshop</div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-base font-medium leading-none text-primary">AI Action Workshop</span>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded">From $1,199</span>
+                      </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
                         Quick win in a box - 10X transformation guaranteed
                       </p>

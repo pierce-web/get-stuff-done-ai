@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Calendar, ExternalLink } from "lucide-react";
+import { Calendar, ExternalLink, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -37,6 +37,30 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
           <p className="text-xl font-bold text-primary">{service.price}</p>
           {service.subtext && (
             <p className="text-sm text-gray-500 mt-1">{service.subtext}</p>
+          )}
+          
+          {/* Display pricing tiers if available */}
+          {service.pricingTiers && service.pricingTiers.length > 0 && (
+            <div className="mt-4 space-y-3">
+              {service.pricingTiers.map((tier, index) => (
+                <div key={index} className="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="font-semibold text-sm text-gray-900">{tier.label}</p>
+                      {tier.description && (
+                        <p className="text-xs text-gray-600 mt-0.5">{tier.description}</p>
+                      )}
+                    </div>
+                    <div className="text-right">
+                      <p className="font-bold text-secondary">{tier.price}</p>
+                      {tier.availability && (
+                        <p className="text-xs text-gray-500 mt-0.5">{tier.availability}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </CardContent>
