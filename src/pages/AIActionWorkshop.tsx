@@ -27,7 +27,7 @@ const AIActionWorkshop = () => {
     "https://gsdat.work/ai-action-workshop",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
-    "$1,199 - $2,499"
+    "$2,499"
   );
 
   // Enhanced FAQ structured data with more comprehensive answers
@@ -50,7 +50,7 @@ const AIActionWorkshop = () => {
     },
     {
       question: "How much does the AI Action Workshop cost?",
-      answer: "We offer two pricing options: $2,499 for a Founder-led workshop with Christian Ulstrup (limited availability), or $1,199 for an Associate-led workshop with one of our GSD Certified Associates. Both deliver the same transformative results and satisfaction guarantee."
+      answer: "The AI Action Workshop is $2,499 for a Founder-led workshop with Christian Ulstrup. We also offer Associate-led workshops with our GSD Certified Associates at competitive rates - perfect for organizations needing flexible scheduling or multiple workshops. Both deliver the same transformative results and satisfaction guarantee."
     },
     {
       question: "How does the workshop process work?",
@@ -58,15 +58,15 @@ const AIActionWorkshop = () => {
     },
     {
       question: "What's the difference between Founder-led and Associate-led workshops?",
-      answer: "Both workshops follow the exact same proven process and deliver identical outcomes. The key difference is the facilitator: Christian Ulstrup personally leads the Founder workshops (limited availability), while our GSD Certified Associates - who have been hand-picked and trained by Christian - lead the Associate workshops with more flexible scheduling. The Associate option provides the same quality at a lower price point."
+      answer: "Both workshops follow the exact same proven process and deliver identical outcomes. The key difference is the facilitator: Christian Ulstrup personally leads the Founder workshops (limited availability), while our GSD Certified Associates - who have been hand-picked and trained by Christian - lead the Associate workshops with more flexible scheduling. The Associate option provides the same quality at competitive rates."
     }
   ]);
 
   return (
     <div className="min-h-screen bg-background">
       <KeywordOptimizedSEO 
-        title="AI Action Workshop | Starting at $1,199 | Quick Win in a Box"
-        content="Quick win in a box starting at $1,199: Break your four-minute mile with AI. Choose between founder-led ($2,499) or associate-led ($1,199) workshops. Transform tasks that take days into victories achieved in hours while learning to replicate success across your organization."
+        title="AI Action Workshop | $2,499 | Quick Win in a Box"
+        content="Quick win in a box: Break your four-minute mile with AI. $2,499 for founder-led workshops, with associate-led options available at competitive rates. Transform tasks that take days into victories achieved in hours while learning to replicate success across your organization."
         canonicalUrl="https://gsdat.work/ai-action-workshop"
         pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}
@@ -88,10 +88,10 @@ const AIActionWorkshop = () => {
             
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
               <p className="text-lg font-semibold text-yellow-900">
-                🎉 Now starting at $1,199 with our GSD Certified Associates
+                🎉 GSD Certified Associates Now Available
               </p>
               <p className="text-sm text-yellow-800 mt-1">
-                Same transformative workshop, more accessible pricing and flexible scheduling
+                Same transformative workshop, flexible scheduling options at competitive rates
               </p>
             </div>
             
@@ -144,66 +144,55 @@ const AIActionWorkshop = () => {
               </div>
               
               <div className="bg-gray-50 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold text-primary mb-4">Choose Your Workshop Leader</h2>
+                <h2 className="text-2xl font-semibold text-primary mb-4">Investment & Availability</h2>
                 
-                {/* Pricing Tiers Display */}
-                <div className="space-y-4 mb-6">
-                  {pricingTiers.map((tier, index) => (
-                    <div key={index} className={`p-4 rounded-lg border-2 ${index === 0 ? 'border-secondary bg-secondary/5' : 'border-blue-300 bg-blue-50'}`}>
-                      <div className="flex justify-between items-start mb-2">
-                        <div>
-                          <h3 className="font-semibold text-lg text-gray-900">{tier.label}</h3>
-                          <p className="text-sm text-gray-600">{tier.description}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-2xl font-bold text-secondary">{tier.price}</p>
-                          <p className="text-xs text-gray-500">{tier.availability}</p>
-                        </div>
-                      </div>
-                      {index === 0 ? (
-                        <Button 
-                          className="w-full mt-3 bg-secondary hover:bg-secondary/90 text-white font-semibold"
-                          onClick={() => tier.calendlyLink && window.open(tier.calendlyLink, '_blank')}
-                        >
-                          <Calendar className="h-4 w-4 mr-2" />
-                          Book Founder Workshop
-                        </Button>
-                      ) : (
-                        <Button 
-                          className="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
-                          onClick={() => workshop.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
-                        >
-                          <Calendar className="h-4 w-4 mr-2" />
-                          Schedule Consultation
-                        </Button>
-                      )}
+                <div className="p-4 rounded-lg border-2 border-secondary bg-secondary/5 mb-4">
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 className="font-semibold text-lg text-gray-900">Founder-Led Workshop</h3>
+                      <p className="text-sm text-gray-600">Led by Christian Ulstrup</p>
                     </div>
-                  ))}
-                </div>
-                
-                <div className="border-t pt-4">
-                  <p className="text-sm text-gray-600 text-center mb-2">
-                    Not sure which option is right for you?
-                  </p>
-                  <p className="text-xs text-gray-500 text-center mb-4">
-                    For associate-led workshops, we'll match you with the right expert during consultation
-                  </p>
+                    <div className="text-right">
+                      <p className="text-2xl font-bold text-secondary">$2,499</p>
+                      <p className="text-xs text-gray-500">Limited availability</p>
+                    </div>
+                  </div>
                   <Button 
-                    variant="outline"
-                    className="w-full border-secondary text-secondary hover:bg-secondary/10"
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold"
                     onClick={() => workshop.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
                   >
-                    Schedule Free Consultation
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Book Workshop
+                  </Button>
+                </div>
+                
+                <div className="p-4 rounded-lg border-2 border-blue-300 bg-blue-50">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Associate-Led Workshops</h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Led by our GSD Certified Associates - hand-picked and trained by Christian to deliver 
+                    the exact same transformative workshop experience.
+                  </p>
+                  <p className="text-sm font-medium text-blue-900 mb-3">
+                    ✓ Same proven process and outcomes<br/>
+                    ✓ More flexible scheduling<br/>
+                    ✓ Competitive rates available
+                  </p>
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                    onClick={() => workshop.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                  >
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Inquire About Associate Availability
                   </Button>
                 </div>
                 
                 <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
                   <p className="text-sm font-medium text-green-900">
-                    ✅ Same Workshop, Same Results
+                    ✅ Satisfaction Guaranteed
                   </p>
                   <p className="text-sm text-green-800 mt-1">
-                    Our GSD Certified Associates are hand-picked and trained by Christian to deliver 
-                    the exact same transformative workshop experience.
+                    Both Founder and Associate workshops are backed by our satisfaction guarantee. 
+                    Same transformative results, every time.
                   </p>
                 </div>
                 
@@ -279,8 +268,8 @@ const AIActionWorkshop = () => {
                 </ul>
                 
                 <p className="text-lg font-semibold text-secondary">
-                  Choose an associate-led workshop when you want immediate scheduling flexibility and a more accessible price point 
-                  without compromising on quality or outcomes.
+                  Choose an associate-led workshop when you want immediate scheduling flexibility 
+                  at competitive rates without compromising on quality or outcomes.
                 </p>
               </div>
             </div>

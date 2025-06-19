@@ -29,7 +29,7 @@ export const EngagementLevels = () => {
             </h3>
             
             <p className="text-lg font-semibold text-blue-600 mb-4">
-              Starting at $1,199
+              $2,499
             </p>
             
             <p className="text-gray-700 mb-6">
@@ -44,7 +44,7 @@ export const EngagementLevels = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">✓</span>
-                <span className="text-gray-700">Founder-led ($2,499) or Associate-led ($1,199)</span>
+                <span className="text-gray-700">Founder-led ($2,499) or Associate-led (competitive rates)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">✓</span>

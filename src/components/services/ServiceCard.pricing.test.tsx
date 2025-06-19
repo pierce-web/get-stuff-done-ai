@@ -16,7 +16,7 @@ describe('ServiceCard Pricing Tiers', () => {
   const mockServiceWithTiers: ServiceType = {
     title: 'AI Action Workshop',
     description: 'Quick win in a box',
-    price: 'Starting at $1,199',
+    price: '$2,499 per session',
     pricingTiers: [
       {
         label: 'Founder-Led Workshop',
@@ -26,7 +26,7 @@ describe('ServiceCard Pricing Tiers', () => {
       },
       {
         label: 'Associate-Led Workshop',
-        price: '$1,199',
+        price: 'Competitive rates',
         description: 'With a GSD Certified Associate',
         availability: 'More scheduling flexibility'
       }
@@ -61,7 +61,7 @@ describe('ServiceCard Pricing Tiers', () => {
     
     // Check prices
     expect(screen.getByText('$2,499')).toBeInTheDocument()
-    expect(screen.getByText('$1,199')).toBeInTheDocument()
+    expect(screen.getByText('Competitive rates')).toBeInTheDocument()
     
     // Check descriptions
     expect(screen.getByText('With Christian Ulstrup')).toBeInTheDocument()
@@ -99,8 +99,8 @@ describe('ServiceCard Pricing Tiers', () => {
   it('displays starting price when pricing tiers exist', () => {
     renderWithRouter(<ServiceCard service={mockServiceWithTiers} />)
     
-    // Should show the starting price
-    expect(screen.getByText('Starting at $1,199')).toBeInTheDocument()
+    // Should show the main price
+    expect(screen.getByText('$2,499 per session')).toBeInTheDocument()
   })
 
   it('handles empty pricing tiers array', () => {
@@ -112,7 +112,7 @@ describe('ServiceCard Pricing Tiers', () => {
     renderWithRouter(<ServiceCard service={serviceWithEmptyTiers} />)
     
     // Should render without errors but not show tier section
-    expect(screen.getByText('Starting at $1,199')).toBeInTheDocument()
+    expect(screen.getByText('$2,499 per session')).toBeInTheDocument()
     expect(screen.queryByText('Founder-Led Workshop')).not.toBeInTheDocument()
   })
 
