@@ -37,7 +37,7 @@ export const DesktopNavigation = () => {
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-base font-medium leading-none text-primary">AI Action Workshop</span>
-                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded">From $1,199</span>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded">$2,499</span>
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
                         Quick win in a box - 10X transformation guaranteed
