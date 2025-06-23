@@ -30,20 +30,8 @@ export const DesktopNavigation = () => {
             <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
             <NavigationMenuContent className="bg-white">
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <li className="col-span-2">
-                  <NavigationMenuLink asChild>
-                    <Link to="/ai-action-workshop" 
-                      className={`block select-none space-y-1 ${borderRadius.md} ${gradients.primaryLight} p-4 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-base font-medium leading-none text-primary">AI Action Workshop</span>
-                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded">$2,499</span>
-                      </div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
-                        Quick win in a box - 10X transformation guaranteed
-                      </p>
-                    </Link>
-                  </NavigationMenuLink>
+                <li className="col-span-2 mb-2">
+                  <div className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-2">Our AI Implementation Journey</div>
                 </li>
                 
                 <li>
@@ -51,9 +39,34 @@ export const DesktopNavigation = () => {
                     <Link to="/ai-oracle-session"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
-                      <div className="text-sm font-medium leading-none">AI Oracle Session</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                      <div className="flex items-start justify-between mb-1">
+                        <div>
+                          <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 1</span>
+                          <span className="text-sm font-medium leading-none">AI Oracle Session</span>
+                        </div>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$2,499</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         AI-powered executive intelligence system
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link to="/ai-action-workshop" 
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="flex items-start justify-between mb-1">
+                        <div>
+                          <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 2</span>
+                          <span className="text-sm font-medium leading-none">AI Action Workshop</span>
+                        </div>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$4,999</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Quick win in a box - 10X transformation guaranteed
                       </p>
                     </Link>
                   </NavigationMenuLink>
@@ -64,8 +77,14 @@ export const DesktopNavigation = () => {
                     <Link to="/10x-executive"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
-                      <div className="text-sm font-medium leading-none">10x Effective Executive</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                      <div className="flex items-start justify-between mb-1">
+                        <div>
+                          <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 3</span>
+                          <span className="text-sm font-medium leading-none">10x Effective Executive</span>
+                        </div>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$19,999</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         AI transformation for executives and their teams
                       </p>
                     </Link>
@@ -77,8 +96,14 @@ export const DesktopNavigation = () => {
                     <Link to="/triple-a-transformation"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
-                      <div className="text-sm font-medium leading-none">Triple-A Transformation</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                      <div className="flex items-start justify-between mb-1">
+                        <div>
+                          <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 4</span>
+                          <span className="text-sm font-medium leading-none">Triple-A Transformation</span>
+                        </div>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">Custom</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Complete organizational AI implementation program
                       </p>
                     </Link>

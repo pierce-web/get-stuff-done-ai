@@ -166,7 +166,7 @@ export const aiActionWorkshopPositioning = {
   
   // Investment and Bundle Options
   pricing: {
-    singleWorkshop: "$2,499",
+    singleWorkshop: "$4,999",
     bundleOptions: {
       starter: {
         quantity: 10,

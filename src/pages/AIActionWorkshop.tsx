@@ -27,7 +27,7 @@ const AIActionWorkshop = () => {
     "https://gsdat.work/ai-action-workshop",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "Get Stuff Done AI",
-    "$2,499"
+    "$4,999"
   );
 
   // Enhanced FAQ structured data with more comprehensive answers
@@ -50,7 +50,7 @@ const AIActionWorkshop = () => {
     },
     {
       question: "How much does the AI Action Workshop cost?",
-      answer: "The AI Action Workshop is $2,499 for a Founder-led workshop with Christian Ulstrup. We also offer Associate-led workshops with our GSD Certified Associates at competitive rates - perfect for organizations needing flexible scheduling or multiple workshops. Both deliver the same transformative results and satisfaction guarantee."
+      answer: "The AI Action Workshop is $4,999 for a Founder-led workshop with Christian Ulstrup. We also offer Associate-led workshops with our GSD Certified Associates at competitive rates - perfect for organizations needing flexible scheduling or multiple workshops. Both deliver the same transformative results and satisfaction guarantee."
     },
     {
       question: "How does the workshop process work?",
@@ -65,8 +65,8 @@ const AIActionWorkshop = () => {
   return (
     <div className="min-h-screen bg-background">
       <KeywordOptimizedSEO 
-        title="AI Action Workshop | $2,499 | Quick Win in a Box"
-        content="Quick win in a box: Break your four-minute mile with AI. $2,499 for founder-led workshops, with associate-led options available at competitive rates. Transform tasks that take days into victories achieved in hours while learning to replicate success across your organization."
+        title="AI Action Workshop | $4,999 | Quick Win in a Box"
+        content="Quick win in a box: Break your four-minute mile with AI. $4,999 for founder-led workshops, with associate-led options available at competitive rates. Transform tasks that take days into victories achieved in hours while learning to replicate success across your organization."
         canonicalUrl="https://gsdat.work/ai-action-workshop"
         pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}
@@ -153,7 +153,7 @@ const AIActionWorkshop = () => {
                       <p className="text-sm text-gray-600">Led by Christian Ulstrup</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-secondary">$2,499</p>
+                      <p className="text-2xl font-bold text-secondary">$4,999</p>
                       <p className="text-xs text-gray-500">Limited availability</p>
                     </div>
                   </div>

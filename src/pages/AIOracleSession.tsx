@@ -115,7 +115,7 @@ const AIOracleSession = () => {
                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                   <Button 
                     className="bg-secondary hover:bg-secondary/90 text-white font-semibold py-6"
-                    onClick={() => workshopCalendlyLink && window.open(workshopCalendlyLink, '_blank')}
+                    onClick={() => consultationCalendlyLink && window.open(consultationCalendlyLink, '_blank')}
                   >
                     Book Your AI Oracle Session
                   </Button>
@@ -455,7 +455,7 @@ const AIOracleSession = () => {
               <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
                 <Button 
                   className="bg-secondary hover:bg-secondary/90 text-white font-semibold py-6"
-                  onClick={() => workshopCalendlyLink && window.open(workshopCalendlyLink, '_blank')}
+                  onClick={() => consultationCalendlyLink && window.open(consultationCalendlyLink, '_blank')}
                 >
                   Schedule Your AI Oracle Session
                   <ArrowRight className="ml-2 h-4 w-4" />
