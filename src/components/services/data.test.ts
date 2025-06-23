@@ -91,7 +91,7 @@ describe('services data', () => {
     const workshops = services.filter(s => s.title.includes('Workshop') || s.title === 'AI Oracle Session')
     workshops.forEach((workshop) => {
       if (workshop.title === 'AI Action Workshop') {
-        expect(workshop.price).toBe('$2,499 per session')
+        expect(workshop.price).toBe('$4,999 per session')
         expect(workshop.subtext).toBe('Associate-led workshops also available - pricing varies')
       } else if (workshop.title === 'AI Oracle Session') {
         expect(workshop.price).toBe('$2,499 per session')
