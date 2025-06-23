@@ -29,7 +29,7 @@ describe('EngagementLevels', () => {
     
     // Quick Win path
     expect(screen.getByText('AI Action Workshop - Quick Win')).toBeInTheDocument()
-    expect(screen.getByText('$2,499')).toBeInTheDocument()
+    expect(screen.getByText('$4,999')).toBeInTheDocument()
     
     // Transformation path
     expect(screen.getByText('AI Transformation Programs')).toBeInTheDocument()
@@ -40,7 +40,7 @@ describe('EngagementLevels', () => {
     renderWithRouter(<EngagementLevels />)
     
     expect(screen.getByText('1-2 hour hands-on workshop')).toBeInTheDocument()
-    expect(screen.getByText('Founder-led ($2,499) or Associate-led (competitive rates)')).toBeInTheDocument()
+    expect(screen.getByText('Founder-led ($4,999) or Associate-led (competitive rates)')).toBeInTheDocument()
     expect(screen.getByText('Transform a 2-day task into 2 hours')).toBeInTheDocument()
     expect(screen.getByText('Create reusable processes & SOPs')).toBeInTheDocument()
   })
