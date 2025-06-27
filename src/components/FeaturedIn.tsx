@@ -32,8 +32,26 @@ export const FeaturedIn = () => {
             </div>
           </a>
           
-          {/* Placeholder for additional logos in the future */}
-          {/* You can easily add more logos by duplicating the above <a> element */}
+          <a 
+            href="https://www.luminary-labs.com/build-your-own-virtual-ai-advisory-board/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <div className="relative">
+              <div className="w-40 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/luminary-labs-logo.png" 
+                  alt="Luminary Labs Logo" 
+                  className="max-h-full w-auto" 
+                />
+              </div>
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap flex items-center text-xs text-gray-600">
+                <span>Read article</span>
+                <ExternalLink className="ml-1 h-3 w-3" />
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
