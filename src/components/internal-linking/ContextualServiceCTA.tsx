@@ -66,6 +66,17 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
       badge: "Executive Focus"
     },
     {
+      id: "ai-automation-integration",
+      title: "AI Automation & Custom Integration",
+      description: "Scale from 10→100 with MCP connectors, voice agents, and full-stack automation",
+      link: "/ai-automation-integration",
+      price: "Custom",
+      icon: <Target className="h-6 w-6" />,
+      keywords: ["automation", "workflow", "integration", "scale", "systematic", "agent", "voice", "MCP", "connector", "n8n", "zapier", "operating leverage", "EBITDA", "hiring", "recruitment", "candidate", "ATS", "CRM", "data entry"],
+      cta: "Scale Your AI Automation",
+      badge: "10→100 Scaling"
+    },
+    {
       id: "triple-a-transformation",
       title: "Triple-A Transformation Program",
       description: "Complete organizational AI adoption with measurable ROI in 14 weeks",

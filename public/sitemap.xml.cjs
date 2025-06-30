@@ -14,19 +14,31 @@ const linkedInDataPath = path.resolve(__dirname, '../src/lib/linkedin-posts-data
 const extractPostsFromFile = (filePath) => {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    const postsMatch = content.match(/export const linkedInPosts: LinkedInPost\[\] = (\[[\s\S]*?\]);/);
     
-    if (postsMatch && postsMatch[1]) {
-      // Replace export syntax with normal JS array
-      const postsJson = postsMatch[1];
-      // Safely evaluate the array (this approach avoids using eval)
-      const posts = JSON.parse(postsJson);
-      return posts;
-    }
+    // Try to require the module directly instead of parsing as JSON
+    // First, create a temporary JS file
+    const tempPath = filePath.replace('.ts', '.temp.js');
     
-    return [];
+    // Convert TS to JS by removing types and fixing imports
+    let jsContent = content
+      .replace(/import.*from.*['"].*['"];?\n?/g, '') // Remove imports
+      .replace(/export\s+/g, '') // Remove export keywords
+      .replace(/:\s*LinkedInPost\[\]/g, '') // Remove type annotations
+      .replace(/interface\s+LinkedInPost\s*{[^}]*}/g, ''); // Remove interface definitions
+    
+    // Write temporary file
+    fs.writeFileSync(tempPath, jsContent, 'utf8');
+    
+    // Clear require cache and require the temp file
+    delete require.cache[require.resolve(tempPath)];
+    const posts = require(tempPath).linkedInPosts;
+    
+    // Clean up temp file
+    fs.unlinkSync(tempPath);
+    
+    return Array.isArray(posts) ? posts : [];
   } catch (error) {
-    console.error('Error reading LinkedIn posts data:', error);
+    console.error('Error reading LinkedIn posts data:', error.message);
     return [];
   }
 };
@@ -75,6 +87,12 @@ const generateSitemap = () => {
       priority: '0.9'
     },
     { 
+      url: 'https://gsdat.work/ai-automation-integration', 
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.9'
+    },
+    { 
       url: 'https://gsdat.work/triple-a-transformation', 
       lastmod: today,
       changefreq: 'weekly',
@@ -101,7 +119,8 @@ const generateSitemap = () => {
     posts = extractPostsFromFile(linkedInDataPath);
     console.log(`Found ${posts.length} LinkedIn posts for sitemap`);
   } catch (error) {
-    console.error('Error loading LinkedIn posts data:', error);
+    console.log('Skipping LinkedIn posts due to parsing issues - including main pages only');
+    posts = []; // Just use empty array for now
   }
   
   // Generate blog post URLs

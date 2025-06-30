@@ -3,8 +3,8 @@ import { services, valueMetrics } from './data'
 import { ServiceType } from './types'
 
 describe('services data', () => {
-  it('contains exactly 4 services', () => {
-    expect(services).toHaveLength(4)
+  it('contains exactly 5 services', () => {
+    expect(services).toHaveLength(5)
   })
 
   it('all services have required fields', () => {
@@ -51,7 +51,8 @@ describe('services data', () => {
 
   it('service prices follow expected patterns', () => {
     services.forEach((service) => {
-      expect(service.price).toMatch(/\$[\d,]+/)
+      // Allow both dollar amounts and "Custom Pricing"
+      expect(service.price).toMatch(/(\$[\d,]+|Custom Pricing)/)
     })
   })
 
@@ -79,12 +80,13 @@ describe('services data', () => {
 
   it('contains expected program services', () => {
     const programTitles = services
-      .filter(s => s.title.includes('Program') || s.title.includes('Executive'))
+      .filter(s => s.title.includes('Program') || s.title.includes('Executive') || s.title.includes('Integration'))
       .map(s => s.title)
     
     expect(programTitles).toContain('10x Effective Executive')
+    expect(programTitles).toContain('AI Automation & Custom Integration')
     expect(programTitles).toContain('Triple-A Transformation Program')
-    expect(programTitles).toHaveLength(2)
+    expect(programTitles).toHaveLength(3)
   })
 
   it('workshops have appropriate pricing', () => {
@@ -103,7 +105,7 @@ describe('services data', () => {
   it('all services have CTAs', () => {
     services.forEach((service) => {
       expect(service.cta).toBe('Learn More')
-      expect(['Schedule a Consultation', 'Schedule a Strategy Call', 'Schedule Executive Briefing']).toContain(service.secondaryCta)
+      expect(['Schedule a Consultation', 'Schedule a Strategy Call', 'Schedule Executive Briefing', 'Schedule Discovery Call']).toContain(service.secondaryCta)
     })
   })
 
@@ -112,6 +114,7 @@ describe('services data', () => {
       'AI Oracle Session': '/ai-oracle-session',
       'AI Action Workshop': '/ai-action-workshop',
       '10x Effective Executive': '/10x-executive',
+      'AI Automation & Custom Integration': '/ai-automation-integration',
       'Triple-A Transformation Program': '/triple-a-transformation'
     }
 

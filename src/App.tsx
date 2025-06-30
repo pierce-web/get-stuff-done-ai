@@ -10,6 +10,7 @@ import CaseStudy from "./pages/CaseStudy";
 import AIToolingReport from "./pages/ai-report";
 import TenXExecutive from "./pages/10xExecutive";
 import AIActionWorkshop from "./pages/AIActionWorkshop";
+import AIAutomationIntegration from "./pages/AIAutomationIntegration";
 import TripleATransformation from "./pages/TripleATransformation";
 import NotFound from "./pages/NotFound";
 import StrategySessionConfirmed from "./pages/StrategySessionConfirmed";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
             <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
             <Route path="/ai-oracle-session" element={<AIOracleSession />} />
+            <Route path="/ai-automation-integration" element={<AIAutomationIntegration />} />
             <Route path="/triple-a-transformation" element={<TripleATransformation />} />
             <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
             <Route path="/blog" element={<BlogPage />} />
