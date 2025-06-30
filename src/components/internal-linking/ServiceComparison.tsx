@@ -89,6 +89,29 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
       ]
     },
     {
+      id: "ai-automation-integration",
+      name: "AI Automation & Custom Integration",
+      subtitle: "Scale from 10→100",
+      price: "Custom",
+      duration: "Flexible",
+      ideal: "Growing teams & departments",
+      icon: <Target className="h-6 w-6" />,
+      color: "bg-indigo-500",
+      link: "/ai-automation-integration",
+      features: [
+        "Custom MCP connectors for ChatGPT/Claude Enterprise",
+        "Voice agents & workflow automation",
+        "Full-stack: n8n, Zapier, custom code",
+        "Deploy to your environment or hosted",
+        "Order-of-magnitude improvements"
+      ],
+      outcomes: [
+        "10x-100x cycle time reduction",
+        "Real operating leverage achieved",
+        "EBITDA expansion foundation"
+      ]
+    },
+    {
       id: "triple-a-transformation",
       name: "Triple-A Transformation",
       subtitle: "Organizational Change",

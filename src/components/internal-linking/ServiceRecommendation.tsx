@@ -59,6 +59,15 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
       badge: "Premium",
       features: ["10-week program", "1:1 coaching", "Executive focus"]
     },
+    "ai-automation-integration": {
+      id: "ai-automation-integration",
+      title: "AI Automation & Custom Integration",
+      description: "Scale from 10→100 with hardcore automation, MCP connectors, and custom solutions",
+      price: "Custom",
+      link: "/ai-automation-integration",
+      badge: "Scale",
+      features: ["Custom MCP connectors", "Voice agents & automation", "Operating leverage"]
+    },
     "triple-a-transformation": {
       id: "triple-a-transformation",
       title: "Triple-A Transformation Program", 
@@ -77,7 +86,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
     switch (currentService) {
       case "ai-action-workshop":
         if (recommendationType === "upsell") {
-          recommendations.push(allServices["10x-executive"], allServices["triple-a-transformation"]);
+          recommendations.push(allServices["10x-executive"], allServices["ai-automation-integration"]);
         } else if (recommendationType === "crosssell") {
           recommendations.push(allServices["ai-oracle-session"]);
         }
@@ -85,7 +94,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
         
       case "ai-oracle-session":
         if (recommendationType === "upsell") {
-          recommendations.push(allServices["10x-executive"]);
+          recommendations.push(allServices["10x-executive"], allServices["ai-automation-integration"]);
         } else if (recommendationType === "crosssell") {
           recommendations.push(allServices["ai-action-workshop"]);
         }
@@ -95,6 +104,16 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
         if (recommendationType === "alternative" || recommendationType === "starter") {
           recommendations.push(allServices["ai-action-workshop"]);
         } else if (recommendationType === "upsell") {
+          recommendations.push(allServices["ai-automation-integration"], allServices["triple-a-transformation"]);
+        } else if (recommendationType === "crosssell") {
+          recommendations.push(allServices["ai-oracle-session"]);
+        }
+        break;
+        
+      case "ai-automation-integration":
+        if (recommendationType === "alternative" || recommendationType === "starter") {
+          recommendations.push(allServices["ai-action-workshop"], allServices["10x-executive"]);
+        } else if (recommendationType === "upsell") {
           recommendations.push(allServices["triple-a-transformation"]);
         } else if (recommendationType === "crosssell") {
           recommendations.push(allServices["ai-oracle-session"]);
@@ -103,7 +122,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
         
       case "triple-a-transformation":
         if (recommendationType === "alternative" || recommendationType === "starter") {
-          recommendations.push(allServices["ai-action-workshop"], allServices["10x-executive"]);
+          recommendations.push(allServices["ai-automation-integration"], allServices["10x-executive"]);
         } else if (recommendationType === "crosssell") {
           recommendations.push(allServices["ai-oracle-session"]);
         }

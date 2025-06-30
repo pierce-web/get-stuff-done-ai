@@ -93,12 +93,31 @@ export const DesktopNavigation = () => {
                 
                 <li>
                   <NavigationMenuLink asChild>
-                    <Link to="/triple-a-transformation"
+                    <Link to="/ai-automation-integration"
                       className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
                     >
                       <div className="flex items-start justify-between mb-1">
                         <div>
                           <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 4</span>
+                          <span className="text-sm font-medium leading-none">AI Automation & Integration</span>
+                        </div>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">Custom</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Scale 10→100 with hardcore automation
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+                
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link to="/triple-a-transformation"
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="flex items-start justify-between mb-1">
+                        <div>
+                          <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 5</span>
                           <span className="text-sm font-medium leading-none">Triple-A Transformation</span>
                         </div>
                         <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">Custom</span>

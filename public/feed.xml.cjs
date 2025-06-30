@@ -12,19 +12,31 @@ const linkedInDataPath = path.resolve(__dirname, '../src/lib/linkedin-posts-data
 const extractPostsFromFile = (filePath) => {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    const postsMatch = content.match(/export const linkedInPosts: LinkedInPost\[\] = (\[[\s\S]*?\]);/);
     
-    if (postsMatch && postsMatch[1]) {
-      // Replace export syntax with normal JS array
-      const postsJson = postsMatch[1];
-      // Safely evaluate the array
-      const posts = JSON.parse(postsJson);
-      return posts;
-    }
+    // Try to require the module directly instead of parsing as JSON
+    // First, create a temporary JS file
+    const tempPath = filePath.replace('.ts', '.temp.js');
     
-    return [];
+    // Convert TS to JS by removing types and fixing imports
+    let jsContent = content
+      .replace(/import.*from.*['"].*['"];?\n?/g, '') // Remove imports
+      .replace(/export\s+/g, '') // Remove export keywords
+      .replace(/:\s*LinkedInPost\[\]/g, '') // Remove type annotations
+      .replace(/interface\s+LinkedInPost\s*{[^}]*}/g, ''); // Remove interface definitions
+    
+    // Write temporary file
+    fs.writeFileSync(tempPath, jsContent, 'utf8');
+    
+    // Clear require cache and require the temp file
+    delete require.cache[require.resolve(tempPath)];
+    const posts = require(tempPath).linkedInPosts;
+    
+    // Clean up temp file
+    fs.unlinkSync(tempPath);
+    
+    return Array.isArray(posts) ? posts : [];
   } catch (error) {
-    console.error('Error reading LinkedIn posts data:', error);
+    console.error('Error reading LinkedIn posts data:', error.message);
     return [];
   }
 };
@@ -55,7 +67,13 @@ const cleanHtmlForRss = (html) => {
 // Generate the RSS feed
 const generateRSSFeed = () => {
   // Get all posts
-  const posts = extractPostsFromFile(linkedInDataPath);
+  let posts = [];
+  try {
+    posts = extractPostsFromFile(linkedInDataPath);
+  } catch (error) {
+    console.log('Skipping LinkedIn posts due to parsing issues - no RSS feed generated');
+    posts = [];
+  }
   
   if (posts.length === 0) {
     console.log('No posts found for RSS feed');
