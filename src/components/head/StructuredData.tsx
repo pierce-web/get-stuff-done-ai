@@ -104,11 +104,11 @@ export const StructuredData: React.FC = () => {
             "description": "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption).",
             "offers": {
               "@type": "Offer",
-              "price": "49999",
+              "price": "150000",
               "priceCurrency": "USD",
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "49999",
+                "price": "150000",
                 "priceCurrency": "USD",
                 "valueAddedTaxIncluded": "true"
               }
