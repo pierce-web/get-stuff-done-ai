@@ -79,8 +79,8 @@ export const services: ServiceType[] = [
   {
     title: "Triple-A Transformation Program",
     description: "14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption)",
-    price: "Starting at $49,999 + Performance Incentives",
-    subtext: "Pricing tied to measurable business outcomes",
+    price: "Starts at $150,000 for 100+ person organizations",
+    subtext: "Includes performance-based incentives and scales with org size",
     extraText: "Organization-wide efficiency gains leading to significant cost reduction, accelerated growth in new markets, greater velocity in delivering offerings, and elevated employee energy levels across teams.",
     features: [
       "Fractional Chief AI Officer services",
