@@ -55,6 +55,9 @@ export const MobileNavigation = () => {
             <Link to="/blog" className="text-lg font-medium">
               Professional Insights
             </Link>
+            <Link to="/hirescope" className="text-lg font-medium">
+              HireScope (Open Source)
+            </Link>
           </div>
           
           <div className="mt-auto px-6 pb-8 pt-12 flex flex-col gap-4">

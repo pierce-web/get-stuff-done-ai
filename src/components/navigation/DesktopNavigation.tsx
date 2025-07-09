@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Phone, Github } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -170,6 +171,24 @@ export const DesktopNavigation = () => {
                       <div className="text-sm font-medium leading-none">Professional Insights</div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                         Articles and posts on AI strategy and digital transformation
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link to="/hirescope"
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium leading-none">HireScope</span>
+                        <Badge variant="secondary" className="text-xs py-0 px-1 h-5">
+                          <Github className="w-3 h-3 mr-1" />
+                          Open Source
+                        </Badge>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                        AI-powered candidate analysis for Greenhouse ATS
                       </p>
                     </Link>
                   </NavigationMenuLink>

@@ -19,6 +19,7 @@ import BlogPostPage from "./pages/blog/[id]";
 import AILegalWorkshop from "./pages/AILegalWorkshop";
 import AssociateCallConfirmed from "./pages/AssociateCallConfirmed";
 import AIOracleSession from "./pages/AIOracleSession";
+import HireScope from "./pages/HireScope";
 import { HeadManager } from "./components/head/HeadManager";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/cases" element={<Cases />} />
             <Route path="/cases/:id" element={<CaseStudy />} />
             <Route path="/ai-tooling-report" element={<AIToolingReport />} />
+            <Route path="/hirescope" element={<HireScope />} />
             <Route path="/10x-executive" element={<TenXExecutive />} />
             <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
             <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
