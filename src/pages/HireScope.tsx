@@ -166,7 +166,7 @@ const HireScope = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className={`w-12 h-12 ${gradients.primaryLight} rounded-lg flex items-center justify-center`}>
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                     <Search className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -180,7 +180,7 @@ const HireScope = () => {
               
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className={`w-12 h-12 ${gradients.secondaryLight} rounded-lg flex items-center justify-center`}>
+                  <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -194,7 +194,7 @@ const HireScope = () => {
               
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className={`w-12 h-12 ${gradients.primaryLight} rounded-lg flex items-center justify-center`}>
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                     <DollarSign className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -208,7 +208,7 @@ const HireScope = () => {
               
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className={`w-12 h-12 ${gradients.secondaryLight} rounded-lg flex items-center justify-center`}>
+                  <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
                     <Award className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -261,7 +261,7 @@ const HireScope = () => {
                 }
               ].map((item) => (
                 <div key={item.step} className="flex gap-4">
-                  <div className={`flex-shrink-0 w-10 h-10 ${gradients.primaryLight} rounded-full flex items-center justify-center text-white font-bold`}>
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">
                     {item.step}
                   </div>
                   <div>
@@ -276,10 +276,10 @@ const HireScope = () => {
       </section>
 
       {/* HR Leader CTA Section */}
-      <section className={`py-20 ${gradients.primaryLight}`}>
+      <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4 bg-white/90">
+            <Badge variant="secondary" className="mb-4">
               For HR Leaders & Recruiting Firms
             </Badge>
             
@@ -287,30 +287,30 @@ const HireScope = () => {
               Ready to Transform Your Entire Talent Strategy?
             </h2>
             
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
               If you're an HR leader or CEO of a recruiting firm looking to massively accelerate your hiring and onboarding processes - 
               and go beyond with employee engagement, scalable personalized pulse surveys, and data-driven insights - 
               we're here to help.
             </p>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8 max-w-2xl mx-auto">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 mb-8 max-w-2xl mx-auto border border-white/30">
               <h3 className="text-2xl font-semibold text-white mb-4">Expert Support Includes:</h3>
               <div className="grid md:grid-cols-2 gap-4 text-left">
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white/90">Custom AI recruiting workflows</span>
+                  <span className="text-white">Custom AI recruiting workflows</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white/90">Automated onboarding systems</span>
+                  <span className="text-white">Automated onboarding systems</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white/90">Employee engagement analytics</span>
+                  <span className="text-white">Employee engagement analytics</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white/90">Personalized pulse survey systems</span>
+                  <span className="text-white">Personalized pulse survey systems</span>
                 </div>
               </div>
             </div>
