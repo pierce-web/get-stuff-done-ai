@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ExternalLink, Github, Star, TrendingUp, Users, Zap, DollarSign, Search, Award } from "lucide-react";
+import { Check, ExternalLink, Github, Star, TrendingUp, Users, Zap, DollarSign, Search, Award, FileText, Target, Brain, Phone, Shield } from "lucide-react";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
@@ -275,42 +275,222 @@ const HireScope = () => {
         </div>
       </section>
 
-      {/* HR Leader CTA Section */}
+      {/* Complete AI Recruiting Workflow Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              The Complete AI-Powered Hiring Workflow
+            </h2>
+            <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+              HireScope is most powerful when combined with a comprehensive AI recruiting strategy. 
+              Here's how leading companies are hiring the right person <strong>10 times faster</strong>.
+            </p>
+            
+            {/* Workflow Steps */}
+            <div className="space-y-8">
+              {/* Step 1: Job Description Excellence */}
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">1</span>
+                    </div>
+                    <CardTitle>Job Description Excellence</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Start with precision. Use state-of-the-art AI models like O3 Pro or Claude Opus combined with meeting transcripts 
+                    from tools like ReadAI, Fireflies, or your preferred platform to craft precise job descriptions.
+                  </p>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p className="text-sm font-semibold text-blue-900">💡 Pro Tip:</p>
+                    <p className="text-sm text-blue-800">Better JDs = Better AI matching accuracy throughout your entire workflow</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Step 2: Expand Your Candidate Pool */}
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">2</span>
+                    </div>
+                    <CardTitle>Expand Your Candidate Pool</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold mb-2">🔍 Deep Research for Niche Communities</h4>
+                      <p className="text-gray-600 text-sm">
+                        Use AI to discover specialty forums and communities. For example, find dedicated Pilates instructor forums 
+                        for studio manager roles or SaaS community boards for product managers.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">🎯 Network Mining</h4>
+                      <p className="text-gray-600 text-sm">
+                        Tools like Happenstance make it 10x easier to get referrals by proactively identifying candidates 
+                        your employees are connected to but may not even know about.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t">
+                    <p className="text-sm text-gray-500">
+                      <strong>Traditional channels still matter:</strong> LinkedIn, Indeed, ZipRecruiter - now enhanced with AI-discovered sources
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Step 3: Smart Screening with HireScope */}
+              <Card className={`${shadows.cardEffect} border-2 border-primary`}>
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">3</span>
+                    </div>
+                    <CardTitle>Smart Screening with HireScope</CardTitle>
+                    <Badge className="ml-auto">You Are Here</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    This is where HireScope shines. Analyze ALL candidates, including rejected ones, to discover hidden gems.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <p className="text-2xl font-bold text-primary">20-40%</p>
+                      <p className="text-sm text-gray-600">Hidden gems found</p>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <p className="text-2xl font-bold text-primary">Minutes</p>
+                      <p className="text-sm text-gray-600">Not hours to analyze</p>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <p className="text-2xl font-bold text-primary">~$0.02</p>
+                      <p className="text-sm text-gray-600">Per candidate</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Step 4: Advanced Candidate Intelligence */}
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">4</span>
+                    </div>
+                    <CardTitle>Advanced Candidate Intelligence</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Before screening calls, run comprehensive background research on your top candidates:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span className="text-gray-700"><strong>Portfolio Discovery:</strong> Especially valuable for creative and technical roles</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span className="text-gray-700"><strong>Professional Insights:</strong> Gather context from public profiles and contributions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span className="text-gray-700"><strong>Culture Fit Signals:</strong> Understand values and work style before the interview</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              {/* Step 5: Qualification Acceleration */}
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">5</span>
+                    </div>
+                    <CardTitle>Qualification Acceleration</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Optional but powerful: Use custom voice AI assistants behind a phone number to collect rich candidate information.
+                  </p>
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-yellow-900 mb-2">🛡️ Fraud Prevention Bonus</h4>
+                    <p className="text-sm text-yellow-800">
+                      Real-time voice responses are much harder to fake than written applications. 
+                      As GPT-generated content becomes more common, this becomes an increasingly valuable safeguard.
+                    </p>
+                  </div>
+                  <div className="mt-4 grid md:grid-cols-2 gap-4">
+                    <div className="text-center p-3 bg-gray-50 rounded">
+                      <p className="font-semibold">50% acceptance rate</p>
+                      <p className="text-sm text-gray-600">When positioned as optional</p>
+                    </div>
+                    <div className="text-center p-3 bg-gray-50 rounded">
+                      <p className="font-semibold">Richer data collected</p>
+                      <p className="text-sm text-gray-600">Better interview preparation</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced HR Leader CTA Section */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">
-              For HR Leaders & Recruiting Firms
+              Want the Complete AI Recruiting Playbook?
             </Badge>
             
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Entire Talent Strategy?
+              Ready to Hire the Right Person 10x Faster?
             </h2>
             
             <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
-              If you're an HR leader or CEO of a recruiting firm looking to massively accelerate your hiring and onboarding processes - 
-              and go beyond with employee engagement, scalable personalized pulse surveys, and data-driven insights - 
-              we're here to help.
+              HireScope is just one piece of the puzzle. If you're an HR leader or CEO of a recruiting firm ready to implement 
+              the complete AI-powered workflow - from job description optimization to automated screening, network activation, 
+              and beyond - we'll show you exactly how to do it.
             </p>
             
             <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 mb-8 max-w-2xl mx-auto border border-white/30">
-              <h3 className="text-2xl font-semibold text-white mb-4">Expert Support Includes:</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">Complete Workflow Implementation:</h3>
               <div className="grid md:grid-cols-2 gap-4 text-left">
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white">Custom AI recruiting workflows</span>
+                  <span className="text-white">AI-powered job description optimization</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white">Automated onboarding systems</span>
+                  <span className="text-white">Automated Greenhouse integration</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white">Employee engagement analytics</span>
+                  <span className="text-white">Network activation & referral mining</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                  <span className="text-white">Personalized pulse survey systems</span>
+                  <span className="text-white">Voice AI screening implementation</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
+                  <span className="text-white">Advanced candidate intelligence setup</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-white mt-1 flex-shrink-0" />
+                  <span className="text-white">Complete workflow automation</span>
                 </div>
               </div>
             </div>
@@ -404,6 +584,33 @@ const HireScope = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Motivation Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Start Small, Think Big
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              HireScope is free and open source - the perfect entry point into AI-powered recruiting. 
+              Start discovering hidden gems today, then expand to the complete workflow when you're ready.
+            </p>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <p className="text-lg font-semibold text-blue-900 mb-2">
+                🎯 Your Next Steps:
+              </p>
+              <ol className="text-left max-w-xl mx-auto space-y-2 text-blue-800">
+                <li>1. Clone HireScope and analyze your current open roles</li>
+                <li>2. Interview the hidden gems you discover</li>
+                <li>3. Activate your network with tools like Happenstance</li>
+                <li>4. Consider voice AI screening for high-volume roles</li>
+                <li>5. Book a strategy call when you're ready to scale</li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>
