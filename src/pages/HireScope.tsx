@@ -54,6 +54,8 @@ const HireScope = () => {
         pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}
         ogType="website"
+        ogImage="https://gsdat.work/og-image.png"
+        ogImageAlt="HireScope - Find Hidden Gems in Your Applicant Pool - Free Open Source AI Tool"
       />
       
       <Navigation />
