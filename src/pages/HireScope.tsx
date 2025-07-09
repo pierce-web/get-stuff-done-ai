@@ -301,7 +301,7 @@ const HireScope = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    Start with precision. Use state-of-the-art AI models like O3 Pro or Claude Opus combined with meeting transcripts 
+                    Start with precision. Use state-of-the-art AI models like o3 Pro or Claude Opus combined with meeting transcripts 
                     from tools like ReadAI, Fireflies, or your preferred platform to craft precise job descriptions.
                   </p>
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -326,14 +326,14 @@ const HireScope = () => {
                     <div>
                       <h4 className="font-semibold mb-2">🔍 Deep Research for Niche Communities</h4>
                       <p className="text-gray-600 text-sm">
-                        Use AI to discover specialty forums and communities. For example, find dedicated Pilates instructor forums 
-                        for studio manager roles or SaaS community boards for product managers.
+                        Use AI to discover specialty forums and communities. For example, find dedicated DevOps forums for site reliability engineers 
+                        or niche medical device communities for regulatory affairs specialists.
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2">🎯 Network Mining</h4>
                       <p className="text-gray-600 text-sm">
-                        Tools like Happenstance make it 10x easier to get referrals by proactively identifying candidates 
+                        Tools like <a href="https://happenstance.ai" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Happenstance</a> make it 10x easier to get referrals by proactively identifying candidates 
                         your employees are connected to but may not even know about.
                       </p>
                     </div>
@@ -354,7 +354,7 @@ const HireScope = () => {
                       <span className="text-white font-bold text-lg">3</span>
                     </div>
                     <CardTitle>Smart Screening with HireScope</CardTitle>
-                    <Badge className="ml-auto">You Are Here</Badge>
+                    <Badge variant="secondary" className="ml-auto">You Are Here</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -421,7 +421,8 @@ const HireScope = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    Optional but powerful: Use custom voice AI assistants behind a phone number to collect rich candidate information.
+                    Not a substitute for face-to-face interviews, but a powerful complement: Use custom voice AI assistants 
+                    behind a phone number to collect rich candidate information on their schedule.
                   </p>
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                     <h4 className="font-semibold text-yellow-900 mb-2">🛡️ Fraud Prevention Bonus</h4>
@@ -432,8 +433,8 @@ const HireScope = () => {
                   </div>
                   <div className="mt-4 grid md:grid-cols-2 gap-4">
                     <div className="text-center p-3 bg-gray-50 rounded">
-                      <p className="font-semibold">50% acceptance rate</p>
-                      <p className="text-sm text-gray-600">When positioned as optional</p>
+                      <p className="font-semibold">Complements human interaction</p>
+                      <p className="text-sm text-gray-600">Not a replacement</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded">
                       <p className="font-semibold">Richer data collected</p>
