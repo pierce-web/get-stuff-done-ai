@@ -109,7 +109,7 @@ export const workshopAsEntryPoint = {
     step3: {
       name: "Triple-A Transformation",
       outcome: "Enterprise-wide AI adoption",
-      investment: "$49,999+"
+      investment: "$150,000+"
     }
   },
   
