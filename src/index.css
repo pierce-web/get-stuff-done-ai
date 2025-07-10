@@ -98,4 +98,36 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* iOS Safari specific fixes for mobile menu */
+  @supports (-webkit-touch-callout: none) {
+    /* Fix for iOS Safari viewport height */
+    [class*="max-h-\\[100dvh\\]"] {
+      height: 100vh;
+      height: -webkit-fill-available;
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body:has([data-state="open"]) {
+      position: fixed;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    /* Ensure smooth scrolling in overlays */
+    [data-radix-dialog-content] {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* Additional mobile menu fixes */
+  [data-state="open"][data-side="left"],
+  [data-state="open"][data-side="right"] {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
 }
