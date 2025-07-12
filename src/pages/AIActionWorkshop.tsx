@@ -2,12 +2,15 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, Clock, Users, Target, CheckCircle, ArrowRight, Zap, TrendingUp, Star } from "lucide-react";
 import { ServiceFeaturesList } from "@/components/services/ServiceFeaturesList";
 import { services } from "@/components/services/data";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { ServiceRecommendation } from "@/components/internal-linking/ServiceRecommendation";
+import { animations, shadows, typography, gradients, buttonStyles, layouts } from "@/lib/design-tokens";
 
 const AIActionWorkshop = () => {
   const workshop = services.find(s => s.title === "AI Action Workshop");
@@ -75,204 +78,463 @@ const AIActionWorkshop = () => {
       
       <Navigation />
       
-      <div className="pt-28 pb-20">
+      {/* Hero Section */}
+      <div className={`relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/5 pt-28 pb-20 ${animations.fadeIn}`}>
+        {/* Background Elements */}
+        <div className={`absolute -top-24 -right-24 w-96 h-96 ${gradients.decorative.secondary} ${animations.floatingElements}`} />
+        <div className={`absolute -bottom-24 -left-24 w-96 h-96 ${gradients.decorative.primary} ${animations.pulsingGlow}`} />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Content */}
+              <div className={`space-y-8 ${animations.slideInLeft}`}>
+                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 text-sm font-bold">
+                  ⚡ Quick Win in a Box
+                </Badge>
+                
+                <h1 className={`${typography.fluid.h1} text-primary mb-6 leading-tight`}>
+                  AI Action Workshop
+                  <span className="block text-secondary mt-2">Your Four-Minute Mile Moment</span>
+                </h1>
+                
+                <p className={`${typography.fluid.large} text-gray-700 leading-relaxed`}>
+                  Transform what takes <strong>2 days into 2 hours</strong>. Experience breakthrough AI implementation 
+                  that's so compelling it becomes charismatic—spreading throughout your organization.
+                </p>
+                
+                {/* Value Props */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3">
+                    <Zap className="h-6 w-6 text-secondary" />
+                    <span className="font-semibold">100-2000% efficiency gains</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-6 w-6 text-secondary" />
+                    <span className="font-semibold">Working solution by end</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Users className="h-6 w-6 text-secondary" />
+                    <span className="font-semibold">Transferable frameworks</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <TrendingUp className="h-6 w-6 text-secondary" />
+                    <span className="font-semibold">Repeatable success</span>
+                  </div>
+                </div>
+                
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    className={`${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold ${buttonStyles.effects.liftGlow} ${buttonStyles.effects.morphing} relative`}
+                    onClick={() => workshop?.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                  >
+                    <Calendar className="h-5 w-5 mr-2" />
+                    Book Your Workshop
+                    <span className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-xs font-bold px-2 py-1 rounded-full text-white shadow-lg">
+                      $4,999
+                    </span>
+                  </Button>
+                  
+                  <Button
+                    variant="outline"
+                    className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} ${buttonStyles.effects.borderGlow} font-semibold`}
+                    onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                  >
+                    Free Consultation
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </div>
+                
+                {/* Social Proof */}
+                <div className="flex items-center gap-4 pt-4">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-gray-600 font-medium">Trusted by 100+ executives</span>
+                </div>
+              </div>
+              
+              {/* Right Column - Visual Element */}
+              <div className={`${animations.slideInRight} relative`}>
+                <Card className={`${shadows.floating} ${shadows.floatingHover} hover:-translate-y-2 transition-all duration-300 ${borderRadius.xl} overflow-hidden`}>
+                  <CardHeader className="bg-gradient-to-r from-primary to-secondary text-white p-8">
+                    <CardTitle className="text-2xl font-bold text-center">
+                      Workshop Transformation
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-8">
+                    <div className="space-y-6">
+                      <div className="text-center">
+                        <div className="text-4xl font-bold text-gray-400 mb-2">Before</div>
+                        <div className="text-lg text-gray-600">2 days of manual work</div>
+                      </div>
+                      
+                      <div className="flex justify-center">
+                        <ArrowRight className="h-8 w-8 text-secondary transform rotate-90" />
+                      </div>
+                      
+                      <div className="text-center">
+                        <div className="text-4xl font-bold text-secondary mb-2">After</div>
+                        <div className="text-lg text-gray-600">2 hours with AI automation</div>
+                      </div>
+                      
+                      <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <div className="text-center text-green-800 font-semibold">
+                          🎯 10X Productivity Gain
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Results & Social Proof Section */}
+      <div className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              AI Action Workshop: Your Quick Win in a Box
-            </h1>
+          <div className="max-w-6xl mx-auto">
             
-            <p className="text-xl text-gray-700 mb-6">
-              Break your four-minute mile with AI. Turn what takes days or weeks into hours of focused execution. Learn to fish while achieving immediate, game-changing results that inspire your entire organization.
-            </p>
-            
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-              <p className="text-lg font-semibold text-yellow-900">
-                🎉 GSD Certified Associates Now Available
-              </p>
-              <p className="text-sm text-yellow-800 mt-1">
-                Same transformative workshop, flexible scheduling options at competitive rates
+            {/* Results Preview */}
+            <div className={`text-center mb-16 ${animations.fadeIn}`}>
+              <h2 className={`${typography.fluid.h2} text-primary mb-6`}>
+                Real Results From Real Workshops
+              </h2>
+              <p className={`${typography.fluid.large} text-gray-600 max-w-3xl mx-auto`}>
+                {workshop?.extraText}
               </p>
             </div>
             
-            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
-              <h2 className="text-lg font-semibold text-blue-900 mb-3">🎯 Perfect for Business Leaders Who Want:</h2>
-              <ul className="space-y-2 text-blue-800">
-                <li>• <strong>Immediate AI implementation</strong> with working solutions</li>
-                <li>• <strong>Practical automation strategies</strong> for workflow optimization</li>
-                <li>• <strong>Hands-on experience</strong> with proven AI tools and frameworks</li>
-                <li>• <strong>Executable roadmaps</strong> for scaling AI across your organization</li>
-              </ul>
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {[
+                { stat: "100-2000%", label: "Efficiency Gains", icon: TrendingUp },
+                { stat: "2 Hours", label: "From 2 Days", icon: Clock },
+                { stat: "100+", label: "Happy Executives", icon: Users }
+              ].map((item, index) => (
+                <Card key={index} className={`text-center p-8 ${shadows.floating} ${animations.breathingGlow} ${animations.scaleIn}`} style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}>
+                  <CardContent className="p-0">
+                    <item.icon className="h-12 w-12 text-secondary mx-auto mb-4" />
+                    <div className="text-4xl font-bold text-primary mb-2">{item.stat}</div>
+                    <div className="text-gray-600">{item.label}</div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
             
-            <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20 mb-12">
-              <h2 className="text-2xl font-semibold text-secondary mb-4">Results You Can Expect</h2>
-              <p className="text-gray-700 mb-0">
-                {workshop.extraText}
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl border-2 border-blue-200 mb-12">
-              <h2 className="text-3xl font-bold text-center text-primary mb-6">🎯 Quick Win in a Box</h2>
-              
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Your Challenge</h3>
-                  <p className="text-gray-600">Something that takes you 2 days or 2 weeks</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Our Workshop</h3>
-                  <p className="text-gray-600">Get it done in hours with 10X transformation</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Your Victory</h3>
-                  <p className="text-gray-600">Break your four-minute mile & inspire others</p>
-                </div>
-              </div>
-              
-              <p className="text-center mt-6 text-lg font-medium text-gray-800">
-                Experience success so compelling it becomes charismatic - spreading throughout your organization
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div>
-                <h2 className="text-2xl font-semibold text-primary mb-6">Workshop Benefits</h2>
-                <ServiceFeaturesList features={workshop.features} />
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold text-primary mb-4">Investment & Availability</h2>
-                
-                <div className="p-4 rounded-lg border-2 border-secondary bg-secondary/5 mb-4">
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 className="font-semibold text-lg text-gray-900">Founder-Led Workshop</h3>
-                      <p className="text-sm text-gray-600">Led by Christian Ulstrup</p>
+            {/* Perfect For Section */}
+            <Card className={`p-8 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 ${shadows.floating}`}>
+              <CardHeader className="text-center pb-6">
+                <CardTitle className={`${typography.fluid.h3} text-primary`}>
+                  🎯 Perfect for Business Leaders Who Want
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    "Immediate AI implementation with working solutions",
+                    "Practical automation strategies for workflow optimization", 
+                    "Hands-on experience with proven AI tools and frameworks",
+                    "Executable roadmaps for scaling AI across your organization"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">{item}</span>
                     </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold text-secondary">$4,999</p>
-                      <p className="text-xs text-gray-500">Limited availability</p>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+            
+      {/* Quick Win Process */}
+      <div className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className={`text-center mb-16 ${animations.fadeIn}`}>
+              <h2 className={`${typography.fluid.h2} text-primary mb-6`}>
+                🎯 Your Quick Win in a Box Process
+              </h2>
+              <p className={`${typography.fluid.large} text-gray-600 max-w-3xl mx-auto`}>
+                Experience success so compelling it becomes charismatic—spreading throughout your organization
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Your Challenge",
+                  description: "Something that takes you 2 days or 2 weeks",
+                  icon: "😓",
+                  color: "border-gray-300 bg-gray-50"
+                },
+                {
+                  title: "Our Workshop", 
+                  description: "Get it done in hours with 10X transformation",
+                  icon: "⚡",
+                  color: "border-secondary bg-secondary/5"
+                },
+                {
+                  title: "Your Victory",
+                  description: "Break your four-minute mile & inspire others", 
+                  icon: "🏆",
+                  color: "border-green-300 bg-green-50"
+                }
+              ].map((step, index) => (
+                <Card key={index} className={`p-8 border-2 ${step.color} ${shadows.floating} ${animations.scaleIn} relative overflow-hidden`} style={{ animationDelay: `${index * 0.3}s`, animationFillMode: 'both' }}>
+                  <CardContent className="text-center p-0 relative z-10">
+                    <div className="text-6xl mb-4">{step.icon}</div>
+                    <h3 className={`${typography.fluid.h4} text-gray-900 mb-4`}>{step.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  </CardContent>
+                  
+                  {/* Arrow connector (except for last item) */}
+                  {index < 2 && (
+                    <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-20">
+                      <ArrowRight className="h-8 w-8 text-secondary" />
+                    </div>
+                  )}
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+            
+      {/* Workshop Benefits & Pricing */}
+      <div className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              
+              {/* Benefits Section */}
+              <div className={`space-y-8 ${animations.slideInLeft}`}>
+                <div>
+                  <h2 className={`${typography.fluid.h2} text-primary mb-8`}>
+                    What You'll Get in Your Workshop
+                  </h2>
+                  <div className="space-y-4">
+                    {workshop?.features?.map((feature, index) => (
+                      <div key={index} className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700 font-medium">{feature}</span>
+                      </div>
+                    )) || <ServiceFeaturesList features={workshop?.features || []} />}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Pricing Section */}
+              <div className={`space-y-6 ${animations.slideInRight}`}>
+                <h2 className={`${typography.fluid.h2} text-primary mb-8`}>
+                  Investment & Availability
+                </h2>
+                
+                {/* Founder-Led Workshop */}
+                <Card className={`relative overflow-hidden border-2 border-secondary/50 ${shadows.floating} ${animations.breathingGlow}`}>
+                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center py-2 text-sm font-bold">
+                    🔥 Most Popular
+                  </div>
+                  <CardHeader className="pt-12 pb-6">
+                    <CardTitle className="text-xl font-bold text-gray-900">Founder-Led Workshop</CardTitle>
+                    <p className="text-gray-600">Led by Christian Ulstrup</p>
+                    <div className="flex items-baseline gap-2 mt-4">
+                      <span className="text-4xl font-bold text-secondary">$4,999</span>
+                      <span className="text-gray-500">one-time</span>
+                    </div>
+                    <Badge variant="outline" className="w-fit mt-2 text-orange-600 border-orange-200">
+                      Limited availability
+                    </Badge>
+                  </CardHeader>
+                  <CardContent>
+                    <Button 
+                      className={`w-full ${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold ${buttonStyles.effects.liftGlow}`}
+                      onClick={() => workshop?.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                    >
+                      <Calendar className="h-5 w-5 mr-2" />
+                      Book Workshop Now
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                {/* Associate-Led Workshop */}
+                <Card className={`border-2 border-blue-200 ${shadows.floating} hover:shadow-xl transition-all duration-300`}>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-gray-900">Associate-Led Workshops</CardTitle>
+                    <p className="text-gray-600 text-sm">
+                      Led by our GSD Certified Associates—hand-picked and trained by Christian to deliver 
+                      the exact same transformative workshop experience.
+                    </p>
+                    <div className="mt-4">
+                      <div className="text-2xl font-bold text-blue-600 mb-2">Competitive Rates</div>
+                      <Badge variant="outline" className="w-fit text-blue-600 border-blue-200">
+                        Flexible scheduling
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3 mb-6">
+                      {[
+                        "Same proven process and outcomes",
+                        "More flexible scheduling options", 
+                        "Competitive rates available"
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-green-500" />
+                          <span className="text-sm text-gray-700">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Button 
+                      className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold ${buttonStyles.sizes.large} ${buttonStyles.effects.liftGlow}`}
+                      onClick={() => workshop?.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                    >
+                      <Calendar className="h-5 w-5 mr-2" />
+                      Inquire About Associates
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                {/* Guarantee & Volume Discounts */}
+                <div className="space-y-4 mt-8">
+                  <Card className="p-6 bg-green-50 border-2 border-green-200">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-green-900 mb-2">✅ Satisfaction Guaranteed</h4>
+                        <p className="text-green-800 text-sm">
+                          Both Founder and Associate workshops are backed by our satisfaction guarantee. 
+                          Same transformative results, every time.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                  
+                  <Card className="p-6 bg-blue-50 border-2 border-blue-200">
+                    <div className="flex items-start gap-3">
+                      <Target className="h-6 w-6 text-blue-600 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-blue-900 mb-2">🎯 Volume Discounts Available</h4>
+                        <p className="text-blue-800 text-sm">
+                          Planning multiple workshops? Bundle pricing available starting at 10 workshops. 
+                          Ask about our organizational transformation packages.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* How It Works - Enhanced Timeline */}
+      <div className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className={`text-center mb-16 ${animations.fadeIn}`}>
+              <h2 className={`${typography.fluid.h2} text-primary mb-6`}>
+                How Your Workshop Works
+              </h2>
+              <p className={`${typography.fluid.large} text-gray-600`}>
+                A simple, proven 3-step process to your AI breakthrough
+              </p>
+            </div>
+            
+            <div className="space-y-12">
+              {[
+                {
+                  step: "1",
+                  title: "Discovery Call",
+                  description: "We'll discuss your specific challenges and identify the most impactful area for AI implementation during the workshop.",
+                  icon: "🎯"
+                },
+                {
+                  step: "2", 
+                  title: "AI Action Workshop",
+                  description: "Experience your 10X transformation: What normally takes 2 days gets done in 2 hours. Build real solutions, create reusable SOPs, and gain the confidence to replicate this success.",
+                  icon: "⚡"
+                },
+                {
+                  step: "3",
+                  title: "Follow-Up Support", 
+                  description: "Access to implementation guides, templates, and a follow-up check-in to ensure your solutions continue to deliver value.",
+                  icon: "🚀"
+                }
+              ].map((item, index) => (
+                <div key={index} className={`flex gap-8 items-start ${animations.slideInLeft}`} style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}>
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-secondary to-secondary/80 text-white flex items-center justify-center font-bold text-2xl shadow-lg">
+                      {item.step}
                     </div>
                   </div>
-                  <Button 
-                    className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold"
-                    onClick={() => workshop.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
-                  >
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Book Workshop
-                  </Button>
+                  <Card className={`flex-1 p-8 ${shadows.floating} hover:shadow-xl transition-all duration-300`}>
+                    <div className="flex items-start gap-4">
+                      <div className="text-4xl">{item.icon}</div>
+                      <div>
+                        <h3 className={`${typography.fluid.h4} text-gray-900 mb-4`}>{item.title}</h3>
+                        <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-                
-                <div className="p-4 rounded-lg border-2 border-blue-300 bg-blue-50">
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">Associate-Led Workshops</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Led by our GSD Certified Associates - hand-picked and trained by Christian to deliver 
-                    the exact same transformative workshop experience.
-                  </p>
-                  <p className="text-sm font-medium text-blue-900 mb-3">
-                    ✓ Same proven process and outcomes<br/>
-                    ✓ More flexible scheduling<br/>
-                    ✓ Competitive rates available
-                  </p>
-                  <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold"
-                    onClick={() => workshop.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
-                  >
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Inquire About Associate Availability
-                  </Button>
-                </div>
-                
-                <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-                  <p className="text-sm font-medium text-green-900">
-                    ✅ Satisfaction Guaranteed
-                  </p>
-                  <p className="text-sm text-green-800 mt-1">
-                    Both Founder and Associate workshops are backed by our satisfaction guarantee. 
-                    Same transformative results, every time.
-                  </p>
-                </div>
-                
-                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <p className="text-sm font-medium text-blue-900">
-                    🎯 Volume Discounts Available
-                  </p>
-                  <p className="text-sm text-blue-800 mt-1">
-                    Planning multiple workshops? Bundle pricing available starting at 10 workshops. 
-                    Ask about our organizational transformation packages.
-                  </p>
-                </div>
-              </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* GSD Associates Section - Enhanced */}
+      <div className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className={`text-center mb-12 ${animations.fadeIn}`}>
+              <h2 className={`${typography.fluid.h2} text-primary mb-6`}>
+                About GSD Certified Associates
+              </h2>
+              <p className={`${typography.fluid.large} text-gray-600`}>
+                Expanding our impact through hand-picked, certified professionals
+              </p>
             </div>
             
-            <div className="border-t border-gray-200 pt-12">
-              <h2 className="text-2xl font-semibold text-primary mb-6">How It Works</h2>
-              
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold">1</div>
-                  <div>
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">Discovery Call</h3>
-                    <p className="text-gray-700">We'll discuss your specific challenges and identify the most impactful area for AI implementation during the workshop.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold">2</div>
-                  <div>
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">AI Action Workshop</h3>
-                    <p className="text-gray-700">Experience your 10X transformation: What normally takes 2 days gets done in 2 hours. Build real solutions, create reusable SOPs, and gain the confidence to replicate this success. Your victory becomes charismatic - inspiring others to follow.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold">3</div>
-                  <div>
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">Follow-Up Support</h3>
-                    <p className="text-gray-700">Access to implementation guides, templates, and a follow-up check-in to ensure your solutions continue to deliver value.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* GSD Associates Section */}
-            <div className="border-t border-gray-200 pt-12 mt-12">
-              <h2 className="text-2xl font-semibold text-primary mb-6">About GSD Certified Associates</h2>
-              
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-200">
-                <p className="text-lg text-gray-700 mb-4">
+            <Card className={`p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 ${shadows.floating}`}>
+              <CardContent className="p-0">
+                <p className="text-lg text-gray-700 mb-6">
                   To expand our capacity and help more organizations achieve AI transformation, we've established the GSD Associate Program. 
                   Our associates are experienced professionals who have been:
                 </p>
                 
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">✓</span>
-                    <span className="text-gray-700">Hand-picked by Christian Ulstrup for their expertise and alignment with our methodology</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">✓</span>
-                    <span className="text-gray-700">Trained extensively in the GSD AI Action Workshop framework</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">✓</span>
-                    <span className="text-gray-700">Certified to deliver the same transformative results you expect from GSD</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">✓</span>
-                    <span className="text-gray-700">Backed by our satisfaction guarantee - same as founder-led workshops</span>
-                  </li>
-                </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  {[
+                    "Hand-picked by Christian Ulstrup for their expertise and alignment with our methodology",
+                    "Trained extensively in the GSD AI Action Workshop framework",
+                    "Certified to deliver the same transformative results you expect from GSD", 
+                    "Backed by our satisfaction guarantee—same as founder-led workshops"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
                 
-                <p className="text-lg font-semibold text-secondary">
-                  Choose an associate-led workshop when you want immediate scheduling flexibility 
-                  at competitive rates without compromising on quality or outcomes.
-                </p>
-              </div>
-            </div>
+                <div className="bg-gradient-to-r from-secondary/10 to-primary/10 p-6 rounded-lg border border-secondary/20">
+                  <p className="text-lg font-semibold text-secondary text-center">
+                    Choose an associate-led workshop when you want immediate scheduling flexibility 
+                    at competitive rates without compromising on quality or outcomes.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
