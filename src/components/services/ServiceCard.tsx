@@ -20,9 +20,9 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
-    <Card className={`group flex flex-col justify-between ${shadows.floating} ${shadows.floatingHover} hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 ${borderRadius.xl} relative overflow-hidden border-0 ring-1 ring-gray-200/50 hover:ring-secondary/30`}>
+    <Card className={`group flex flex-col justify-between ${shadows.floating} hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ${borderRadius.xl} relative overflow-hidden border-0 ring-1 ring-gray-200/50 hover:ring-secondary/30`}>
       {/* Subtle gradient overlay on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
       
       <CardHeader className="relative z-10">
         <CardTitle className="text-xl font-bold">{service.title}</CardTitle>

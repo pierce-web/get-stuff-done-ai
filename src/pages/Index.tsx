@@ -37,45 +37,29 @@ const Index = () => {
       </div>
       
       <div className="relative">
-        {/* Flowing section transitions with advanced layouts */}
-        <div className="bg-gradient-to-b from-background to-gray-50 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-br from-primary/3 to-secondary/3 rounded-b-[50%] transform -translate-y-16"></div>
+        {/* Clean section layout without diagonal overlays */}
+        <div className="bg-gradient-to-b from-background to-gray-50">
           <TestimonialsCarousel />
         </div>
         
-        {/* Asymmetrical featured section */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/2 to-secondary/5 transform skew-y-1"></div>
-          <FeaturedIn />
-        </div>
+        <FeaturedIn />
         
-        <div className="bg-gradient-to-b from-gray-50 to-background py-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-secondary/5 to-transparent rounded-b-[30%]"></div>
+        <div className="bg-gradient-to-b from-gray-50 to-background py-8">
           <FeaturedReport />
         </div>
         
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 transform -skew-y-1"></div>
-          <EngagementLevels />
-        </div>
+        <EngagementLevels />
         
-        <div className="py-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-b-[60%] transform -translate-y-20"></div>
+        <div className="py-8">
           <Services />
         </div>
         
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/3 via-transparent to-primary/3 transform skew-y-1"></div>
-          <ServiceComparison 
-            title="Find Your Perfect AI Implementation Path"
-            description="Whether you're just getting started or ready for full transformation, we have the right program to accelerate your success."
-          />
-        </div>
+        <ServiceComparison 
+          title="Find Your Perfect AI Implementation Path"
+          description="Whether you're just getting started or ready for full transformation, we have the right program to accelerate your success."
+        />
         
-        <div className="relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-primary/5 to-transparent rounded-b-[40%]"></div>
-          <About />
-        </div>
+        <About />
       </div>
     </Layout>
   );

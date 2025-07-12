@@ -25,7 +25,7 @@ export const Services = React.memo(() => {
             Expert AI implementation services designed to accelerate your business transformation. From hands-on workshops to comprehensive organizational change programs, we deliver practical AI solutions that drive measurable results.
           </SEOParagraph>
         </div>
-        <div className={`mx-auto mt-16 max-w-7xl ${layouts.asymmetric.features}`}>
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={service.title}
