@@ -63,8 +63,8 @@ export const Hero = () => {
               onClick={scrollToServices}
             >
               <span>See How We Execute</span>
-              <span className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-xs font-bold px-2 py-1 rounded-full text-white shadow-lg animate-pulse">
-                500+ Leaders
+              <span className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-blue-600 text-xs font-bold px-2 py-1 rounded-full text-white shadow-lg">
+                Get Results
               </span>
             </Button>
             <Button
