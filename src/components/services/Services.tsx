@@ -2,7 +2,7 @@
 import React from "react";
 import { ServiceCard } from "./ServiceCard";
 import { services } from "./data";
-import { animations } from "@/lib/design-tokens";
+import { animations, typography } from "@/lib/design-tokens";
 import { SEOHeading, SEOParagraph } from "@/components/seo/KeywordRichContent";
 
 export const Services = React.memo(() => {
@@ -12,13 +12,13 @@ export const Services = React.memo(() => {
         <div className="mx-auto max-w-2xl text-center">
           <SEOHeading 
             level={2}
-            className="text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+            className={`${typography.fluid.h2} text-primary`}
             keywords={["AI implementation services", "AI consulting", "business automation"]}
           >
             AI Implementation Services & Consulting
           </SEOHeading>
           <SEOParagraph 
-            className="mt-6 text-lg leading-8 text-gray-600"
+            className={`mt-6 ${typography.fluid.large} text-gray-600`}
             keywords={["AI transformation", "business automation", "AI adoption"]}
             emphasis={true}
           >
