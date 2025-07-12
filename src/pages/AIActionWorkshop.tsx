@@ -10,7 +10,7 @@ import { services } from "@/components/services/data";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { ServiceRecommendation } from "@/components/internal-linking/ServiceRecommendation";
-import { animations, shadows, typography, gradients, buttonStyles, layouts } from "@/lib/design-tokens";
+import { animations, shadows, typography, gradients, buttonStyles, layouts, borderRadius } from "@/lib/design-tokens";
 
 const AIActionWorkshop = () => {
   const workshop = services.find(s => s.title === "AI Action Workshop");
