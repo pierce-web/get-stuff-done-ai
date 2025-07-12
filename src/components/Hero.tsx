@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-import { shadows, gradients, buttonStyles, animations, spacing } from "@/lib/design-tokens";
+import { shadows, gradients, buttonStyles, animations, spacing, typography } from "@/lib/design-tokens";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { ParallaxElement } from "@/components/ui/parallax-element";
 
@@ -15,17 +15,21 @@ export const Hero = () => {
 
   return (
     <div className={`relative overflow-hidden ${spacing.section.lg} ${animations.fadeIn}`}>
-      {/* Background gradient elements with parallax */}
-      <ParallaxElement speed={0.3} className={`absolute -top-24 -right-24 w-96 h-96 ${gradients.decorative.secondary}`}>
+      {/* Background gradient elements with enhanced animations */}
+      <ParallaxElement speed={0.3} className={`absolute -top-24 -right-24 w-96 h-96 ${gradients.decorative.secondary} ${animations.floatingElements}`}>
         <div />
       </ParallaxElement>
-      <ParallaxElement speed={0.2} className={`absolute -bottom-24 -left-24 w-96 h-96 ${gradients.decorative.primary}`}>
+      <ParallaxElement speed={0.2} className={`absolute -bottom-24 -left-24 w-96 h-96 ${gradients.decorative.primary} ${animations.pulsingGlow}`}>
         <div />
       </ParallaxElement>
       
+      {/* Additional floating elements */}
+      <div className={`absolute top-1/3 left-1/4 w-32 h-32 ${gradients.decorative.secondary} opacity-30 ${animations.slowRotate}`} />
+      <div className={`absolute bottom-1/3 right-1/4 w-24 h-24 ${gradients.decorative.primary} opacity-40 ${animations.gentleBounce}`} />
+      
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
+          <h1 className={`${typography.fluid.h1} text-primary`}>
             AI Implementation Services: Get Stuff Done with AI
           </h1>
           <p className="mt-3 text-lg sm:text-xl font-semibold text-secondary">
@@ -36,7 +40,7 @@ export const Hero = () => {
               className="font-bold"
             />
           </p>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600 px-2 sm:px-0">
+          <p className={`mt-4 sm:mt-6 ${typography.fluid.large} text-gray-600 px-2 sm:px-0`}>
             Expert AI consulting and implementation services that deliver measurable business results. We help organizations accelerate AI adoption with proven strategies, hands-on implementation, and practical automation solutions.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
@@ -55,21 +59,26 @@ export const Hero = () => {
           </div>
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
-              className={`${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold w-full sm:w-auto ${shadows.buttonEffect} ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}
+              className={`${buttonStyles.primary} ${buttonStyles.sizes.large} ${typography.touchTargets.button} font-semibold w-full sm:w-auto ${buttonStyles.effects.liftGlow} ${buttonStyles.effects.morphing} relative`}
               onClick={scrollToServices}
             >
-              See How We Execute
+              <span>See How We Execute</span>
+              <span className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-xs font-bold px-2 py-1 rounded-full text-white shadow-lg">
+                100+ Clients Served
+              </span>
             </Button>
             <Button
               variant="outline"
-              className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} w-full sm:w-auto ${shadows.buttonEffect} ${animations.hoverLift} hover:border-secondary/70 hover:bg-secondary/5`}
+              className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} ${typography.touchTargets.button} w-full sm:w-auto ${buttonStyles.effects.borderGlow} hover:border-secondary/70 hover:bg-secondary/5 relative`}
               onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
             >
-              Schedule a Strategy Call
+              <span>Schedule a Strategy Call</span>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></span>
             </Button>
             <Button
               variant="outline"
-              className={`${buttonStyles.outline.primary} ${buttonStyles.sizes.large} gap-2 w-full sm:w-auto ${shadows.buttonEffect} ${animations.hoverLift} hover:border-primary/70 hover:bg-primary/5`}
+              className={`${buttonStyles.outline.primary} ${buttonStyles.sizes.large} ${typography.touchTargets.button} gap-2 w-full sm:w-auto ${buttonStyles.effects.borderGlow} hover:border-primary/70 hover:bg-primary/5`}
               onClick={() => window.location.href = "tel:+18482610259"}
             >
               <Phone className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />

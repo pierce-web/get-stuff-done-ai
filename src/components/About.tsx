@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { GraduationCap, CircuitBoard, TrendingUp, File } from "lucide-react";
-import { animations, gradients } from "@/lib/design-tokens";
+import { animations, gradients, typography, layouts } from "@/lib/design-tokens";
 import { SEOHeading, SEOParagraph, KeywordRichContent } from "@/components/seo/KeywordRichContent";
 
 export const About = () => {
@@ -21,23 +21,25 @@ export const About = () => {
         <div className="mt-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Left Column - Profile Photo */}
           <div className="lg:w-2/5 flex justify-center">
-            <div className="relative w-[180px] h-[180px] sm:w-[360px] sm:h-[360px]">
-              <div className="absolute inset-0 rounded-full bg-gray-100"></div>
+            <div className={`relative w-[180px] h-[180px] sm:w-[360px] sm:h-[360px] ${animations.magneticPull} group`}>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-500"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent to-white/20 group-hover:to-white/40 transition-all duration-500"></div>
               <img
                 src="/lovable-uploads/eb3e02b7-4b6b-4085-bd2c-fd961a1b1003.png"
                 alt="Christian Ulstrup"
-                className="relative rounded-full w-full h-full object-cover shadow-lg"
+                className="relative rounded-full w-full h-full object-cover shadow-xl group-hover:shadow-2xl transition-all duration-500"
                 loading="eager"
               />
+              <div className="absolute inset-0 rounded-full ring-4 ring-white/50 group-hover:ring-white/80 transition-all duration-500"></div>
             </div>
           </div>
 
           {/* Right Column - Content */}
           <div className="lg:w-3/5">
-            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+            <h3 className={`${typography.fluid.h3} font-bold text-primary mb-2 ${animations.liquidMotion} p-2 -m-2 rounded-lg`}>
               Christian Ulstrup
             </h3>
-            <h4 className="text-xl sm:text-2xl font-semibold text-secondary mb-8">
+            <h4 className={`${typography.fluid.h4} font-semibold text-secondary mb-8`}>
               AI Implementation Expert | Founder, GSD at Work
             </h4>
 
@@ -52,7 +54,7 @@ export const About = () => {
               {/* Credentials */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 py-12">
                 <div 
-                  className={`flex flex-col items-center text-center p-6 ${gradients.cardGlass} rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] ${animations.hoverLift} ${animations.hoverGlow} hover:bg-white/90 h-full group ${animations.scaleIn}`}
+                  className={`flex flex-col items-center text-center p-6 ${gradients.cardGlass} rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.05)] ${animations.breathingGlow} hover:bg-white/90 h-full group ${animations.scaleIn}`}
                   style={{ animationDelay: '0.1s', animationFillMode: 'both' }}
                 >
                   <GraduationCap className="w-8 h-8 text-secondary mb-3 group-hover:scale-110 transition-transform duration-300" />

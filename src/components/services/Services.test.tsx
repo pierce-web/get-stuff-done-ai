@@ -98,7 +98,7 @@ describe('Services', () => {
     const secondCardWrapper = serviceCards[1].parentElement
     
     expect(firstCardWrapper?.style.animationDelay).toBe('0s')
-    expect(secondCardWrapper?.style.animationDelay).toBe('0.1s')
+    expect(secondCardWrapper?.style.animationDelay).toBe('0.15s')
   })
 
   it('has responsive grid layout classes', () => {

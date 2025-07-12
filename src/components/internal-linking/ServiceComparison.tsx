@@ -240,7 +240,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 relative z-10">
           <p className="text-gray-600 mb-6">
             🤔 <strong>Not sure which program is right for you?</strong>
           </p>
@@ -249,14 +249,15 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
               href="https://calendly.com/gsdatwork/free-consult"
               target="_blank"
               rel="noopener noreferrer"
+              className="relative z-20"
             >
-              <Button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-3">
+              <Button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 relative z-20">
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
-            <a href="tel:+18482610259">
-              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-3">
+            <a href="tel:+18482610259" className="relative z-20">
+              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-3 relative z-20">
                 Call AI Assistant: (848) 261-0259
               </Button>
             </a>

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { ServiceType } from "./types";
 import { ServiceFeaturesList } from "./ServiceFeaturesList";
-import { animations } from "@/lib/design-tokens";
+import { animations, shadows, typography, borderRadius, gradients } from "@/lib/design-tokens";
 
 interface ServiceCardProps {
   service: ServiceType;
@@ -20,12 +20,15 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
-    <Card className={`flex flex-col justify-between ${animations.hoverLift} ${animations.hoverGlow}`}>
-      <CardHeader>
+    <Card className={`group flex flex-col justify-between ${shadows.floating} hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ${borderRadius.xl} relative overflow-hidden border-0 ring-1 ring-gray-200/50 hover:ring-secondary/30`}>
+      {/* Subtle gradient overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      
+      <CardHeader className="relative z-10">
         <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
         <CardDescription className="mt-2">{service.description}</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="relative z-10">
         {service.extraText && (
           <p className="mb-4 text-gray-700 bg-secondary/5 p-3 rounded-md border border-secondary/10 text-sm">
             <strong className="text-secondary">ROI: </strong>
@@ -64,11 +67,11 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
           )}
         </div>
       </CardContent>
-      <CardFooter className="pt-4 flex flex-col gap-3">
+      <CardFooter className="pt-4 flex flex-col gap-3 relative z-10">
         {service.learnMoreLink && (
           <Link to={service.learnMoreLink} className="w-full">
             <Button 
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 flex items-center gap-2"
+              className={`w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base py-6 ${typography.touchTargets.button} flex items-center gap-2 ${shadows.buttonEffect} hover:shadow-lg hover:shadow-secondary/20`}
             >
               Learn More
               <ExternalLink className="h-4 w-4" />
@@ -78,7 +81,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
         
         <Button 
           variant="outline"
-          className="w-full border border-primary text-primary hover:bg-primary/10 gap-2"
+          className={`w-full border border-primary text-primary hover:bg-primary/10 gap-2 ${typography.touchTargets.button} ${shadows.buttonEffect} hover:border-primary/70`}
           onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
         >
           <Calendar className="h-4 w-4" />

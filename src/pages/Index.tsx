@@ -37,12 +37,11 @@ const Index = () => {
       </div>
       
       <div className="relative">
-        {/* Add subtle dividers and consistent spacing between sections */}
+        {/* Clean section layout without diagonal overlays */}
         <div className="bg-gradient-to-b from-background to-gray-50">
           <TestimonialsCarousel />
         </div>
         
-        {/* Add the new FeaturedIn component here */}
         <FeaturedIn />
         
         <div className="bg-gradient-to-b from-gray-50 to-background py-8">

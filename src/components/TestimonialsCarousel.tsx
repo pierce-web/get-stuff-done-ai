@@ -2,7 +2,7 @@
 import React, { useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { animations } from "@/lib/design-tokens";
+import { animations, typography } from "@/lib/design-tokens";
 
 export const TestimonialsCarousel = React.memo(() => {
   const handleScriptCleanup = useCallback(() => {
@@ -21,9 +21,11 @@ export const TestimonialsCarousel = React.memo(() => {
   }, [handleScriptCleanup]);
 
   return (
-    <div className={`py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 ${animations.fadeIn}`}>
-      <div className="max-w-4xl mx-auto">
-        <h2 className={`text-3xl font-bold tracking-tight text-primary text-center mb-12 ${animations.slideInUp}`}>
+    <div className={`py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white relative ${animations.fadeIn}`}>
+      {/* Subtle animated border */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 opacity-50"></div>
+      <div className="max-w-4xl mx-auto relative z-10">
+        <h2 className={`${typography.fluid.h2} text-primary text-center mb-12 ${animations.slideInUp}`}>
           What Leaders Say
         </h2>
         
