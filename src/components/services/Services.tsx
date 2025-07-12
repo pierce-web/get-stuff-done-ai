@@ -2,7 +2,7 @@
 import React from "react";
 import { ServiceCard } from "./ServiceCard";
 import { services } from "./data";
-import { animations, typography } from "@/lib/design-tokens";
+import { animations, typography, layouts } from "@/lib/design-tokens";
 import { SEOHeading, SEOParagraph } from "@/components/seo/KeywordRichContent";
 
 export const Services = React.memo(() => {
@@ -25,13 +25,13 @@ export const Services = React.memo(() => {
             Expert AI implementation services designed to accelerate your business transformation. From hands-on workshops to comprehensive organizational change programs, we deliver practical AI solutions that drive measurable results.
           </SEOParagraph>
         </div>
-        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+        <div className={`mx-auto mt-16 max-w-7xl ${layouts.asymmetric.features}`}>
           {services.map((service, index) => (
             <div
               key={service.title}
               className={`${animations.slideInUp}`}
               style={{
-                animationDelay: `${index * 0.1}s`,
+                animationDelay: `${index * 0.15}s`,
                 animationFillMode: 'both'
               }}
             >

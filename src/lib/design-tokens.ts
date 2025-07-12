@@ -90,7 +90,13 @@ export const animations = {
   floatingElements: "animate-[float_6s_ease-in-out_infinite] motion-reduce:animate-none",
   pulsingGlow: "animate-[pulse_4s_ease-in-out_infinite] motion-reduce:animate-none",
   slowRotate: "animate-[spin_20s_linear_infinite] motion-reduce:animate-none",
-  gentleBounce: "animate-[bounce_3s_ease-in-out_infinite] motion-reduce:animate-none"
+  gentleBounce: "animate-[bounce_3s_ease-in-out_infinite] motion-reduce:animate-none",
+  // Advanced micro-interactions
+  magneticPull: "hover:scale-105 hover:-translate-y-1 hover:rotate-1 transition-all duration-300 ease-out motion-reduce:hover:scale-100 motion-reduce:hover:translate-y-0 motion-reduce:hover:rotate-0",
+  breathingGlow: "hover:shadow-2xl hover:shadow-secondary/20 animate-[pulse_2s_ease-in-out_infinite] hover:animate-none transition-all duration-500 motion-reduce:animate-none",
+  liquidMotion: "hover:bg-gradient-to-r hover:from-primary/10 hover:via-secondary/10 hover:to-primary/10 transition-all duration-700 ease-out",
+  parallaxHover: "hover:[transform:perspective(1000px)_rotateX(5deg)_rotateY(5deg)] transition-transform duration-300 ease-out motion-reduce:hover:transform-none",
+  textShimmer: "bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] animate-[shimmer_3s_ease-in-out_infinite] motion-reduce:animate-none"
 };
 
 // Spacing system
@@ -99,6 +105,12 @@ export const spacing = {
     sm: "py-16",
     md: "py-24 sm:py-32",
     lg: "py-24 sm:py-32 md:py-40" 
+  },
+  // Advanced layout spacing
+  asymmetric: {
+    offset: "ml-8 md:ml-16 lg:ml-24",
+    stagger: "mt-8 md:mt-16 lg:mt-24",
+    flowing: "mb-12 md:mb-20 lg:mb-32"
   }
 };
 
@@ -138,5 +150,28 @@ export const typography = {
     button: "min-h-[44px] min-w-[44px]",
     link: "min-h-[44px] flex items-center",
     input: "min-h-[44px]"
+  }
+};
+
+// Advanced layout systems
+export const layouts = {
+  // Asymmetrical grids
+  asymmetric: {
+    hero: "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center",
+    features: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 [&>*:nth-child(2)]:md:mt-12 [&>*:nth-child(4)]:lg:mt-16",
+    testimonials: "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start [&>*:nth-child(2)]:lg:mt-12",
+    split: "grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center"
+  },
+  // Flowing sections
+  flowing: {
+    wave: "relative before:absolute before:top-0 before:left-0 before:right-0 before:h-24 before:bg-gradient-to-b before:from-transparent before:to-current before:opacity-10",
+    curved: "relative overflow-hidden before:absolute before:top-0 before:left-0 before:right-0 before:h-32 before:bg-gradient-to-br before:from-primary/5 before:to-secondary/5 before:rounded-b-[50%]",
+    diagonal: "relative before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-primary/5 before:to-secondary/10 before:transform before:skew-y-1"
+  },
+  // Content rhythm
+  rhythm: {
+    alternating: "[&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-gray-50",
+    staggered: "[&>*:nth-child(2n)]:lg:mt-16 [&>*:nth-child(3n)]:lg:mt-8",
+    floating: "[&>*:nth-child(odd)]:lg:-translate-y-8 [&>*:nth-child(even)]:lg:translate-y-8"
   }
 };
