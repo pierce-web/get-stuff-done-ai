@@ -13,7 +13,9 @@ export const MobileNavigation = () => {
     <Sheet>
       <SheetTrigger asChild>
         <Button
-          className="hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+          variant="ghost"
+          size="icon"
+          className="md:hidden text-foreground"
           aria-label="Open navigation menu"
         >
           <Menu className="h-6 w-6" aria-hidden="true" />
