@@ -160,7 +160,8 @@ const FloatingNavigation = () => {
             className="rounded-full bg-secondary hover:bg-secondary/80 shadow-lg h-12 w-12"
             aria-label="Open table of contents"
           >
-            <Menu className="h-5 w-5 text-white" />
+            <Menu className="h-5 w-5 text-white" aria-hidden="true" />
+            <span className="sr-only">Open table of contents</span>
           </Button>
         </SheetTrigger>
         <SheetContent className="w-[320px] sm:w-[380px]">

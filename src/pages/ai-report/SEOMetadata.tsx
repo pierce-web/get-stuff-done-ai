@@ -55,8 +55,8 @@ const SEOMetadata: React.FC = () => {
 
   return (
     <SEOHead
-      title="2025 AI Tooling & Budget Report | Ultimate Implementation Guide for Businesses"
-      description="Comprehensive guide to AI tool budgeting for 2025. Learn how to equip your team with the right AI tools, optimize costs from $50-2,500/month per employee, and increase productivity by 20-40% for businesses of all sizes."
+      title="2025 AI Tooling & Budget Report | GSD at Work - Get Stuff Done with AI"
+      description="GSD at Work's 2025 AI Tooling & Budget Report: Comprehensive guide to AI tool budgeting for 2025. Learn how to equip your team with the right AI tools, optimize costs from $50-2,500/month per employee, and increase productivity by 20-40% for businesses of all sizes."
       canonicalUrl="https://gsdat.work/ai-tooling-report"
       ogType="article"
       ogImage="https://gsdat.work/lovable-uploads/621fea6b-e235-4db5-99a0-4570284b0f48.png"

@@ -23,13 +23,13 @@ const AIActionWorkshop = () => {
   // Extract pricing tiers for better display
   const pricingTiers = workshop.pricingTiers || [];
 
-  // Generate structured data with enhanced descriptions from our Helmet implementation
+  // Generate structured data with consistent branding
   const serviceStructuredData = generateServicePageStructuredData(
     workshop.title,
     workshop.description,
     "https://gsdat.work/ai-action-workshop",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-    "Get Stuff Done AI",
+    "GSD at Work",
     "$4,999"
   );
 
@@ -68,8 +68,8 @@ const AIActionWorkshop = () => {
   return (
     <div className="min-h-screen bg-background">
       <KeywordOptimizedSEO 
-        title="AI Action Workshop | $4,999 | Quick Win in a Box"
-        content="Quick win in a box: Break your four-minute mile with AI. $4,999 for founder-led workshops, with associate-led options available at competitive rates. Transform tasks that take days into victories achieved in hours while learning to replicate success across your organization."
+        title="AI Action Workshop | GSD at Work - Get Stuff Done with AI"
+        content="GSD at Work's AI Action Workshop ($4,999): Break your four-minute mile with AI. Transform tasks that take days into victories achieved in hours. Founder-led workshops with hands-on implementation and immediate results."
         canonicalUrl="https://gsdat.work/ai-action-workshop"
         pageType="service"
         structuredData={[serviceStructuredData, faqStructuredData]}

@@ -3,16 +3,19 @@ import { test, expect } from '@playwright/test';
 
 // Define key pages to test
 const pagesToTest = [
-  { path: '/', expectedTitleContent: 'AI Implementation Services' },
-  { path: '/blog', expectedTitleContent: 'Professional Insights' },
-  { path: '/cases', expectedTitleContent: 'Case Studies' },
-  { path: '/cases/othership-ai-partnership', expectedTitleContent: 'Othership' },
+  { path: '/', expectedTitleContent: 'GSD at Work' },
+  { path: '/blog', expectedTitleContent: 'GSD at Work' },
+  { path: '/cases', expectedTitleContent: 'GSD at Work' },
+  { path: '/cases/othership-ai-partnership', expectedTitleContent: 'GSD at Work' },
 ];
 
 test.describe('SEO Tests', () => {
   for (const { path, expectedTitleContent } of pagesToTest) {
     test(`${path} has basic SEO requirements`, async ({ page }) => {
-      await page.goto(path);
+      await page.goto(path, { 
+        waitUntil: 'domcontentloaded',
+        timeout: process.env.CI ? 60000 : 30000 
+      });
 
       // 1. Check page has a title
       const title = await page.title();

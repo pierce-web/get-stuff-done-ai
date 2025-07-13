@@ -47,8 +47,8 @@ const Cases = () => {
   return (
     <Layout>
       <SEOHead 
-        title="Case Studies | AI Implementation Success Stories"
-        description="Real-world AI implementation case studies and success stories. Learn how businesses transform with practical AI solutions from GSD at Work. Detailed case studies coming soon."
+        title="Case Studies | GSD at Work - Get Stuff Done with AI"
+        description="GSD at Work's AI implementation case studies and success stories. Learn how businesses transform with practical AI solutions from GSD at Work. Detailed case studies coming soon."
         canonicalUrl="https://gsdat.work/cases"
         keywords="AI case studies, AI implementation success stories, business transformation AI, AI consulting results, practical AI solutions"
         structuredData={structuredData}

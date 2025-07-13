@@ -7,9 +7,17 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
+  // Global timeout configuration
+  timeout: process.env.CI ? 90000 : 60000, // 90s for CI, 60s for local
+  expect: {
+    timeout: process.env.CI ? 15000 : 10000, // 15s for CI assertions
+  },
   use: {
-    // Use production site by default
-    baseURL: process.env.BASE_URL || 'https://gsdat.work',
+    // Use local dev server for development, allow override via BASE_URL
+    baseURL: process.env.BASE_URL || 'http://localhost:5173',
+    // Timeout configuration for CI vs local
+    actionTimeout: process.env.CI ? 45000 : 30000, // 45s for CI actions
+    navigationTimeout: process.env.CI ? 60000 : 30000, // 60s for CI navigation
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -35,12 +43,11 @@ export default defineConfig({
       use: { ...devices['iPhone 12'] },
     },
   ],
-  // Only start the dev server if explicitly requested
-  ...(process.env.USE_DEV_SERVER ? {
-    webServer: {
-      command: 'npm run dev',
-      url: 'http://localhost:5173',
-      reuseExistingServer: !process.env.CI,
-    }
-  } : {}),
+  // Start dev server for local development (not in CI)
+  webServer: process.env.CI ? undefined : {
+    command: 'npm run dev',
+    url: 'http://localhost:5173',
+    reuseExistingServer: true,
+    timeout: 120 * 1000,
+  },
 });

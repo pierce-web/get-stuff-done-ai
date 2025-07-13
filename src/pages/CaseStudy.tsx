@@ -347,8 +347,8 @@ const CaseStudy = () => {
   return (
     <Layout>
       <SEOHead 
-        title={`${caseStudy.title} | AI Implementation Case Study`}
-        description={`${caseStudy.subtitle} - Learn how we helped a ${caseStudy.industry} company achieve remarkable results through strategic AI implementation.`}
+        title={`${caseStudy.title} | GSD at Work - Get Stuff Done with AI`}
+        description={`GSD at Work Case Study: ${caseStudy.subtitle} - Learn how we helped a ${caseStudy.industry} company achieve remarkable results through strategic AI implementation.`}
         canonicalUrl={`https://gsdat.work/cases/${id}`}
         ogType="article"
         keywords={`AI case study, ${caseStudy.industry} AI, AI implementation, business transformation, AI consulting, practical AI solutions`}

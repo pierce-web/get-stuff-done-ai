@@ -23,8 +23,8 @@ const Index = () => {
   return (
     <Layout>
       <KeywordOptimizedSEO 
-        title="AI Implementation Services | Expert AI Consulting & Business Automation"
-        content="Transform your business with expert AI implementation services and consulting. We help organizations accelerate AI adoption, optimize business processes, and achieve measurable results through proven automation strategies, executive productivity programs, and hands-on AI workshops. From strategy to implementation, we deliver practical AI solutions that get stuff done."
+        title="GSD at Work - AI Implementation Services & Business Automation Consulting"
+        content="GSD at Work helps organizations implement AI to get stuff done 10x faster. Expert AI consulting, hands-on workshops, and proven automation strategies that deliver measurable results. Transform your business with our practical AI implementation services."
         canonicalUrl="https://gsdat.work/"
         pageType="landing"
         structuredData={structuredData}

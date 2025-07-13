@@ -18,15 +18,15 @@ const TenXExecutive: React.FC = () => {
     "A 10-week AI-powered transformation program for executives and their teams to accelerate productivity, reclaim time, and master AI tools organization-wide.",
     "https://gsdat.work/10x-executive",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-    "Get Stuff Done AI",
+    "GSD at Work",
     "$19,999"
   );
 
   return (
     <>
       <SEOHead 
-        title="10x Effective Executive | AI Transformation for Teams"
-        description="A 10-week AI-powered transformation program for executives and their teams. 5 bi-weekly sessions to accelerate productivity and master AI tools organization-wide."
+        title="10x Effective Executive | GSD at Work - Get Stuff Done with AI"
+        description="GSD at Work's 10x Effective Executive Program: A 10-week AI-powered transformation program for executives and their teams. 5 bi-weekly sessions to accelerate productivity and master AI tools organization-wide."
         canonicalUrl="/10x-executive"
         keywords="AI executive coaching, AI team transformation, executive AI program, organizational AI adoption, AI for teams, AI implementation, team productivity AI"
         structuredData={[serviceData]}

@@ -1,9 +1,10 @@
-name: Production Deployment
+name: CI (Simple Version)
 
 on:
   push:
     branches: [ main ]
-  # Remove pull_request - now handled by pr-fast.yml
+  pull_request:
+    branches: [ main ]
 
 jobs:
   test:
@@ -30,21 +31,21 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     
-    - name: Wait for Netlify preview deployment
-      uses: jakepartusch/wait-for-netlify-action@v1.4
-      id: wait-for-netlify
-      with:
-        site_name: 'deft-florentine-69dcb4'
-        max_timeout: 600
-      env:
-        NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+    # Simple approach: Test the built application locally
+    - name: Start preview server
+      run: |
+        npm run preview &
+        sleep 5
     
-    - name: Run Playwright tests against preview
+    - name: Wait for server to be ready
+      run: npx wait-on http://localhost:4173 --timeout 30000
+    
+    - name: Run Playwright tests
       run: npm test
       env:
-        BASE_URL: ${{ steps.wait-for-netlify.outputs.url }}
+        BASE_URL: http://localhost:4173
     
-    - name: Upload Playwright report
+    - name: Upload test results
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
@@ -63,10 +64,3 @@ jobs:
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: false
-    
-    - name: Trigger Netlify deployment after tests pass
-      if: success()
-      run: |
-        echo "✅ All tests passed! Safe to deploy to production."
-        echo "Netlify will auto-deploy this commit since it was pushed to main."
-        echo "If this fails, deployment should be blocked manually in Netlify."

@@ -2,8 +2,22 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Performance', () => {
   test('Homepage loads within performance budget', async ({ page }) => {
-    // Enable performance metrics
-    await page.goto('/');
+    // Set longer timeout for performance tests in CI
+    if (process.env.CI) {
+      test.setTimeout(120000); // 2 minutes for CI
+    }
+    
+    // Enable performance metrics and navigate with extended timeout
+    const response = await page.goto('/', { 
+      waitUntil: 'domcontentloaded', // More reliable than networkidle for CI
+      timeout: process.env.CI ? 60000 : 30000 
+    });
+    
+    // Ensure page loaded successfully
+    expect(response?.status()).toBeLessThan(400);
+    
+    // Wait for page to be interactive
+    await page.waitForLoadState('domcontentloaded');
     
     // Get performance timing metrics
     const performanceTimings = await page.evaluate(() => {

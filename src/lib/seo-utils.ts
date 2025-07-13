@@ -10,7 +10,7 @@ export const generateServicePageStructuredData = (
   description: string,
   url: string,
   image: string = "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-  provider: string = "Get Stuff Done AI",
+  provider: string = "GSD at Work",
   price?: string
 ) => {
   return {
@@ -65,13 +65,20 @@ export const generateOrganizationStructuredData = () => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Get Stuff Done AI",
-    "description": "Expert AI consulting and implementation services to accelerate your business. From solopreneurs to enterprises, we help you harness AI's potential with proven strategies.",
+    "@id": "https://gsdat.work/#organization",
+    "name": "GSD at Work",
+    "alternateName": ["Get Stuff Done at Work", "GSD at Work LLC", "Get Stuff Done AI"],
+    "description": "GSD at Work provides expert AI consulting and implementation services to help organizations get stuff done 10x faster. We deliver practical AI solutions through hands-on workshops and proven automation strategies.",
     "url": "https://gsdat.work/",
+    "logo": "https://gsdat.work/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png",
     "image": "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
     "priceRange": "$$",
     "serviceType": ["AI Consulting", "AI Implementation", "Business Automation", "AI Strategy", "Productivity Improvement"],
     "areaServed": "Worldwide",
+    "sameAs": [
+      "https://www.linkedin.com/company/gsd-at-work-llc/",
+      "https://www.linkedin.com/in/christianulstrup/"
+    ],
     "founder": {
       "@type": "Person",
       "name": "Christian Ulstrup",
@@ -115,8 +122,8 @@ export const generateLocalBusinessStructuredData = () => {
     "@type": "LocalBusiness",
     "@id": "https://gsdat.work/#organization",
     "name": "GSD at Work LLC",
-    "alternateName": "Get Stuff Done AI",
-    "description": "Expert AI consulting and implementation services to accelerate your business. From solopreneurs to enterprises, we help you harness AI's potential with proven strategies.",
+    "alternateName": ["Get Stuff Done at Work", "Get Stuff Done AI", "GSD at Work"],
+    "description": "GSD at Work LLC provides expert AI consulting and implementation services to help organizations get stuff done 10x faster. We deliver practical AI solutions through hands-on workshops and proven automation strategies.",
     "url": "https://gsdat.work/",
     "telephone": "+18482610259",
     "email": "hello@gsdat.work",

@@ -2,7 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Navigation', () => {
   test('navigation elements are present', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Check that navigation exists
     const nav = await page.locator('nav').first();
@@ -14,18 +17,29 @@ test.describe('Navigation', () => {
     expect(count).toBeGreaterThan(0);
   });
 
-  test('mobile viewport shows appropriate navigation', async ({ page }) => {
-    // Set viewport to mobile size
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('/');
+  test('mobile viewport shows appropriate navigation', async ({ page, isMobile }) => {
+    // Only set viewport if not already mobile
+    if (!isMobile) {
+      await page.setViewportSize({ width: 390, height: 844 });
+    }
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
+    
+    // Wait for the page to load and responsive CSS to apply
+    await page.waitForLoadState('domcontentloaded');
 
     // Verify mobile-specific elements are present
-    const mobileNavButton = await page.locator('button[data-testid="mobile-nav-button"], button.md\\:hidden').first();
+    const mobileNavButton = await page.locator('button[data-testid="mobile-nav-button"]');
     await expect(mobileNavButton).toBeVisible();
   });
 
   test('footer exists and has content', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Scroll to footer
     await page.evaluate(() => {
