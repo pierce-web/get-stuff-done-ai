@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // Performance optimizations
-    minify: 'terser',
+    minify: 'esbuild', // Use esbuild for fast minification
     cssMinify: true,
     reportCompressedSize: false,
     chunkSizeWarningLimit: 1000,
@@ -31,10 +31,10 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           // Vendor chunk for stable libraries
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          // UI library chunk
+          // UI library chunk  
           ui: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-navigation-menu'],
-          // Analytics and tracking
-          analytics: ['@sentry/react'],
+          // Query and state management
+          query: ['@tanstack/react-query'],
         },
         // Optimize chunk file names for caching
         chunkFileNames: (chunkInfo) => {
@@ -54,14 +54,6 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash].${ext}`;
         },
-      },
-    },
-    // Terser options for better minification
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
       },
     },
   },
