@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GitHub Actions](https://github.com/culstrup/get-stuff-done-ai/workflows/CI/badge.svg)](https://github.com/culstrup/get-stuff-done-ai/actions)
 [![codecov](https://codecov.io/gh/culstrup/get-stuff-done-ai/graph/badge.svg)](https://codecov.io/gh/culstrup/get-stuff-done-ai)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/49513722-08c3-4e06-8f9d-f6f3732a3b15/deploy-status)](https://app.netlify.com/sites/deft-florentine-69dcb4/deploys)
 
 **Live Site**: https://gsdat.work
 
