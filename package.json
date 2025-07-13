@@ -27,6 +27,7 @@
     "test:perf": "playwright test performance.spec.ts",
     "test:run": "./scripts/run-local-tests.sh",
     "test:ci": "playwright test --project=chromium",
+    "test:production": "BASE_URL=https://gsdat.work playwright test --grep @smoke",
     "prepare": "husky install"
   },
   "dependencies": {
