@@ -34,15 +34,14 @@ jobs:
     - name: Run Playwright tests
       run: npm test
     
-    # Note: Add unit tests with coverage when implemented
-    # - name: Run tests with coverage
-    #   run: npm run test:coverage
+    - name: Run unit tests with coverage
+      run: npm run test:coverage
     
-    # - name: Upload coverage to Codecov
-    #   uses: codecov/codecov-action@v4
-    #   with:
-    #     token: ${{ secrets.CODECOV_TOKEN }}
-    #     files: ./coverage/lcov.info
-    #     flags: unittests
-    #     name: codecov-umbrella
-    #     fail_ci_if_error: false
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false

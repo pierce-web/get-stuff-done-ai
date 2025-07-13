@@ -50,3 +50,6 @@ coverage/
 
 # Debug files
 context/
+
+# Local Netlify folder
+.netlify
