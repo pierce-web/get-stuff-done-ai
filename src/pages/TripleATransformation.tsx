@@ -19,7 +19,7 @@ const TripleATransformation = () => {
     program.description,
     "https://gsdat.work/triple-a-transformation",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-    "Get Stuff Done AI",
+    "GSD at Work",
     program.price
   );
 
@@ -50,8 +50,8 @@ const TripleATransformation = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Triple-A Transformation Program"
-        description="A 14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption). From opportunity assessment to implementation, we deliver measurable business outcomes."
+        title="Triple-A Transformation Program | GSD at Work - Get Stuff Done with AI"
+        description="GSD at Work's Triple-A Transformation Program: A 14-week program to revolutionize your operations with AI (Triple-A = Accelerated AI Adoption). From opportunity assessment to implementation, we deliver measurable business outcomes."
         canonicalUrl="/triple-a-transformation"
         keywords="AI transformation, enterprise AI, AI adoption, organizational AI, AI implementation, business AI strategy, accelerated AI adoption"
         structuredData={[serviceStructuredData, faqStructuredData]}

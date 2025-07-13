@@ -26,7 +26,7 @@ const AIOracleSession = () => {
     "Transform your executive decision-making with AI-powered organizational insights. Turn data into strategic foresight with our C-suite intelligence system.",
     "https://gsdat.work/ai-oracle-session",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-    "Get Stuff Done AI",
+    "GSD at Work",
     "$2,499"
   );
 

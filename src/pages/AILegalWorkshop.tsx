@@ -91,8 +91,8 @@ const AILegalWorkshop: React.FC = () => {
   return (
     <>
       <SEOHead 
-        title="Watch the Replay: AI in Action for Lawyers"
-        description="Access the recording of our hands-on workshop where you'll see a real legal workflow transformed with AI. Learn practical applications for your law firm."
+        title="AI in Action for Lawyers | GSD at Work - Get Stuff Done with AI"
+        description="GSD at Work's AI Legal Workshop: Access the recording of our hands-on workshop where you'll see a real legal workflow transformed with AI. Learn practical applications for your law firm."
         canonicalUrl="https://gsdat.work/ai-legal-workshop"
         ogType="website"
         ogImage={workshopImageUrl}

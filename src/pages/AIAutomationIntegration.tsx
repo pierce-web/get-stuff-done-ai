@@ -18,7 +18,7 @@ const AIAutomationIntegration = () => {
     program.description,
     "https://gsdat.work/ai-automation-integration",
     "https://gsdat.work/lovable-uploads/34b71833-b38f-4c6a-b8d2-4d9b3dcc99f3.png",
-    "Get Stuff Done AI",
+    "GSD at Work",
     "Custom Pricing"
   );
 
@@ -89,8 +89,8 @@ const AIAutomationIntegration = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="AI Automation & Custom Integration | Scale Your AI Success"
-        description="Scale from isolated AI wins to systematic automation. Deploy voice agents, custom MCP connectors, and full-stack automation for order-of-magnitude improvements. From 0→1→10→100."
+        title="AI Automation & Custom Integration | GSD at Work - Get Stuff Done with AI"
+        description="GSD at Work's AI Automation & Custom Integration: Scale from isolated AI wins to systematic automation. Deploy voice agents, custom MCP connectors, and full-stack automation for order-of-magnitude improvements. From 0→1→10→100."
         canonicalUrl="/ai-automation-integration"
         keywords="AI automation integration, MCP connectors, voice agents, n8n, Zapier, custom software development, ChatGPT Enterprise integration, Claude Enterprise, operating leverage, EBITDA expansion, hiring automation, candidate scoring, ATS integration, CRM automation"
         structuredData={[serviceStructuredData, faqStructuredData]}

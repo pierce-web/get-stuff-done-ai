@@ -34,22 +34,22 @@ export default function BlogPage() {
   return (
     <>
       <Helmet>
-        <title>Professional Insights | AI Implementation Blog | Christian Ulstrup</title>
-        <meta name="description" content="Explore expert insights, strategies, and practical advice on AI implementation, digital transformation, and executive productivity from Christian Ulstrup." />
+        <title>Professional Insights | GSD at Work - Get Stuff Done with AI Blog</title>
+        <meta name="description" content="GSD at Work's AI Implementation Blog: Explore expert insights, strategies, and practical advice on AI implementation, digital transformation, and executive productivity from Christian Ulstrup." />
         <link rel="canonical" href="https://gsdat.work/blog" />
-        <link rel="alternate" type="application/rss+xml" title="Get Stuff Done AI - Professional Insights" href="https://gsdat.work/feed.xml" />
+        <link rel="alternate" type="application/rss+xml" title="GSD at Work - Professional Insights" href="https://gsdat.work/feed.xml" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Professional Insights | AI Implementation Blog | Christian Ulstrup" />
+        <meta property="og:title" content="Professional Insights | GSD at Work - AI Implementation Blog" />
         <meta property="og:description" content="Explore expert insights, strategies, and practical advice on AI implementation, digital transformation, and executive productivity from Christian Ulstrup." />
         <meta property="og:url" content="https://gsdat.work/blog" />
         <meta property="og:image" content="https://gsdat.work/og-image.png" />
-        <meta property="og:site_name" content="Get Stuff Done AI" />
+        <meta property="og:site_name" content="GSD at Work" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Professional Insights | AI Implementation Blog | Christian Ulstrup" />
+        <meta name="twitter:title" content="Professional Insights | GSD at Work - AI Implementation Blog" />
         <meta name="twitter:description" content="Explore expert insights, strategies, and practical advice on AI implementation, digital transformation, and executive productivity from Christian Ulstrup." />
         <meta name="twitter:image" content="https://gsdat.work/og-image.png" />
         
@@ -62,7 +62,7 @@ export default function BlogPage() {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
-        <meta name="copyright" content={`© ${new Date().getFullYear()} Get Stuff Done AI. All rights reserved.`} />
+        <meta name="copyright" content={`© ${new Date().getFullYear()} GSD at Work. All rights reserved.`} />
         <meta name="geo.region" content="US" />
         <meta name="geo.position" content="37.7749;-122.4194" />
         <meta name="ICBM" content="37.7749, -122.4194" />
@@ -94,7 +94,7 @@ export default function BlogPage() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Get Stuff Done AI",
+              "name": "GSD at Work",
               "logo": {
                 "@type": "ImageObject",
                 "url": "https://gsdat.work/lovable-uploads/26896559-83b7-4f50-b009-c8d2378a3bb9.png",
