@@ -31,10 +31,24 @@ jobs:
     
     - name: Fast smoke tests
       run: |
-        # Run key tests on localhost with Chromium only
-        npm run dev & 
-        sleep 10
+        # Start dev server and wait for it to be ready
+        npm run dev &
+        DEV_PID=$!
+        
+        # Wait for dev server to be available
+        echo "Waiting for dev server to start..."
+        for i in {1..30}; do
+          if curl -f http://localhost:5173 >/dev/null 2>&1; then
+            echo "Dev server is ready!"
+            break
+          fi
+          sleep 2
+        done
+        
+        # Run tests
         npx playwright test tests/smoke.spec.ts tests/homepage.spec.ts --project=chromium
-        pkill -f "npm run dev" || true
+        
+        # Clean up
+        kill $DEV_PID 2>/dev/null || true
       env:
         BASE_URL: http://localhost:5173
