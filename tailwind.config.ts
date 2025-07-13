@@ -3,11 +3,36 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+  content: {
+    files: [
+      "./pages/**/*.{ts,tsx}",
+      "./components/**/*.{ts,tsx}",
+      "./app/**/*.{ts,tsx}",
+      "./src/**/*.{ts,tsx}",
+      "./index.html",
+    ],
+    extract: {
+      // Custom extractor for better CSS purging
+      tsx: (content) => {
+        // Extract Tailwind classes more accurately
+        return content.match(/[\w-/:]+(?<!:)/g) || [];
+      },
+    },
+  },
+  // More aggressive purging in production
+  safelist: [
+    // Keep essential classes that might be dynamically generated
+    'animate-fade-in',
+    'animate-slide-in-left', 
+    'animate-slide-in-right',
+    'animate-slide-in-up',
+    'animate-scale-in',
+    'animate-bounce-in',
+    // Keep responsive variants for key components
+    'md:hidden',
+    'md:flex',
+    'lg:grid-cols-3',
+    'lg:grid-cols-2',
   ],
   prefix: "",
   theme: {
@@ -91,4 +116,74 @@ export default {
     },
   },
   plugins: [import("tailwindcss-animate")],
+  // Optimize for production builds
+  corePlugins: {
+    // Disable unused core plugins to reduce bundle size
+    preflight: true,
+    container: true,
+    accessibility: true,
+    pointerEvents: true,
+    visibility: true,
+    position: true,
+    inset: true,
+    isolation: false, // Disable if not used
+    zIndex: true,
+    order: true,
+    gridColumn: true,
+    gridColumnStart: true,
+    gridColumnEnd: true,
+    gridRow: true,
+    gridRowStart: true,
+    gridRowEnd: true,
+    float: false, // Modern layout doesn't need float
+    clear: false,
+    margin: true,
+    padding: true,
+    space: true,
+    width: true,
+    minWidth: true,
+    maxWidth: true,
+    height: true,
+    minHeight: true,
+    maxHeight: true,
+    fontSize: true,
+    fontFamily: true,
+    fontWeight: true,
+    lineHeight: true,
+    letterSpacing: true,
+    textAlign: true,
+    textColor: true,
+    textDecoration: true,
+    textDecorationColor: true,
+    textDecorationStyle: true,
+    textDecorationThickness: true,
+    textUnderlineOffset: true,
+    textTransform: true,
+    textOverflow: true,
+    textIndent: false, // Rarely used
+    verticalAlign: true,
+    whitespace: true,
+    wordBreak: true,
+    backgroundColor: true,
+    backgroundImage: true,
+    backgroundSize: true,
+    backgroundPosition: true,
+    backgroundRepeat: true,
+    backgroundAttachment: false, // Rarely used
+    borderRadius: true,
+    borderWidth: true,
+    borderColor: true,
+    borderStyle: true,
+    divideWidth: true,
+    divideColor: true,
+    divideStyle: true,
+    ringWidth: true,
+    ringColor: true,
+    ringOffsetWidth: true,
+    ringOffsetColor: true,
+    boxShadow: true,
+    opacity: true,
+    mixBlendMode: false, // Advanced feature, disable if unused
+    backgroundBlendMode: false,
+  },
 } satisfies Config;

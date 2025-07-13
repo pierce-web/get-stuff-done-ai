@@ -19,4 +19,54 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Performance optimizations
+    minify: 'terser',
+    cssMinify: true,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        // Manual chunk splitting for better caching
+        manualChunks: {
+          // Vendor chunk for stable libraries
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          // UI library chunk
+          ui: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-navigation-menu'],
+          // Analytics and tracking
+          analytics: ['@sentry/react'],
+        },
+        // Optimize chunk file names for caching
+        chunkFileNames: (chunkInfo) => {
+          const facadeModuleId = chunkInfo.facadeModuleId
+            ? chunkInfo.facadeModuleId.split('/').pop()?.replace('.tsx', '').replace('.ts', '')
+            : 'chunk';
+          return `assets/[name]-[hash].js`;
+        },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') ?? [];
+          const ext = info[info.length - 1];
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name ?? '')) {
+            return `assets/images/[name]-[hash].${ext}`;
+          }
+          if (/\.(css)$/i.test(assetInfo.name ?? '')) {
+            return `assets/css/[name]-[hash].${ext}`;
+          }
+          return `assets/[name]-[hash].${ext}`;
+        },
+      },
+    },
+    // Terser options for better minification
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+      },
+    },
+  },
+  // CSS optimization
+  css: {
+    devSourcemap: mode === 'development',
+  },
 }));
