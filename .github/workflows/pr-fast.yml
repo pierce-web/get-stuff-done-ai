@@ -31,8 +31,8 @@ jobs:
     
     - name: Fast smoke tests
       run: |
-        # Start dev server and wait for it to be ready
-        npm run dev &
+        # Start dev server on specific port and wait for it to be ready
+        npm run dev -- --port 5173 &
         DEV_PID=$!
         
         # Wait for dev server to be available
