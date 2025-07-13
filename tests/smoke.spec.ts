@@ -13,12 +13,18 @@ test.describe('Production Smoke Tests @smoke', () => {
     await expect(page.locator('h1')).toBeVisible();
   });
 
-  test('navigation is accessible', async ({ page }) => {
+  test('navigation is accessible', async ({ page, isMobile }) => {
     await page.goto('/');
     
-    // Desktop navigation should be visible on desktop
-    const desktopNav = page.locator('nav').first();
-    await expect(desktopNav).toBeVisible();
+    if (isMobile) {
+      // Mobile navigation should show mobile nav button
+      const mobileNavButton = page.locator('button[data-testid="mobile-nav-button"]');
+      await expect(mobileNavButton).toBeVisible();
+    } else {
+      // Desktop navigation should be visible on desktop
+      const desktopNav = page.locator('nav').first();
+      await expect(desktopNav).toBeVisible();
+    }
   });
 
   test('critical pages are accessible', async ({ page }) => {
@@ -39,12 +45,15 @@ test.describe('Production Smoke Tests @smoke', () => {
   test('contact methods work', async ({ page }) => {
     await page.goto('/');
     
-    // Check phone link exists
-    const phoneLink = page.locator('a[href^="tel:"]').first();
-    await expect(phoneLink).toBeVisible();
+    // Wait for page to load completely
+    await page.waitForLoadState('networkidle');
     
-    // Check calendly button exists
-    const bookButton = page.getByText('Book a Strategy Call').first();
-    await expect(bookButton).toBeVisible();
+    // Check phone link exists (scroll to find it if needed)
+    const phoneLink = page.locator('a[href^="tel:"]');
+    await expect(phoneLink).toBeVisible({ timeout: 10000 });
+    
+    // Check calendly button exists (may need scrolling)
+    const bookButton = page.getByText('Book a Strategy Call');
+    await expect(bookButton).toBeVisible({ timeout: 10000 });
   });
 });

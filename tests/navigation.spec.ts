@@ -14,13 +14,18 @@ test.describe('Navigation', () => {
     expect(count).toBeGreaterThan(0);
   });
 
-  test('mobile viewport shows appropriate navigation', async ({ page }) => {
-    // Set viewport to mobile size
-    await page.setViewportSize({ width: 390, height: 844 });
+  test('mobile viewport shows appropriate navigation', async ({ page, isMobile }) => {
+    // Only set viewport if not already mobile
+    if (!isMobile) {
+      await page.setViewportSize({ width: 390, height: 844 });
+    }
     await page.goto('/');
+    
+    // Wait for the page to load and responsive CSS to apply
+    await page.waitForLoadState('networkidle');
 
     // Verify mobile-specific elements are present
-    const mobileNavButton = await page.locator('button[data-testid="mobile-nav-button"], button.md\\:hidden').first();
+    const mobileNavButton = await page.locator('button[data-testid="mobile-nav-button"]');
     await expect(mobileNavButton).toBeVisible();
   });
 

@@ -29,12 +29,18 @@ test.describe('Homepage', () => {
     await expect(servicesSection).toBeVisible();
   });
 
-  test('navigation menu is present', async ({ page }) => {
+  test('navigation menu is present', async ({ page, isMobile }) => {
     await page.goto('/');
 
-    // Verify navigation is visible
-    const nav = await page.locator('nav').first();
-    await expect(nav).toBeVisible();
+    if (isMobile) {
+      // On mobile, check for mobile navigation button
+      const mobileNavButton = await page.locator('button[data-testid="mobile-nav-button"]');
+      await expect(mobileNavButton).toBeVisible();
+    } else {
+      // On desktop, check for nav element
+      const nav = await page.locator('nav').first();
+      await expect(nav).toBeVisible();
+    }
   });
 
   test('has footer with contact information', async ({ page }) => {

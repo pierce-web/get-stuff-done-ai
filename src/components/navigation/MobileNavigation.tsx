@@ -17,6 +17,7 @@ export const MobileNavigation = () => {
           size="icon"
           className="md:hidden text-foreground"
           aria-label="Open navigation menu"
+          data-testid="mobile-nav-button"
         >
           <Menu className="h-6 w-6" aria-hidden="true" />
           <span className="sr-only">Open navigation menu</span>

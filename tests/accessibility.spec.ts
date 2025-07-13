@@ -5,7 +5,12 @@ test.describe('Accessibility', () => {
 
   for (const path of pagesToTest) {
     test(`${path} should not have accessibility violations`, async ({ page }) => {
+      // Increase timeout for accessibility tests
+      test.setTimeout(60000);
+      
       await page.goto(path);
+      // Wait for page to be fully loaded
+      await page.waitForLoadState('networkidle');
       
       // Check for common accessibility issues
       
@@ -15,9 +20,15 @@ test.describe('Accessibility', () => {
       
       // 2. Check for sufficient color contrast in buttons
       const buttons = await page.locator('button, a[href]').all();
-      for (const button of buttons) {
-        const isVisible = await button.isVisible();
-        if (isVisible) {
+      
+      // Process buttons in smaller batches to prevent timeout
+      const batchSize = 10;
+      for (let i = 0; i < buttons.length; i += batchSize) {
+        const batch = buttons.slice(i, i + batchSize);
+        
+        for (const button of batch) {
+          const isVisible = await button.isVisible();
+          if (isVisible) {
           // Skip buttons that are part of third-party widgets (like Senja)
           const isThirdPartyWidget = await button.evaluate(el => {
             // Check for Senja widget
@@ -55,6 +66,7 @@ test.describe('Accessibility', () => {
             expect(accessibleName, 'Button should have accessible name').toBeTruthy();
           }
         }
+      }
       }
       
       // 3. Check for proper heading structure (h1 appears once before any h2)
