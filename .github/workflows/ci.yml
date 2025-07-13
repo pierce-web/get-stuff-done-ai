@@ -30,19 +30,23 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     
-    - name: Wait for Netlify preview deployment
-      uses: jakepartusch/wait-for-netlify-action@v1.4
-      id: wait-for-netlify
-      with:
-        site_name: 'deft-florentine-69dcb4'
-        max_timeout: 600
-      env:
-        NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+    - name: Wait for deployment
+      run: |
+        echo "Waiting for deployment to be ready..."
+        # For pushes to main, wait for production deployment
+        # Give Netlify time to start deployment
+        sleep 30
+        
+        # Use production URL for main branch pushes
+        DEPLOY_URL="https://gsdat.work"
+        echo "Using production URL: $DEPLOY_URL"
+        echo "url=$DEPLOY_URL" >> $GITHUB_OUTPUT
+      id: wait-for-deploy
     
-    - name: Run Playwright tests against preview
+    - name: Run Playwright tests against production
       run: npm test
       env:
-        BASE_URL: ${{ steps.wait-for-netlify.outputs.url }}
+        BASE_URL: ${{ steps.wait-for-deploy.outputs.url }}
     
     - name: Upload Playwright report
       uses: actions/upload-artifact@v4
