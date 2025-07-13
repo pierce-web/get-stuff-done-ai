@@ -107,57 +107,90 @@ export const About = () => {
           </div>
         </div>
         
-        {/* GSD Associates Section */}
-        <div className="mt-24 pt-16 border-t border-gray-200">
-          <div className="mx-auto max-w-4xl text-center">
-            <h3 className="text-3xl font-bold text-primary mb-6">
-              Expanding Our Impact Through GSD Associates
-            </h3>
-            
-            <div className="text-left space-y-6 text-gray-600">
-              <p className="text-lg">
-                To meet the growing demand for AI transformation services, we've established the GSD Associate Program. 
-                Our associates are carefully selected professionals who share our commitment to delivering practical, 
-                results-driven AI implementations.
+        {/* GSD Associates Section - Enhanced */}
+        <div className="mt-24 pt-16">
+          <div className="mx-auto max-w-6xl">
+            <div className={`text-center mb-12 ${animations.fadeIn}`}>
+              <h3 className={`${typography.fluid.h2} text-primary mb-6`}>
+                Expanding Our Impact Through GSD Associates
+              </h3>
+              <p className={`${typography.fluid.large} text-gray-600 max-w-3xl mx-auto`}>
+                Hand-picked, certified professionals delivering the same transformative results
               </p>
-              
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
-                <h4 className="text-xl font-semibold text-blue-900 mb-4">
-                  GSD Certified Associates:
-                </h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span>Are hand-selected based on their expertise and alignment with our methodology</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span>Complete rigorous training in the GSD AI Action Workshop framework</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span>Deliver the same transformative results at a more accessible price point</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span>Operate with Christian's oversight to ensure quality and consistency</span>
-                  </li>
-                </ul>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Content */}
+              <div className={`space-y-8 ${animations.slideInLeft}`}>
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    To expand our capacity and help more organizations achieve AI transformation, we've established the GSD Associate Program. 
+                    Our associates are experienced professionals who have been hand-picked and certified to deliver the transformative results you expect from GSD.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 gap-4">
+                    {[
+                      "Hand-picked by Christian Ulstrup for their expertise and methodology alignment",
+                      "Trained extensively in the GSD AI Action Workshop framework",
+                      "Certified to deliver the same transformative results with competitive pricing", 
+                      "Backed by our satisfaction guarantee—same quality as founder-led services"
+                    ].map((item, index) => (
+                      <div key={index} className={`flex items-start gap-4 p-4 bg-white rounded-lg ${gradients.cardGlass} hover:shadow-md transition-all duration-300 ${animations.scaleIn}`} style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}>
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-secondary to-secondary/80 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white font-bold text-sm">{index + 1}</span>
+                        </div>
+                        <span className="text-gray-700 font-medium leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
               
-              <p className="text-lg font-semibold text-secondary text-center pt-4">
-                This expansion allows us to serve more organizations while maintaining our 
-                commitment to exceptional results and client satisfaction.
-              </p>
-              
-              <div className="mt-6 text-center">
-                <Button
-                  variant="outline"
-                  className={`border-2 border-secondary text-secondary hover:bg-secondary/10 ${animations.hoverLift}`}
-                  onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
-                >
-                  Learn More About Working With Associates
-                </Button>
+              {/* Right Column - Call to Action Card */}
+              <div className={`${animations.slideInRight}`}>
+                <div className={`p-8 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl border-2 border-blue-200 ${gradients.cardGlass} ${animations.breathingGlow} hover:shadow-xl transition-all duration-500`}>
+                  <div className="text-center space-y-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mx-auto">
+                      <TrendingUp className="h-8 w-8 text-white" />
+                    </div>
+                    
+                    <h4 className={`${typography.fluid.h3} text-primary font-bold`}>
+                      Ready to Scale AI Impact?
+                    </h4>
+                    
+                    <p className="text-gray-600 leading-relaxed">
+                      Choose an associate-led workshop when you want immediate scheduling flexibility 
+                      at competitive rates without compromising on quality or outcomes.
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <div className={`bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200 ${animations.pulsingGlow}`}>
+                        <div className="flex items-center justify-center gap-2">
+                          <CircuitBoard className="h-5 w-5 text-green-600" />
+                          <span className="text-green-800 font-semibold">Same Proven Process & Outcomes</span>
+                        </div>
+                      </div>
+                      
+                      <Button
+                        className={`w-full bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white font-semibold py-4 ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}
+                        onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                      >
+                        <GraduationCap className="h-5 w-5 mr-2" />
+                        Learn About Associates Program
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Bottom banner */}
+            <div className={`mt-12 text-center ${animations.fadeIn}`}>
+              <div className={`bg-gradient-to-r from-secondary/10 to-primary/10 p-6 rounded-xl border border-secondary/20 ${gradients.cardGlass}`}>
+                <p className={`${typography.fluid.large} font-semibold text-secondary`}>
+                  This expansion allows us to serve more organizations while maintaining our 
+                  unwavering commitment to exceptional results and client satisfaction.
+                </p>
               </div>
             </div>
           </div>
