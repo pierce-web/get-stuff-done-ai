@@ -1,10 +1,9 @@
-name: CI
+name: Production Deployment
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # Remove pull_request - now handled by pr-fast.yml
 
 jobs:
   test:
@@ -64,3 +63,10 @@ jobs:
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: false
+    
+    - name: Trigger Netlify deployment after tests pass
+      if: success()
+      run: |
+        echo "✅ All tests passed! Safe to deploy to production."
+        echo "Netlify will auto-deploy this commit since it was pushed to main."
+        echo "If this fails, deployment should be blocked manually in Netlify."
