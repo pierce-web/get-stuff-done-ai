@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -11,12 +11,16 @@ import {
 export const MobileNavigation = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild className="md:hidden">
-        <Button variant="ghost" size="icon">
-          <Menu className="h-6 w-6" />
+      <SheetTrigger asChild>
+        <Button
+          className="hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+          aria-label="Open navigation menu"
+        >
+          <Menu className="h-6 w-6" aria-hidden="true" />
+          <span className="sr-only">Open navigation menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[350px] bg-white p-0 flex flex-col h-full max-h-[100vh] max-h-[100dvh]">
+        <SheetContent side="left" className="w-[300px] sm:w-[350px] bg-white p-0 flex flex-col h-full max-h-[100vh] max-h-[100dvh]">
         <div className="flex flex-col h-full overflow-hidden">
           <div className="flex-shrink-0 flex flex-col items-center justify-center pt-12 pb-8">
             <img 
