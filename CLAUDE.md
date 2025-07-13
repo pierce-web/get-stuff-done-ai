@@ -50,3 +50,10 @@
 - **Spacing**: Use standard spacing values (e.g., `spacing.section.md`)
 - **Animations**: Use standard animation classes (e.g., `animations.fadeIn`, `animations.transition`)
 - **Borders**: Use standard border radii (e.g., `borderRadius.md`, `borderRadius.full`)
+
+## Open Source Guidelines
+- **License**: Apache 2.0 with GSD at Work LLC copyright
+- **Contributing**: Welcome all contributions via PRs - see CONTRIBUTING.md
+- **Bounties**: Issues labeled with 💰 are paid opportunities
+- **Security**: Never commit LinkedIn export data or sensitive information
+- **Attribution**: Maintain copyright notices and attribution requirements

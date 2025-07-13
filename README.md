@@ -1,12 +1,68 @@
 # Get Stuff Done AI
 
-[![codecov](https://codecov.io/gh/culstrup/get-stuff-done-ai/graph/badge.svg?token=YOUR_TOKEN)](https://codecov.io/gh/culstrup/get-stuff-done-ai)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![GitHub Actions](https://github.com/culstrup/get-stuff-done-ai/workflows/CI/badge.svg)](https://github.com/culstrup/get-stuff-done-ai/actions)
 
-**URL**: https://gsdat.work
+**Live Site**: https://gsdat.work
 
-## Project Overview
+## 🚀 About GSD at Work LLC
 
-This is the codebase for Get Stuff Done AI, a consulting business focused on AI implementation expertise.
+This is the website for **GSD at Work LLC**, a boutique consultancy that helps visionary leaders set bold goals and achieve them 10x faster with AI. 
+
+### Our Philosophy
+
+- **Results, Not Slides**: We're action-oriented, focusing on tangible outcomes rather than endless presentations
+- **Maximizing Degrees of Freedom**: We believe in flexible, adaptive approaches that preserve optionality
+- **AI-Powered Transformation**: We leverage cutting-edge AI tools to accelerate growth and innovation
+
+### Why Open Source?
+
+While we have a formal associates program, this repository is open source to:
+- Enable rapid, permissionless contributions from talented developers
+- Allow quick responses to bounties and feature requests
+- Build in public and demonstrate our commitment to transparency
+- Share our approach to building AI-focused business solutions
+
+## 🤝 Contributing
+
+We actively encourage contributions! Whether you're responding to a bounty, fixing a bug, or proposing new features, we want to make it easy for you to contribute.
+
+### Quick Start for Contributors
+
+1. **Fork & Clone**
+   ```bash
+   git clone https://github.com/[your-username]/get-stuff-done-ai.git
+   cd get-stuff-done-ai
+   npm install
+   ```
+
+2. **Enable Git Hooks** (prevents accidental commits of sensitive data)
+   ```bash
+   git config core.hooksPath .githooks
+   ```
+
+3. **Create a Feature Branch**
+   ```bash
+   git checkout -b feature/your-awesome-feature
+   ```
+
+4. **Make Your Changes & Test**
+   ```bash
+   npm run dev     # Development server
+   npm run build   # Ensure it builds
+   npm run lint    # Check code style
+   ```
+
+5. **Submit a Pull Request**
+   - Clear description of what you've done and why
+   - Reference any related issues or bounties
+   - Include screenshots for UI changes
+
+### Bounties & Paid Contributions
+
+Watch for issues labeled with 💰 `bounty` for paid contribution opportunities. We believe in compensating developers fairly for their work.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Technologies
 

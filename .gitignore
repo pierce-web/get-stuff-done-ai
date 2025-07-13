@@ -25,6 +25,18 @@ dist-ssr
 
 # LinkedIn export data (contains personal information)
 linkedin-llm-txt/
+linkedin-export*/
+*LinkedInDataExport*.zip
+*linkedin*export*/
+Messages.csv
+messages.csv
+Connections.csv
+Email Addresses.csv
+PhoneNumbers.csv
+SearchQueries.csv
+Registration.csv
+Ad_Targeting.csv
+*.csv
 
 # Playwright
 playwright-report/

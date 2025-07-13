@@ -12,7 +12,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 // Configuration
-const LINKEDIN_EXPORT_DIR = path.resolve(__dirname, '../linkedin-llm-txt/[new] Complete_LinkedInDataExport_06-07-2025.zip');
+const LINKEDIN_EXPORT_DIR = process.env.LINKEDIN_EXPORT_PATH || path.resolve(__dirname, '../linkedin-export-data');
 const OUTPUT_FILE = path.resolve(__dirname, '../src/lib/linkedin-posts-data.ts');
 const ARTICLES_OUTPUT_DIR = path.resolve(__dirname, '../src/data/linkedin-articles');
 

@@ -110,3 +110,39 @@ If you want to customize the content processing:
 - **Content Cleaning**: Adjust the cleaning functions if you notice formatting issues
 
 For more complex changes, consult the detailed comments in the `process-linkedin.cjs` file.
+
+## 🔒 Security Best Practices
+
+**IMPORTANT**: LinkedIn exports contain sensitive personal data. Follow these security practices:
+
+### Never Commit LinkedIn Export Data
+
+1. **Store exports outside the repository**: Keep your LinkedIn export files in a separate directory outside the project
+2. **Use environment variables**: Set `LINKEDIN_EXPORT_PATH` to point to your export location:
+   ```bash
+   export LINKEDIN_EXPORT_PATH=/path/to/your/linkedin/export
+   npm run process-linkedin
+   ```
+
+### What's Safe vs. Sensitive
+
+**Safe to commit:**
+- Processed blog content in `src/lib/linkedin-posts-data.ts`
+- Article HTML files in `src/data/linkedin-articles/`
+- These contain only your public posts and articles
+
+**NEVER commit:**
+- The LinkedIn export ZIP file
+- CSV files (especially `messages.csv`, `Connections.csv`, `Email Addresses.csv`)
+- Any folder named `linkedin-llm-txt/` or similar
+
+### Enable Git Hooks (Recommended)
+
+To prevent accidental commits of sensitive data:
+
+```bash
+# Enable the pre-commit hook
+git config core.hooksPath .githooks
+```
+
+This will check for sensitive files before each commit and warn you if any are detected.
