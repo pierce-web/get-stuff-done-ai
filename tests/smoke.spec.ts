@@ -9,7 +9,7 @@ test.describe('Production Smoke Tests @smoke', () => {
     expect(response?.status()).toBeLessThan(400);
     
     // Check critical elements exist
-    await expect(page).toHaveTitle(/AI Implementation Services|Get Stuff Done/);
+    await expect(page).toHaveTitle(/GSD at Work/);
     await expect(page.locator('h1')).toBeVisible();
   });
 

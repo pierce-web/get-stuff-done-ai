@@ -5,7 +5,7 @@ test.describe('Homepage', () => {
     await page.goto('/');
 
     // Check page title
-    await expect(page).toHaveTitle(/AI Implementation Services/);
+    await expect(page).toHaveTitle(/GSD at Work/);
 
     // Check meta description exists
     const metaDescription = await page.locator('meta[name="description"]').getAttribute('content');
