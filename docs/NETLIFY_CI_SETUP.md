@@ -8,8 +8,8 @@ To enable automated testing against Netlify preview deployments, you need to:
 
 1. Go to your Netlify dashboard
 2. Click on your site
-3. Go to "Site configuration" → "General"
-4. Find "Site name" (e.g., `get-stuff-done-ai`)
+3. Go to "Site configuration" → "General" → "Project details"
+4. Find "Project name" (e.g., `deft-florentine-69dcb4`)
 
 ### 2. Create a Netlify Personal Access Token
 
