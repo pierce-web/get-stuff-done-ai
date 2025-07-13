@@ -45,8 +45,8 @@ jobs:
           sleep 2
         done
         
-        # Run tests
-        npx playwright test tests/smoke.spec.ts tests/homepage.spec.ts --project=chromium
+        # Run key tests that would catch deployment-breaking issues
+        npx playwright test tests/smoke.spec.ts tests/homepage.spec.ts tests/navigation.spec.ts --project=chromium
         
         # Clean up
         kill $DEV_PID 2>/dev/null || true
