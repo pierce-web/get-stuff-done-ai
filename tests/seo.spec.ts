@@ -3,10 +3,10 @@ import { test, expect } from '@playwright/test';
 
 // Define key pages to test
 const pagesToTest = [
-  { path: '/', expectedTitleContent: 'AI Implementation Services' },
-  { path: '/blog', expectedTitleContent: 'Professional Insights' },
-  { path: '/cases', expectedTitleContent: 'Case Studies' },
-  { path: '/cases/othership-ai-partnership', expectedTitleContent: 'Othership' },
+  { path: '/', expectedTitleContent: 'GSD at Work' },
+  { path: '/blog', expectedTitleContent: 'GSD at Work' },
+  { path: '/cases', expectedTitleContent: 'GSD at Work' },
+  { path: '/cases/othership-ai-partnership', expectedTitleContent: 'GSD at Work' },
 ];
 
 test.describe('SEO Tests', () => {

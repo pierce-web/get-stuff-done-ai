@@ -60,12 +60,12 @@ test.describe('Production Smoke Tests @smoke', () => {
     // Wait for page to load completely with CI-specific timeout
     await page.waitForLoadState('domcontentloaded');
     
-    // Check phone link exists (scroll to find it if needed)
-    const phoneLink = page.locator('a[href^="tel:"]');
+    // Check phone link exists (use first() to handle multiple phone links)
+    const phoneLink = page.locator('a[href^="tel:"]').first();
     await expect(phoneLink).toBeVisible({ timeout: process.env.CI ? 20000 : 10000 });
     
     // Check calendly button exists (may need scrolling)
-    const bookButton = page.getByText('Book a Strategy Call');
+    const bookButton = page.getByText('Book a Strategy Call').first();
     await expect(bookButton).toBeVisible({ timeout: process.env.CI ? 20000 : 10000 });
   });
 });
