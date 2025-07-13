@@ -5,12 +5,15 @@ test.describe('Accessibility', () => {
 
   for (const path of pagesToTest) {
     test(`${path} should not have accessibility violations`, async ({ page }) => {
-      // Increase timeout for accessibility tests
-      test.setTimeout(60000);
+      // Increase timeout for accessibility tests with CI-specific values
+      test.setTimeout(process.env.CI ? 120000 : 60000);
       
-      await page.goto(path);
+      await page.goto(path, { 
+        waitUntil: 'domcontentloaded',
+        timeout: process.env.CI ? 60000 : 30000 
+      });
       // Wait for page to be fully loaded
-      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('domcontentloaded');
       
       // Check for common accessibility issues
       

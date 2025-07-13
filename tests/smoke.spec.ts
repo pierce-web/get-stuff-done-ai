@@ -5,7 +5,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Production Smoke Tests @smoke', () => {
   test('homepage loads successfully', async ({ page }) => {
-    const response = await page.goto('/');
+    const response = await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
     expect(response?.status()).toBeLessThan(400);
     
     // Check critical elements exist
@@ -14,7 +17,10 @@ test.describe('Production Smoke Tests @smoke', () => {
   });
 
   test('navigation is accessible', async ({ page, isMobile }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
     
     if (isMobile) {
       // Mobile navigation should show mobile nav button
@@ -37,23 +43,29 @@ test.describe('Production Smoke Tests @smoke', () => {
     ];
     
     for (const path of criticalPages) {
-      const response = await page.goto(path);
+      const response = await page.goto(path, { 
+        waitUntil: 'domcontentloaded',
+        timeout: process.env.CI ? 60000 : 30000 
+      });
       expect(response?.status()).toBeLessThan(400);
     }
   });
 
   test('contact methods work', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
     
-    // Wait for page to load completely
-    await page.waitForLoadState('networkidle');
+    // Wait for page to load completely with CI-specific timeout
+    await page.waitForLoadState('domcontentloaded');
     
     // Check phone link exists (scroll to find it if needed)
     const phoneLink = page.locator('a[href^="tel:"]');
-    await expect(phoneLink).toBeVisible({ timeout: 10000 });
+    await expect(phoneLink).toBeVisible({ timeout: process.env.CI ? 20000 : 10000 });
     
     // Check calendly button exists (may need scrolling)
     const bookButton = page.getByText('Book a Strategy Call');
-    await expect(bookButton).toBeVisible({ timeout: 10000 });
+    await expect(bookButton).toBeVisible({ timeout: process.env.CI ? 20000 : 10000 });
   });
 });

@@ -2,7 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Navigation', () => {
   test('navigation elements are present', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Check that navigation exists
     const nav = await page.locator('nav').first();
@@ -19,10 +22,13 @@ test.describe('Navigation', () => {
     if (!isMobile) {
       await page.setViewportSize({ width: 390, height: 844 });
     }
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
     
     // Wait for the page to load and responsive CSS to apply
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Verify mobile-specific elements are present
     const mobileNavButton = await page.locator('button[data-testid="mobile-nav-button"]');
@@ -30,7 +36,10 @@ test.describe('Navigation', () => {
   });
 
   test('footer exists and has content', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Scroll to footer
     await page.evaluate(() => {

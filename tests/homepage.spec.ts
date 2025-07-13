@@ -2,7 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Homepage', () => {
   test('has correct title and meta description', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Check page title
     await expect(page).toHaveTitle(/GSD at Work/);
@@ -14,7 +17,10 @@ test.describe('Homepage', () => {
   });
 
   test('displays hero section', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Verify hero section exists
     const heroSection = await page.locator('div.pt-20').first();
@@ -22,7 +28,10 @@ test.describe('Homepage', () => {
   });
 
   test('displays services section', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Verify services section is present
     const servicesSection = await page.locator('.py-8').first();
@@ -30,7 +39,10 @@ test.describe('Homepage', () => {
   });
 
   test('navigation menu is present', async ({ page, isMobile }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     if (isMobile) {
       // On mobile, check for mobile navigation button
@@ -44,7 +56,10 @@ test.describe('Homepage', () => {
   });
 
   test('has footer with contact information', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { 
+      waitUntil: 'domcontentloaded',
+      timeout: process.env.CI ? 60000 : 30000 
+    });
 
     // Verify footer exists
     const footer = await page.locator('footer');

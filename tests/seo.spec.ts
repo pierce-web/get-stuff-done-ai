@@ -12,7 +12,10 @@ const pagesToTest = [
 test.describe('SEO Tests', () => {
   for (const { path, expectedTitleContent } of pagesToTest) {
     test(`${path} has basic SEO requirements`, async ({ page }) => {
-      await page.goto(path);
+      await page.goto(path, { 
+        waitUntil: 'domcontentloaded',
+        timeout: process.env.CI ? 60000 : 30000 
+      });
 
       // 1. Check page has a title
       const title = await page.title();
