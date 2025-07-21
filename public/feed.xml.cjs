@@ -41,31 +41,17 @@ const extractPostsFromFile = (filePath) => {
   }
 };
 
-// Function to clean HTML content for RSS using ultra-safe approach
+// Function to clean HTML content for RSS - simple approach
 const cleanHtmlForRss = (html) => {
   if (!html) return '';
   
-  // Step 1: Aggressively remove script/style content
-  let text = html;
+  // Simply remove all tags - no special handling
+  let text = html.replace(/<[^>]*>/g, ' ');
   
-  // Remove anything remotely resembling script/style tags
-  text = text.replace(/<\s*script[\s\S]*?script\s*>/gi, ' ');
-  text = text.replace(/<\s*script[\s\S]*$/gi, ' ');
-  text = text.replace(/^[\s\S]*script\s*>/gi, ' ');
-  text = text.replace(/<\s*style[\s\S]*?style\s*>/gi, ' ');
-  text = text.replace(/<\s*style[\s\S]*$/gi, ' ');
-  text = text.replace(/^[\s\S]*style\s*>/gi, ' ');
-  
-  // Step 2: Remove ALL HTML tags
-  text = text.replace(/<[^>]*>/g, ' ');
-  
-  // Step 3: Remove any remaining angle brackets (ultra-safe)
-  text = text.replace(/[<>]/g, '');
-  
-  // Step 4: Normalize whitespace
+  // Normalize whitespace
   text = text.replace(/\s+/g, ' ').trim();
   
-  // Step 5: Escape for XML (must escape & first)
+  // Escape for XML
   text = text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -73,7 +59,7 @@ const cleanHtmlForRss = (html) => {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
   
-  // Step 6: Remove any XML-illegal characters
+  // Remove control characters
   text = text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
   
   return text;

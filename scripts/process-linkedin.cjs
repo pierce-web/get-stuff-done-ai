@@ -33,22 +33,8 @@ function generateSlug(title) {
 function extractExcerpt(content, maxLength = 160) {
   // If content is HTML, remove tags and use the plain text content
   if (content.includes('<') && content.includes('>')) {
-    // Remove HTML tags using ultra-safe approach
-    let textContent = content;
-    
-    // Step 1: Aggressively remove script/style content
-    textContent = textContent.replace(/<\s*script[\s\S]*?script\s*>/gi, ' ');
-    textContent = textContent.replace(/<\s*script[\s\S]*$/gi, ' ');
-    textContent = textContent.replace(/^[\s\S]*script\s*>/gi, ' ');
-    textContent = textContent.replace(/<\s*style[\s\S]*?style\s*>/gi, ' ');
-    textContent = textContent.replace(/<\s*style[\s\S]*$/gi, ' ');
-    textContent = textContent.replace(/^[\s\S]*style\s*>/gi, ' ');
-    
-    // Step 2: Remove ALL HTML tags
-    textContent = textContent.replace(/<[^>]*>/g, ' ');
-    
-    // Step 3: Remove any remaining angle brackets (ultra-safe)
-    textContent = textContent.replace(/[<>]/g, '');
+    // Remove HTML tags - simple approach
+    let textContent = content.replace(/<[^>]*>/g, ' ');
     
     // Remove extra whitespace
     textContent = textContent.replace(/\s+/g, " ").trim();

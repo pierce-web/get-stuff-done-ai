@@ -2,11 +2,11 @@
  * Utility functions for safe HTML handling
  */
 
-// Import the ultra-safe text extraction
-import { safeExtractText } from './safe-text-extract';
+// Import the text-only approach
+import { htmlToText } from './text-only';
 
 // Export with the expected name
-export const extractTextFromHTML = safeExtractText;
+export const extractTextFromHTML = htmlToText;
 
 /**
  * Calculate estimated reading time from HTML content
