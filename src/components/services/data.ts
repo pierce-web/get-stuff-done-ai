@@ -3,6 +3,24 @@ import { ServiceType, PricingTier } from "./types";
 
 export const services: ServiceType[] = [
   {
+    title: "Enterprise AI Cooking Show",
+    description: "High-energy, live AI transformation demonstration that gets your team excited about what's possible with AI",
+    price: "$4,999",
+    subtext: "Premium workshop experience",
+    extraText: "Perfect for enterprises and mastermind groups. Watch real transformations happen live, participate in hands-on demonstrations, and leave with the excitement and knowledge to kickstart your AI journey.",
+    features: [
+      "Live AI demonstrations with real business scenarios",
+      "Interactive audience participation and Q&A",
+      "Executive engagement and buy-in",
+      "Pipeline generation for transformation opportunities",
+      "Actionable takeaways for immediate implementation"
+    ],
+    cta: "Learn More",
+    secondaryCta: "Book Your Show",
+    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    learnMoreLink: "/enterprise-ai-cooking-show",
+  },
+  {
     title: "AI Oracle Session",
     description: "Transform executive decision-making with AI-powered organizational insights that integrate into your leadership cadence",
     price: "$2,499 per session",

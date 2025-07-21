@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export const StructuredData: React.FC = () => {
   // The structured data has been purposely split into separate blocks for better maintainability

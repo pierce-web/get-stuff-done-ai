@@ -7,13 +7,37 @@
     <title>Get Stuff Done with AI | AI Consulting & Implementation Services</title>
     <link rel="icon" href="/lovable-uploads/27fe830f-8000-40cf-9d6d-49cfa6d1275a.png" />
     
-    <!-- Crisp Chat Widget -->
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="33e006f8-7f32-4479-9d19-b6aa413e9790";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <!-- Preconnect to third-party domains for better performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="preconnect" href="https://client.crisp.chat" crossorigin>
+    <link rel="preconnect" href="https://static.hotjar.com" crossorigin>
+    <link rel="preconnect" href="https://script.hotjar.com" crossorigin>
+    <link rel="preconnect" href="https://widget.senja.io" crossorigin>
+    <link rel="preconnect" href="https://js-na2.hs-scripts.com" crossorigin>
+    <link rel="preconnect" href="https://script.getswan.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.vector.co" crossorigin>
+    <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin>
+    
   </head>
 
   <body>
     <div id="root"></div>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Crisp Chat Widget - Loaded after page content -->
+    <script type="text/javascript">
+      // Defer Crisp chat loading until after page load
+      window.addEventListener('load', function() {
+        window.$crisp=[];
+        window.CRISP_WEBSITE_ID="33e006f8-7f32-4479-9d19-b6aa413e9790";
+        var d=document;
+        var s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      });
+    </script>
   </body>
 </html>
