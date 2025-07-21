@@ -149,7 +149,7 @@ export default function BlogPage() {
         <main className="flex-grow container mx-auto px-4 pt-28 pb-12 max-w-5xl">
           <div className="max-w-4xl mx-auto mb-12">
             <div className="flex justify-between items-center mb-6">
-              <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Professional Insights</h1>
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Professional Insights</h1>
               <a 
                 href="/feed.xml" 
                 target="_blank" 
