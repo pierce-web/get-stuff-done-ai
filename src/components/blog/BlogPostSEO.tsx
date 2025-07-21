@@ -69,16 +69,16 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
       <meta name="theme-color" content="#ffffff" />
       
       {/* JSON-LD Schema for BlogPosting - Enhanced for SEO */}
-      <script type="application/ld+json">{`
-        {
+      <script type="application/ld+json">
+        {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://gsdat.work/blog/${post.id}"
+            "@id": `https://gsdat.work/blog/${post.id}`
           },
-          "headline": "${post.title.replace(/"/g, '\\"')}",
-          "description": "${textContent.substring(0, 155).replace(/"/g, '\\"')}...",
+          "headline": post.title,
+          "description": `${textContent.substring(0, 155)}...`,
           "image": {
             "@type": "ImageObject",
             "url": "https://gsdat.work/og-image.png",
@@ -106,26 +106,26 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
             },
             "url": "https://gsdat.work"
           },
-          "datePublished": "${formattedDate}T00:00:00Z",
-          "dateModified": "${formattedDate}T00:00:00Z",
-          "wordCount": "${wordCount}",
-          "timeRequired": "PT${readingTime}M",
-          "articleBody": "${textContent.substring(0, 500).replace(/"/g, '\\"')}...",
+          "datePublished": `${formattedDate}T00:00:00Z`,
+          "dateModified": `${formattedDate}T00:00:00Z`,
+          "wordCount": String(wordCount),
+          "timeRequired": `PT${readingTime}M`,
+          "articleBody": `${textContent.substring(0, 500)}...`,
           "inLanguage": "en-US",
           "genre": "AI Implementation",
-          "keywords": "AI implementation, generative AI, business productivity, AI tools, digital transformation, ${post.title.replace(/"/g, '\\"').substring(0, 50)}",
+          "keywords": `AI implementation, generative AI, business productivity, AI tools, digital transformation, ${post.title.substring(0, 50)}`,
           "isAccessibleForFree": "True",
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".post-content p:first-of-type", "h1"]
           },
           "articleSection": "Professional Insights"
-        }
-      `}</script>
+        })}
+      </script>
       
       {/* Person Schema for Author */}
-      <script type="application/ld+json">{`
-        {
+      <script type="application/ld+json">
+        {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Christian Ulstrup",
@@ -139,8 +139,8 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
             "name": "Get Stuff Done AI",
             "url": "https://gsdat.work"
           }
-        }
-      `}</script>
+        })}
+      </script>
     </Helmet>
   );
 };

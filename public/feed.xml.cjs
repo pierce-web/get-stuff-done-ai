@@ -43,25 +43,52 @@ const extractPostsFromFile = (filePath) => {
 
 // Function to clean HTML content for RSS
 const cleanHtmlForRss = (html) => {
-  // Remove script tags and their content
-  let clean = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  if (!html) return '';
   
-  // A more drastic approach - strip all HTML tags for safety
-  // This avoids XML parsing errors from complex or malformed HTML
-  clean = clean.replace(/<\/?[^>]+(>|$)/g, "");
+  // First decode HTML entities
+  let clean = html
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
   
-  // Encode XML entities
-  clean = clean.replace(/&/g, '&amp;')
-               .replace(/</g, '&lt;')
-               .replace(/>/g, '&gt;')
-               .replace(/"/g, '&quot;')
-               .replace(/'/g, '&apos;');
+  // Remove script and style tags with their content
+  clean = clean
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
   
-  // Remove any potential XML parsing issues
-  // Remove any remaining XML-illegal characters
+  // Replace block-level tags with spaces to preserve word boundaries
+  clean = clean
+    .replace(/<\/(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
+    .replace(/<[^>]+>/g, '') // Remove remaining tags
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+  
+  // Now encode for XML
+  clean = clean
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+  
+  // Remove any XML-illegal characters
   clean = clean.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
   
   return clean;
+};
+
+// Function to escape XML entities
+const escapeXml = (text) => {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 };
 
 // Generate the RSS feed
@@ -121,7 +148,7 @@ const generateRSSFeed = () => {
 ${sortedPosts.map(post => {
   const postDate = new Date(post.date).toUTCString();
   const cleanContent = cleanHtmlForRss(post.content);
-  const cleanTitle = post.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const cleanTitle = escapeXml(post.title);
   const cleanExcerpt = cleanHtmlForRss(post.excerpt);
   
   return `

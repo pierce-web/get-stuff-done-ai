@@ -33,8 +33,25 @@ function generateSlug(title) {
 function extractExcerpt(content, maxLength = 160) {
   // If content is HTML, remove tags and use the plain text content
   if (content.includes('<') && content.includes('>')) {
-    // Remove HTML tags
-    let textContent = content.replace(/<\/?[^>]+(>|$)/g, "");
+    // Remove HTML tags more safely
+    // First decode HTML entities
+    let textContent = content
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&nbsp;/g, ' ');
+    
+    // Remove script and style tags with their content
+    textContent = textContent
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+    
+    // Replace block-level tags with spaces to preserve word boundaries
+    textContent = textContent
+      .replace(/<\/(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
+      .replace(/<[^>]+>/g, ''); // Remove remaining tags
     
     // Remove extra whitespace
     textContent = textContent.replace(/\s+/g, " ").trim();
@@ -521,14 +538,16 @@ function cleanLinkedInContent(content) {
   // Handle LinkedIn's quirky use of quotes
   let cleaned = content;
   
-  // LinkedIn often uses "" as an escape for quotes within the content
-  // Need to be careful not to remove legitimate quotation marks
+  // Process escape sequences first to avoid double unescaping
+  // Handle actual backslash escapes
+  cleaned = cleaned.replace(/\\n/g, '\n'); // Convert \n to actual newline
+  cleaned = cleaned.replace(/\\"/g, '\u0001'); // Temporarily replace \" with placeholder
+  
+  // Handle CSV-style doubled quotes ("" -> ")
   cleaned = cleaned.replace(/""/g, '"');
   
-  // Sometimes LinkedIn adds extra escape sequences we need to clean up
-  cleaned = cleaned.replace(/\\"/g, '"');
-  cleaned = cleaned.replace(/\\n/g, '\n');
-  cleaned = cleaned.replace(/\\(.)/g, '$1');
+  // Restore escaped quotes
+  cleaned = cleaned.replace(/\u0001/g, '"');
   
   // Handle common LinkedIn export patterns 
   // Posts often have a quote around the entire content due to CSV format

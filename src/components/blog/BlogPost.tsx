@@ -11,6 +11,7 @@ import { BlogPostHeader } from "./BlogPostHeader";
 import { OriginalPostLink } from "./OriginalPostLink";
 import EnhancedCTASection from "./EnhancedCTASection";
 import { RelatedPosts } from "./RelatedPosts";
+import { extractTextFromHTML, getWordCount, calculateReadingTime } from "@/lib/html-utils";
 
 interface BlogPostProps {
   post: {
@@ -32,10 +33,9 @@ interface BlogPostProps {
 
 export default function BlogPost({ post, allPosts = [] }: BlogPostProps) {
   // Calculate estimated reading time
-  const wordsPerMinute = 200;
-  const textContent = post.content.replace(/<[^>]*>/g, '');
-  const wordCount = textContent.split(/\s+/).length;
-  const readingTime = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+  const textContent = extractTextFromHTML(post.content);
+  const wordCount = getWordCount(post.content);
+  const readingTime = calculateReadingTime(post.content);
   
   // Format the date for SEO
   const formattedDate = new Date(post.date).toISOString().split('T')[0];
