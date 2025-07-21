@@ -19,7 +19,7 @@ const ReportHeader = () => {
             </Badge>
           </div>
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             The 2025 AI Tooling & Budget Report
           </h1>
           

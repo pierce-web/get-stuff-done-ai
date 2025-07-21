@@ -29,7 +29,7 @@ export const Hero = () => {
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className={`${typography.fluid.h1} text-primary`}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-primary">
             AI Implementation Services: Get Stuff Done with AI
           </h1>
           <p className="mt-3 text-lg sm:text-xl font-semibold text-secondary">
