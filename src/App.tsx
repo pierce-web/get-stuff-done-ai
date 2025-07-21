@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { HeadManager } from "./components/head/HeadManager";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -29,20 +30,24 @@ const AILegalWorkshop = lazy(() => import("./pages/AILegalWorkshop"));
 const AssociateCallConfirmed = lazy(() => import("./pages/AssociateCallConfirmed"));
 const AIOracleSession = lazy(() => import("./pages/AIOracleSession"));
 const HireScope = lazy(() => import("./pages/HireScope"));
+const Methodology = lazy(() => import("./pages/methodology"));
+const TripleAFramework = lazy(() => import("./pages/methodology/TripleAFramework"));
+const AssociateProgram = lazy(() => import("./pages/AssociateProgram"));
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <ErrorBoundary>
-        <HeadManager />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <ErrorBoundary>
+          <HeadManager />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
               {/* Critical route - no lazy loading for homepage */}
               <Route path="/" element={<Index />} />
               
@@ -51,6 +56,9 @@ const App = () => (
               <Route path="/cases/:id" element={<CaseStudy />} />
               <Route path="/ai-tooling-report" element={<AIToolingReport />} />
               <Route path="/hirescope" element={<HireScope />} />
+              <Route path="/methodology" element={<Methodology />} />
+              <Route path="/methodology/triple-a-framework" element={<TripleAFramework />} />
+              <Route path="/associate-program" element={<AssociateProgram />} />
               <Route path="/10x-executive" element={<TenXExecutive />} />
               <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
               <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
@@ -69,6 +77,7 @@ const App = () => (
       </ErrorBoundary>
     </TooltipProvider>
   </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

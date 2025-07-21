@@ -60,11 +60,17 @@ export const MobileNavigation = () => {
               <Link to="/ai-tooling-report" className="text-lg font-medium">
                 AI Tooling Report
               </Link>
+              <Link to="/methodology" className="text-lg font-medium">
+                GSD Methodologies (Open Source)
+              </Link>
               <Link to="/blog" className="text-lg font-medium">
                 Professional Insights
               </Link>
               <Link to="/hirescope" className="text-lg font-medium">
                 HireScope (Open Source)
+              </Link>
+              <Link to="/associate-program" className="text-lg font-medium">
+                Associate Program
               </Link>
             </div>
           </div>

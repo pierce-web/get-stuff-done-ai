@@ -1,5 +1,5 @@
 import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Footer } from "../../components/Footer";
 import { Separator } from "../../components/ui/separator";
 import { Navigation } from "../../components/navigation/Navigation";
