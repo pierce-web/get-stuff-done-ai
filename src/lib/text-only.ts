@@ -13,15 +13,9 @@ export function htmlToText(html: string): string {
   // Simply remove all tags - no special cases
   let text = html.replace(/<[^>]*>/g, ' ');
   
-  // Decode common entities
-  text = text
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'");
+  // Only decode nbsp to space, leave other entities as-is
+  // This avoids any double-decoding issues
+  text = text.replace(/&nbsp;/g, ' ');
   
   // Clean whitespace
   return text.replace(/\s+/g, ' ').trim();
