@@ -41,39 +41,48 @@ const extractPostsFromFile = (filePath) => {
   }
 };
 
+// Function to remove script/style tags securely
+const removeScriptAndStyleTags = (html) => {
+  let result = html;
+  let previousLength;
+  
+  // Keep removing until no more changes occur
+  do {
+    previousLength = result.length;
+    
+    // Remove script tags - handle various malformed cases
+    result = result.replace(/<script(?:\s|>)[\s\S]*?<\/script(?:\s|>)/gi, '');
+    
+    // Also remove script tags that might be broken/incomplete
+    result = result.replace(/<script[\s\S]*?$/gi, '');
+    result = result.replace(/^[\s\S]*?<\/script(?:\s|>)/gi, '');
+    
+    // Remove style tags similarly
+    result = result.replace(/<style(?:\s|>)[\s\S]*?<\/style(?:\s|>)/gi, '');
+    result = result.replace(/<style[\s\S]*?$/gi, '');
+    result = result.replace(/^[\s\S]*?<\/style(?:\s|>)/gi, '');
+    
+  } while (result.length < previousLength);
+  
+  return result;
+};
+
 // Function to clean HTML content for RSS
 const cleanHtmlForRss = (html) => {
   if (!html) return '';
   
-  let clean = html;
+  // First, remove script and style tags completely
+  let clean = removeScriptAndStyleTags(html);
   
-  // Remove script and style tags with their content using a more robust approach
-  // Repeatedly remove until no more matches to handle nested cases
-  let previousLength;
-  do {
-    previousLength = clean.length;
-    clean = clean
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '')
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
-  } while (clean.length < previousLength);
+  // Remove all HTML tags
+  clean = clean.replace(/<[^>]*>/g, ' ');
   
-  // Replace block-level tags with spaces to preserve word boundaries
+  // Normalize whitespace first
+  clean = clean.replace(/\s+/g, ' ').trim();
+  
+  // Escape for XML (must escape & first)
   clean = clean
-    .replace(/<\/?(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
-    .replace(/<[^>]+>/g, ''); // Remove remaining tags
-  
-  // Decode HTML entities (but avoid double decoding)
-  clean = clean
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&'); // Decode &amp; last
-  
-  // Now encode for XML (encode in correct order to avoid double encoding)
-  clean = clean
-    .replace(/&/g, '&amp;') // Encode & first
+    .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
@@ -81,9 +90,6 @@ const cleanHtmlForRss = (html) => {
   
   // Remove any XML-illegal characters
   clean = clean.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
-  
-  // Normalize whitespace
-  clean = clean.replace(/\s+/g, ' ').trim();
   
   return clean;
 };
