@@ -4,6 +4,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { categorizeBlogPost, extractBlogKeywords } from "@/lib/blog-seo-utils";
+import { extractTextFromHTML, calculateReadingTime } from "@/lib/html-utils";
 
 interface RelatedPost {
   id: string;
@@ -92,12 +93,6 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = ({
     });
   };
   
-  const calculateReadingTime = (content: string) => {
-    const wordsPerMinute = 200;
-    const textContent = content.replace(/<[^>]*>/g, '');
-    const wordCount = textContent.split(/\s+/).length;
-    return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
-  };
   
   return (
     <section className="mt-16 border-t pt-12" itemScope itemType="https://schema.org/ItemList">
@@ -165,7 +160,7 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = ({
                   className="text-sm text-gray-600 mb-4 line-clamp-3"
                   itemProp="description"
                 >
-                  {post.content.replace(/<[^>]*>/g, '').substring(0, 120)}...
+                  {extractTextFromHTML(post.content).substring(0, 120)}...
                 </CardDescription>
                 
                 <div className="flex items-center justify-between">

@@ -218,37 +218,37 @@ export const KeywordOptimizedSEO: React.FC<KeywordOptimizedSEOProps> = ({
       
       {/* FAQ Schema for How-to content */}
       {(title.toLowerCase().includes("how to") || content.toLowerCase().includes("how to")) && (
-        <script type="application/ld+json">{`
-          {
+        <script type="application/ld+json">
+          {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "HowTo",
-            "name": "${optimizedTitle.replace(/"/g, '\\"')}",
-            "description": "${optimizedDescription.replace(/"/g, '\\"')}",
-            "image": "${ogImage}",
+            "name": optimizedTitle,
+            "description": optimizedDescription,
+            "image": ogImage,
             "step": [
               {
                 "@type": "HowToStep",
                 "name": "Consultation",
-                "text": "Schedule a free consultation to discuss your ${keywordAnalysis.optimization.primary[0]} needs"
+                "text": `Schedule a free consultation to discuss your ${keywordAnalysis.optimization.primary[0]} needs`
               },
               {
                 "@type": "HowToStep", 
                 "name": "Strategy",
-                "text": "Develop a customized ${keywordAnalysis.optimization.primary[0]} strategy"
+                "text": `Develop a customized ${keywordAnalysis.optimization.primary[0]} strategy`
               },
               {
                 "@type": "HowToStep",
                 "name": "Implementation", 
-                "text": "Execute the ${keywordAnalysis.optimization.primary[0]} plan with expert guidance"
+                "text": `Execute the ${keywordAnalysis.optimization.primary[0]} plan with expert guidance`
               }
             ],
             "totalTime": "PT2H",
             "supply": {
               "@type": "HowToSupply",
-              "name": "${keywordAnalysis.optimization.primary[0]} expertise"
+              "name": `${keywordAnalysis.optimization.primary[0]} expertise`
             }
-          }
-        `}</script>
+          })}
+        </script>
       )}
     </Helmet>
   );

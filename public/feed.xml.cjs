@@ -41,27 +41,39 @@ const extractPostsFromFile = (filePath) => {
   }
 };
 
-// Function to clean HTML content for RSS
+// Function to clean HTML content for RSS - simple approach
 const cleanHtmlForRss = (html) => {
-  // Remove script tags and their content
-  let clean = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  if (!html) return '';
   
-  // A more drastic approach - strip all HTML tags for safety
-  // This avoids XML parsing errors from complex or malformed HTML
-  clean = clean.replace(/<\/?[^>]+(>|$)/g, "");
+  // Simply remove all tags - no special handling
+  let text = html.replace(/<[^>]*>/g, ' ');
   
-  // Encode XML entities
-  clean = clean.replace(/&/g, '&amp;')
-               .replace(/</g, '&lt;')
-               .replace(/>/g, '&gt;')
-               .replace(/"/g, '&quot;')
-               .replace(/'/g, '&apos;');
+  // Normalize whitespace
+  text = text.replace(/\s+/g, ' ').trim();
   
-  // Remove any potential XML parsing issues
-  // Remove any remaining XML-illegal characters
-  clean = clean.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
+  // Escape for XML
+  text = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
   
-  return clean;
+  // Remove control characters
+  text = text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
+  
+  return text;
+};
+
+// Function to escape XML entities
+const escapeXml = (text) => {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 };
 
 // Generate the RSS feed
@@ -121,7 +133,7 @@ const generateRSSFeed = () => {
 ${sortedPosts.map(post => {
   const postDate = new Date(post.date).toUTCString();
   const cleanContent = cleanHtmlForRss(post.content);
-  const cleanTitle = post.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const cleanTitle = escapeXml(post.title);
   const cleanExcerpt = cleanHtmlForRss(post.excerpt);
   
   return `

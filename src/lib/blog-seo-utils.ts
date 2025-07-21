@@ -184,8 +184,8 @@ export const generateEnhancedBlogStructuredData = (
       "@type": "WebPage",
       "@id": `https://gsdat.work/blog/${post.id}`
     },
-    "headline": post.title.replace(/"/g, '\\"'),
-    "description": metaDescription.replace(/"/g, '\\"'),
+    "headline": post.title,
+    "description": metaDescription,
     "image": {
       "@type": "ImageObject",
       "url": "https://gsdat.work/og-image.png",
@@ -217,7 +217,7 @@ export const generateEnhancedBlogStructuredData = (
     "dateModified": formattedDate,
     "wordCount": wordCount,
     "timeRequired": `PT${readingTime}M`,
-    "articleBody": textContent.substring(0, 500).replace(/"/g, '\\"') + "...",
+    "articleBody": textContent.substring(0, 500) + "...",
     "inLanguage": "en-US",
     "genre": categorization.category,
     "keywords": keywords.join(", "),
