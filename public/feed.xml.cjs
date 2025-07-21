@@ -41,57 +41,42 @@ const extractPostsFromFile = (filePath) => {
   }
 };
 
-// Function to remove script/style tags securely
-const removeScriptAndStyleTags = (html) => {
-  let result = html;
-  let previousLength;
-  
-  // Keep removing until no more changes occur
-  do {
-    previousLength = result.length;
-    
-    // Remove script tags - handle various malformed cases
-    result = result.replace(/<script(?:\s|>)[\s\S]*?<\/script(?:\s|>)/gi, '');
-    
-    // Also remove script tags that might be broken/incomplete
-    result = result.replace(/<script[\s\S]*?$/gi, '');
-    result = result.replace(/^[\s\S]*?<\/script(?:\s|>)/gi, '');
-    
-    // Remove style tags similarly
-    result = result.replace(/<style(?:\s|>)[\s\S]*?<\/style(?:\s|>)/gi, '');
-    result = result.replace(/<style[\s\S]*?$/gi, '');
-    result = result.replace(/^[\s\S]*?<\/style(?:\s|>)/gi, '');
-    
-  } while (result.length < previousLength);
-  
-  return result;
-};
-
-// Function to clean HTML content for RSS
+// Function to clean HTML content for RSS using ultra-safe approach
 const cleanHtmlForRss = (html) => {
   if (!html) return '';
   
-  // First, remove script and style tags completely
-  let clean = removeScriptAndStyleTags(html);
+  // Step 1: Aggressively remove script/style content
+  let text = html;
   
-  // Remove all HTML tags
-  clean = clean.replace(/<[^>]*>/g, ' ');
+  // Remove anything remotely resembling script/style tags
+  text = text.replace(/<\s*script[\s\S]*?script\s*>/gi, ' ');
+  text = text.replace(/<\s*script[\s\S]*$/gi, ' ');
+  text = text.replace(/^[\s\S]*script\s*>/gi, ' ');
+  text = text.replace(/<\s*style[\s\S]*?style\s*>/gi, ' ');
+  text = text.replace(/<\s*style[\s\S]*$/gi, ' ');
+  text = text.replace(/^[\s\S]*style\s*>/gi, ' ');
   
-  // Normalize whitespace first
-  clean = clean.replace(/\s+/g, ' ').trim();
+  // Step 2: Remove ALL HTML tags
+  text = text.replace(/<[^>]*>/g, ' ');
   
-  // Escape for XML (must escape & first)
-  clean = clean
+  // Step 3: Remove any remaining angle brackets (ultra-safe)
+  text = text.replace(/[<>]/g, '');
+  
+  // Step 4: Normalize whitespace
+  text = text.replace(/\s+/g, ' ').trim();
+  
+  // Step 5: Escape for XML (must escape & first)
+  text = text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
   
-  // Remove any XML-illegal characters
-  clean = clean.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
+  // Step 6: Remove any XML-illegal characters
+  text = text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
   
-  return clean;
+  return text;
 };
 
 // Function to escape XML entities

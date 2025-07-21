@@ -2,8 +2,11 @@
  * Utility functions for safe HTML handling
  */
 
-// Re-export from the more secure implementation
-export { extractTextFromHTML } from './sanitize-html';
+// Import the ultra-safe text extraction
+import { safeExtractText } from './safe-text-extract';
+
+// Export with the expected name
+export const extractTextFromHTML = safeExtractText;
 
 /**
  * Calculate estimated reading time from HTML content
