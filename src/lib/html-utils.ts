@@ -10,26 +10,34 @@ export const extractTextFromHTML = (html: string): string => {
   // For server-side rendering compatibility, use a regex-based approach
   // but with proper handling of edge cases
   
-  // First, decode HTML entities
-  const decodedHtml = html
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ');
+  let cleanHtml = html;
   
-  // Remove script and style content first
-  let cleanHtml = decodedHtml
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+  // Remove script and style tags with their content using a more robust approach
+  // Repeatedly remove until no more matches to handle nested cases
+  let previousLength;
+  do {
+    previousLength = cleanHtml.length;
+    cleanHtml = cleanHtml
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
+  } while (cleanHtml.length < previousLength);
   
   // Replace block-level tags with spaces to preserve word boundaries
   cleanHtml = cleanHtml
     .replace(/<\/?(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
-    .replace(/<[^>]+>/g, '') // Remove remaining tags
-    .replace(/\s+/g, ' ') // Normalize whitespace
-    .trim();
+    .replace(/<[^>]+>/g, ''); // Remove remaining tags
+  
+  // Decode HTML entities AFTER removing tags to avoid double unescaping
+  cleanHtml = cleanHtml
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&'); // Decode &amp; last to avoid double decoding
+  
+  // Normalize whitespace
+  cleanHtml = cleanHtml.replace(/\s+/g, ' ').trim();
   
   return cleanHtml;
 };

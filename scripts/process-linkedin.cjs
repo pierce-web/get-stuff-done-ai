@@ -34,24 +34,30 @@ function extractExcerpt(content, maxLength = 160) {
   // If content is HTML, remove tags and use the plain text content
   if (content.includes('<') && content.includes('>')) {
     // Remove HTML tags more safely
-    // First decode HTML entities
-    let textContent = content
-      .replace(/&amp;/g, '&')
+    let textContent = content;
+    
+    // Remove script and style tags with their content using a robust approach
+    let previousLength;
+    do {
+      previousLength = textContent.length;
+      textContent = textContent
+        .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '')
+        .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
+    } while (textContent.length < previousLength);
+    
+    // Replace block-level tags with spaces to preserve word boundaries
+    textContent = textContent
+      .replace(/<\/?(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
+      .replace(/<[^>]+>/g, ''); // Remove remaining tags
+    
+    // Decode HTML entities AFTER removing tags
+    textContent = textContent
       .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, "'")
-      .replace(/&nbsp;/g, ' ');
-    
-    // Remove script and style tags with their content
-    textContent = textContent
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
-    
-    // Replace block-level tags with spaces to preserve word boundaries
-    textContent = textContent
-      .replace(/<\/(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
-      .replace(/<[^>]+>/g, ''); // Remove remaining tags
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&'); // Decode &amp; last
     
     // Remove extra whitespace
     textContent = textContent.replace(/\s+/g, " ").trim();

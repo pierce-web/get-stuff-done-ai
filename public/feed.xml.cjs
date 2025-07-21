@@ -45,30 +45,35 @@ const extractPostsFromFile = (filePath) => {
 const cleanHtmlForRss = (html) => {
   if (!html) return '';
   
-  // First decode HTML entities
-  let clean = html
-    .replace(/&amp;/g, '&')
+  let clean = html;
+  
+  // Remove script and style tags with their content using a more robust approach
+  // Repeatedly remove until no more matches to handle nested cases
+  let previousLength;
+  do {
+    previousLength = clean.length;
+    clean = clean
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
+  } while (clean.length < previousLength);
+  
+  // Replace block-level tags with spaces to preserve word boundaries
+  clean = clean
+    .replace(/<\/?(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
+    .replace(/<[^>]+>/g, ''); // Remove remaining tags
+  
+  // Decode HTML entities (but avoid double decoding)
+  clean = clean
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ');
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&'); // Decode &amp; last
   
-  // Remove script and style tags with their content
+  // Now encode for XML (encode in correct order to avoid double encoding)
   clean = clean
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
-  
-  // Replace block-level tags with spaces to preserve word boundaries
-  clean = clean
-    .replace(/<\/(div|p|br|h[1-6]|ul|ol|li|blockquote|pre|table|tr|td|th)[^>]*>/gi, ' ')
-    .replace(/<[^>]+>/g, '') // Remove remaining tags
-    .replace(/\s+/g, ' ') // Normalize whitespace
-    .trim();
-  
-  // Now encode for XML
-  clean = clean
-    .replace(/&/g, '&amp;')
+    .replace(/&/g, '&amp;') // Encode & first
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
@@ -76,6 +81,9 @@ const cleanHtmlForRss = (html) => {
   
   // Remove any XML-illegal characters
   clean = clean.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
+  
+  // Normalize whitespace
+  clean = clean.replace(/\s+/g, ' ').trim();
   
   return clean;
 };
