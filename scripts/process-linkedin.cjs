@@ -143,11 +143,13 @@ async function processArticles() {
     articleContent = articleContent.replace(/<p[^>]*class="created"[^>]*>.*?<\/p>/gs, '');
     articleContent = articleContent.replace(/<p[^>]*class="published"[^>]*>.*?<\/p>/gs, '');
     
-    // Fix common formatting issues
+    // Fix common formatting issues - decode in safe order
+    // Decode quotes and angle brackets first (safe)
     articleContent = articleContent.replace(/&quot;/g, '"');
-    articleContent = articleContent.replace(/&amp;/g, '&');
     articleContent = articleContent.replace(/&lt;/g, '<');
     articleContent = articleContent.replace(/&gt;/g, '>');
+    // Decode &amp; last to avoid double-decoding
+    articleContent = articleContent.replace(/&amp;/g, '&');
     
     // More aggressive cleanup of the HTML
     
@@ -549,12 +551,13 @@ function cleanLinkedInContent(content) {
   // Fix nbsp characters that appear in LinkedIn exports
   cleaned = cleaned.replace(/\xa0/g, ' ');
   
-  // Sometimes LinkedIn includes HTML entities
+  // Sometimes LinkedIn includes HTML entities - decode in safe order
   cleaned = cleaned.replace(/&quot;/g, '"');
-  cleaned = cleaned.replace(/&amp;/g, '&');
   cleaned = cleaned.replace(/&lt;/g, '<');
   cleaned = cleaned.replace(/&gt;/g, '>');
   cleaned = cleaned.replace(/&nbsp;/g, ' ');
+  // Decode &amp; last to avoid double-decoding issues
+  cleaned = cleaned.replace(/&amp;/g, '&');
   
   // Normalize line endings (CRLF -> LF)
   cleaned = cleaned.replace(/\r\n/g, '\n');
