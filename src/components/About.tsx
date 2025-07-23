@@ -98,7 +98,7 @@ export const About = () => {
                 <Button
                   variant="outline"
                   className={`w-full sm:w-auto border-2 border-secondary text-secondary hover:bg-secondary/10 py-6 sm:py-2 ${animations.hoverLift} hover:border-secondary/70`}
-                  onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                  onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
                 >
                   Schedule Strategy Call
                 </Button>
@@ -173,7 +173,7 @@ export const About = () => {
                       
                       <Button
                         className={`w-full bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white font-semibold py-4 ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}
-                        onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                        onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
                       >
                         <GraduationCap className="h-5 w-5 mr-2" />
                         Learn About Associates Program

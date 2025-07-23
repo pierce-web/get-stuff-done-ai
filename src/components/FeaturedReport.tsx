@@ -102,7 +102,7 @@ export const FeaturedReport = () => {
                   <Button 
                     variant="outline" 
                     className={`w-full sm:w-auto ${buttonStyles.outline.secondary} ${shadows.buttonEffect} ${animations.hoverLift} hover:border-secondary/70 hover:bg-secondary/5`}
-                    onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
+                    onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank", "noopener,noreferrer")}
                   >
                     Schedule Your Strategy Session
                   </Button>

@@ -139,7 +139,7 @@ const AIActionWorkshop = () => {
                   <Button
                     variant="outline"
                     className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} ${buttonStyles.effects.borderGlow} font-semibold`}
-                    onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                    onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
                   >
                     Free Consultation
                     <ArrowRight className="h-4 w-4 ml-2" />
@@ -356,7 +356,11 @@ const AIActionWorkshop = () => {
                   <CardContent>
                     <Button 
                       className={`w-full ${buttonStyles.primary} ${buttonStyles.sizes.large} font-semibold ${buttonStyles.effects.liftGlow}`}
-                      onClick={() => workshop?.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                      onClick={() => {
+                        const founderTier = pricingTiers.find(tier => tier.label === 'Founder-Led Workshop');
+                        const link = founderTier?.calendlyLink || workshop?.calendlyLink;
+                        if (link) window.open(link, '_blank');
+                      }}
                     >
                       <Calendar className="h-5 w-5 mr-2" />
                       Book Workshop Now
@@ -395,7 +399,11 @@ const AIActionWorkshop = () => {
                     
                     <Button 
                       className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold ${buttonStyles.sizes.large} ${buttonStyles.effects.liftGlow}`}
-                      onClick={() => workshop?.calendlyLink && window.open(workshop.calendlyLink, '_blank')}
+                      onClick={() => {
+                        const associateTier = pricingTiers.find(tier => tier.label === 'Associate-Led Workshop');
+                        const link = associateTier?.calendlyLink || workshop?.calendlyLink;
+                        if (link) window.open(link, '_blank');
+                      }}
                     >
                       <Calendar className="h-5 w-5 mr-2" />
                       Inquire About Associates

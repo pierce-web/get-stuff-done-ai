@@ -15,7 +15,7 @@ const Conclusion = () => {
   ];
 
   const handleScheduleNow = () => {
-    window.open("https://calendly.com/gsdatwork/free-consult", "_blank");
+    window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank");
     toast({
       title: "Calendly opened",
       description: "Schedule your free AI tools strategy session now.",

@@ -60,7 +60,7 @@ export const ValueMetricsSection = () => {
         <p className="text-gray-600">
           Or{" "}
           <a 
-            href="https://calendly.com/gsdatwork/free-consult" 
+            href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" 
             target="_blank" 
             className="text-secondary hover:text-secondary/90 font-medium inline-flex items-center"
           >

@@ -88,7 +88,7 @@ const BudgetResults: React.FC<BudgetResultsProps> = ({ budget }) => {
             </div>
             <DialogFooter className="flex flex-col sm:flex-row gap-2">
               <Button
-                onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
                 className="bg-secondary hover:bg-secondary/90 gap-2 w-full text-white"
               >
                 <Calendar className="h-4 w-4" />

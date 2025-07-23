@@ -1048,8 +1048,8 @@ const TripleAFramework = () => {
                 
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
                   <p className="text-sm text-blue-900">
-                    <strong>Tools:</strong> Use <a href="https://vapi.ai" target="_blank" rel="noopener noreferrer" className="underline">VAPI</a> for voice surveys. 
-                    Retrieve transcripts with <a href="https://github.com/culstrup/vapi-tools" target="_blank" rel="noopener noreferrer" className="underline">vapi-tools</a>.
+                    <strong>Tools:</strong> Use <a href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" target="_blank" rel="noopener noreferrer" className="underline">VAPI</a> for voice surveys. 
+                    Retrieve transcripts with <a href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" target="_blank" rel="noopener noreferrer" className="underline">vapi-tools</a>.
                   </p>
                 </div>
               </CardContent>

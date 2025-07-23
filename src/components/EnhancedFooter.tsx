@@ -17,7 +17,7 @@ export const EnhancedFooter = () => {
       { name: "AI Tooling Report", href: "/ai-tooling-report", description: "2025 implementation guide" },
       { name: "Professional Insights", href: "/blog", description: "Expert AI implementation blog" },
       { name: "Case Studies", href: "/cases", description: "Real-world success stories" },
-      { name: "Free Consultation", href: "https://calendly.com/gsdatwork/free-consult", external: true, description: "Schedule your strategy session" },
+      { name: "Free Consultation", href: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", external: true, description: "Schedule your strategy session" },
     ],
     company: [
       { name: "About Christian", href: "/#about", description: "AI implementation expert" },
@@ -187,7 +187,7 @@ export const EnhancedFooter = () => {
             Schedule a free consultation to discuss your specific needs and discover how AI can accelerate your success.
           </p>
           <a
-            href="https://calendly.com/gsdatwork/free-consult"
+            href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-colors shadow-sm hover:shadow-md"
@@ -216,7 +216,7 @@ export const EnhancedFooter = () => {
             </Link>
             <span>•</span>
             <a 
-              href="https://calendly.com/gsdatwork/free-consult" 
+              href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-secondary transition-colors"

@@ -17,7 +17,7 @@ export const services: ServiceType[] = [
     ],
     cta: "Learn More",
     secondaryCta: "Book Your Show",
-    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    calendlyLink: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call",
     learnMoreLink: "/enterprise-ai-cooking-show",
   },
   {
@@ -35,15 +35,31 @@ export const services: ServiceType[] = [
     ],
     cta: "Learn More",
     secondaryCta: "Schedule Executive Briefing",
-    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    calendlyLink: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call",
     learnMoreLink: "/ai-oracle-session",
   },
   {
     title: "AI Action Workshop",
     description: "Quick win in a box: Transform what takes days or weeks into hours. Break your four-minute mile with AI and gain the know-how to replicate success across your organization",
     price: "$4,999 per session",
-    subtext: "Associate-led workshops also available - pricing varies",
+    subtext: "Choose between Founder-led or Associate-led workshops",
     extraText: "100-2000% efficiency gain for targeted tasks. Participants develop transferable SOPs, reduce cycle times, and maintain significantly higher energy levels throughout the workday.",
+    pricingTiers: [
+      {
+        label: 'Founder-Led Workshop',
+        price: '$4,999',
+        description: 'Led by Christian Ulstrup',
+        availability: 'Limited availability',
+        calendlyLink: 'https://calendly.com/gsdatwork/free-consult'
+      },
+      {
+        label: 'Associate-Led Workshop',
+        price: 'Competitive rates',
+        description: 'Led by GSD Certified Associates',
+        availability: 'More flexible scheduling',
+        calendlyLink: 'https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call'
+      }
+    ],
     features: [
       "Turn 2-day tasks into 2-hour victories with 10X transformation",
       "Learn to fish - gain skills to replicate success independently",
@@ -91,7 +107,7 @@ export const services: ServiceType[] = [
     ],
     cta: "Learn More",
     secondaryCta: "Schedule Discovery Call",
-    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    calendlyLink: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call",
     learnMoreLink: "/ai-automation-integration",
   },
   {
@@ -109,7 +125,7 @@ export const services: ServiceType[] = [
     ],
     cta: "Learn More",
     secondaryCta: "Schedule a Strategy Call",
-    calendlyLink: "https://calendly.com/gsdatwork/free-consult",
+    calendlyLink: "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call",
     learnMoreLink: "/triple-a-transformation",
   },
 ];

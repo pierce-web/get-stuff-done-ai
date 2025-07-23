@@ -239,7 +239,7 @@ export const DesktopNavigation = () => {
       
       <Button
         className={`ml-2 ${buttonStyles.primary} ${shadows.buttonEffect}`}
-        onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+        onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
       >
         Book a Strategy Call
       </Button>

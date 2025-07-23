@@ -449,7 +449,7 @@ const CaseStudy = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-secondary hover:bg-secondary/90 text-white"
-                onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer")}
+                onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank", "noopener,noreferrer")}
               >
                 Book a Strategy Call
               </Button>

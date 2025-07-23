@@ -8,7 +8,7 @@ const ReportCTA = () => {
   const { toast } = useToast();
 
   const handleScheduleCall = () => {
-    window.open("https://calendly.com/gsdatwork/free-consult", "_blank", "noopener,noreferrer");
+    window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank", "noopener,noreferrer");
     toast({
       title: "Calendly opened",
       description: "Schedule your free AI tools consultation now.",
