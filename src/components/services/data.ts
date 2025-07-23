@@ -42,7 +42,7 @@ export const services: ServiceType[] = [
     title: "AI Action Workshop",
     description: "Quick win in a box: Transform what takes days or weeks into hours. Break your four-minute mile with AI and gain the know-how to replicate success across your organization",
     price: "$4,999 per session",
-    subtext: "Choose between Founder-led or Associate-led workshops",
+    subtext: "Associate-led workshops also available - pricing varies",
     extraText: "100-2000% efficiency gain for targeted tasks. Participants develop transferable SOPs, reduce cycle times, and maintain significantly higher energy levels throughout the workday.",
     pricingTiers: [
       {
@@ -54,7 +54,7 @@ export const services: ServiceType[] = [
       },
       {
         label: 'Associate-Led Workshop',
-        price: 'Competitive rates',
+        price: 'pricing varies',
         description: 'Led by GSD Certified Associates',
         availability: 'More flexible scheduling',
         calendlyLink: 'https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call'
