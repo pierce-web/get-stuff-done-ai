@@ -50,7 +50,7 @@ export const services: ServiceType[] = [
         price: '$4,999',
         description: 'Led by Christian Ulstrup',
         availability: 'Limited availability',
-        calendlyLink: 'https://calendly.com/gsdatwork/free-consult'
+        calendlyLink: 'https://calendly.com/gsdatwork/ai-workshop'
       },
       {
         label: 'Associate-Led Workshop',
