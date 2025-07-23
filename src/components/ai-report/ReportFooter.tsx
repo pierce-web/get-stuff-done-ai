@@ -15,9 +15,9 @@ const ReportFooter = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2 text-primary">Connect with Us</h3>
           <p className="space-y-1">
-            <strong>Website:</strong> <a href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" className="text-secondary hover:underline">GSDat.work</a><br />
+            <strong>Website:</strong> <a href="https://gsdat.work" className="text-secondary hover:underline">GSDat.work</a><br />
             <strong>Email:</strong> <a href="mailto:christian@gsdat.work" className="text-secondary hover:underline">christian@gsdat.work</a><br />
-            <strong>Social:</strong> <a href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" className="text-secondary hover:underline">LinkedIn</a>
+            <strong>Social:</strong> <a href="https://www.linkedin.com/company/gsd-at-work" className="text-secondary hover:underline">LinkedIn</a>
           </p>
         </div>
       </div>
