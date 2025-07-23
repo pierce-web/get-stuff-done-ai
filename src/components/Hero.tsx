@@ -70,7 +70,7 @@ export const Hero = () => {
             <Button
               variant="outline"
               className={`${buttonStyles.outline.secondary} ${buttonStyles.sizes.large} ${typography.touchTargets.button} w-full sm:w-auto ${buttonStyles.effects.borderGlow} hover:border-secondary/70 hover:bg-secondary/5 relative`}
-              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+              onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
             >
               <span>Schedule a Strategy Call</span>
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></span>

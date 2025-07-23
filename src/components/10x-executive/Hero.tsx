@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
                 className="bg-secondary hover:bg-secondary/90 text-white shadow-md"
-                onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+                onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
               >
                 Schedule a Strategy Call
               </Button>

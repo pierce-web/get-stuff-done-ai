@@ -14,7 +14,7 @@ const CTASection: React.FC = () => {
       </p>
       <Button 
         className="bg-secondary hover:bg-secondary/90 text-white flex items-center shadow-sm hover:shadow-md transition-all duration-300"
-        onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+        onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
       >
         <CalendarDays className="mr-2 h-4 w-4" />
         Schedule Strategy Session

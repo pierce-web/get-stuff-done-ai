@@ -257,7 +257,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
           <p className="text-sm text-gray-500 mb-4">
             Not sure which program is right for you?
           </p>
-          <Link to="https://calendly.com/gsdatwork/free-consult" target="_blank" rel="noopener noreferrer">
+          <Link to="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white">
               Schedule a Free Consultation
             </Button>

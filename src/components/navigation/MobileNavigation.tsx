@@ -78,7 +78,7 @@ export const MobileNavigation = () => {
           <div className="flex-shrink-0 px-6 pb-8 pt-6 flex flex-col gap-4 border-t">
             <Button
               className="w-full bg-secondary hover:bg-secondary/90 text-white py-6"
-              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+              onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
             >
               Book a Strategy Call
             </Button>

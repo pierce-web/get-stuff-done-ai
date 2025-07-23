@@ -182,7 +182,7 @@ const Cases = () => {
             <Button 
               variant="outline" 
               className="gap-2 border-primary/20 text-primary bg-white hover:bg-primary/5"
-              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+              onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
             >
               Want to be our next case study? Book a call
               <ArrowRight className="h-4 w-4" />

@@ -335,7 +335,7 @@ const HireScope = () => {
                     <div>
                       <h4 className="font-semibold mb-2">🎯 Network Mining</h4>
                       <p className="text-gray-600 text-sm">
-                        Tools like <a href="https://happenstance.ai/invite/friend/y5ZeyS7RWfqXvukP0QbZb0ThvZn" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Happenstance</a> make it 10x easier to get referrals by proactively identifying candidates 
+                        Tools like <a href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Happenstance</a> make it 10x easier to get referrals by proactively identifying candidates 
                         your employees are connected to but may not even know about.
                       </p>
                     </div>
@@ -502,7 +502,7 @@ const HireScope = () => {
               size="lg"
               variant="secondary"
               className={`${shadows.buttonEffect} bg-white hover:bg-gray-100`}
-              onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+              onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
             >
               Book a Strategy Call
             </Button>

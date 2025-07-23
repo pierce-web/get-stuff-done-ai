@@ -15,7 +15,7 @@ import {
 const AIOracleSession = () => {
   // Calendly links
   const workshopCalendlyLink = "https://calendly.com/gsdatwork/ai-workshop"; 
-  const consultationCalendlyLink = "https://calendly.com/gsdatwork/free-consult";
+  const consultationCalendlyLink = "https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call";
 
   // Current date for dateModified schema property
   const currentDate = new Date().toISOString().split('T')[0];

@@ -183,7 +183,7 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
           </Link>
           
           <Link 
-            to="https://calendly.com/gsdatwork/free-consult" 
+            to="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block"

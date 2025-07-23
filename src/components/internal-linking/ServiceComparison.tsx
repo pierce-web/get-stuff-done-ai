@@ -246,7 +246,7 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://calendly.com/gsdatwork/free-consult"
+              href="https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call"
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-20"

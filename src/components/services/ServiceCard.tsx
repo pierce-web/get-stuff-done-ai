@@ -82,7 +82,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
         <Button 
           variant="outline"
           className={`w-full border border-primary text-primary hover:bg-primary/10 gap-2 ${typography.touchTargets.button} ${shadows.buttonEffect} hover:border-primary/70`}
-          onClick={() => window.open("https://calendly.com/gsdatwork/free-consult", "_blank")}
+          onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
         >
           <Calendar className="h-4 w-4" />
           Schedule Strategy Call
