@@ -148,7 +148,7 @@ const TripleAFramework = () => {
                 size="lg"
                 variant="outline"
                 className={`${buttonStyles.outline.primary} ${shadows.buttonEffect}`}
-                onClick={() => window.location.href = "#download"}
+                onClick={() => window.open("/downloads/triple-a-tracker-template.csv", "_blank")}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Framework
