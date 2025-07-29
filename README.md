@@ -4,6 +4,7 @@
 [![GitHub Actions](https://github.com/culstrup/get-stuff-done-ai/workflows/CI/badge.svg)](https://github.com/culstrup/get-stuff-done-ai/actions)
 [![codecov](https://codecov.io/gh/culstrup/get-stuff-done-ai/graph/badge.svg)](https://codecov.io/gh/culstrup/get-stuff-done-ai)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/49513722-08c3-4e06-8f9d-f6f3732a3b15/deploy-status)](https://app.netlify.com/sites/deft-florentine-69dcb4/deploys)
+[![Boss Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fwww.boss.dev%2Fshield%2Fgithub%2Fculstrup%2Fget-stuff-done-ai)](https://www.boss.dev/issues/repo/github/culstrup/get-stuff-done-ai)
 
 **Live Site**: https://gsdat.work
 
@@ -62,7 +63,12 @@ We actively encourage contributions! Whether you're responding to a bounty, fixi
 
 ### Bounties & Paid Contributions
 
-Watch for issues labeled with 💰 `bounty` for paid contribution opportunities. We believe in compensating developers fairly for their work.
+We use [Boss.dev](https://www.boss.dev) for bounty management. Watch for issues labeled with 💰 `bounty` for paid contribution opportunities. We believe in compensating developers fairly for their work.
+
+To claim a bounty:
+1. Sign up at [boss.dev](https://www.boss.dev) and connect your bank account
+2. Comment `/boss champion` on the issue you want to work on
+3. Submit your PR - you'll be paid automatically when the issue is closed!
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
