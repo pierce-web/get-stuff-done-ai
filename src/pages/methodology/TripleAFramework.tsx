@@ -139,7 +139,7 @@ const TripleAFramework = () => {
               <Button
                 size="lg"
                 className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
-                onClick={() => window.open("https://github.com/culstrup/get-stuff-done-ai/tree/main/methodology", "_blank")}
+                onClick={() => window.open("https://github.com/culstrup/get-stuff-done-ai", "_blank")}
               >
                 <Github className="mr-2 h-5 w-5" />
                 View on GitHub
