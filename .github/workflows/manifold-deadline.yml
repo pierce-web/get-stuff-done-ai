@@ -2,8 +2,8 @@ name: Check Manifold Market Deadline
 
 on:
   schedule:
-    # Run every hour from August 6, 2025 onwards
-    # This will ensure we catch the deadline (Aug 6, 2025 9PM ET)
+    # Run every hour
+    # Will check deadline (Aug 6, 2025 9PM ET) and resolve if needed
     - cron: '0 * * * *'
   workflow_dispatch: # Allow manual trigger for testing
 
@@ -11,7 +11,11 @@ env:
   MARKET_ID: "nQIuhZd9O8"
   TARGET_ISSUE: "59"
   # August 6, 2025 9PM ET (Unix timestamp in milliseconds)
-  DEADLINE_TIMESTAMP: "1754494440000"
+  DEADLINE_TIMESTAMP: "1754528400000"
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   check-deadline:
@@ -89,6 +93,12 @@ jobs:
             -d '{"outcome":"NO"}')
           
           echo "Market resolution response: $RESPONSE"
+          
+          # Check if resolution was successful
+          if echo "$RESPONSE" | jq -e '.error' > /dev/null; then
+            echo "Error resolving market: $(echo "$RESPONSE" | jq -r '.error')" >&2
+            exit 1
+          fi
           
           # Comment on the issue if it's still open
           ISSUE_STATE=$(gh api repos/${{ github.repository }}/issues/${{ env.TARGET_ISSUE }} --jq '.state')

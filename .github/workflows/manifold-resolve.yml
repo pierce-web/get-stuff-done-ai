@@ -10,6 +10,11 @@ env:
   MARKET_ID: "nQIuhZd9O8"
   TARGET_ISSUE: "59"
 
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
 jobs:
   check-and-resolve:
     if: |
@@ -98,6 +103,12 @@ jobs:
             -d '{"outcome":"YES"}')
           
           echo "Market resolution response: $RESPONSE"
+          
+          # Check if resolution was successful
+          if echo "$RESPONSE" | jq -e '.error' > /dev/null; then
+            echo "Error resolving market: $(echo "$RESPONSE" | jq -r '.error')" >&2
+            exit 1
+          fi
           
           # Comment on the issue about the resolution
           gh issue comment ${{ env.TARGET_ISSUE }} --body "🎉 The Manifold prediction market has been automatically resolved to **YES**! 

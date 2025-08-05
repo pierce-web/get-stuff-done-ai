@@ -82,7 +82,7 @@ You can manually trigger the deadline workflow to test:
 ## Important Notes
 
 - The market ID is hardcoded: `nQIuhZd9O8`
-- The deadline is: August 6, 2025 9PM ET (timestamp: 1754494440000)
+- The deadline is: August 6, 2025 9PM ET (timestamp: 1754528400000)
 - Both workflows check if the market is already resolved to avoid duplicate resolutions
 - The system posts comments on issue #59 when resolving the market
 
