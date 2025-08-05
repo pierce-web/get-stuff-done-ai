@@ -94,6 +94,27 @@ export const FeaturedIn = () => {
               </div>
             </div>
           </a>
+
+          <a 
+            href="https://www.youtube.com/watch?v=Huo92ninBsM" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <div className="relative">
+              <div className="w-36 h-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img 
+                  src="/gen-logo.png" 
+                  alt="Global Entrepreneurship Network Logo" 
+                  className="max-h-full w-auto" 
+                />
+              </div>
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap flex items-center text-xs text-gray-600">
+                <span>Watch presentation</span>
+                <ExternalLink className="ml-1 h-3 w-3" />
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
