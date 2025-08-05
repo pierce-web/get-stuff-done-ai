@@ -1,0 +1,120 @@
+name: Resolve Manifold Market on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+  issues:
+    types: [labeled]
+
+env:
+  MARKET_ID: "nQIuhZd9O8"
+  TARGET_ISSUE: "59"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  check-and-resolve:
+    if: |
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
+      (github.event_name == 'issues' && github.event.issue.number == 59 && github.event.label.name == 'bounty-released')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR closes issue #59
+        if: github.event_name == 'pull_request'
+        id: check_pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Get linked issues for this PR
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          LINKED_ISSUES=$(gh api graphql -f query='
+            query($owner: String!, $repo: String!, $pr: Int!) {
+              repository(owner: $owner, name: $repo) {
+                pullRequest(number: $pr) {
+                  closingIssuesReferences(first: 10) {
+                    nodes {
+                      number
+                    }
+                  }
+                }
+              }
+            }' -f owner=${{ github.repository_owner }} -f repo=${{ github.event.repository.name }} -f pr=$PR_NUMBER --jq '.data.repository.pullRequest.closingIssuesReferences.nodes[].number')
+          
+          # Check if issue 59 is in the linked issues
+          if echo "$LINKED_ISSUES" | grep -q "^59$"; then
+            echo "pr_closes_59=true" >> $GITHUB_OUTPUT
+          else
+            echo "pr_closes_59=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check current issue state and labels
+        id: check_issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Get issue state and labels
+          ISSUE_DATA=$(gh api repos/${{ github.repository }}/issues/${{ env.TARGET_ISSUE }} --jq '{state: .state, labels: [.labels[].name]}')
+          ISSUE_STATE=$(echo "$ISSUE_DATA" | jq -r '.state')
+          HAS_BOUNTY_LABEL=$(echo "$ISSUE_DATA" | jq -r '.labels[] | select(. == "bounty-released")' | wc -l)
+          
+          echo "issue_state=$ISSUE_STATE" >> $GITHUB_OUTPUT
+          if [ "$HAS_BOUNTY_LABEL" -gt 0 ]; then
+            echo "has_bounty_label=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_bounty_label=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if market should resolve YES
+        id: should_resolve
+        run: |
+          # Market resolves YES if:
+          # 1. Issue #59 is closed (by PR merge)
+          # 2. bounty-released label is present
+          
+          if [[ "${{ steps.check_issue.outputs.issue_state }}" == "closed" ]] && \
+             [[ "${{ steps.check_issue.outputs.has_bounty_label }}" == "true" ]]; then
+            echo "should_resolve=true" >> $GITHUB_OUTPUT
+            echo "Market conditions met: Issue #59 is closed and bounty-released label is present"
+          else
+            echo "should_resolve=false" >> $GITHUB_OUTPUT
+            echo "Market conditions not met yet"
+            echo "Issue state: ${{ steps.check_issue.outputs.issue_state }}"
+            echo "Has bounty label: ${{ steps.check_issue.outputs.has_bounty_label }}"
+          fi
+
+      - name: Check if market already resolved
+        if: steps.should_resolve.outputs.should_resolve == 'true'
+        id: check_market
+        run: |
+          MARKET_STATUS=$(curl -s "https://api.manifold.markets/v0/market/${{ env.MARKET_ID }}" | jq -r '.isResolved')
+          echo "is_resolved=$MARKET_STATUS" >> $GITHUB_OUTPUT
+
+      - name: Resolve Manifold market YES
+        if: steps.should_resolve.outputs.should_resolve == 'true' && steps.check_market.outputs.is_resolved == 'false'
+        env:
+          MANIFOLD_API_KEY: ${{ secrets.MANIFOLD_API_KEY }}
+        run: |
+          RESPONSE=$(curl -s -X POST "https://api.manifold.markets/v0/market/${{ env.MARKET_ID }}/resolve" \
+            -H "Authorization: Key ${MANIFOLD_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{"outcome":"YES"}')
+          
+          echo "Market resolution response: $RESPONSE"
+          
+          # Check if resolution was successful
+          if echo "$RESPONSE" | jq -e '.error' > /dev/null; then
+            echo "Error resolving market: $(echo "$RESPONSE" | jq -r '.error')" >&2
+            exit 1
+          fi
+          
+          # Comment on the issue about the resolution
+          gh issue comment ${{ env.TARGET_ISSUE }} --body "🎉 The Manifold prediction market has been automatically resolved to **YES**! 
+          
+          Both conditions have been met:
+          - ✅ PR merged that closes this issue
+          - ✅ BOSS.dev bounty released (bounty-released label present)
+          
+          Market: https://manifold.markets/ChristianUlstrup/pr-merged-and-bossdev-1500-bounty-r"

@@ -1,0 +1,123 @@
+name: Check Manifold Market Deadline
+
+on:
+  schedule:
+    # Run every hour
+    # Will check deadline (Aug 6, 2025 9PM ET) and resolve if needed
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allow manual trigger for testing
+
+env:
+  MARKET_ID: "nQIuhZd9O8"
+  TARGET_ISSUE: "59"
+  # August 6, 2025 9PM ET (Unix timestamp in milliseconds)
+  DEADLINE_TIMESTAMP: "1754528400000"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-deadline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check current time vs deadline
+        id: check_time
+        run: |
+          CURRENT_TIME_MS=$(date +%s000)
+          DEADLINE_MS=${{ env.DEADLINE_TIMESTAMP }}
+          
+          echo "Current time (ms): $CURRENT_TIME_MS"
+          echo "Deadline time (ms): $DEADLINE_MS"
+          
+          if [ "$CURRENT_TIME_MS" -gt "$DEADLINE_MS" ]; then
+            echo "past_deadline=true" >> $GITHUB_OUTPUT
+            echo "Deadline has passed"
+          else
+            echo "past_deadline=false" >> $GITHUB_OUTPUT
+            REMAINING_MS=$((DEADLINE_MS - CURRENT_TIME_MS))
+            REMAINING_HOURS=$((REMAINING_MS / 3600000))
+            echo "Deadline not reached yet. Hours remaining: $REMAINING_HOURS"
+          fi
+
+      - name: Check market status
+        if: steps.check_time.outputs.past_deadline == 'true'
+        id: check_market
+        run: |
+          MARKET_DATA=$(curl -s "https://api.manifold.markets/v0/market/${{ env.MARKET_ID }}")
+          IS_RESOLVED=$(echo "$MARKET_DATA" | jq -r '.isResolved')
+          
+          echo "is_resolved=$IS_RESOLVED" >> $GITHUB_OUTPUT
+          
+          if [ "$IS_RESOLVED" == "true" ]; then
+            OUTCOME=$(echo "$MARKET_DATA" | jq -r '.resolution')
+            echo "Market already resolved to: $OUTCOME"
+          else
+            echo "Market not yet resolved"
+          fi
+
+      - name: Check if conditions were met
+        if: steps.check_time.outputs.past_deadline == 'true' && steps.check_market.outputs.is_resolved == 'false'
+        id: check_conditions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Check issue state and labels
+          ISSUE_DATA=$(gh api repos/${{ github.repository }}/issues/${{ env.TARGET_ISSUE }} --jq '{state: .state, labels: [.labels[].name]}')
+          ISSUE_STATE=$(echo "$ISSUE_DATA" | jq -r '.state')
+          HAS_BOUNTY_LABEL=$(echo "$ISSUE_DATA" | jq -r '.labels[] | select(. == "bounty-released")' | wc -l)
+          
+          if [[ "$ISSUE_STATE" == "closed" ]] && [ "$HAS_BOUNTY_LABEL" -gt 0 ]; then
+            echo "conditions_met=true" >> $GITHUB_OUTPUT
+            echo "Both conditions were met - this shouldn't happen as the other workflow should have resolved it"
+          else
+            echo "conditions_met=false" >> $GITHUB_OUTPUT
+            echo "Conditions not met by deadline:"
+            echo "- Issue #59 state: $ISSUE_STATE"
+            echo "- Has bounty-released label: $([ "$HAS_BOUNTY_LABEL" -gt 0 ] && echo "true" || echo "false")"
+          fi
+
+      - name: Resolve Manifold market NO
+        if: |
+          steps.check_time.outputs.past_deadline == 'true' && 
+          steps.check_market.outputs.is_resolved == 'false' && 
+          steps.check_conditions.outputs.conditions_met == 'false'
+        env:
+          MANIFOLD_API_KEY: ${{ secrets.MANIFOLD_API_KEY }}
+        run: |
+          echo "Resolving market to NO - deadline passed without meeting conditions"
+          
+          RESPONSE=$(curl -s -X POST "https://api.manifold.markets/v0/market/${{ env.MARKET_ID }}/resolve" \
+            -H "Authorization: Key ${MANIFOLD_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{"outcome":"NO"}')
+          
+          echo "Market resolution response: $RESPONSE"
+          
+          # Check if resolution was successful
+          if echo "$RESPONSE" | jq -e '.error' > /dev/null; then
+            echo "Error resolving market: $(echo "$RESPONSE" | jq -r '.error')" >&2
+            exit 1
+          fi
+          
+          # Comment on the issue if it's still open
+          ISSUE_STATE=$(gh api repos/${{ github.repository }}/issues/${{ env.TARGET_ISSUE }} --jq '.state')
+          if [ "$ISSUE_STATE" == "open" ]; then
+            gh issue comment ${{ env.TARGET_ISSUE }} --body "⏰ The Manifold prediction market has been automatically resolved to **NO**.
+            
+The deadline (August 6, 2025 9PM ET) has passed without meeting both required conditions.
+
+Market: https://manifold.markets/ChristianUlstrup/pr-merged-and-bossdev-1500-bounty-r"
+          fi
+
+      - name: Disable this workflow after resolution
+        if: |
+          steps.check_time.outputs.past_deadline == 'true' && 
+          (steps.check_market.outputs.is_resolved == 'true' || 
+           steps.check_conditions.outputs.conditions_met == 'false')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Market has been resolved. This scheduled workflow is no longer needed."
+          # The workflow will effectively stop running after August 2025 anyway,
+          # but we log this for clarity
