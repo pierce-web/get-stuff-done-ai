@@ -41,7 +41,7 @@ const EnterpriseAICookingShow = () => {
     },
     {
       question: "What if our data is confidential?",
-      answer: "We use synthetic data for demonstrations, or work with anonymized datasets. All sessions follow enterprise-grade security protocols. We can sign NDAs and work within your compliance requirements."
+      answer: "We use synthetic data for demonstrations, or work with anonymized datasets. All sessions follow enterprise-grade security protocols and we can work within your compliance requirements."
     },
     {
       question: "How technical do participants need to be?",
@@ -653,7 +653,7 @@ const EnterpriseAICookingShow = () => {
                   },
                   {
                     q: "What if our data is confidential?",
-                    a: "We use synthetic data for demonstrations, or work with anonymized datasets. All sessions follow enterprise-grade security protocols. We can sign NDAs and work within your compliance requirements."
+                    a: "We use synthetic data for demonstrations, or work with anonymized datasets. All sessions follow enterprise-grade security protocols and we can work within your compliance requirements."
                   },
                   {
                     q: "How technical do participants need to be?",
