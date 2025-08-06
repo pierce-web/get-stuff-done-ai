@@ -14,7 +14,7 @@ import {
 
 const EnterpriseAICookingShow = () => {
   // Calendly links
-  const cookingShowCalendlyLink = "https://calendly.com/gsdatwork/free-consult";
+  const cookingShowCalendlyLink = "https://calendly.com/gsdatwork/cooking-show";
 
   // Current date for dateModified schema property
   const currentDate = new Date().toISOString().split('T')[0];
