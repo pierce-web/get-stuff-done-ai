@@ -77,6 +77,21 @@ const EnterpriseAICookingShow = () => {
       quote: "20-40% of top candidates AI surfaced had been previously rejected.",
       context: "Discovery during talent analysis session",
       role: "VP People Operations"
+    },
+    {
+      quote: "This is giving me goosebumps.",
+      context: "Watching AI analyze 2 years of customer feedback in minutes",
+      role: "VP Innovation"
+    },
+    {
+      quote: "Can we use this tomorrow?",
+      context: "After seeing custom AI agent built live",
+      role: "Head of Product"
+    },
+    {
+      quote: "Holy cow, that's incredible.",
+      context: "AI voice agent conducting live interview demonstration",
+      role: "Director of Talent Acquisition"
     }
   ];
 
@@ -150,7 +165,7 @@ const EnterpriseAICookingShow = () => {
               </p>
               
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                A live, interactive workshop where Fortune 500 executives watch their workflows transform before their eyes. No slides. No theory. Just your actual processes reimagined with AI—in real-time.
+                A live, interactive workshop where enterprise leaders and their teams watch their workflows transform before their eyes. Our expert AI chef uses cutting-edge tools as 'ingredients,' cooking up real solutions to your business challenges—live on screen.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -264,7 +279,7 @@ const EnterpriseAICookingShow = () => {
                 Real Transformations, Real Time
               </h2>
               <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-                Watch complex processes compress from months to minutes—live, with your actual workflows
+                These aren't projections—these are actual results from live sessions
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -303,8 +318,8 @@ const EnterpriseAICookingShow = () => {
                     1
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Pre-Session Discovery (1 Week Before)</h3>
-                    <p className="text-gray-600">We deploy an AI agent to interview your team, gathering burning questions and understanding your specific challenges. This ensures the session addresses your exact needs.</p>
+                    <h3 className="text-xl font-semibold mb-2">Pre-Session AI Discovery (1 Week Before)</h3>
+                    <p className="text-gray-600">We deploy an AI agent to interview every participant—uncovering hidden concerns, burning questions, and the challenges your team won't say in meetings. One executive said: "The AI asked questions I didn't know I needed answered."</p>
                   </div>
                 </div>
                 
@@ -313,8 +328,8 @@ const EnterpriseAICookingShow = () => {
                     2
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Opening Magic (10 Minutes)</h3>
-                    <p className="text-gray-600">We address the burning questions from your team, ensuring everyone's concerns are heard before we dive into the transformation.</p>
+                    <h3 className="text-xl font-semibold mb-2">Opening Revelations (0-10 Minutes)</h3>
+                    <p className="text-gray-600">"Here's what your team really thinks..." We start by addressing the burning questions surfaced by AI, creating immediate engagement and trust.</p>
                   </div>
                 </div>
                 
@@ -323,8 +338,8 @@ const EnterpriseAICookingShow = () => {
                     3
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Live Transformation (90 Minutes)</h3>
-                    <p className="text-gray-600">Watch as we transform your actual workflow in real-time. Your team participates, providing feedback as we build AI-powered solutions live. No slides, no theory—just your processes being revolutionized.</p>
+                    <h3 className="text-xl font-semibold mb-2">Live Analysis & Building (10-60 Minutes)</h3>
+                    <p className="text-gray-600">Your actual challenges, solved in real-time. Watch 12 weeks of market research compress to 12 minutes. See job descriptions rewritten that actually attract top talent. Every "what if" from your team becomes "let me show you."</p>
                   </div>
                 </div>
                 
@@ -333,8 +348,8 @@ const EnterpriseAICookingShow = () => {
                     4
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Interactive Creation (Throughout)</h3>
-                    <p className="text-gray-600">Your team provides real-time feedback as solutions emerge. Watch AI analyze data, create websites, generate content, and automate processes—all responding to your input.</p>
+                    <h3 className="text-xl font-semibold mb-2">"Yes, And..." Creation (60-90 Minutes)</h3>
+                    <p className="text-gray-600">Your ideas, amplified by AI. A key member of your team joins as our 'sous chef,' providing domain expertise as we build. When someone says "could we..." we immediately build it. When tools break, we teach resilience. Real work, real challenges, real solutions.</p>
                   </div>
                 </div>
                 
@@ -343,9 +358,100 @@ const EnterpriseAICookingShow = () => {
                     5
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Tangible Deliverables (Take Home)</h3>
-                    <p className="text-gray-600">Leave with working tools, automated workflows, custom AI agents, and a clear implementation roadmap. Plus recordings and 30-day support to ensure success.</p>
+                    <h3 className="text-xl font-semibold mb-2">Deploy & Deliver (90-120 Minutes)</h3>
+                    <p className="text-gray-600">Package everything for immediate use. Working tools, automated workflows, AI agents ready to deploy. One participant asked: "Can we use this tomorrow?" The answer is always yes.</p>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Synthetic Data Section - NEW */}
+        <section className="py-20 bg-gradient-to-br from-secondary/5 to-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+                The Secret Weapon: Synthetic Data
+              </h2>
+              <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Transform your actual processes without exposing a single confidential detail
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-secondary/20">
+                  <h3 className="font-semibold mb-3 text-lg">Synthetic Personas</h3>
+                  <p className="text-gray-600">We create realistic customer profiles, employee personas, and market scenarios that mirror your reality without using real data.</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-secondary/20">
+                  <h3 className="font-semibold mb-3 text-lg">Safe Experimentation</h3>
+                  <p className="text-gray-600">Test bold ideas and "what-if" scenarios without risk. Break things, learn fast, deploy confidently.</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-secondary/20">
+                  <h3 className="font-semibold mb-3 text-lg">Instant Scenarios</h3>
+                  <p className="text-gray-600">Generate 1000 customer interactions, employee profiles, or market conditions in seconds to stress-test solutions.</p>
+                </div>
+              </div>
+              
+              <div className="mt-12 bg-primary/5 rounded-xl p-8">
+                <h3 className="text-xl font-semibold mb-4 text-center">Real Example from Recent Session</h3>
+                <p className="text-gray-700 text-center max-w-3xl mx-auto">
+                  "We needed to test a new hiring process but couldn't use real candidate data. In 10 minutes, we created 100 synthetic candidate profiles, ran them through AI screening, and discovered our 'perfect' job description was excluding 40% of top talent. The HR leader's response: <span className="font-semibold">'I'm impressed... this is pretty much spot on to our actual candidate pool.'</span>"
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Concrete Example Section - NEW */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+                A Taste of What We'll Cook: From 6 Months to 6 Weeks
+              </h2>
+              <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Here's exactly what happened in a recent session with a Fortune 500 HR team
+              </p>
+              
+              <div className="space-y-6">
+                <div className="bg-white border-l-4 border-red-500 p-6 rounded-r-xl shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2 text-red-600">The Challenge</h3>
+                  <p className="text-gray-700">Two critical Regional Sales Director roles. Current process: 6 months. Executive frustration: Maximum.</p>
+                </div>
+                
+                <div className="bg-white border-l-4 border-blue-500 p-6 rounded-r-xl shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">The Ingredients (Data)</h3>
+                  <p className="text-gray-700">Synthetic data modeled on historical performance records, exit interviews, and public profiles. Zero confidential information exposed.</p>
+                </div>
+                
+                <div className="bg-white border-l-4 border-green-500 p-6 rounded-r-xl shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2 text-green-600">The Live Recipe (90 Minutes)</h3>
+                  <div className="space-y-3 mt-4">
+                    <div className="flex gap-4">
+                      <span className="font-semibold text-secondary">0-15 min:</span>
+                      <span>AI analyzes what makes top performers succeed—surfacing patterns humans missed</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="font-semibold text-secondary">15-30 min:</span>
+                      <span>Generate hyper-targeted job description and build recruitment landing page—live</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="font-semibold text-secondary">30-60 min:</span>
+                      <span>Deploy AI agents to find niche talent pools and warm introductions</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="font-semibold text-secondary">60-90 min:</span>
+                      <span>Create voice AI for screening calls and automated scheduling system</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold mb-2">The Result</h3>
+                  <p>Complete AI-powered recruitment system. Time-to-hire reduced from 6 months to 6 weeks. First candidate identified during the session. HR leader's reaction: <span className="font-bold">"Can we use this tomorrow?"</span> Yes, you can.</p>
                 </div>
               </div>
             </div>
@@ -431,10 +537,22 @@ const EnterpriseAICookingShow = () => {
                 ))}
               </div>
               
-              <div className="text-center mt-12">
-                <div className="inline-flex items-center gap-4 px-6 py-3 bg-primary/5 rounded-full">
-                  <Award className="h-6 w-6 text-primary" />
-                  <span className="font-semibold">Average Session Rating: 4.8/5 from 100+ Executives</span>
+              <div className="space-y-4 mt-12">
+                <div className="text-center">
+                  <div className="inline-flex items-center gap-4 px-6 py-3 bg-primary/5 rounded-full">
+                    <Award className="h-6 w-6 text-primary" />
+                    <span className="font-semibold">Average Session Rating: 4.8/5 from 100+ Executives</span>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <p className="text-lg font-semibold text-gray-900 mb-2">Moments of Magic from Recent Sessions:</p>
+                  <div className="max-w-3xl mx-auto space-y-3">
+                    <p className="text-gray-600">• When HR discovered their job requirements excluded 40% of qualified candidates</p>
+                    <p className="text-gray-600">• When 12 weeks of market research happened in 12 minutes</p>
+                    <p className="text-gray-600">• When the AI interviewer asked: "What would make you NOT take this job?"</p>
+                    <p className="text-gray-600">• When a broken API became a lesson in resource management</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -446,10 +564,10 @@ const EnterpriseAICookingShow = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Enterprise-Grade AI Arsenal
+                Inside Our AI Kitchen: The Chef's Toolkit
               </h2>
               <p className="text-xl text-gray-600 mb-12">
-                We bring the full power of cutting-edge AI to your challenge
+                It's not about any single tool, but the expert orchestration—knowing which 'ingredient' to add at the perfect moment
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center">
@@ -478,6 +596,7 @@ const EnterpriseAICookingShow = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Ideal Participants</h3>
+                  <p className="text-gray-600 mb-4">This workshop creates alignment and excitement across departments.</p>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
@@ -662,6 +781,10 @@ const EnterpriseAICookingShow = () => {
                   {
                     q: "What happens after the workshop?",
                     a: "You keep everything created during the session, plus receive implementation guides, recordings, and 30-day support. Your team will have the knowledge and tools to continue the transformation independently."
+                  },
+                  {
+                    q: "There are so many AI tools. Will my team be overwhelmed?",
+                    a: "Not at all. The goal isn't to master every tool, but to see what's possible when they're orchestrated by an expert. We act as your 'AI chef,' selecting the right 'ingredients' (tools) for your specific 'recipe' (workflow). Your team leaves with the finished dish—the solution—and the inspiration to start their own AI experiments, focusing on just one or two tools at first."
                   }
                 ].map((faq, index) => (
                   <div key={index} className="bg-gray-50 rounded-xl p-6">
