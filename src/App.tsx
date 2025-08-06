@@ -29,6 +29,7 @@ const BlogPostPage = lazy(() => import("./pages/blog/[id]"));
 const AILegalWorkshop = lazy(() => import("./pages/AILegalWorkshop"));
 const AssociateCallConfirmed = lazy(() => import("./pages/AssociateCallConfirmed"));
 const AIOracleSession = lazy(() => import("./pages/AIOracleSession"));
+const EnterpriseAICookingShow = lazy(() => import("./pages/EnterpriseAICookingShow"));
 const HireScope = lazy(() => import("./pages/HireScope"));
 const Methodology = lazy(() => import("./pages/methodology"));
 const TripleAFramework = lazy(() => import("./pages/methodology/TripleAFramework"));
@@ -63,6 +64,7 @@ const App = () => (
               <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
               <Route path="/ai-legal-workshop" element={<AILegalWorkshop />} />
               <Route path="/ai-oracle-session" element={<AIOracleSession />} />
+              <Route path="/enterprise-ai-cooking-show" element={<EnterpriseAICookingShow />} />
               <Route path="/ai-automation-integration" element={<AIAutomationIntegration />} />
               <Route path="/triple-a-transformation" element={<TripleATransformation />} />
               <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
