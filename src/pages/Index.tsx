@@ -11,6 +11,7 @@ import { Layout } from "@/components/Layout";
 import { generateOrganizationStructuredData, generateLocalBusinessStructuredData, generateWebSiteStructuredData } from "@/lib/seo-utils";
 import { ServiceComparison } from "@/components/internal-linking/ServiceComparison";
 import { EngagementLevels } from "@/components/EngagementLevels";
+import { ExecutiveMessaging } from "@/components/ExecutiveMessaging";
 
 const Index = () => {
   // Generate comprehensive structured data for homepage
@@ -35,6 +36,8 @@ const Index = () => {
       <div className="pt-20">
         <Hero />
       </div>
+
+      <ExecutiveMessaging />
       
       <div className="relative">
         {/* Clean section layout without diagonal overlays */}
