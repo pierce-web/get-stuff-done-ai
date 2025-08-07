@@ -1,14 +1,23 @@
 name: Resolve Manifold Market on PR Merge
 
+# DISABLED: Market for issue #59 has been resolved
+# To re-enable for a new issue/market:
+# 1. Uncomment the 'on' section below
+# 2. Update MARKET_ID and TARGET_ISSUE in env section
+# 3. Update the issue number in the job conditions
+
+# on:
+#   pull_request:
+#     types: [closed]
+#   issues:
+#     types: [labeled]
+
 on:
-  pull_request:
-    types: [closed]
-  issues:
-    types: [labeled]
+  workflow_dispatch: # Only manual trigger for now
 
 env:
-  MARKET_ID: "nQIuhZd9O8"
-  TARGET_ISSUE: "59"
+  MARKET_ID: "nQIuhZd9O8"  # Update this for new markets
+  TARGET_ISSUE: "59"  # Update this for new issues
 
 permissions:
   contents: read

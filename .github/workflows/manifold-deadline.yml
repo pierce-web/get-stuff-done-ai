@@ -1,17 +1,22 @@
 name: Check Manifold Market Deadline
 
+# DISABLED: Market for issue #59 has been resolved
+# To re-enable for a new issue/market:
+# 1. Uncomment the schedule in 'on' section below
+# 2. Update MARKET_ID, TARGET_ISSUE, and DEADLINE_TIMESTAMP in env section
+
 on:
-  schedule:
-    # Run every hour
-    # Will check deadline (Aug 6, 2025 9PM ET) and resolve if needed
-    - cron: '0 * * * *'
+  # schedule:
+  #   # Run every hour
+  #   # Will check deadline and resolve if needed
+  #   - cron: '0 * * * *'
   workflow_dispatch: # Allow manual trigger for testing
 
 env:
-  MARKET_ID: "nQIuhZd9O8"
-  TARGET_ISSUE: "59"
+  MARKET_ID: "nQIuhZd9O8"  # Update this for new markets
+  TARGET_ISSUE: "59"  # Update this for new issues
   # August 6, 2025 9PM ET (Unix timestamp in milliseconds)
-  DEADLINE_TIMESTAMP: "1754528400000"
+  DEADLINE_TIMESTAMP: "1754528400000"  # Update this for new deadlines
 
 permissions:
   contents: read
