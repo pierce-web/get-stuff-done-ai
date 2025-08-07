@@ -1,14 +1,26 @@
 name: Resolve Manifold Market on PR Merge
 
+# DISABLED: Market for issue #59 has been resolved
+# To re-enable for a new issue/market:
+# 1. Uncomment the 'on' section below
+# 2. Update MARKET_ID and TARGET_ISSUE in env section
+# 3. Update the issue number in the job conditions
+#
+# Note: Manual triggers (workflow_dispatch) will skip PR/issue checks
+# and attempt to resolve the market directly if conditions are met
+
+# on:
+#   pull_request:
+#     types: [closed]
+#   issues:
+#     types: [labeled]
+
 on:
-  pull_request:
-    types: [closed]
-  issues:
-    types: [labeled]
+  workflow_dispatch: # Only manual trigger for now
 
 env:
-  MARKET_ID: "nQIuhZd9O8"
-  TARGET_ISSUE: "59"
+  MARKET_ID: "nQIuhZd9O8"  # Update this for new markets
+  TARGET_ISSUE: "59"  # Update this for new issues
 
 permissions:
   contents: read
@@ -19,7 +31,8 @@ jobs:
   check-and-resolve:
     if: |
       (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
-      (github.event_name == 'issues' && github.event.issue.number == 59 && github.event.label.name == 'bounty-released')
+      (github.event_name == 'issues' && github.event.issue.number == 59 && github.event.label.name == 'bounty-released') ||
+      (github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     steps:
       - name: Check if PR closes issue #59
