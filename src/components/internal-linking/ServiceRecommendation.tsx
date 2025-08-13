@@ -32,8 +32,17 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
 }) => {
   // Define all services with their relationships
   const allServices: Record<string, Service> = {
+    "enterprise-ai-cooking-show": {
+      id: "enterprise-ai-cooking-show",
+      title: "Enterprise AI Cooking Show",
+      description: "High-energy, live AI transformation workshop for enterprise teams",
+      price: "$4,999",
+      link: "/enterprise-ai-cooking-show",
+      badge: "Live",
+      features: ["Live demos", "Interactive participation", "Executive buy-in"]
+    },
     "ai-oracle-session": {
-      id: "ai-oracle-session", 
+      id: "ai-oracle-session",
       title: "AI Oracle Session",
       description: "Executive intelligence system for strategic decision-making",
       price: "$2,499",
@@ -70,7 +79,7 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
     },
     "triple-a-transformation": {
       id: "triple-a-transformation",
-      title: "Triple-A Transformation Program", 
+      title: "Triple-A Transformation Program",
       description: "14-week comprehensive AI adoption program for organizations",
       price: "Custom",
       link: "/triple-a-transformation",
@@ -84,6 +93,13 @@ export const ServiceRecommendation: React.FC<ServiceRecommendationProps> = ({
     const recommendations: Service[] = [];
     
     switch (currentService) {
+      case "enterprise-ai-cooking-show":
+        if (recommendationType === "upsell") {
+          recommendations.push(allServices["ai-oracle-session"], allServices["ai-action-workshop"]);
+        } else if (recommendationType === "crosssell") {
+          recommendations.push(allServices["ai-action-workshop"]);
+        }
+        break;
       case "ai-action-workshop":
         if (recommendationType === "upsell") {
           recommendations.push(allServices["10x-executive"], allServices["ai-automation-integration"]);

@@ -92,7 +92,7 @@ describe('ServiceCard', () => {
     const scheduleButton = screen.getByRole('button', { name: /Schedule Strategy Call/i })
     await user.click(scheduleButton)
     
-    expect(window.open).toHaveBeenCalledWith('https://calendly.com/gsdatwork/free-consult', '_blank')
+    expect(window.open).toHaveBeenCalledWith('https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call', '_blank')
   })
 
   it('handles service without optional fields', () => {

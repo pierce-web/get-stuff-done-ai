@@ -34,7 +34,26 @@ export const DesktopNavigation = () => {
                 <li className="col-span-2 mb-2">
                   <div className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-2">Our AI Implementation Journey</div>
                 </li>
-                
+
+                <li>
+                  <NavigationMenuLink asChild>
+                    <Link to="/enterprise-ai-cooking-show"
+                      className={`block select-none space-y-1 ${borderRadius.md} p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`}
+                    >
+                      <div className="flex items-start justify-between mb-1">
+                        <div>
+                          <span className="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Step 0</span>
+                          <span className="text-sm font-medium leading-none">Enterprise AI Cooking Show</span>
+                        </div>
+                        <span className="text-xs font-semibold text-secondary bg-secondary/10 px-2 py-1 rounded ml-2">$4,999</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        High-energy, live AI transformation workshop
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+
                 <li>
                   <NavigationMenuLink asChild>
                     <Link to="/ai-oracle-session"

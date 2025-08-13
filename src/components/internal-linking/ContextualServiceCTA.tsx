@@ -33,6 +33,17 @@ export const ContextualServiceCTA: React.FC<ContextualServiceCTAProps> = ({
   // Define services with their targeting keywords
   const services: ServiceCTA[] = [
     {
+      id: "enterprise-ai-cooking-show",
+      title: "Enterprise AI Cooking Show",
+      description: "High-energy, live AI transformation workshop",
+      link: "/enterprise-ai-cooking-show",
+      price: "$4,999",
+      icon: <Zap className="h-6 w-6" />,
+      keywords: ["live", "workshop", "demonstration", "team", "enterprise", "cooking", "show"],
+      cta: "Book Your Show",
+      badge: "Live"
+    },
+    {
       id: "ai-oracle-session",
       title: "AI Oracle Session",
       description: "Transform executive decision-making with AI-powered organizational intelligence",
