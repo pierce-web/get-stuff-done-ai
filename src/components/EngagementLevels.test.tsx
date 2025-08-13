@@ -76,7 +76,7 @@ describe('EngagementLevels', () => {
     const consultButtons = screen.getAllByText('Schedule Free Consultation')
     await user.click(consultButtons[0])
     
-    expect(window.open).toHaveBeenCalledWith('https://calendly.com/gsdatwork/free-consult', '_blank')
+    expect(window.open).toHaveBeenCalledWith('https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call', '_blank')
   })
 
   it('opens consultation link when Transformation consultation button is clicked', async () => {
@@ -87,7 +87,7 @@ describe('EngagementLevels', () => {
     const consultButtons = screen.getAllByText('Schedule Free Consultation')
     await user.click(consultButtons[1])
     
-    expect(window.open).toHaveBeenCalledWith('https://calendly.com/gsdatwork/free-consult', '_blank')
+    expect(window.open).toHaveBeenCalledWith('https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call', '_blank')
   })
 
   it('displays ideal audience for each path', () => {

@@ -20,6 +20,29 @@ export const ServiceComparison: React.FC<ServiceComparisonProps> = ({
 }) => {
   const services = [
     {
+      id: "enterprise-ai-cooking-show",
+      name: "Enterprise AI Cooking Show",
+      subtitle: "Live Transformation Workshop",
+      price: "$4,999",
+      duration: "Live Session",
+      ideal: "Enterprise teams & mastermind groups",
+      icon: <Clock className="h-6 w-6" />,
+      color: "bg-red-500",
+      link: "/enterprise-ai-cooking-show",
+      features: [
+        "Live AI demonstrations with real business scenarios",
+        "Interactive audience participation and Q&A",
+        "Executive engagement and buy-in",
+        "Pipeline generation for transformation opportunities",
+        "Actionable takeaways for immediate implementation",
+      ],
+      outcomes: [
+        "Team excitement about AI possibilities",
+        "Hands-on experience with cutting-edge tools",
+        "Immediate ideas for AI integration",
+      ],
+    },
+    {
       id: "ai-oracle-session",
       name: "AI Oracle Session",
       subtitle: "Executive Intelligence System",

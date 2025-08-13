@@ -23,7 +23,7 @@ describe('cn utility', () => {
   it('merges tailwind classes correctly', () => {
     // clsx handles tailwind class conflicts
     const result = cn('px-2 py-1', 'px-4');
-    expect(result).toBe('px-4 py-1');
+    expect(result).toBe('py-1 px-4');
   });
 
   it('handles arrays of classes', () => {

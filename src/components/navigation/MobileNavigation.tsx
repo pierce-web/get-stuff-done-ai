@@ -39,11 +39,14 @@ export const MobileNavigation = () => {
               <Link to="/" className="text-lg font-medium">
                 Home
               </Link>
-              <Link to="/ai-action-workshop" className="text-lg font-medium">
-                AI Action Workshop
+              <Link to="/enterprise-ai-cooking-show" className="text-lg font-medium">
+                Enterprise AI Cooking Show
               </Link>
               <Link to="/ai-oracle-session" className="text-lg font-medium">
                 AI Oracle Session
+              </Link>
+              <Link to="/ai-action-workshop" className="text-lg font-medium">
+                AI Action Workshop
               </Link>
               <Link to="/10x-executive" className="text-lg font-medium">
                 10x Executive Program
