@@ -69,7 +69,9 @@
     
     const script = document.createElement('script');
     script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify(schema);
+    // Use textContent instead of innerHTML to prevent XSS attacks
+    // This prevents malicious content in reviews from breaking out of the JSON-LD context
+    script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
   }
   
