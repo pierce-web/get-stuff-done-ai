@@ -308,7 +308,7 @@ const Methodology = () => {
                     <Button
                       className={`w-full ${
                         methodology.disabled 
-                          ? 'opacity-50 cursor-not-allowed' 
+                          ? 'bg-gray-200 text-gray-700 cursor-not-allowed hover:bg-gray-200' 
                           : `${buttonStyles.primary} ${shadows.buttonEffect}`
                       }`}
                       disabled={methodology.disabled}
