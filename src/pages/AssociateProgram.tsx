@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Calendar, DollarSign, TrendingUp, Users, Briefcase, Target, Award, ArrowRight, Zap } from "lucide-react";
+import { Check, Calendar, DollarSign, TrendingUp, Users, Briefcase, Target, Award, ArrowRight, Zap, FileCheck, AlertCircle, BookOpen } from "lucide-react";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
@@ -174,6 +174,154 @@ const AssociateProgram = () => {
                 Study Our Methods First
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Evidence Requirement - CRITICAL */}
+      <section className={`${spacing.section.md} bg-red-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <Card className={`${shadows.cardEffect} border-2 border-red-200`}>
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 rounded-full bg-red-100">
+                    <AlertCircle className="w-8 h-8 text-red-600" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl text-red-900">
+                      Critical Requirement: Evidence of Impact
+                    </CardTitle>
+                    <CardDescription className="text-red-700 text-base">
+                      You must demonstrate proven results before applying
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="bg-white p-6 rounded-lg border border-red-100">
+                  <h3 className="text-lg font-semibold mb-3 text-red-900">
+                    To be seriously considered, you MUST present evidence that you have:
+                  </h3>
+                  <p className="text-gray-800 mb-4 text-lg">
+                    <strong>Made at least 3 people incontrovertibly better off</strong> by implementing 
+                    generative AI into their professional workflows.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Verifiable Evidence Required</p>
+                        <p className="text-sm text-gray-600">
+                          Recordings, transcripts, before/after metrics, testimonials - concrete proof that transformation occurred
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Quantifiable Impact</p>
+                        <p className="text-sm text-gray-600">
+                          Time saved, revenue generated, errors reduced - measurable improvements they can testify to
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-gray-900">3 Separate Validations</p>
+                        <p className="text-sm text-gray-600">
+                          Could be 3 different people, same person 3 ways, or any combination - but 3 distinct transformations
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <FileCheck className="w-5 h-5" />
+                    How to Compile Your Evidence Dossier
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    <strong>Pro tip:</strong> Use AI to compile a compelling dossier from your work:
+                  </p>
+                  <ol className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">1.</span>
+                      <span>Gather all recordings, emails, and documentation from your transformations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">2.</span>
+                      <span>Use AI tools to create a comprehensive summary with footnotes to primary sources</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">3.</span>
+                      <span>Include specific metrics: hours saved, revenue impact, process improvements</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">4.</span>
+                      <span>Get written testimonials from those you've helped</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">5.</span>
+                      <span>Create a portfolio showing before/after workflows</span>
+                    </li>
+                  </ol>
+                </div>
+
+                <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <BookOpen className="w-5 h-5" />
+                    Not There Yet? Here's Your Path:
+                  </h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-4 h-4 mt-0.5 text-yellow-600" />
+                      <span>Study our <a href="/methodology" className="text-primary underline font-semibold">open-source methodologies</a></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-4 h-4 mt-0.5 text-yellow-600" />
+                      <span>Follow Christian Ulstrup on LinkedIn for daily insights</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-4 h-4 mt-0.5 text-yellow-600" />
+                      <span>Apply the methods with friends, family, or in your current role</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-4 h-4 mt-0.5 text-yellow-600" />
+                      <span>Document everything - recordings, metrics, testimonials</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-4 h-4 mt-0.5 text-yellow-600" />
+                      <span>Build your evidence portfolio over time</span>
+                    </li>
+                  </ul>
+                  
+                  <p className="mt-4 text-sm text-gray-600 italic">
+                    <strong>Remember:</strong> Scale doesn't matter - helping one person save 2 hours daily 
+                    counts just as much as enterprise transformations. What matters is verifiable, quantifiable impact.
+                  </p>
+                </div>
+
+                <div className="text-center pt-4">
+                  <p className="text-lg font-semibold text-gray-900 mb-4">
+                    Ready with your evidence? Let's talk.
+                  </p>
+                  <Button
+                    size="lg"
+                    className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
+                    onClick={() => window.open("https://calendly.com/gsdatwork/associate-program", "_blank")}
+                  >
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Apply With Evidence
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
