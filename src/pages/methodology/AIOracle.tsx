@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, TrendingUp, AlertTriangle, Sparkles, Database, Mic, FileText, Users, Target, Brain, Zap, ArrowRight, CheckCircle, Clock, Shield, ChevronRight, Telescope, BookOpen, ExternalLink } from "lucide-react";
+import { Search, TrendingUp, AlertTriangle, Sparkles, Database, Mic, FileText, Users, Target, Brain, Zap, ArrowRight, CheckCircle, Clock, Shield, ChevronRight, Telescope, BookOpen, ExternalLink, Rocket } from "lucide-react";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
@@ -12,9 +12,7 @@ import {
   DataSourceExplorer,
   ConvexityVisualizer,
   SessionTimeline,
-  QuestionBank,
-  OracleROICalculator,
-  SuccessStoryCarousel
+  QuestionBank
 } from "./AIOracle.components";
 
 const AIOracle = () => {
@@ -202,21 +200,6 @@ const AIOracle = () => {
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className={`py-${spacing.section.sm} bg-gradient-to-br from-indigo-50 to-purple-50`}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center animate-fade-in-down">
-              Real Oracle Success Stories
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-              See how organizations have uncovered critical insights hidden in their data
-            </p>
-            <SuccessStoryCarousel />
-          </div>
-        </div>
-      </section>
-
       {/* Expected Outcomes */}
       <section className={`py-${spacing.section.md} bg-gradient-to-br from-gray-50 to-white`}>
         <div className="container mx-auto px-4">
@@ -302,12 +285,59 @@ const AIOracle = () => {
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold text-purple-900 mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-purple-600" />
-                  Beyond Individual Insights
+                  Beyond Individual Insights: Building Your Transformation Pipeline
                 </h3>
-                <p className="text-purple-800 mb-4">
+                <p className="text-purple-800 mb-6">
                   The session naturally uncovers a pipeline of AI implementation opportunities - from automating 
                   rote processes to creating new customer-facing tools. It becomes a catalyst for broader transformation.
                 </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <Card className="border-green-200 bg-green-50/50 hover:bg-green-50 transition-colors">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                          <Sparkles className="w-4 h-4 text-green-600" />
+                        </div>
+                        <h4 className="font-semibold text-green-900">Workflow Opportunities</h4>
+                      </div>
+                      <p className="text-sm text-green-800 mb-3">
+                        When Oracle sessions reveal specific processes ripe for 10x improvement
+                      </p>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="text-green-700 border-green-300 hover:bg-green-100"
+                        onClick={() => window.location.href = "/methodology/action-workshop"}
+                      >
+                        → AI Action Workshop
+                      </Button>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card className="border-indigo-200 bg-indigo-50/50 hover:bg-indigo-50 transition-colors">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                          <Rocket className="w-4 h-4 text-indigo-600" />
+                        </div>
+                        <h4 className="font-semibold text-indigo-900">Systematic Transformation</h4>
+                      </div>
+                      <p className="text-sm text-indigo-800 mb-3">
+                        When insights reveal need for organization-wide AI adoption strategy
+                      </p>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="text-indigo-700 border-indigo-300 hover:bg-indigo-100"
+                        onClick={() => window.location.href = "/methodology/triple-a-framework"}
+                      >
+                        → Triple-A Transformation
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+                
                 <p className="text-purple-800 font-medium">
                   Success = Clear, committed next steps with ownership and accountability.
                 </p>
@@ -1025,11 +1055,6 @@ const AIOracle = () => {
               This methodology is open source because insight shouldn't be proprietary. 
               Master it yourself, or work with our certified practitioners.
             </p>
-            
-            {/* ROI Calculator */}
-            <div className="mb-12">
-              <OracleROICalculator />
-            </div>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <Card className={`${shadows.cardEffect} hover:shadow-lg transition-all duration-300`}>
