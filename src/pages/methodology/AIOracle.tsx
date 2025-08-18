@@ -456,33 +456,91 @@ const AIOracle = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
                         <Zap className="w-5 h-5 text-indigo-600" />
-                        Step 3: Process and Refine the Data
+                        Step 3: The Data Refinery Process
                       </h4>
                       
-                      <div className="grid md:grid-cols-3 gap-4">
-                        <div className="p-4 bg-gray-50 rounded-lg">
-                          <h5 className="font-semibold text-gray-900 mb-2">Consolidate</h5>
-                          <p className="text-sm text-gray-600">
-                            Gather all raw exports into a single local directory
+                      <Card className="border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 mb-6">
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-3 mb-4">
+                            <span className="text-3xl">🛢️</span>
+                            <ArrowRight className="w-6 h-6 text-amber-600" />
+                            <span className="text-3xl">⚡</span>
+                          </div>
+                          <p className="font-semibold text-amber-900 mb-2">The Crude Oil Analogy</p>
+                          <p className="text-amber-800 text-sm">
+                            Raw data exports are like crude oil from the ground - valuable but unusable. 
+                            You need to refine them into dense, high-octane fuel that AI can efficiently process.
                           </p>
-                        </div>
-                        <div className="p-4 bg-gray-50 rounded-lg">
-                          <h5 className="font-semibold text-gray-900 mb-2">Sequence</h5>
-                          <p className="text-sm text-gray-600">
-                            Create chronologically-ordered text file or JSON/CSV
-                          </p>
-                        </div>
-                        <div className="p-4 bg-gray-50 rounded-lg">
-                          <h5 className="font-semibold text-gray-900 mb-2">Compress</h5>
-                          <p className="text-sm text-gray-600">
-                            Maximize signal density while preserving core facts
-                          </p>
-                        </div>
-                      </div>
+                        </CardContent>
+                      </Card>
                       
-                      <p className="text-sm text-gray-600 mt-4 italic">
-                        Think of raw data as crude oil - you need to refine it into dense, usable fuel for the AI.
-                      </p>
+                      <div className="space-y-6">
+                        <div className="grid md:grid-cols-3 gap-4">
+                          <div className="p-4 bg-gray-50 rounded-lg">
+                            <h5 className="font-semibold text-gray-900 mb-2">1. Consolidate</h5>
+                            <p className="text-sm text-gray-600 mb-3">
+                              Gather all raw exports into a single local directory
+                            </p>
+                            <ul className="text-xs text-gray-500 space-y-1">
+                              <li>• Customer service exports</li>
+                              <li>• Sales call transcripts</li>
+                              <li>• Email threads</li>
+                              <li>• Meeting recordings</li>
+                            </ul>
+                          </div>
+                          <div className="p-4 bg-gray-50 rounded-lg">
+                            <h5 className="font-semibold text-gray-900 mb-2">2. Sequence</h5>
+                            <p className="text-sm text-gray-600 mb-3">
+                              Create chronologically-ordered unified dataset
+                            </p>
+                            <ul className="text-xs text-gray-500 space-y-1">
+                              <li>• Timestamp normalization</li>
+                              <li>• Oldest to newest ordering</li>
+                              <li>• Single JSON/CSV/TSV output</li>
+                              <li>• Preserve interaction context</li>
+                            </ul>
+                          </div>
+                          <div className="p-4 bg-gray-50 rounded-lg">
+                            <h5 className="font-semibold text-gray-900 mb-2">3. Compress</h5>
+                            <p className="text-sm text-gray-600 mb-3">
+                              Maximize signal density for context windows
+                            </p>
+                            <ul className="text-xs text-gray-500 space-y-1">
+                              <li>• Remove redundant metadata</li>
+                              <li>• Preserve core facts</li>
+                              <li>• Handle massive datasets</li>
+                              <li>• Iterative compression</li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <Card className="border-indigo-200 bg-indigo-50">
+                          <CardContent className="p-4">
+                            <h5 className="font-semibold text-indigo-900 mb-3">Tactical Implementation with Claude Code</h5>
+                            <div className="space-y-2 text-sm text-gray-700">
+                              <div className="flex items-start gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                <span>Use Claude Code to inspect raw export structure and understand data schema</span>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                <span>Give plain-language instructions: "Take all data in this directory and normalize it"</span>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                <span>Iterate until you have one giant textual output ordered chronologically</span>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                <span>Handle context window limits through intelligent compression</span>
+                              </div>
+                            </div>
+                            <p className="text-xs text-indigo-700 mt-3 italic">
+                              "Every system is different - this is always a bit annoying, but you just have to iterate until it's right."
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </div>
                     </div>
                   </div>
                 </CardContent>

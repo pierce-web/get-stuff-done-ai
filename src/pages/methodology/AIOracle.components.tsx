@@ -550,25 +550,25 @@ export const SuccessStoryCarousel = () => {
   
   const stories = [
     {
-      company: "B2B SaaS Startup",
-      challenge: "Couldn't understand why enterprise deals were stalling",
-      discovery: "Support tickets revealed security concerns never mentioned in sales calls",
-      outcome: "Added SOC2 compliance messaging, closed 3 enterprise deals in 30 days",
-      value: "$1.2M ARR added"
+      company: "National Corporate Brand",
+      challenge: "Core application workflow preventing customers from completing critical tasks",
+      discovery: "Digital exhaust analysis revealed common workflow failure pattern across customers nationwide",
+      outcome: "Integrated customer feedback into codebase, deployed critical bug fix",
+      value: "Restored full functionality for national customer base"
     },
     {
-      company: "E-commerce Platform",
-      challenge: "Unexplained 15% drop in repeat purchases",
-      discovery: "Customer emails showed confusion about new checkout flow",
-      outcome: "Reverted specific UX change, recovered 12% of lost customers",
-      value: "$450K monthly revenue recovered"
+      company: "C-Level Executive Analysis",
+      challenge: "Years of relationships and interactions with no clear strategy for activation",
+      discovery: "AI analysis of complete email history revealed overlooked customer personas and relationship patterns",
+      outcome: "Identified high-value relationships to reactivate and new messaging strategies",
+      value: "Strategic relationship mapping and persona targeting"
     },
     {
-      company: "Professional Services Firm",
-      challenge: "High employee turnover despite good compensation",
-      discovery: "Slack data revealed burnout from inefficient internal processes",
-      outcome: "Automated report generation, saved 10 hrs/week per employee",
-      value: "50% reduction in turnover"
+      company: "Marketing Function Optimization",
+      challenge: "Centralized marketing approach not meeting diverse market needs",
+      discovery: "Customer interaction data revealed need for decentralized, localized marketing functions",
+      outcome: "Restructured marketing approach to enable localized execution",
+      value: "More targeted, effective marketing across regions"
     }
   ];
   

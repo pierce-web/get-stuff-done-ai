@@ -158,44 +158,80 @@ export const aiAgentPersonalities = [
   {
     name: "The Explorer",
     emoji: "🔍",
-    description: "Insatiably curious, always looking for novel connections and patterns",
-    colorScheme: "blue"
+    description: "Super curious and enthusiastic, always looking for novel connections and patterns",
+    personality: "Insatiably curious, enthusiastic, finds excitement in discovering hidden insights",
+    focus: "Pattern recognition, novel connections, unexpected correlations",
+    colorScheme: "blue",
+    samplePrompt: "You are extremely curious and enthusiastic. Always look for novel connections and patterns that others might miss. Get excited about discoveries."
   },
   {
     name: "The Skeptic",
-    emoji: "🤔",
-    description: "Demands hard evidence for every claim, pushes back on assumptions",
-    colorScheme: "orange"
+    emoji: "🤔", 
+    description: "Extremely skeptical, always demands evidence for everything that gets proposed",
+    personality: "Highly skeptical, evidence-driven, pushes back on assumptions and unsubstantiated claims",
+    focus: "Demanding proof, questioning assumptions, identifying weak evidence",
+    colorScheme: "orange",
+    samplePrompt: "You are extremely skeptical and always demand hard evidence for every claim. Question assumptions and push back when evidence is insufficient."
   },
   {
-    name: "The Strategist",
+    name: "The Strategist", 
     emoji: "🎯",
-    description: "Focused on \"So what?\" and \"What can we do about this?\"",
-    colorScheme: "green"
+    description: "Super action-oriented, always thinking about 'what can we do about this?'",
+    personality: "Action-oriented, strategic, focused on practical implementation",
+    focus: "Actionability, strategic implications, concrete next steps",
+    colorScheme: "green",
+    samplePrompt: "You are super action-oriented. Always think about 'So what?' and 'What can we do about this?' Focus on making insights actionable."
   }
 ];
+
+export const multiAgentSetup = {
+  scratchPadInstructions: "Keep a common scratch pad in a shared markdown file where all agents can take notes and refer back to previous analysis",
+  goalSetting: "The goal here is to mine these actionable insights. Set this in plain speech using dictation tools.",
+  toolAccess: "Agents can use code when they need to. Give them Gemini API key for additional tool calling if needed.",
+  collaborationStyle: "Have agents debate and challenge each other until they produce a comprehensive markdown report",
+  outputFormat: "Clean markdown report that can be pasted directly into Google Docs using 'paste as markdown' feature"
+};
 
 export const insightfulQuestions = [
   {
     purpose: "To Surface the Unknown",
     question: "What is the most important thing in this data that no one is paying attention to?",
-    type: "discovery"
+    type: "discovery",
+    whenToUse: "When you need to uncover blind spots and overlooked patterns"
   },
   {
-    purpose: "To Make Insights Actionable",
+    purpose: "To Make Insights Actionable", 
     question: "What is one action that [Executive Name] can take in the next 60 seconds to get the ball rolling?",
-    type: "action"
+    type: "action",
+    whenToUse: "When insights are too big/abstract - helps identify the right person and immediate next step",
+    note: "This frames action in terms of the best person to do it and makes commitment easy"
   },
   {
     purpose: "To Uncover Social Dynamics (Use with Care)",
     question: "Perform a 'Straussian reading' of the internal communications. What are the esoteric power dynamics?",
     type: "advanced",
-    warning: "Can yield powerful but sometimes conspiratorial-sounding insights"
+    warning: "Can yield powerful but sometimes conspiratorial-sounding insights",
+    whenToUse: "For uncovering hidden social dynamics in unstructured data",
+    context: "Leo Strauss philosopher approach - reading between the lines for hidden meanings"
   },
   {
     purpose: "To Quantify Findings",
     question: "Can you size this opportunity? Based on the financial data, what's the potential quarterly impact?",
-    type: "metrics"
+    type: "metrics",
+    whenToUse: "Once you have an insight, to make it concrete and compelling for executives"
+  },
+  {
+    purpose: "To Find the Most Interesting",
+    question: "What's the most interesting thing you see here that no one's paying attention to?",
+    type: "discovery",
+    whenToUse: "Alternative framing when 'important' feels too heavy"
+  },
+  {
+    purpose: "To Enable Tool Calling",
+    question: "Use code to calculate this more rigorously - what's the quantified potential upside?",
+    type: "analysis",
+    whenToUse: "When you need precise calculations using available financial/quantitative data",
+    note: "AI can run code in local repls through Claude Code for rigorous analysis"
   }
 ];
 
@@ -326,7 +362,66 @@ export const sessionRoles = {
 
 export const recapElements = [
   "Use AI to summarize Fireflies transcript within hours",
-  "Highlight key insights, decisions, and commitments (who/what/when)",
+  "Highlight key insights, decisions, and commitments (who/what/when)", 
   "Request permission to follow up on action items",
   "Schedule check-in emails immediately"
 ];
+
+export const automationProgression = {
+  philosophy: "Don't go full auto immediately - iterate manually first to refine the process",
+  stages: [
+    {
+      stage: "0→1: Manual Integration",
+      description: "Oracle analysis becomes standing input for weekly leadership meetings",
+      duration: "Immediate implementation",
+      owner: "Executive team or eager analyst",
+      focus: "Prove value and establish routine"
+    },
+    {
+      stage: "1→10: Manual Refinement", 
+      description: "Run manually 2-3 times, gather feedback, perfect the format and integration",
+      duration: "2-3 iteration cycles",
+      owner: "Designated team member (eager analyst or enthusiastic team member)",
+      focus: "Quality improvement and process optimization"
+    },
+    {
+      stage: "10→100: Automation",
+      description: "APIs and SDKs run analysis as recurring 'cron job'",
+      duration: "After proven manual success",
+      owner: "Technical implementation team",
+      focus: "Full automation with MCP connectors, API connections, Claude Code SDK"
+    }
+  ],
+  criticalSuccess: "Have somebody on the team be responsible for providing this as additional input regularly, then refine over time"
+};
+
+export const followUpProcess = {
+  immediate: {
+    title: "Immediate Post-Session (Within Hours)",
+    actions: [
+      "Ask every participant for 0-5 satisfaction score",
+      "Use counterfactuals: 'Why not [score-1]? What would make it [score+1]?'",
+      "Send comprehensive AI-generated recap from Fireflies transcript",
+      "Highlight key insights, decisions, and commitments with clear ownership"
+    ]
+  },
+  ongoing: {
+    title: "Permission-Based Follow-Up",
+    process: [
+      "Ask permission: 'Could I send you a check-in email by [date] to see how things panned out?'",
+      "Schedule follow-up emails through Shortwave/Gmail",
+      "Derive content from original transcript for context",
+      "Use responses to gauge actual helpfulness and insight quality"
+    ],
+    purpose: "Close the loop - sometimes insights get explained away by missing context"
+  },
+  measurement: {
+    title: "Success Indicators",
+    metrics: [
+      "Insights that lead to actual actions taken",
+      "Discoveries that weren't explained away by missing data",
+      "Follow-through on commitments made during session",
+      "Integration into regular executive decision-making processes"
+    ]
+  }
+};
