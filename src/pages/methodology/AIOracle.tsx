@@ -550,7 +550,14 @@ const AIOracle = () => {
                             <div className="space-y-2 text-sm text-gray-700">
                               <div className="flex items-start gap-2">
                                 <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                                <span>Use Claude Code to inspect raw export structure and understand data schema</span>
+                                <span>Use <a 
+                                  href="https://claude.ai/code" 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="text-indigo-600 hover:text-indigo-800 underline"
+                                >
+                                  Claude Code
+                                </a> to inspect raw export structure and understand data schema</span>
                               </div>
                               <div className="flex items-start gap-2">
                                 <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -602,7 +609,14 @@ const AIOracle = () => {
                       </h4>
                       
                       <p className="text-gray-700 mb-6">
-                        Use Claude Code or similar to instantiate AI agents with distinct personalities:
+                        Use <a 
+                          href="https://claude.ai/code" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-purple-600 hover:text-purple-800 underline font-medium"
+                        >
+                          Claude Code
+                        </a> or similar to instantiate AI agents with distinct personalities:
                       </p>
                       
                       <div className="grid md:grid-cols-3 gap-4">
@@ -653,7 +667,7 @@ const AIOracle = () => {
                         <p className="text-sm text-purple-800">
                           <strong>Setup:</strong> Create a shared "scratchpad" for agents to debate. 
                           Task them to identify the single most critical risk and opportunity. 
-                          Let them use code for quantitative analysis where needed.
+                          Let them use code for quantitative analysis where needed. Give them Gemini API key for additional tool calling if sophisticated.
                         </p>
                       </div>
                     </div>
@@ -794,7 +808,16 @@ const AIOracle = () => {
                             <div className="flex items-start gap-3">
                               <Badge className="bg-indigo-100 text-indigo-800">1</Badge>
                               <div>
-                                <p className="font-medium text-gray-900">Google AI Studio with Gemini 1.5 Pro</p>
+                                <p className="font-medium text-gray-900">
+                                  <a 
+                                    href="https://aistudio.google.com" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-indigo-600 hover:text-indigo-800 underline"
+                                  >
+                                    Google AI Studio
+                                  </a> with Gemini 2.5 Pro
+                                </p>
                                 <p className="text-sm text-gray-600">Pre-load entire dataset into context window</p>
                               </div>
                             </div>
@@ -809,7 +832,7 @@ const AIOracle = () => {
                               <Badge className="bg-indigo-100 text-indigo-800">3</Badge>
                               <div>
                                 <p className="font-medium text-gray-900">Interactive Loop</p>
-                                <p className="text-sm text-gray-600">Copy questions from transcript → Paste to Gemini → Share insights</p>
+                                <p className="text-sm text-gray-600">Copy questions from transcript → Paste to Gemini 2.5 Pro in AI Studio → Share insights</p>
                               </div>
                             </div>
                           </div>
@@ -825,7 +848,14 @@ const AIOracle = () => {
                               <p className="text-xs text-indigo-800">
                                 "There's a lot of copying and pasting, there's a lot of swishing around between different windows" 
                                 - This is the practical mechanics. You're constantly moving between Fireflies transcript, 
-                                Google AI Studio, and your screen share. It's active, dynamic facilitation.
+                                <a 
+                                  href="https://aistudio.google.com" 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="text-indigo-600 hover:text-indigo-800 underline"
+                                >
+                                  Google AI Studio
+                                </a>, and your screen share. It's active, dynamic facilitation.
                               </p>
                             </div>
                           </div>
