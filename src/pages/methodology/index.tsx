@@ -22,19 +22,20 @@ const Methodology = () => {
 
   const methodologies = [
     {
-      title: "Triple-A Transformation Playbook",
-      subtitle: "Accelerated AI Adoption",
-      description: "Comprehensive bundle for systematic AI transformation. Includes all methodologies for identifying, developing, and scaling AI opportunities.",
+      title: "Discovery Calls",
+      subtitle: "Sales & Transformation Discovery",
+      description: "Master the art of uncovering 10x opportunities through structured discovery conversations and process mapping.",
       features: [
-        "10x process improvements",
-        "CFO-validated ROI",
-        "0→1→10→10+ scaling model",
-        "Complete implementation guide"
+        "Discovery call scripts",
+        "Process mapping techniques",
+        "Counterfactual questioning",
+        "Workshop negotiation"
       ],
       status: "Available Now",
       statusColor: "bg-emerald-100 text-emerald-800",
-      link: "/methodology/triple-a-framework",
-      icon: <Rocket className="w-6 h-6" />
+      link: "/methodology/sales-discovery",
+      icon: <Phone className="w-6 h-6" />,
+      disabled: false
     },
     {
       title: "AI Action Workshop",
@@ -69,20 +70,20 @@ const Methodology = () => {
       disabled: true
     },
     {
-      title: "Discovery Calls",
-      subtitle: "Sales & Transformation Discovery",
-      description: "Master the art of uncovering 10x opportunities through structured discovery conversations and process mapping.",
+      title: "Enterprise AI Cooking Show",
+      subtitle: "Premium Workshop Experience",
+      description: "High-energy, paid workshop ($4,999) that gets enterprises and mastermind groups excited about AI possibilities.",
       features: [
-        "Discovery call scripts",
-        "Process mapping techniques",
-        "Counterfactual questioning",
-        "Workshop negotiation"
+        "Live AI demonstrations",
+        "Interactive transformations",
+        "Executive engagement",
+        "Pipeline generation tool"
       ],
-      status: "Available Now",
-      statusColor: "bg-emerald-100 text-emerald-800",
-      link: "/methodology/sales-discovery",
-      icon: <Phone className="w-6 h-6" />,
-      disabled: false
+      status: "Coming Soon",
+      statusColor: "bg-red-100 text-red-800",
+      link: "#",
+      icon: <ChefHat className="w-6 h-6" />,
+      disabled: true
     },
     {
       title: "10x Effective Executive",
@@ -101,20 +102,19 @@ const Methodology = () => {
       disabled: true
     },
     {
-      title: "Enterprise AI Cooking Show",
-      subtitle: "Premium Workshop Experience",
-      description: "High-energy, paid workshop ($4,999) that gets enterprises and mastermind groups excited about AI possibilities.",
+      title: "Triple-A Transformation Playbook",
+      subtitle: "Accelerated AI Adoption",
+      description: "Comprehensive bundle for systematic AI transformation. Includes all methodologies for identifying, developing, and scaling AI opportunities.",
       features: [
-        "Live AI demonstrations",
-        "Interactive transformations",
-        "Executive engagement",
-        "Pipeline generation tool"
+        "10x process improvements",
+        "CFO-validated ROI",
+        "0→1→10→10+ scaling model",
+        "Complete implementation guide"
       ],
-      status: "Coming Soon",
-      statusColor: "bg-red-100 text-red-800",
-      link: "#",
-      icon: <ChefHat className="w-6 h-6" />,
-      disabled: true
+      status: "Available Now",
+      statusColor: "bg-emerald-100 text-emerald-800",
+      link: "/methodology/triple-a-framework",
+      icon: <Rocket className="w-6 h-6" />
     },
     {
       title: "Artisanal Product Development",
