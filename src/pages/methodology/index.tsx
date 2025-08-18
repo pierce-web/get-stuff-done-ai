@@ -78,11 +78,11 @@ const Methodology = () => {
         "Counterfactual questioning",
         "Workshop negotiation"
       ],
-      status: "Coming Soon",
-      statusColor: "bg-orange-100 text-orange-800",
-      link: "#",
+      status: "Available Now",
+      statusColor: "bg-emerald-100 text-emerald-800",
+      link: "/methodology/sales-discovery",
       icon: <Phone className="w-6 h-6" />,
-      disabled: true
+      disabled: false
     },
     {
       title: "10x Effective Executive",
