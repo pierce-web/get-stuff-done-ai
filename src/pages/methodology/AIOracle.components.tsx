@@ -235,25 +235,29 @@ export const SessionTimeline = () => {
       title: "Data Preparation",
       duration: "1-2 weeks",
       activities: ["Inventory data sources", "Capture executive context", "Process & refine"],
-      color: "indigo"
+      color: "indigo",
+      isCore: true
     },
     {
       title: "Async Analysis",
       duration: "2-3 days",
       activities: ["Multi-agent reasoning", "Generate report", "Share for pre-read"],
-      color: "purple"
+      color: "purple",
+      isCore: true
     },
     {
       title: "Live Session",
       duration: "60-90 min",
       activities: ["Review findings", "Interactive Q&A", "Commit to actions"],
-      color: "green"
+      color: "green",
+      isCore: true
     },
     {
       title: "Follow-Up",
       duration: "Ongoing",
       activities: ["Send recap", "Track actions", "Schedule automation"],
-      color: "amber"
+      color: "amber",
+      isCore: false
     }
   ];
   
@@ -283,10 +287,12 @@ export const SessionTimeline = () => {
                   className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${
                     activePhase === idx
                       ? `bg-${phase.color}-500 text-white scale-125 shadow-lg`
-                      : 'bg-white border-2 border-gray-300 hover:scale-110'
+                      : phase.isCore 
+                        ? 'bg-white border-2 border-gray-300 hover:scale-110'
+                        : 'bg-gray-100 border-2 border-gray-300 hover:scale-110'
                   }`}
                 >
-                  {idx + 1}
+                  {phase.isCore ? idx + 1 : '→'}
                 </button>
               ))}
             </div>
@@ -305,7 +311,7 @@ export const SessionTimeline = () => {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle className={`text-${phase.color}-900`}>
-                        Phase {idx + 1}: {phase.title}
+                        {phase.isCore ? `Phase ${idx + 1}: ${phase.title}` : `Post-Session: ${phase.title}`}
                       </CardTitle>
                       <Badge className={`bg-${phase.color}-100 text-${phase.color}-800`}>
                         {phase.duration}
