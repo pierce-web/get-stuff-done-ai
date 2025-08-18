@@ -47,11 +47,11 @@ const Methodology = () => {
         "Teach-to-fish approach",
         "Immediate ROI"
       ],
-      status: "Coming Soon",
-      statusColor: "bg-blue-100 text-blue-800",
-      link: "#",
+      status: "Available Now",
+      statusColor: "bg-emerald-100 text-emerald-800",
+      link: "/methodology/action-workshop",
       icon: <Lightbulb className="w-6 h-6" />,
-      disabled: true
+      disabled: false
     },
     {
       title: "AI Oracle / Crystal Ball",
