@@ -8,6 +8,28 @@ import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
 import { corePhilosophy, workshopPhases, fiveRs, criticalTools as criticalToolsData, realExamples, iterativeLoopSteps, feedbackFramework } from "./ActionWorkshop.data";
+import { 
+  ExitRampSection, 
+  EnergyDrainingSection, 
+  ExcelTipSection, 
+  WorkflowQualificationChecklist, 
+  WorkshopTimeline, 
+  PILawyerCaseStudy, 
+  PeopleTypeWarning,
+  MagicMomentVisualization,
+  FormalCausesEnhanced
+} from "./ActionWorkshop.enhancements";
+import {
+  FacilitatorPrepWork,
+  WorkflowMappingTools,
+  LiveTranscriptStrategy,
+  FollowUpProtocol,
+  CommonPitfalls,
+  CounterfactualQuestions,
+  EnterpriseAnalytics,
+  ShowAndTellProtocol,
+  WorkshopIntensity
+} from "./ActionWorkshop.additions";
 
 const ActionWorkshop = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -153,24 +175,10 @@ const ActionWorkshop = () => {
               ))}
             </div>
 
-            <Card className={`mt-8 ${shadows.cardEffect} border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 animate-fade-in-up animation-delay-500`}>
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-amber-900 mb-4 flex items-center gap-2">
-                  <AlertCircle className="w-5 h-5 text-amber-600" />
-                  The Critical Insight
-                </h3>
-                <p className="text-amber-800 mb-4">
-                  <strong>Formal causes matter as much as technology.</strong> The business model, 
-                  incentive structures, and organizational architecture determine success as much as 
-                  the AI itself. A law firm billing hourly will resist efficiency gains - this is 
-                  structural, not personal.
-                </p>
-                <p className="text-amber-800 font-medium">
-                  Always understand: Is the company selling inputs (hours) or outcomes (results)? 
-                  Misalignment here guarantees friction, regardless of technical success.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Enhanced Formal Causes Section */}
+            <div className="mt-8">
+              <FormalCausesEnhanced />
+            </div>
           </div>
         </div>
       </section>
@@ -203,6 +211,15 @@ const ActionWorkshop = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Timeline */}
+      <section className={`${spacing.section.sm}`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <WorkshopTimeline />
           </div>
         </div>
       </section>
@@ -257,6 +274,76 @@ const ActionWorkshop = () => {
                 </Card>
               </div>
             ))}
+            
+            {/* Phase 1: Discovery & Preparation Tools */}
+            <div className="mt-16 space-y-12">
+              <h3 className="text-2xl font-bold text-primary text-center">Discovery & Preparation Tools</h3>
+              
+              {/* Facilitator Prep */}
+              <div className={`${animations.fadeInUp} animation-delay-100`}>
+                <FacilitatorPrepWork />
+              </div>
+              
+              {/* Workflow Mapping */}
+              <div className={`${animations.fadeInUp} animation-delay-200`}>
+                <WorkflowMappingTools />
+              </div>
+              
+              {/* Enterprise Analytics */}
+              <div className={`${animations.fadeInUp} animation-delay-300`}>
+                <EnterpriseAnalytics />
+              </div>
+              
+              {/* Energy-Draining Tasks */}
+              <div className={`${animations.fadeInUp} animation-delay-400`}>
+                <EnergyDrainingSection />
+              </div>
+              
+              {/* Workflow Qualification */}
+              <div className={`${animations.fadeInUp} animation-delay-500`}>
+                <WorkflowQualificationChecklist />
+              </div>
+            </div>
+            
+            {/* Phase 3: Live Workshop Execution */}
+            <div className="mt-16 space-y-12">
+              <h3 className="text-2xl font-bold text-primary text-center">Live Workshop Execution</h3>
+              
+              {/* Exit Ramp - Trust Building */}
+              <div className={`${animations.fadeInUp} animation-delay-100`}>
+                <ExitRampSection />
+              </div>
+              
+              {/* Live Transcript Strategy */}
+              <div className={`${animations.fadeInUp} animation-delay-200`}>
+                <LiveTranscriptStrategy />
+              </div>
+              
+              {/* Workshop Intensity Warning */}
+              <div className={`${animations.fadeInUp} animation-delay-300`}>
+                <WorkshopIntensity />
+              </div>
+              
+              {/* People Type Warning */}
+              <div className={`${animations.fadeInUp} animation-delay-400`}>
+                <PeopleTypeWarning />
+              </div>
+            </div>
+            
+            {/* Phase 4: Follow-Up & Scaling */}
+            <div className="mt-16 space-y-12">
+              <h3 className="text-2xl font-bold text-primary text-center">Follow-Up & Scaling Success</h3>
+              
+              {/* Follow-Up Protocol */}
+              <div className={`${animations.fadeInUp} animation-delay-100`}>
+                <FollowUpProtocol />
+              </div>
+              
+              {/* Show and Tell Sessions */}
+              <div className={`${animations.fadeInUp} animation-delay-200`}>
+                <ShowAndTellProtocol />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -291,24 +378,8 @@ const ActionWorkshop = () => {
               ))}
             </div>
 
-            <Card className={`${shadows.cardEffect} border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50`}>
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-purple-900 mb-4 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-purple-600" />
-                  The Magic Moment
-                </h3>
-                <p className="text-purple-800 mb-4">
-                  It happens on the second or third iteration. The AI incorporates their spoken 
-                  feedback with shocking accuracy. Their eyes widen. They lean forward. 
-                  <strong> "Whoa, that's crazy!"</strong>
-                </p>
-                <p className="text-purple-800">
-                  This is the paradigm shift - from seeing computers as rigid tools to 
-                  collaborative partners. Once someone experiences this, they can never go back. 
-                  They understand viscerally that work has fundamentally changed.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Enhanced Magic Moment Visualization */}
+            <MagicMomentVisualization />
           </div>
         </div>
       </section>
@@ -364,6 +435,15 @@ const ActionWorkshop = () => {
         </div>
       </section>
 
+      {/* Critical Excel Technical Tip */}
+      <section className={`${spacing.section.sm}`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <ExcelTipSection />
+          </div>
+        </div>
+      </section>
+
       {/* Real Examples */}
       <section className={`${spacing.section.md} bg-gray-50`}>
         <div className="container mx-auto px-4">
@@ -410,6 +490,11 @@ const ActionWorkshop = () => {
                 </Card>
               ))}
             </div>
+            
+            {/* Detailed PI Lawyer Case Study */}
+            <div className="mt-16">
+              <PILawyerCaseStudy />
+            </div>
           </div>
         </div>
       </section>
@@ -424,6 +509,11 @@ const ActionWorkshop = () => {
             <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
               Never skip this question - it's your most valuable calibration tool
             </p>
+            
+            {/* Enhanced Counterfactual Questions */}
+            <div className="mb-8">
+              <CounterfactualQuestions />
+            </div>
 
             <Card className={`${shadows.cardEffect} mb-8`}>
               <CardContent className="p-8">
@@ -640,6 +730,15 @@ const ActionWorkshop = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Common Pitfalls Warning */}
+      <section className={`${spacing.section.md} bg-gradient-to-br from-red-50 via-white to-orange-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <CommonPitfalls />
           </div>
         </div>
       </section>
