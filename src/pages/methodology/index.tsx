@@ -63,11 +63,11 @@ const Methodology = () => {
         "Strategic prioritization",
         "Pipeline generation"
       ],
-      status: "Coming Soon",
-      statusColor: "bg-purple-100 text-purple-800",
-      link: "#",
+      status: "Available Now",
+      statusColor: "bg-emerald-100 text-emerald-800",
+      link: "/methodology/ai-oracle",
       icon: <Target className="w-6 h-6" />,
-      disabled: true
+      disabled: false
     },
     {
       title: "Enterprise AI Cooking Show",
