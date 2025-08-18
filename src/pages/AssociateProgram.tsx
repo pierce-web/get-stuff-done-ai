@@ -128,25 +128,31 @@ const AssociateProgram = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className={`pt-28 pb-20 ${gradients.backgroundSubtle}`}>
-        <div className="container mx-auto px-4">
+      <section className={`pt-28 pb-20 ${gradients.backgroundSubtle} relative overflow-hidden`}>
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-blue-400/10 to-emerald-400/10 rounded-full blur-3xl animate-float animation-delay-500" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6">
+            <Badge variant="secondary" className="mb-6 animate-fade-in-down hover:scale-110 transition-transform duration-300">
               <Users className="w-3 h-3 mr-1" />
               Now Accepting Applications
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-emerald-600 to-blue-600 bg-clip-text text-transparent animate-fade-in-up animate-gradient-shift">
               Become a GSD at Work Associate
             </h1>
             
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200 leading-relaxed">
               Join our network of elite AI practitioners. Deliver transformations using proven 
               methodologies. Earn based on outcomes, not hours. Build your path from 
               associate to principal to CEO.
             </p>
             
-            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <div className="glass-effect border border-emerald-200/50 rounded-2xl p-8 mb-8 max-w-2xl mx-auto shadow-xl animate-fade-in-up animation-delay-300 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               <p className="text-lg font-semibold text-emerald-900 mb-2">
                 💰 Performance-Based Compensation
               </p>
@@ -156,10 +162,10 @@ const AssociateProgram = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 size="lg"
-                className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
+                className={`${buttonStyles.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
                 onClick={() => window.open("https://calendly.com/gsdatwork/associate-program", "_blank")}
               >
                 <Calendar className="mr-2 h-5 w-5" />
@@ -168,7 +174,7 @@ const AssociateProgram = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect}`}
+                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
                 onClick={() => window.location.href = "/methodology"}
               >
                 Study Our Methods First
@@ -179,10 +185,11 @@ const AssociateProgram = () => {
       </section>
 
       {/* Evidence Requirement - CRITICAL */}
-      <section className={`${spacing.section.md} bg-red-50`}>
-        <div className="container mx-auto px-4">
+      <section className={`${spacing.section.md} bg-gradient-to-br from-red-50 via-white to-orange-50/30 relative`}>
+        <div className="absolute inset-0 bg-grid-red-100/[0.03] pointer-events-none" />
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
-            <Card className={`${shadows.cardEffect} border-2 border-red-200`}>
+            <Card className={`${shadows.cardEffect} border-2 border-red-200 hover:shadow-2xl transition-all duration-300 animate-fade-in-up hover-lift`}>
               <CardHeader>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-3 rounded-full bg-red-100">

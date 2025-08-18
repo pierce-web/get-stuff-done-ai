@@ -10,6 +10,9 @@ import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } f
 
 const SalesDiscovery = () => {
   const currentDate = new Date().toISOString().split('T')[0];
+  
+  // Add scroll-triggered animations
+  const animateOnScroll = "transition-all duration-700 ease-out";
 
   const serviceStructuredData = generateServicePageStructuredData(
     "GSD Sales Discovery Playbook - AI Adoption Sales Methodology",
@@ -229,34 +232,40 @@ Draw a line from our potential solution to financial outcomes
       <Navigation />
       
       {/* Hero Section */}
-      <section className={`pt-28 pb-20 ${gradients.backgroundSubtle}`}>
-        <div className="container mx-auto px-4">
+      <section className="pt-28 pb-20 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-tr from-purple-400/10 to-blue-400/10 rounded-full blur-3xl animate-float animation-delay-500" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6">
+            <Badge variant="secondary" className="mb-6 animate-fade-in-down hover:scale-110 transition-transform duration-300">
               <BookOpen className="w-3 h-3 mr-1" />
               Open Source Methodology
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in-up animate-gradient-shift">
               The GSD Sales Discovery Playbook
             </h1>
             
-            <p className="text-2xl font-semibold text-gray-800 mb-4">
+            <p className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 animate-fade-in-up animation-delay-200">
               Willing the Good of the Other
             </p>
             
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-300 leading-relaxed">
               Transform sales conversations from transactions into partnerships. 
-              Every interaction must leave the prospect <strong>incontrovertibly better off</strong> - 
+              Every interaction must leave the prospect <strong className="text-blue-600">incontrovertibly better off</strong> - 
               less anxious, more excited, and on a genuinely better trajectory.
             </p>
             
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <div className="glass-effect border border-blue-200/50 rounded-2xl p-8 mb-8 max-w-2xl mx-auto shadow-xl animate-fade-in-up animation-delay-400 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               <p className="text-lg font-semibold text-blue-900 mb-2">
                 📚 Based on St. Thomas Aquinas's Definition of Charity
               </p>
               <p className="text-blue-800">
-                <em>"Caritas"</em> - To will the good of the other. This isn't about closing deals; 
+                <em className="font-serif text-lg">"Caritas"</em> - To will the good of the other. This isn't about closing deals; 
                 it's about creating value. When you commit to this, the right business naturally follows.
               </p>
             </div>
@@ -264,7 +273,7 @@ Draw a line from our potential solution to financial outcomes
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
+                className={`${buttonStyles.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
                 onClick={() => window.location.href = "#methodology"}
               >
                 Start Learning the Methodology
@@ -272,7 +281,7 @@ Draw a line from our potential solution to financial outcomes
               <Button
                 size="lg"
                 variant="outline"
-                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect}`}
+                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
                 onClick={() => window.location.href = "/associate-program"}
               >
                 <Users className="mr-2 h-5 w-5" />
@@ -293,10 +302,10 @@ Draw a line from our potential solution to financial outcomes
             
             <div className="grid md:grid-cols-2 gap-8">
               {philosophyPrinciples.map((principle, index) => (
-                <Card key={index} className={`${shadows.cardEffect} hover:shadow-lg transition-shadow duration-300`}>
+                <Card key={index} className={`${shadows.cardEffect} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group hover-lift overflow-hidden relative animate-fade-in-up`} style={{ animationDelay: `${index * 100}ms` }}>
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                      <div className={`p-2 rounded-lg ${gradients.primaryLight} group-hover:scale-110 transition-transform duration-300`}>
                         {principle.icon}
                       </div>
                       <CardTitle className="text-xl">{principle.title}</CardTitle>
@@ -309,9 +318,10 @@ Draw a line from our potential solution to financial outcomes
               ))}
             </div>
 
-            <Card className={`mt-8 ${shadows.cardEffect} border-orange-200 bg-orange-50`}>
+            <Card className={`mt-8 ${shadows.cardEffect} border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 animate-fade-in-up animation-delay-500`}>
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-orange-900 mb-4">
+                <h3 className="text-xl font-semibold text-orange-900 mb-4 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-orange-600" />
                   The Mindset Shift
                 </h3>
                 <p className="text-orange-800 mb-4">
@@ -330,20 +340,21 @@ Draw a line from our potential solution to financial outcomes
       </section>
 
       {/* The Four Phases */}
-      <section id="methodology" className={`${spacing.section.md} bg-gray-50`}>
-        <div className="container mx-auto px-4">
+      <section id="methodology" className={`${spacing.section.md} bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative`}>
+        <div className="absolute inset-0 bg-grid-gray-100/[0.03] pointer-events-none" />
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center animate-fade-in-down">
               The Four-Phase Process
             </h2>
-            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
               From preparation to commitment, every step is designed to maximize value delivery
             </p>
             
             {phases.map((phase, phaseIndex) => (
-              <div key={phaseIndex} className="mb-12">
+              <div key={phaseIndex} className="mb-12 animate-fade-in-up" style={{ animationDelay: `${phaseIndex * 150}ms` }}>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-3 rounded-full ${gradients.primaryLight}`}>
+                  <div className={`p-3 rounded-full ${gradients.primaryLight} animate-pulse-soft`}>
                     {phase.icon}
                   </div>
                   <div>
@@ -354,7 +365,8 @@ Draw a line from our potential solution to financial outcomes
                   </div>
                 </div>
                 
-                <Card className={`${shadows.cardEffect}`}>
+                <Card className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300 hover-lift overflow-hidden relative`}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-3xl" />
                   <CardHeader>
                     <CardDescription className="text-base">
                       {phase.description}
@@ -363,12 +375,12 @@ Draw a line from our potential solution to financial outcomes
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-6">
                       {phase.steps.map((step, stepIndex) => (
-                        <div key={stepIndex} className="flex gap-4">
-                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary">
+                        <div key={stepIndex} className="flex gap-4 group hover:bg-gray-50/50 p-3 rounded-lg transition-all duration-200">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                             {stepIndex + 1}
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-1">{step.title}</h4>
+                            <h4 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">{step.title}</h4>
                             <p className="text-sm text-gray-600">{step.details}</p>
                           </div>
                         </div>
@@ -560,7 +572,7 @@ Draw a line from our potential solution to financial outcomes
             </h2>
             
             <div className="space-y-8">
-              <Card className={`${shadows.cardEffect} border-l-4 border-red-500`}>
+              <Card className={`${shadows.cardEffect} border-l-4 border-red-500 hover:shadow-xl transition-all duration-300 hover:border-l-8`}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <AlertCircle className="w-5 h-5 text-red-600" />
@@ -586,7 +598,7 @@ Draw a line from our potential solution to financial outcomes
                 </CardContent>
               </Card>
 
-              <Card className={`${shadows.cardEffect} border-l-4 border-blue-500`}>
+              <Card className={`${shadows.cardEffect} border-l-4 border-blue-500 hover:shadow-xl transition-all duration-300 hover:border-l-8`}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-blue-600" />
@@ -616,7 +628,7 @@ Draw a line from our potential solution to financial outcomes
                 </CardContent>
               </Card>
 
-              <Card className={`${shadows.cardEffect} border-l-4 border-green-500`}>
+              <Card className={`${shadows.cardEffect} border-l-4 border-green-500 hover:shadow-xl transition-all duration-300 hover:border-l-8`}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Zap className="w-5 h-5 text-green-600" />
@@ -649,7 +661,7 @@ Draw a line from our potential solution to financial outcomes
                 </CardContent>
               </Card>
 
-              <Card className={`${shadows.cardEffect} border-l-4 border-orange-500`}>
+              <Card className={`${shadows.cardEffect} border-l-4 border-orange-500 hover:shadow-xl transition-all duration-300 hover:border-l-8`}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <XCircle className="w-5 h-5 text-orange-600" />
@@ -689,10 +701,10 @@ Draw a line from our potential solution to financial outcomes
             </h2>
             
             <div className="grid lg:grid-cols-3 gap-8 mb-12">
-              <Card className={`${shadows.cardEffect}`}>
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover-lift group animate-fade-in-up`}>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                    <div className={`p-2 rounded-lg ${gradients.primaryLight} group-hover:scale-110 transition-transform duration-300`}>
                       <Search className="w-5 h-5" />
                     </div>
                     <CardTitle className="text-lg">Research & Intelligence</CardTitle>
@@ -722,10 +734,10 @@ Draw a line from our potential solution to financial outcomes
                 </CardContent>
               </Card>
 
-              <Card className={`${shadows.cardEffect}`}>
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover-lift group animate-fade-in-up animation-delay-200`}>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                    <div className={`p-2 rounded-lg ${gradients.primaryLight} group-hover:scale-110 transition-transform duration-300`}>
                       <Mic className="w-5 h-5" />
                     </div>
                     <CardTitle className="text-lg">Call & Capture Tools</CardTitle>
@@ -755,10 +767,10 @@ Draw a line from our potential solution to financial outcomes
                 </CardContent>
               </Card>
 
-              <Card className={`${shadows.cardEffect}`}>
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover-lift group animate-fade-in-up animation-delay-400`}>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                    <div className={`p-2 rounded-lg ${gradients.primaryLight} group-hover:scale-110 transition-transform duration-300`}>
                       <Link className="w-5 h-5" />
                     </div>
                     <CardTitle className="text-lg">Relationship & Follow-up</CardTitle>

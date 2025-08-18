@@ -150,25 +150,31 @@ const Methodology = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className={`pt-28 pb-20 ${gradients.backgroundSubtle}`}>
-        <div className="container mx-auto px-4">
+      <section className={`pt-28 pb-20 ${gradients.backgroundSubtle} relative overflow-hidden`}>
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-indigo-400/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-tr from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl animate-float animation-delay-500" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6">
+            <Badge variant="secondary" className="mb-6 animate-fade-in-down hover:scale-110 transition-transform duration-300">
               <BookOpen className="w-3 h-3 mr-1" />
               Open Source Initiative
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-fade-in-up animate-gradient-shift">
               We Open Source Our Methodologies
             </h1>
             
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-              Access the same frameworks we use to deliver <strong>10x transformations</strong> for 
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200 leading-relaxed">
+              Access the same frameworks we use to deliver <strong className="text-purple-600">10x transformations</strong> for 
               SMBs, equity-financed businesses, global enterprises, and public sector clients. Learn at your own pace, implement with your team, 
               or engage us for expert guidance.
             </p>
             
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <div className="glass-effect border border-blue-200/50 rounded-2xl p-8 mb-8 max-w-2xl mx-auto shadow-xl animate-fade-in-up animation-delay-300 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               <p className="text-lg font-semibold text-blue-900 mb-2">
                 🎓 Permissionless Apprenticeship Model
               </p>
@@ -178,10 +184,10 @@ const Methodology = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 size="lg"
-                className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
+                className={`${buttonStyles.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
                 onClick={() => window.location.href = "#methodologies"}
               >
                 Explore Methodologies
@@ -189,7 +195,7 @@ const Methodology = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect}`}
+                className={`${buttonStyles.outline.primary} ${shadows.buttonEffect} hover:scale-105 transition-transform duration-300`}
                 onClick={() => window.location.href = "/associate-program"}
               >
                 <Users className="mr-2 h-5 w-5" />
@@ -209,7 +215,7 @@ const Methodology = () => {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className={`${shadows.cardEffect} hover:shadow-lg transition-shadow duration-300`}>
+              <Card className={`${shadows.cardEffect} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover-lift animate-fade-in-up`}>
                 <CardHeader>
                   <CardTitle className="text-xl">Accelerate AI Adoption</CardTitle>
                 </CardHeader>
@@ -250,13 +256,14 @@ const Methodology = () => {
       </section>
 
       {/* Methodologies Grid */}
-      <section id="methodologies" className={`${spacing.section.md} bg-gray-50`}>
-        <div className="container mx-auto px-4">
+      <section id="methodologies" className={`${spacing.section.md} bg-gradient-to-br from-gray-50 via-white to-indigo-50/30 relative`}>
+        <div className="absolute inset-0 bg-grid-gray-100/[0.03] pointer-events-none" />
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center animate-fade-in-down">
               Available Methodologies
             </h2>
-            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
               Battle-tested frameworks from hundreds of successful implementations
             </p>
             
@@ -264,16 +271,18 @@ const Methodology = () => {
               {methodologies.map((methodology, index) => (
                 <Card 
                   key={index} 
-                  className={`${shadows.cardEffect} hover:shadow-lg transition-all duration-300 ${
-                    methodology.disabled ? 'opacity-75' : 'hover:scale-105'
-                  }`}
+                  className={`${shadows.cardEffect} hover:shadow-2xl transition-all duration-300 ${
+                    methodology.disabled ? 'opacity-75' : 'hover:scale-[1.02] hover:-translate-y-2'
+                  } hover-lift animate-fade-in-up overflow-hidden relative group`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <CardHeader>
                     <div className="flex items-start justify-between mb-4">
-                      <div className={`p-3 rounded-lg ${gradients.primaryLight}`}>
+                      <div className={`p-3 rounded-lg ${gradients.primaryLight} group-hover:scale-110 transition-transform duration-300`}>
                         {methodology.icon}
                       </div>
-                      <Badge className={methodology.statusColor}>
+                      <Badge className={`${methodology.statusColor} group-hover:scale-105 transition-transform duration-300`}>
                         {methodology.status}
                       </Badge>
                     </div>

@@ -112,10 +112,10 @@ export const About = () => {
           <div className="mx-auto max-w-6xl">
             <div className={`text-center mb-12 ${animations.fadeIn}`}>
               <h3 className={`${typography.fluid.h2} text-primary mb-6`}>
-                Expanding Our Impact Through GSD Associates
+                Join the GSD Associate Network
               </h3>
               <p className={`${typography.fluid.large} text-gray-600 max-w-3xl mx-auto`}>
-                Hand-picked, certified professionals delivering the same transformative results
+                Build your AI transformation practice with our proven methodologies and support
               </p>
             </div>
             
@@ -155,28 +155,28 @@ export const About = () => {
                     </div>
                     
                     <h4 className={`${typography.fluid.h3} text-primary font-bold`}>
-                      Ready to Scale AI Impact?
+                      Join Our Network of AI Transformation Leaders
                     </h4>
                     
                     <p className="text-gray-600 leading-relaxed">
-                      Choose an associate-led workshop when you want immediate scheduling flexibility 
-                      at competitive rates without compromising on quality or outcomes.
+                      Are you passionate about AI transformation? Join our elite network of associates 
+                      and help organizations achieve 10x improvements while building your own practice.
                     </p>
                     
                     <div className="space-y-4">
                       <div className={`bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200 ${animations.pulsingGlow}`}>
                         <div className="flex items-center justify-center gap-2">
                           <CircuitBoard className="h-5 w-5 text-green-600" />
-                          <span className="text-green-800 font-semibold">Same Proven Process & Outcomes</span>
+                          <span className="text-green-800 font-semibold">Performance-Based Compensation</span>
                         </div>
                       </div>
                       
                       <Button
                         className={`w-full bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white font-semibold py-4 ${animations.hoverLift} ${animations.hoverGlow} hover:shadow-secondary/25`}
-                        onClick={() => window.open("https://calendly.com/d/cst9-jzy-7kj/accelerated-ai-adoption-strategic-planning-call", "_blank")}
+                        onClick={() => window.location.href = "/associate-program"}
                       >
                         <GraduationCap className="h-5 w-5 mr-2" />
-                        Learn About Associates Program
+                        Become a GSD Associate
                       </Button>
                     </div>
                   </div>
