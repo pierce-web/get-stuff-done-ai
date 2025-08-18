@@ -742,7 +742,7 @@ Draw a line from our potential solution to financial outcomes
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-600 mt-0.5" />
                       <div>
-                        <strong>Vappy:</strong> AI voice assistant for pre-call intake
+                        <strong>Vapi:</strong> AI voice assistant for pre-call intake
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
@@ -793,7 +793,7 @@ Draw a line from our potential solution to financial outcomes
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Mic className="w-5 h-5" />
-                  Voice Assistant Setup (Vappy)
+                  Voice Assistant Setup (Vapi)
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -822,7 +822,7 @@ Draw a line from our potential solution to financial outcomes
                     <ol className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
                         <span className="font-semibold">1.</span>
-                        Deploy Vappy agent with intake script
+                        Deploy Vapi agent with intake script
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="font-semibold">2.</span>
