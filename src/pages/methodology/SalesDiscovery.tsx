@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ExternalLink, Github, Download, BookOpen, Users, Target, TrendingUp, BarChart, FileText, Lightbulb, Scale, Search, Phone, Heart, DollarSign, Clock, Brain, Zap, AlertCircle } from "lucide-react";
+import { Check, ExternalLink, Github, Download, BookOpen, Users, Target, TrendingUp, BarChart, FileText, Lightbulb, Scale, Search, Phone, Heart, DollarSign, Clock, Brain, Zap, AlertCircle, Mic, Shield, Link, ArrowRight, XCircle } from "lucide-react";
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
@@ -551,6 +551,300 @@ Draw a line from our potential solution to financial outcomes
         </div>
       </section>
 
+      {/* Real-World Examples */}
+      <section className={`${spacing.section.md}`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-12 text-center">
+              Real-World Examples & Scenarios
+            </h2>
+            
+            <div className="space-y-8">
+              <Card className={`${shadows.cardEffect} border-l-4 border-red-500`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 text-red-600" />
+                    The Pause Path: AI Trend Chaser
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-3">
+                    <strong>Scenario:</strong> A traditional manufacturing CEO wants to "put AI on everything" after a conference.
+                  </p>
+                  <p className="text-gray-600 mb-3">
+                    <strong>Discovery:</strong> Their core competency is precision engineering. Their customers value reliability over innovation. 
+                    AI implementation would distract from their differentiator.
+                  </p>
+                  <p className="text-gray-700 italic">
+                    <strong>Your Response:</strong> "I'm going to recommend something unusual - don't pursue AI right now. 
+                    Your 98% on-time delivery is why Fortune 500s choose you. Focus on getting to 99.5% instead. 
+                    That's worth $2M more than any AI initiative."
+                  </p>
+                  <p className="text-sm text-green-700 mt-3">
+                    <strong>Result:</strong> They become your biggest advocate, referring 3 clients who actually need AI transformation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect} border-l-4 border-blue-500`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-blue-600" />
+                    The DIY Path: Recruiter's 10x Improvement
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-3">
+                    <strong>Scenario:</strong> A $500 engagement to help one recruiter optimize their workflow.
+                  </p>
+                  <p className="text-gray-600 mb-3">
+                    <strong>Discovery:</strong> They spend 3 hours daily typing up candidate notes into their ATS.
+                  </p>
+                  <p className="text-gray-700 mb-3">
+                    <strong>DIY Solution:</strong> "Use this voice-to-text template with Claude. Record your thoughts, 
+                    paste the transcript, and it formats everything for your ATS. Here's the exact prompt..."
+                  </p>
+                  <p className="text-gray-600 italic mb-3">
+                    <strong>Commitment:</strong> "When will you test this with 5 candidates?" → "By Friday."
+                    <br />
+                    <strong>Follow-up:</strong> Automated email scheduled for Friday afternoon.
+                  </p>
+                  <p className="text-sm text-green-700">
+                    <strong>Result:</strong> They save 2.5 hours daily. Six months later, their company engages you for 
+                    a $50K enterprise transformation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect} border-l-4 border-green-500`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Zap className="w-5 h-5 text-green-600" />
+                    The Accelerate Path: Top-of-Funnel Crisis
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-3">
+                    <strong>Scenario:</strong> SaaS startup with 0.1% cold email response rate, burning $50K/month, 
+                    4 months runway remaining.
+                  </p>
+                  <p className="text-gray-600 mb-3">
+                    <strong>Discovery:</strong> Generic messaging, no personalization, targeting too broad.
+                  </p>
+                  <p className="text-gray-700 mb-3">
+                    <strong>Vision Test:</strong> "If I could guarantee 100 qualified meetings booked next month, 
+                    how would that feel?" → "That would literally save our company!"
+                  </p>
+                  <p className="text-gray-600 mb-3">
+                    <strong>Offensive Amount Question:</strong> "What would be an offensive amount to ask for that?" 
+                    → "$75,000"
+                  </p>
+                  <p className="text-gray-700 italic mb-3">
+                    <strong>Your Offer:</strong> "For $15K upfront, I'll build an AI-powered outbound system using 
+                    Clay + GPT-4 + multi-channel sequences. If we don't book 50 meetings, full refund."
+                  </p>
+                  <p className="text-sm text-green-700">
+                    <strong>Result:</strong> 73 meetings booked, 12 deals closed, company extends runway by 18 months.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect} border-l-4 border-orange-500`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <XCircle className="w-5 h-5 text-orange-600" />
+                    The Tire Kicker: "Just Exploring Options"
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-3">
+                    <strong>Red Flags:</strong> Vague about budget, no specific pain point, "just want to learn about AI," 
+                    multiple stakeholders but no decision maker present.
+                  </p>
+                  <p className="text-gray-600 mb-3">
+                    <strong>Your Response:</strong> Shift to DIY immediately. Give them valuable resources, 
+                    connect on LinkedIn, but don't invest more time.
+                  </p>
+                  <p className="text-gray-700 italic">
+                    <strong>Script:</strong> "Based on what you've shared, you're in exploration mode. Here's my 
+                    AI Readiness Checklist. Once you identify a specific workflow bottleneck costing over $50K annually, 
+                    let's reconnect."
+                  </p>
+                  <p className="text-sm text-blue-700 mt-3">
+                    <strong>Lesson:</strong> Qualify early and often. Your time has value - protect it.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className={`${spacing.section.md} bg-gray-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-12 text-center">
+              Technology Stack & Implementation
+            </h2>
+            
+            <div className="grid lg:grid-cols-3 gap-8 mb-12">
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                      <Search className="w-5 h-5" />
+                    </div>
+                    <CardTitle className="text-lg">Research & Intelligence</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>ChatGPT/Claude:</strong> Deep research agents with web browsing
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Perplexity:</strong> Real-time market intelligence
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>LinkedIn Sales Navigator:</strong> Professional background research
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                      <Mic className="w-5 h-5" />
+                    </div>
+                    <CardTitle className="text-lg">Call & Capture Tools</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Fireflies.ai:</strong> Automatic transcription and note-taking
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Vappy:</strong> AI voice assistant for pre-call intake
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Calendly:</strong> Scheduling with intake questions
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`p-2 rounded-lg ${gradients.primaryLight}`}>
+                      <Link className="w-5 h-5" />
+                    </div>
+                    <CardTitle className="text-lg">Relationship & Follow-up</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Happenstance:</strong> Find warm intros in your network
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Shortwave/Superhuman:</strong> Email scheduling and automation
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <div>
+                        <strong>Clay:</strong> Data enrichment and personalization
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className={`${shadows.cardEffect} ${gradients.secondaryLight}`}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Mic className="w-5 h-5" />
+                  Voice Assistant Setup (Vappy)
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Pre-Call Intake Script</h4>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <p className="text-sm font-mono">
+                        "Hi! I'm helping [Your Name] prepare for your upcoming conversation. 
+                        To make the most of your time together, I'd love to learn more about your situation.
+                        <br /><br />
+                        First, what's the biggest challenge you're facing in your business right now?
+                        <br /><br />
+                        [Listen and probe deeper]
+                        <br /><br />
+                        What would success look like for you in 3 months?
+                        <br /><br />
+                        What have you already tried to solve this problem?
+                        <br /><br />
+                        On a scale of 1-10, how urgent is solving this for you?"
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Implementation Steps</h4>
+                    <ol className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="font-semibold">1.</span>
+                        Deploy Vappy agent with intake script
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="font-semibold">2.</span>
+                        Add phone number to calendar invite: "Call 555-XXX-XXXX for optional pre-meeting intake (5 min)"
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="font-semibold">3.</span>
+                        Review transcript before live call
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="font-semibold">4.</span>
+                        Start conversation with: "I reviewed your intake call notes..."
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Practical Tools & Templates */}
       <section className={`${spacing.section.md}`}>
         <div className="container mx-auto px-4">
@@ -678,8 +972,156 @@ Draw a line from our potential solution to financial outcomes
         </div>
       </section>
 
-      {/* Best Practices */}
+      {/* Qualification & Red Flags */}
       <section className={`${spacing.section.md} bg-gray-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-12 text-center">
+              Qualification & Red Flags
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className={`${shadows.cardEffect} border-red-200`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-red-700">
+                    <XCircle className="w-5 h-5" />
+                    Red Flags to Watch For
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
+                      <div>
+                        <strong>No specific pain point:</strong> "We just want to explore AI"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
+                      <div>
+                        <strong>No budget authority:</strong> "I need to check with my boss"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
+                      <div>
+                        <strong>Comparison shopping:</strong> "We're talking to 10 vendors"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
+                      <div>
+                        <strong>No urgency:</strong> "Maybe next year"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
+                      <div>
+                        <strong>Wants free consulting:</strong> Multiple "quick questions" emails
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-500 mt-0.5" />
+                      <div>
+                        <strong>Past payment issues:</strong> "Can we do net 90?"
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect} border-green-200`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-green-700">
+                    <Shield className="w-5 h-5" />
+                    Green Flags of Quality Prospects
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5" />
+                      <div>
+                        <strong>Specific, quantified pain:</strong> "We waste 20 hours/week on X"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5" />
+                      <div>
+                        <strong>Decision maker present:</strong> CEO/VP directly engaged
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5" />
+                      <div>
+                        <strong>Budget allocated:</strong> "We have $X set aside for this"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5" />
+                      <div>
+                        <strong>Clear timeline:</strong> "We need this solved by Q2"
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5" />
+                      <div>
+                        <strong>Past success with consultants:</strong> Track record of investing
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5" />
+                      <div>
+                        <strong>Prepared for call:</strong> Completed intake, shared context
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className={`${shadows.cardEffect} ${gradients.primaryLight}`}>
+              <CardHeader>
+                <CardTitle>Early Disqualification Scripts</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="p-4 bg-white rounded-lg">
+                    <p className="font-semibold text-sm mb-2">For the Tire Kicker:</p>
+                    <p className="text-sm italic text-gray-700">
+                      "It sounds like you're in early exploration mode. I've created a free resource - 
+                      the AI Readiness Assessment - that will help you identify if and where AI makes sense 
+                      for your business. Once you find a specific bottleneck costing over $50K annually, 
+                      let's reconnect."
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 bg-white rounded-lg">
+                    <p className="font-semibold text-sm mb-2">For the Budget-Less:</p>
+                    <p className="text-sm italic text-gray-700">
+                      "Based on what you've shared, the solution would require about $X investment. 
+                      It sounds like that's not in the cards right now. Here's what you can do yourself 
+                      in the meantime... When budget becomes available, I'm happy to help accelerate your progress."
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 bg-white rounded-lg">
+                    <p className="font-semibold text-sm mb-2">For the Wrong Fit:</p>
+                    <p className="text-sm italic text-gray-700">
+                      "I specialize in AI-powered process transformation for workflows losing over $50K annually. 
+                      Your challenge sounds more like a pure software development need. 
+                      Let me introduce you to [Name] who specializes in exactly what you're looking for."
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Best Practices */}
+      <section className={`${spacing.section.md}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-primary mb-12 text-center">
@@ -889,6 +1331,158 @@ Draw a line from our potential solution to financial outcomes
               Licensed under Apache 2.0 with GSD at Work LLC copyright. 
               Free to use, modify, and distribute with attribution.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Connection to Other Methodologies */}
+      <section className={`${spacing.section.md} bg-gray-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-12 text-center">
+              How This Connects to Other GSD Methodologies
+            </h2>
+            
+            <div className="grid lg:grid-cols-2 gap-8">
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Target className="w-5 h-5" />
+                    Discovery → Triple-A Framework
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Discovery calls identify 10x opportunities that become candidates for the Triple-A transformation process.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-blue-50 rounded-lg">
+                      <p className="text-sm font-semibold">Discovery Output</p>
+                      <p className="text-xs text-gray-600">Qualified 10x opportunity with stakeholder buy-in</p>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded-lg">
+                      <p className="text-sm font-semibold">Triple-A Input</p>
+                      <p className="text-xs text-gray-600">0→1 Action Workshop to prototype solution</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Lightbulb className="w-5 h-5" />
+                    Discovery → Action Workshops
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    The "Accelerate" path often leads directly to booking an Action Workshop as the first engagement.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-purple-50 rounded-lg">
+                      <p className="text-sm font-semibold">Discovery Negotiation</p>
+                      <p className="text-xs text-gray-600">"Let's do a 2-hour workshop for $X to prove the 10x improvement"</p>
+                    </div>
+                    <div className="p-3 bg-orange-50 rounded-lg">
+                      <p className="text-sm font-semibold">Workshop Delivery</p>
+                      <p className="text-xs text-gray-600">Hands-on transformation with immediate ROI</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Users className="w-5 h-5" />
+                    Discovery → Associate Program
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Master discovery calls to qualify for the GSD Associate Program.
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <span>Complete 3+ successful discovery-to-engagement conversions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <span>Demonstrate mastery of the three paths</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 mt-0.5" />
+                      <span>Build reputation for creating genuine value</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className={`${shadows.cardEffect}`}>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BarChart className="w-5 h-5" />
+                    Discovery → AI Oracle Sessions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    Complex organizations may need an AI Oracle session before individual discoveries.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-indigo-50 rounded-lg">
+                      <p className="text-sm font-semibold">Oracle First</p>
+                      <p className="text-xs text-gray-600">Top-down analysis identifies opportunities</p>
+                    </div>
+                    <div className="p-3 bg-teal-50 rounded-lg">
+                      <p className="text-sm font-semibold">Discovery Second</p>
+                      <p className="text-xs text-gray-600">Deep-dive with specific stakeholders</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className={`${shadows.cardEffect} ${gradients.primaryLight} mt-8`}>
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold mb-4 text-center">The Discovery Foundation</h3>
+                <p className="text-gray-700 text-center mb-6">
+                  Sales Discovery is the foundation of all GSD engagements. Master this methodology first, 
+                  then layer on specialized frameworks based on client needs.
+                </p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className={buttonStyles.outline.secondary}
+                    onClick={() => window.location.href = "/methodology/triple-a-framework"}
+                  >
+                    Triple-A Framework
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className={buttonStyles.outline.secondary}
+                    onClick={() => window.location.href = "/ai-action-workshop"}
+                  >
+                    Action Workshops
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className={buttonStyles.outline.secondary}
+                    onClick={() => window.location.href = "/associate-program"}
+                  >
+                    Associate Program
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
