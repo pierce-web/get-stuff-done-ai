@@ -7,8 +7,15 @@ import { Search, TrendingUp, AlertTriangle, Sparkles, Database, Mic, FileText, U
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
-import { dataSourceCategories } from "./AIOracle.data";
-import { DataSourceExplorer } from "./AIOracle.components";
+import { dataSourceCategories, insightfulQuestions } from "./AIOracle.data";
+import { 
+  DataSourceExplorer,
+  ConvexityVisualizer,
+  SessionTimeline,
+  QuestionBank,
+  OracleROICalculator,
+  SuccessStoryCarousel
+} from "./AIOracle.components";
 
 const AIOracle = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -195,6 +202,21 @@ const AIOracle = () => {
         </div>
       </section>
 
+      {/* Success Stories */}
+      <section className={`py-${spacing.section.sm} bg-gradient-to-br from-indigo-50 to-purple-50`}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 text-center animate-fade-in-down">
+              Real Oracle Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+              See how organizations have uncovered critical insights hidden in their data
+            </p>
+            <SuccessStoryCarousel />
+          </div>
+        </div>
+      </section>
+
       {/* Expected Outcomes */}
       <section className={`py-${spacing.section.md} bg-gradient-to-br from-gray-50 to-white`}>
         <div className="container mx-auto px-4">
@@ -291,6 +313,11 @@ const AIOracle = () => {
                 </p>
               </CardContent>
             </Card>
+            
+            {/* Interactive Convexity Visualizer */}
+            <div className="mt-12">
+              <ConvexityVisualizer />
+            </div>
           </div>
         </div>
       </section>
@@ -299,9 +326,14 @@ const AIOracle = () => {
       <section id="methodology" className={`py-${spacing.section.lg}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-down">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-down">
               The Three-Phase Oracle Process
             </h2>
+            
+            {/* Interactive Timeline */}
+            <div className="mb-12">
+              <SessionTimeline />
+            </div>
             
             {/* Phase 1: Preparation & Data Curation */}
             <div className="mb-16 animate-fade-in-up">
@@ -738,6 +770,11 @@ const AIOracle = () => {
               </CardContent>
             </Card>
             
+            {/* Interactive Question Bank */}
+            <div className="mb-8">
+              <QuestionBank questions={insightfulQuestions} />
+            </div>
+            
             {/* Technical Best Practices */}
             <Card className={`${shadows.cardEffect} border-indigo-200`}>
               <CardHeader>
@@ -930,6 +967,11 @@ const AIOracle = () => {
               This methodology is open source because insight shouldn't be proprietary. 
               Master it yourself, or work with our certified practitioners.
             </p>
+            
+            {/* ROI Calculator */}
+            <div className="mb-12">
+              <OracleROICalculator />
+            </div>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <Card className={`${shadows.cardEffect} hover:shadow-lg transition-all duration-300`}>

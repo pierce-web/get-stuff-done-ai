@@ -97,19 +97,62 @@ export const executiveQuestions = [
   {
     name: "The Crystal Ball Question",
     question: "If you had a crystal ball that saw everything the company did for the past 60 days, what three questions would you ask it?",
-    purpose: "Surfaces unspoken priorities"
+    purpose: "Surfaces unspoken priorities",
+    category: "discovery"
   },
   {
-    name: "The Attention Question",
+    name: "The Attention Question", 
     question: "What's the most important thing happening that no one is paying enough attention to?",
-    purpose: "Identifies blind spots"
+    purpose: "Identifies blind spots",
+    category: "discovery"
   },
   {
     name: "The Pre-Mortem",
     question: "It's one year from now and we've failed to hit our goals. What's the most likely reason?",
-    purpose: "Reveals hidden risks"
+    purpose: "Reveals hidden risks",
+    category: "risk"
+  },
+  {
+    name: "Goals & Priorities",
+    question: "What are your top 3 goals for the next quarter? What's keeping you up at night?",
+    purpose: "Maps current focus areas",
+    category: "context"
+  },
+  {
+    name: "The Frustration Question",
+    question: "What process or workflow in the company frustrates you the most? Why?",
+    purpose: "Uncovers efficiency opportunities",
+    category: "opportunity"
+  },
+  {
+    name: "The Success Pattern",
+    question: "When things go really well here, what usually makes the difference?",
+    purpose: "Identifies success patterns to amplify",
+    category: "opportunity"
   }
 ];
+
+export const vapiSetupGuide = {
+  purpose: "Make every participant feel heard before the live session",
+  benefits: [
+    "Tailors analysis to their specific concerns",
+    "Increases engagement and buy-in",
+    "Surfaces executive hunches and intuition",
+    "Creates psychological ownership of insights"
+  ],
+  technicalSetup: [
+    "Create Vapi voice assistant with warm, professional tone",
+    "Set up outbound calling capability or provide dial-in number", 
+    "Configure 10-15 minute conversation length",
+    "Auto-transcribe all responses for analysis inclusion"
+  ],
+  bestPractices: [
+    "Send calendar invite with context: 'Brief prep call for Oracle session'",
+    "Position as 'helping us tailor the analysis to your priorities'",
+    "Keep conversational and natural - not an interrogation",
+    "Follow up immediately with transcript for verification"
+  ]
+};
 
 export const aiAgentPersonalities = [
   {
