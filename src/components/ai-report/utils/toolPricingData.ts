@@ -76,6 +76,12 @@ export const toolPricingData: ToolPrice[] = [
     purpose: "Meeting scheduling that helps you take control of your time and attention. Set constraints on availability and create workflows (e.g., voice intake via VAPI) to collect and analyze information before meetings.",
   },
   {
+    tool: "Howie.ai",
+    url: "https://howie.ai",
+    cost: "$400 (custom domain)",
+    purpose: "AI-powered email scheduling assistant that makes coordination a million times easier. Handles complex meeting scheduling and rescheduling across teams with custom domain support for enterprise branding.",
+  },
+  {
     tool: "Zoom",
     url: "https://zoom.us",
     cost: "$17",
