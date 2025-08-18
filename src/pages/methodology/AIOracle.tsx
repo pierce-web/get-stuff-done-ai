@@ -7,6 +7,8 @@ import { Search, TrendingUp, AlertTriangle, Sparkles, Database, Mic, FileText, U
 import { KeywordOptimizedSEO } from "@/components/seo/KeywordOptimizedSEO";
 import { generateServicePageStructuredData, generateFAQStructuredData } from "@/lib/seo-utils";
 import { shadows, gradients, buttonStyles, animations, borderRadius, spacing } from "@/lib/design-tokens";
+import { dataSourceCategories } from "./AIOracle.data";
+import { DataSourceExplorer } from "./AIOracle.components";
 
 const AIOracle = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -325,49 +327,48 @@ const AIOracle = () => {
                         Step 1: Create Comprehensive Data Inventory
                       </h4>
                       
-                      <div className="grid md:grid-cols-3 gap-6">
-                        <Card className="border-indigo-200 bg-indigo-50/50">
-                          <CardHeader>
-                            <CardTitle className="text-base text-indigo-900">High-Value External</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <ul className="space-y-2 text-sm text-gray-700">
-                              <li>• Sales call transcripts</li>
-                              <li>• Support tickets & chats</li>
-                              <li>• Customer emails</li>
-                              <li>• Meeting recordings</li>
-                            </ul>
-                          </CardContent>
-                        </Card>
-                        
-                        <Card className="border-purple-200 bg-purple-50/50">
-                          <CardHeader>
-                            <CardTitle className="text-base text-purple-900">Valuable Internal</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <ul className="space-y-2 text-sm text-gray-700">
-                              <li>• Employee surveys</li>
-                              <li>• Slack exports</li>
-                              <li>• Code repositories</li>
-                              <li>• Project management data</li>
-                            </ul>
-                          </CardContent>
-                        </Card>
-                        
-                        <Card className="border-pink-200 bg-pink-50/50">
-                          <CardHeader>
-                            <CardTitle className="text-base text-pink-900">Quantitative & Public</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <ul className="space-y-2 text-sm text-gray-700">
-                              <li>• Financial/ERP data</li>
-                              <li>• Sales figures</li>
-                              <li>• Public reviews (G2, etc)</li>
-                              <li>• Market research</li>
-                            </ul>
-                          </CardContent>
-                        </Card>
-                      </div>
+                      <Card className={`${shadows.cardEffect} border-emerald-200 bg-gradient-to-br from-emerald-50 to-green-50`}>
+                        <CardContent className="p-6">
+                          <div className="mb-4 p-4 bg-emerald-100/80 rounded-lg border border-emerald-300">
+                            <p className="font-semibold text-emerald-900 mb-2">🎯 Value Hierarchy Principle</p>
+                            <p className="text-sm text-emerald-800">
+                              <strong>Private data from customer interactions</strong> yields the highest Oracle insights. 
+                              Start here first - recorded calls, support tickets, customer emails contain unfiltered truth.
+                            </p>
+                          </div>
+                          
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-3 p-3 bg-white/80 rounded-lg">
+                              <span className="text-2xl">🔥</span>
+                              <div>
+                                <p className="font-semibold text-gray-900">Private External (★★★★★)</p>
+                                <p className="text-sm text-gray-600">Customer calls, support tickets, emails - your proprietary gold mine</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-3 p-3 bg-white/80 rounded-lg">
+                              <span className="text-2xl">📊</span>
+                              <div>
+                                <p className="font-semibold text-gray-900">Private Quantitative (★★★)</p>
+                                <p className="text-sm text-gray-600">ERP data, metrics, analytics - reliable ground truth for sizing</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-3 p-3 bg-white/80 rounded-lg">
+                              <span className="text-2xl">🏢</span>
+                              <div>
+                                <p className="font-semibold text-gray-900">Private Internal (★★)</p>
+                                <p className="text-sm text-gray-600">Employee surveys, Slack, meetings - organizational context</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-3 p-3 bg-white/80 rounded-lg">
+                              <span className="text-2xl">🌐</span>
+                              <div>
+                                <p className="font-semibold text-gray-900">Public Data (★)</p>
+                                <p className="text-sm text-gray-600">Reviews, industry reports - supplementary validation</p>
+                              </div>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
                       
                       <div className="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
                         <p className="text-sm text-amber-800">
@@ -375,6 +376,11 @@ const AIOracle = () => {
                           sales calls skew optimistic. Cross-functional experts contextualize these biases during analysis.
                         </p>
                       </div>
+                    </div>
+                    
+                    {/* Interactive Data Source Explorer */}
+                    <div className="mt-8">
+                      <DataSourceExplorer dataCategories={dataSourceCategories} />
                     </div>
                     
                     {/* Executive Context */}

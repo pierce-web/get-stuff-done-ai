@@ -9,55 +9,89 @@ import { Search, AlertTriangle, TrendingUp, Shield, Database, Mic, FileText, Use
 
 // Interactive Data Source Explorer
 export const DataSourceExplorer = ({ dataCategories }: { dataCategories: any[] }) => {
-  const [selectedCategory, setSelectedCategory] = useState("external");
+  const [selectedCategory, setSelectedCategory] = useState("private-external");
+  
+  const getValueStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <span key={i} className={i < rating ? "text-yellow-400" : "text-gray-300"}>★</span>
+    ));
+  };
   
   return (
-    <Card className={`${shadows.cardEffect} border-2 border-indigo-200`}>
+    <Card className={`${shadows.cardEffect} border-2 border-emerald-200`}>
       <CardHeader>
         <CardTitle className="text-xl flex items-center gap-2">
-          <Database className="w-5 h-5 text-indigo-600" />
-          Interactive Data Source Explorer
+          <Database className="w-5 h-5 text-emerald-600" />
+          Data Source Value Hierarchy
         </CardTitle>
         <CardDescription>
-          Click each category to explore valuable data sources for Oracle analysis
+          Organized by value for Oracle insights - start with highest value sources
         </CardDescription>
       </CardHeader>
       <CardContent>
+        {/* Value hierarchy overview */}
+        <div className="mb-6 p-4 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-lg border border-emerald-200">
+          <p className="text-sm text-gray-700 mb-2">
+            <strong>Key Insight:</strong> Private data from customer interactions yields the highest-value insights.
+            Each category builds on the others, but prioritize your time accordingly.
+          </p>
+        </div>
+        
         <Tabs value={selectedCategory} onValueChange={setSelectedCategory}>
-          <TabsList className="grid grid-cols-3 w-full">
+          <TabsList className="grid grid-cols-2 lg:grid-cols-4 w-full gap-1">
             {dataCategories.map((cat) => (
-              <TabsTrigger key={cat.category} value={cat.category}>
-                {cat.title.split(' ')[0]}
+              <TabsTrigger key={cat.category} value={cat.category} className="text-xs p-2">
+                <div className="flex flex-col items-center">
+                  <span className="font-medium">{cat.title.split(':')[0]}</span>
+                  <div className="flex text-xs">{getValueStars(cat.valueRating)}</div>
+                </div>
               </TabsTrigger>
             ))}
           </TabsList>
           
           {dataCategories.map((cat) => (
             <TabsContent key={cat.category} value={cat.category} className="mt-6">
-              <Card className={`border-${cat.colorScheme}-200 bg-${cat.colorScheme}-50/50`}>
+              <Card className={`border-${cat.colorScheme}-200 bg-gradient-to-br from-${cat.colorScheme}-50 to-white`}>
                 <CardHeader>
-                  <CardTitle className={`text-lg text-${cat.colorScheme}-900`}>
-                    {cat.title}
-                  </CardTitle>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <CardTitle className={`text-lg text-${cat.colorScheme}-900`}>
+                        {cat.title}
+                      </CardTitle>
+                      <CardDescription className="mt-1">
+                        {cat.subtitle}
+                      </CardDescription>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium text-gray-600">Value:</span>
+                      <div className="flex">{getValueStars(cat.valueRating)}</div>
+                    </div>
+                  </div>
+                  <p className={`text-sm text-${cat.colorScheme}-700 mt-2`}>
+                    {cat.description}
+                  </p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
-                    {cat.sources.map((source: string, idx: number) => (
-                      <li key={idx} className="flex items-start gap-3 p-3 bg-white/60 rounded-lg hover:bg-white/80 transition-colors">
-                        <CheckCircle className={`w-5 h-5 text-${cat.colorScheme}-500 mt-0.5`} />
-                        <span className="text-gray-700">{source}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  {cat.category === "external" && (
-                    <Alert className="mt-4 border-indigo-200 bg-indigo-50">
-                      <AlertCircle className="h-4 w-4 text-indigo-600" />
-                      <AlertDescription className="text-indigo-800">
-                        <strong>Highest Value:</strong> Data from external interactions contains the most actionable insights
-                      </AlertDescription>
-                    </Alert>
-                  )}
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-3">Data Sources:</h4>
+                      <div className="grid gap-2">
+                        {cat.sources.map((source: string, idx: number) => (
+                          <div key={idx} className="flex items-start gap-3 p-3 bg-white/80 rounded-lg hover:bg-white transition-colors">
+                            <CheckCircle className={`w-4 h-4 text-${cat.colorScheme}-500 mt-0.5 flex-shrink-0`} />
+                            <span className="text-gray-700 text-sm">{source}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className={`p-4 bg-${cat.colorScheme}-100/50 rounded-lg border border-${cat.colorScheme}-200`}>
+                      <h4 className={`font-semibold text-${cat.colorScheme}-900 mb-2`}>Why This Matters:</h4>
+                      <p className={`text-sm text-${cat.colorScheme}-800`}>
+                        {cat.whyValuable}
+                      </p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>

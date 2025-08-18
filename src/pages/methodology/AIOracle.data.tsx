@@ -24,37 +24,72 @@ export const macroscopeComparison = [
 
 export const dataSourceCategories = [
   {
-    title: "High-Value External",
-    category: "external",
-    colorScheme: "indigo",
+    title: "🔥 Highest Value: Private External",
+    subtitle: "Private data from customer interactions",
+    category: "private-external",
+    colorScheme: "emerald",
+    description: "Your proprietary window into customer reality - this is where the gold is",
     sources: [
-      "Sales call transcripts",
-      "Support tickets & chats",
-      "Customer emails",
-      "Meeting recordings"
-    ]
+      "Recorded sales calls & demos",
+      "Support tickets & chat logs",
+      "Customer email threads",
+      "Client meeting transcripts",
+      "User onboarding sessions",
+      "Customer success check-ins"
+    ],
+    valueRating: 5,
+    whyValuable: "High-fidelity, qualitative data that reveals what customers actually think, need, and struggle with"
   },
   {
-    title: "Valuable Internal",
-    category: "internal",
+    title: "📊 Ground Truth: Private Quantitative",
+    subtitle: "Internal metrics and financial data",
+    category: "private-quantitative",
+    colorScheme: "blue",
+    description: "Reliable baseline metrics for validating qualitative insights",
+    sources: [
+      "ERP/Financial systems",
+      "CRM pipeline data",
+      "Usage analytics",
+      "Churn metrics",
+      "Product telemetry",
+      "Revenue breakdowns"
+    ],
+    valueRating: 3,
+    whyValuable: "Provides hard numbers to size opportunities and validate hypotheses from qualitative data"
+  },
+  {
+    title: "🏢 Context: Private Internal",
+    subtitle: "Internal communications and operations",
+    category: "private-internal",
     colorScheme: "purple",
+    description: "Reveals organizational dynamics and internal perspectives",
     sources: [
       "Employee surveys",
-      "Slack exports",
+      "Internal Slack/Teams",
+      "Team meeting notes",
+      "Project retrospectives",
       "Code repositories",
-      "Project management data"
-    ]
+      "Internal documentation"
+    ],
+    valueRating: 2,
+    whyValuable: "Shows how internal teams perceive challenges and can reveal process inefficiencies"
   },
   {
-    title: "Quantitative & Public",
+    title: "🌐 Supplementary: Public Data",
+    subtitle: "Publicly available information",
     category: "public",
-    colorScheme: "pink",
+    colorScheme: "gray",
+    description: "External validation and competitive context",
     sources: [
-      "Financial/ERP data",
-      "Sales figures",
-      "Public reviews (G2, etc)",
-      "Market research"
-    ]
+      "Public reviews (G2, Capterra)",
+      "Social media mentions",
+      "Industry reports",
+      "Competitor analysis",
+      "Market research",
+      "News & press"
+    ],
+    valueRating: 1,
+    whyValuable: "Provides market context but lacks the specificity of proprietary data"
   }
 ];
 
