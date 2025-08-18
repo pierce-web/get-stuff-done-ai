@@ -267,16 +267,16 @@ Draw a line from our potential solution to financial outcomes
                 className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
                 onClick={() => window.location.href = "#methodology"}
               >
-                Explore the Methodology
+                Start Learning the Methodology
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className={`${buttonStyles.outline.primary} ${shadows.buttonEffect}`}
-                onClick={() => window.location.href = "#download"}
+                onClick={() => window.location.href = "/associate-program"}
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resources
+                <Users className="mr-2 h-5 w-5" />
+                Become an Associate
               </Button>
             </div>
           </div>
@@ -715,7 +715,7 @@ Draw a line from our potential solution to financial outcomes
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-600 mt-0.5" />
                       <div>
-                        <strong>LinkedIn Sales Navigator:</strong> Professional background research
+                        <strong>Clay.com:</strong> Scalable data enrichment and qualification
                       </div>
                     </li>
                   </ul>
@@ -798,8 +798,14 @@ Draw a line from our potential solution to financial outcomes
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
+                  <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200 mb-4">
+                    <p className="text-sm text-yellow-900">
+                      <strong>Note:</strong> This is a sample intake script. To deploy, you'll need to create a proper system prompt 
+                      that gives the assistant full context about your business, expertise, and discovery goals.
+                    </p>
+                  </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Pre-Call Intake Script</h4>
+                    <h4 className="font-semibold mb-2">Sample Pre-Call Intake Script</h4>
                     <div className="bg-white p-4 rounded-lg border border-gray-200">
                       <p className="text-sm font-mono">
                         "Hi! I'm helping [Your Name] prepare for your upcoming conversation. 
@@ -1269,59 +1275,72 @@ Draw a line from our potential solution to financial outcomes
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-primary mb-8">
-              Ready to Transform Your Sales Process?
+              Start Tracking Your Discovery Calls
             </h2>
             
             <Card className={`${shadows.cardEffect} max-w-2xl mx-auto`}>
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">What's Included</h3>
-                    <ul className="text-left space-y-2 text-gray-600">
+                    <h3 className="text-xl font-semibold mb-3">Discovery Call Tracker</h3>
+                    <p className="text-gray-600 mb-4">
+                      Download our CSV tracker to start documenting your discovery calls. 
+                      Each completed row represents one solid rep toward mastery.
+                    </p>
+                    <ul className="text-left space-y-2 text-gray-600 mb-6">
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        Complete methodology guide
+                        Track prospect details and company info
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        Discovery call scripts and questions
+                        Document long-term goals and proximal challenges
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        Research dossier templates
+                        Record estimated value and path chosen
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        Follow-up email templates
+                        Monitor concrete commitments and follow-ups
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        ROI calculation frameworks
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <Check className="w-4 h-4 text-green-600" />
-                        Voice assistant prompts
+                        Link to discovery call recordings
                       </li>
                     </ul>
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex flex-col gap-4">
                     <Button
                       size="lg"
-                      className={`${buttonStyles.primary} ${shadows.buttonEffect}`}
-                      onClick={() => window.open("https://github.com/culstrup/get-stuff-done-ai", "_blank")}
+                      className={`${buttonStyles.primary} ${shadows.buttonEffect} w-full`}
+                      onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '/downloads/discovery-tracker-template.csv';
+                        link.download = 'discovery-tracker-template.csv';
+                        link.click();
+                      }}
                     >
-                      <Github className="mr-2 h-5 w-5" />
-                      View on GitHub
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Discovery Tracker (CSV)
                     </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className={`${buttonStyles.outline.primary} ${shadows.buttonEffect}`}
-                      onClick={() => window.open("https://calendly.com/gsdatwork/strategy", "_blank")}
-                    >
-                      Get Expert Training
-                    </Button>
+                    
+                    <div className="pt-4 border-t border-gray-200">
+                      <p className="text-sm text-gray-600 mb-3">
+                        <strong>Ready to take the next step?</strong> Complete 3+ successful discovery-to-engagement 
+                        conversions using this methodology, then apply to become a GSD Associate.
+                      </p>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className={`${buttonStyles.outline.primary} ${shadows.buttonEffect} w-full`}
+                        onClick={() => window.location.href = "/associate-program"}
+                      >
+                        <Users className="mr-2 h-5 w-5" />
+                        Learn About the Associate Program
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardContent>
