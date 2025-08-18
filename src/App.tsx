@@ -33,6 +33,7 @@ const EnterpriseAICookingShow = lazy(() => import("./pages/EnterpriseAICookingSh
 const HireScope = lazy(() => import("./pages/HireScope"));
 const Methodology = lazy(() => import("./pages/methodology"));
 const TripleAFramework = lazy(() => import("./pages/methodology/TripleAFramework"));
+const SalesDiscovery = lazy(() => import("./pages/methodology/SalesDiscovery"));
 const AssociateProgram = lazy(() => import("./pages/AssociateProgram"));
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ const App = () => (
               <Route path="/hirescope" element={<HireScope />} />
               <Route path="/methodology" element={<Methodology />} />
               <Route path="/methodology/triple-a-framework" element={<TripleAFramework />} />
+              <Route path="/methodology/sales-discovery" element={<SalesDiscovery />} />
               <Route path="/associate-program" element={<AssociateProgram />} />
               <Route path="/10x-executive" element={<TenXExecutive />} />
               <Route path="/ai-action-workshop" element={<AIActionWorkshop />} />
