@@ -713,13 +713,17 @@ const AIOracle = () => {
                       
                       <Card className="border-green-200 bg-green-50/50">
                         <CardContent className="p-4">
-                          <p className="text-gray-700 mb-2">
-                            <strong>Amazon-Style Reading:</strong> If participants haven't pre-read, 
-                            start with 10-20 minutes of silent reading to ensure shared baseline.
+                          <p className="text-gray-700 mb-3">
+                            <strong>Amazon-Style Reading:</strong> Set a timer for 5-20 minutes for silent reading 
+                            if participants haven't pre-read the document. This ensures everyone has the same baseline understanding.
                           </p>
-                          <p className="text-sm text-gray-600 italic">
-                            The initial report is a starting point for debate, not a final verdict.
-                          </p>
+                          <div className="p-3 bg-white/80 rounded border border-green-200">
+                            <p className="text-sm font-medium text-green-900 mb-1">Pro Tip:</p>
+                            <p className="text-sm text-gray-700">
+                              "The initial report is a starting point for debate, not a final verdict. 
+                              This reading time is critical for productive discussion."
+                            </p>
+                          </div>
                         </CardContent>
                       </Card>
                     </div>
@@ -731,14 +735,34 @@ const AIOracle = () => {
                         Step 7: Facilitate Interactive Discussion
                       </h4>
                       
+                      <Card className="border-amber-200 bg-amber-50/50 mb-4">
+                        <CardContent className="p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <AlertTriangle className="w-5 h-5 text-amber-600" />
+                            <h5 className="font-semibold text-amber-900">Facilitation is an Art</h5>
+                          </div>
+                          <p className="text-sm text-amber-800 mb-3">
+                            <strong>Critical Reality:</strong> Managing executives with strong personalities requires skill. 
+                            This is very much an art, especially when insights challenge existing beliefs.
+                          </p>
+                          <ul className="space-y-1 text-xs text-amber-700">
+                            <li>• Keep everyone feeling heard (executive context from Vapi helps)</li>
+                            <li>• Manage time strictly - executives' time is precious</li>
+                            <li>• Navigate disagreements professionally</li>
+                            <li>• Push for concrete commitments, not just discussion</li>
+                          </ul>
+                        </CardContent>
+                      </Card>
+                      
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="p-4 bg-gray-50 rounded-lg">
-                          <h5 className="font-semibold text-gray-900 mb-2">Your Role</h5>
+                          <h5 className="font-semibold text-gray-900 mb-2">Your Role as Facilitator</h5>
                           <ul className="space-y-1 text-sm text-gray-700">
-                            <li>• Guide conversation</li>
-                            <li>• Manage time strictly</li>
+                            <li>• Guide conversation flow</li>
+                            <li>• Manage time and energy</li>
                             <li>• Ensure all voices heard</li>
                             <li>• Push for concrete actions</li>
+                            <li>• Navigate executive dynamics</li>
                           </ul>
                         </div>
                         <div className="p-4 bg-gray-50 rounded-lg">
@@ -746,8 +770,9 @@ const AIOracle = () => {
                           <ul className="space-y-1 text-sm text-gray-700">
                             <li>• React to findings</li>
                             <li>• Challenge assumptions</li>
-                            <li>• Provide context</li>
-                            <li>• Commit to actions</li>
+                            <li>• Provide missing context</li>
+                            <li>• Commit to specific actions</li>
+                            <li>• Battle-test insights</li>
                           </ul>
                         </div>
                       </div>
@@ -790,10 +815,19 @@ const AIOracle = () => {
                           </div>
                           
                           <div className="mt-6 p-4 bg-indigo-100/50 rounded-lg">
-                            <p className="text-sm text-indigo-800">
+                            <p className="text-sm text-indigo-800 mb-3">
                               This highly interactive loop allows the team to battle-test insights in real-time, 
                               ask follow-ups, and dig deeper until satisfied.
                             </p>
+                            
+                            <div className="bg-white/70 p-3 rounded border border-indigo-200">
+                              <p className="text-xs font-medium text-indigo-900 mb-1">The Reality:</p>
+                              <p className="text-xs text-indigo-800">
+                                "There's a lot of copying and pasting, there's a lot of swishing around between different windows" 
+                                - This is the practical mechanics. You're constantly moving between Fireflies transcript, 
+                                Google AI Studio, and your screen share. It's active, dynamic facilitation.
+                              </p>
+                            </div>
                           </div>
                         </CardContent>
                       </Card>
@@ -870,6 +904,15 @@ const AIOracle = () => {
                   <Shield className="w-5 h-5 text-indigo-600" />
                   Technical & Operational Best Practices
                 </CardTitle>
+                <CardDescription className="mt-2">
+                  <div className="flex items-center gap-2 p-2 bg-indigo-50 rounded">
+                    <AlertTriangle className="w-4 h-4 text-indigo-600" />
+                    <span className="text-sm text-indigo-700">
+                      <strong>Note:</strong> This toolkit is always evolving. New MCP servers, connectors, 
+                      and integration options appear regularly. Adapt these techniques as the landscape develops.
+                    </span>
+                  </div>
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -892,21 +935,31 @@ const AIOracle = () => {
                   </div>
                   
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-900">Transparency</h4>
+                    <h4 className="font-semibold text-gray-900">Repository Sharing & Transparency</h4>
                     <ul className="space-y-2 text-sm text-gray-700">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Share agent configurations with technical clients</span>
+                        <span>Create private repo with your multi-agent configurations and methodology</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Document your methodology in private repos</span>
+                        <span>Share repo access with technical clients or transfer ownership</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Build trust through radical transparency</span>
+                        <span>Upload agent configurations, Claude Code prompts, analysis workflows</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Build trust through radical transparency of your methods</span>
                       </li>
                     </ul>
+                    <div className="mt-3 p-3 bg-amber-50 rounded border border-amber-200">
+                      <p className="text-xs text-amber-800">
+                        <strong>Critical:</strong> Always ensure sensitive client data is in .gitignore 
+                        before uploading anything to repositories. Share methodology, not data.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -979,7 +1032,7 @@ const AIOracle = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <ChevronRight className="w-5 h-5 text-purple-500 mt-0.5" />
-                      <span>Schedule check-in emails immediately</span>
+                      <span>Schedule check-in emails immediately (use Shortwave, Gmail, or your preferred client)</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -1031,10 +1084,19 @@ const AIOracle = () => {
                     </div>
                     
                     <div className="p-4 bg-indigo-100/50 rounded-lg">
-                      <p className="text-indigo-800 font-medium">
+                      <p className="text-indigo-800 font-medium mb-3">
                         This transforms the AI Oracle from a one-time intervention into a continuous source 
                         of strategic advantage, permanently integrated into decision-making.
                       </p>
+                      
+                      <div className="bg-white/70 p-3 rounded border border-indigo-300">
+                        <p className="text-xs font-medium text-indigo-900 mb-1">Reality Check:</p>
+                        <p className="text-xs text-indigo-800">
+                          Sometimes insights get "explained away" by data that wasn't available to the model, 
+                          or context that was missing. That's why follow-up is critical - you can't know the 
+                          true value unless you close the loop.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
