@@ -28,6 +28,7 @@ const BlogPage = lazy(() => import("./pages/blog"));
 const BlogPostPage = lazy(() => import("./pages/blog/[id]"));
 const AILegalWorkshop = lazy(() => import("./pages/AILegalWorkshop"));
 const AssociateCallConfirmed = lazy(() => import("./pages/AssociateCallConfirmed"));
+const CustomGPTs = lazy(() => import("./pages/CustomGPTs"));
 const AIOracleSession = lazy(() => import("./pages/AIOracleSession"));
 const EnterpriseAICookingShow = lazy(() => import("./pages/EnterpriseAICookingShow"));
 const HireScope = lazy(() => import("./pages/HireScope"));
@@ -74,6 +75,7 @@ const App = () => (
               <Route path="/ai-automation-integration" element={<AIAutomationIntegration />} />
               <Route path="/triple-a-transformation" element={<TripleATransformation />} />
               <Route path="/strategy-session-confirmed" element={<StrategySessionConfirmed />} />
+<Route path="/custom-gpts" element={<CustomGPTs />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:id" element={<BlogPostPage />} />
               <Route path="/not-found" element={<NotFound />} />
