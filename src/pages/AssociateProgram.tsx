@@ -1,3 +1,12 @@
+/*
+ * CUSTOM GPT TOOLS FOR ASSOCIATES:
+ * 
+ * Client Engagement Assessment GPT:
+ * https://chatgpt.com/g/g-685435835688819192a9245b85512233-client-engagement-assessment
+ * 
+ * This GPT provides comprehensive client engagement analysis and strategic insights
+ * Perfect for discovery calls and client relationship optimization
+ */
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -630,5 +639,6 @@ const AssociateProgram = () => {
     </div>
   );
 };
+
 
 export default AssociateProgram;
